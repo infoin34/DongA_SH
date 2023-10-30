@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=960">
+	<title>마크업</title>
+	<link rel="stylesheet" href="../markup/markup.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="../markup/markup.js"></script>
+	<script>
+		//state-> 완료: end , 진행중: ing 		  
+		const markupList = [
+			{
+				'공통' : [
+					{'depth2': 'img', 'info': '아이콘, 로고, 이미지 모음', 'src': 'guide/svg', 'state':''},
+					{'depth2': 'layout','info': 'header, footer, nav', 'src': 'guide/layout'},
+					{'depth2': 'button', 'info': 'style', 'src': 'guide/etc?button'},
+					{'depth2': 'form', 'info': 'input, select', 'src': 'guide/etc?component'},
+					{'depth2': 'component', 'info': 'block요소 공통', 'src': 'guide/etc?component'},
+					{'depth2': 'popup', 'info': 'style', 'src': ''}
+				]
+			},
+			{
+				'메인' : [
+					{'depth2': '메인',  'depth3': '', 'info': '','src': 'main/main', 'state':'ing'}
+				]
+			},	
+			{
+				'동아쏘시오 그룹' : [
+					{'depth2': '그룹소개', 'info': '','src': 'sample/sample', 'state':''},
+					{'depth2': 'CEO 인사말', 'info': '','src': 'sample/sample', 'state':''},
+					{'depth2': '가치 및 비전', 'info': '', 'src': 'bb/bb', 'state':'ing'},
+					{'depth2': '연혁', 'info': '', 'src': 'bb/aa', 'state':'end'},
+					{'depth2': 'CI소개', 'info': '', 'src': 'cc/aa', 'state':''}
+				]
+			},
+			{
+				'투자정보' : [
+					{'depth2': '주식정보', 'info': '', 'src': 'iii'},
+					{'depth2': '재무정보', 'info': '팝업(#pop1, #pop2)', 'src': 'eee'},
+					{'depth2': 'IR', 'info': '', 'src': ''},
+					{'depth2': '기업지배구조', 'info': '', 'src': ''},
+					{'depth2': '공고', 'info': '', 'src': ''}
+				]
+			},
+			{
+				'정도경영' : [
+					{'depth2': '정도경영 철학', 'depth3': '정도경영 철학', 'info': '','src': '', 'state':''},
+					{'depth2': '', 'depth3': '사회책임협의회(DSC)', 'info': '','src': '', 'state':''},
+					{'depth2': '인권경영', 'info': '','src': '', 'state':''},
+					{'depth2': '환경경영', 'info': '','src': '', 'state':''},
+					{'depth2': '준법경영', 'info': '','src': '', 'state':''},
+					{'depth2': '소비자중심경영', 'depth3': 'CSR', 'info': '','src': '', 'state':''},
+					{'depth2': '', 'depth3': '전략 및 운영체계', 'info': '','src': '', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 활동', 'info': '','src': '', 'state':''},
+					{'depth2': '', 'depth3': '협력기관', 'info': '','src': '', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 소식', 'info': '','src': '', 'state':''},
+					{'depth2': '공급망 관리', 'info': '','src': '', 'state':''},
+					{'depth2': '윤리현장 및 규정', 'info': '','src': '', 'state':''},
+					{'depth2': '통합보고서', 'info': '','src': '', 'state':''},
+				]
+			},
+			{
+				'PR Center' : [
+					{'depth2': '그룹뉴스', 'info': '', 'src': 'iii'},
+					{'depth2': '미디어룸', 'info': '팝업(#pop1, #pop2)', 'src': 'eee'},
+					{'depth2': '사회공헌', 'info': '', 'src': ''}
+				]
+			},
+			{
+				'Etc' : [
+					{'depth2': '인재채용', 'info': '', 'src': 'iii'},
+					{'depth2': '상담/문의', 'info': '팝업(#pop1, #pop2)', 'src': 'eee'}
+				]
+			},				
+		]
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<!-- container -->
+		<div id="container">
+			<div class="pcMarkup"> 
+                <div class="notice">
+					<p class="pub"><strong>*담당자: 안선영, 김예빈</strong></p>
+					<p class="progress">*총 페이지 <strong id="totalCnt"></strong>개 중 <strong id="endCnt"></strong>개 완료 (<strong id="endCntP"></strong>%)</p>
+				</div>
+                <h2>동아쏘시오홀딩스</h2>
+                <div class="state"><span class="ing">진행중</span><span class="end">완료</span><span class="allEnd">모두완료</span></div>        
+                <ul class="urlList"> 
+                    <li class="head">
+                        <div class="depth_1">1Depth (<span id="depth1Cnt"></span>)</div>
+                        <div class="depth_2">2Depth</div>
+						<div class="depth_3">3Depth</div>
+                        <div class="info">detail</div>
+                        <div class="fileName">folder/name</div>
+                    </li>    
+                </ul>
+            </div>    
+		</div>
+		<!-- //container -->
+	</div>
+</body>
+</html>
