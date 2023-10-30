@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+
+
+
+	<title>guide</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/swiper.css">
+	<!--//css -->
+
+
+	<!-- srcipt -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<!-- <script src="../../static/js/swiper.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="../../static/js/common.ui.js"></script>
+	<!--//srcipt -->
+	<link rel="stylesheet" href="../../static/css/guide.css">
+</head>
+<style>
+	.design-guide-wrap {
+		display: none;
+	}
+</style>
+
+<body>
+	<div id="wrapper" class="design-guide">
+		<main>
+			<div class="design-guide-tab tab-wrap">
+				<ul class="tab-a">
+					<li class="tab-item button"><a href="?button">Button</a></li>
+					<li class="tab-item form"><a href="?form">Form</a></li>
+					<li class="tab-item component"><a href="?component">Component</a></li>
+				</ul>
+			</div>
+			<!-- button -->
+			<div class="design-guide-wrap button">
+				<h1>Button</h1>
+				<table class="table-a">
+					<caption>버튼 공통</caption>
+					<colgroup>
+						<col style="width:200px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">defult</th>
+							<th scope="col">on</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>disabled</th>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>btn-a</th>
+							<td>
+								<div class="code-box">
+									<div class="code-view">
+										<a href="javascript:void(0);" class="btn-a">버튼</a>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="code-box">
+									<div class="code-view">
+										<a href="javascript:void(0);" class="btn-a">버튼</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>btn-b</th>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- // button -->
+			<!-- form -->
+			<div class="design-guide-wrap form">
+				<h1>Form</h1>
+				<table class="table-a">
+					<caption>폼 공통</caption>
+					<colgroup>
+						<col style="width:200px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="2">구분</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th></th>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- // form -->
+			<!-- component -->
+			<div class="design-guide-wrap component">
+				<h1>Component</h1>
+				<table class="table-a">
+					<caption>블록 요소(세트) 공통</caption>
+					<colgroup>
+						<col style="width:200px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="2">구분</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>checkbox</th>
+							<td>
+								<div class="code-box">
+									<p>check-a</p>
+									<div class="code-view">
+										<div class="check-a">
+											<input type="checkbox" name="chk" id="chk1">
+											<label for="chk1">체크박스</label>
+										</div>
+									</div>
+								</div>
+								<div class="code-box">
+									<p>check-b</p>
+									<div class="code-view">
+										<div class="check-b">
+											<input type="checkbox" name="chk" id="chk2">
+											<label for="chk2">체크박스</label>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //component -->
+	</div>
+	</main>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+	$(function() {
+		if (!location.href.split('?')[1]) location.href = '?button';
+
+		$('.design-guide-tab .' + location.href.split('?')[1]).addClass('is-on');
+		$('.design-guide-wrap.' + location.href.split('?')[1]).addClass('is-on');
+
+		$('.code-box').each(function() {
+			let str = $(this).find('.code-view').html();
+			$(this).append('<div class="code-text"></div>');
+			console.log(str)
+			$(this).find('.code-text').text(str);
+		});
+	});
+</script>
+<!--//페이지 관련 스크립트 -->
+
+</html>

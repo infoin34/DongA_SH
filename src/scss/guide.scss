@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/********** guide ***********/
+html {}
+.design-guide {
+    margin: 0 auto;
+    max-width: 2040px;
+    min-width: 1200px;
+    padding: 0 30px;
+    font-size: 18px;
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+    .table-a {
+        margin-top: 30px;
+        width:100%; 
+        justify-content: center;
+        table-layout: fixed;
+        border-top: 2px solid #000;
+        thead{
+            th {
+                padding: 28px 15px; 
+                color:#888; 
+                font-size:18px; 
+                text-align: center; 
+                font-weight:600; 
+                background: #f5f5f5; 
+                border-bottom:1px solid #ddd;
+            }
+        }
+        tbody{
+                th, td {
+                    font-size:18px; 
+                    border-bottom:1px solid #ddd; 
+                    text-align:center;
+                }
+                th {color:#888;}
+                td { padding:28px 15px;}
+                th + *, td + * {
+                    border-left: 1px solid #ddd;
+                }
+        }
+    }
+    /* tab */
+    .tab-a {
+        display: flex;
+        margin: 50px 0;
+        justify-content: center;
+        align-content: center; 
+        gap: 10px;
+        li { 
+            flex-grow: 1;
+            line-height: 1.4em; 
+            a {
+                display:block;
+                padding: 13px 5px; 
+                font-size: 24px; 
+                text-align: center;
+                border: 1px solid;
+                transition: all 0.25s;
+            }
+            &:hover a {
+                background-color: #ddd;
+            }
+            &.is-on{
+                a {
+                    background:#000;
+                    color: #fff;  
+                }
+            }
+        }
+    }
+    .code-box {
+        + .code-box {margin-top:20px;}
+        p {font-size: 16px; font-weight: 600;}
+        .code-view {
+            
+        }      
+        .code-text {
+            margin-top: 15px;
+            padding: 20px;
+            white-space: pre-line;
+            background-color: #dfdfdf;
+            text-align: left;
+        }
+    }
+}
+.design-guide-wrap.is-on{
+    display:block;
+}
+

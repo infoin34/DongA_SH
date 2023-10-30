@@ -1,0 +1,67 @@
+{
+  "name": "donga",
+  "version": "1.0.0",
+  "description": "동아쏘시오홀딩스",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "breakpoint-sass": "^3.0.0",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^4.0.1",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-html-replace-v": "^1.6.4",
+    "gulp-if-else": "^1.0.3",
+    "gulp-livereload": "^4.0.2",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-newer": "^1.4.0",
+    "gulp-preprocess": "^4.0.2",
+    "gulp-pretty-html": "^2.0.10",
+    "gulp-remove-empty-lines": "^0.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webserver": "^0.9.1",
+    "susy": "^3.0.8"
+  },
+  "includePath": [
+    "node_modules/susy/sass",
+    "node_modules/breakpoint-sass/stylesheets"
+  ],
+  "paths": {
+    "pc": {
+      "css": {
+        "src": "./src/scss",
+        "output": "./src/dest/static/css/",
+        "dest": "./dest/static/css/"
+      },
+      "html": {
+        "include": "./src/include/",
+        "src": "./src/html/",
+        "output": "./src/dest/html/",
+        "dest": "./dest/html/"
+      },
+      "js": {
+        "src": "./src/dest/static/js/",
+        "dest": "./dest/static/js/"
+      },
+      "images": {
+        "src": "./src/dest/static/images/",
+        "dest": "./dest/static/images/"
+      },
+      "font": {
+        "src": "./src/dest/static/font/",
+        "dest": "./dest/static/font/"
+      }
+    }
+  }
+}

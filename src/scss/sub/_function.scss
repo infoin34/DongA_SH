@@ -1,0 +1,50 @@
+/******* fn *******/
+
+$base-font-size : 10;
+$img : '../images/';
+
+
+// rem 단축 함수
+@function rem($px, $base: $base-font-size) {
+	@return calc($px / $base)+rem;
+}
+
+
+// --------------------------------
+
+// Photoshop 자간 간격 설정
+@function ps-ls($em: 0) {
+	@return strip-units($em) / 1000 + em;
+}
+
+// 이미지url + cache buster
+@function image-url($str) {
+	$ran: random(99999999);
+	@if $cashFlag == true {
+		@return url("#{$img}#{$str}?#{$ran}");
+	} @else {
+		@return url("#{$img}#{$str}");
+	}
+}
+@function iurl($str) {
+	@return image-url($str);
+}
+
+@keyframes sdb {	
+	100% {
+	  top: 50%;
+	  opacity: 0.2;
+	}
+}
+
+@keyframes cover1 {	
+	100% {
+		left: 100%;
+	}
+	
+}
+@keyframes aniVisualObj1 { 
+	0% { top:0; } 
+	50% { top:-8px; } 
+	100% { top:0; }
+}
