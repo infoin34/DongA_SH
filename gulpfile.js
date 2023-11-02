@@ -210,10 +210,19 @@ function filecopy_pc_js(done) {
 	filecopy(paths.pc.js);
 	done();
 }
+function filecopy_pc_css(done) {
+	src(paths.pc.css.dest + "*", {read: false})
+	.pipe(clean())
+	.pipe(src([paths.pc.css.src2 + "/!(common)*.css", paths.pc.css.src2 + "/!(guide)*.css"]))
+	.pipe(dest(paths.pc.css.dest));
+	done();
+}
+
 function filecopy_pc_font(done) {
 	//filecopy(paths.pc.font);
 	done();
 }
+
 
 function sos(done) {
 	console.log('--- 프로젝트 Gulp 명령어 ----')
@@ -242,7 +251,7 @@ exports.html = html_pc;
 exports.css_clean = css_pc_clean;
 exports.css_dev = css_pc_dev;
 exports.css_build = series(css_pc_build);
-exports.build = series(set_prod_env, html_pc_clean, parallel(css_pc_dev, html_pc), filecopy_pc_images, filecopy_pc_js, filecopy_pc_font, markupList);
+exports.build = series(set_prod_env, html_pc_clean, parallel(css_pc_dev, html_pc), filecopy_pc_images, filecopy_pc_css, filecopy_pc_js, filecopy_pc_font, markupList);
 
 
 
