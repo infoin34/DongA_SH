@@ -1,16 +1,15 @@
+/**********************************
+***************************/
 /******* fn *******/
 
 $base-font-size : 10;
 $img : '../images/';
-
 
 // rem 단축 함수
 @function rem($px, $base: $base-font-size) {
 	@return calc($px / $base)+rem;
 }
 
-
-// --------------------------------
 
 // Photoshop 자간 간격 설정
 @function ps-ls($em: 0) {
@@ -26,25 +25,45 @@ $img : '../images/';
 		@return url("#{$img}#{$str}");
 	}
 }
+
 @function iurl($str) {
 	@return image-url($str);
 }
 
-@keyframes sdb {	
-	100% {
-	  top: 50%;
-	  opacity: 0.2;
-	}
-}
 
-@keyframes cover1 {	
-	100% {
-		left: 100%;
-	}
-	
+/**********************************
+***************************/
+/******* animation *******/
+@keyframes sdb {	
+	100% {top: 50%; opacity: 0.2;}
 }
-@keyframes aniVisualObj1 { 
-	0% { top:0; } 
-	50% { top:-8px; } 
-	100% { top:0; }
+@keyframes introV1 { 
+	0% {top: -50%; opacity: 0; transform: scale(1);} 
+	70% {top:0; opacity: 1; transform: scale(1);}
+	100% {top:0; opacity: 1; transform: scale(1.05);}
+}
+@keyframes introV2 { 
+	from {opacity: 0;} 
+	to {opacity: 1;}
+}
+@keyframes introV3 {
+	60% {opacity: 0;} 
+	100% {top: 0; left: 0; opacity: 0;}
+}
+@keyframes introV4 {
+	20% {opacity: 1;} 
+	50% {opacity: 1; width:calc(77/1920*100vw);}
+	100% {width:calc(705/1920*100vw); opacity: 1;}
+}
+@keyframes introV5 {
+	from {top: calc(50% - calc(78/1920*50vw)); left:calc(705/1920*50vw);}
+	to {top: 4rem; left: 8rem;}
+}
+@keyframes introV6 {
+	0% { width:calc(705/1920*100vw); height:calc(78/1920*100vw);}
+	100% {width: 20.9rem; height: 2.3rem;}
+}
+@keyframes clipPath1 {
+	from {clip-path: circle(0);}
+	to {clip-path: circle(100%);}
 }

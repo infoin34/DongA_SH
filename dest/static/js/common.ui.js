@@ -32,6 +32,20 @@
 	function scrollMove (val, time){
         $('html, body').animate({scrollTop: val}, time || 300);
     }   
+
+	/* animate - 타겟, {바뀔 속성}, 걸리는 시간, 지연 시간, 속도, fn(콜백)  */ 
+	function ani(target, aniObj, duration, delay, timing, cd){
+        let $target = $(target),
+            _delay = delay ? delay : 0,
+            _timing = timing ? timing : 'swing',
+            _duration = duration ? duration : '300';
+
+        $target.delay(delay).animate(
+            aniObj, _duration, _timing, function(){
+				if(cd) cd();
+			}
+        )
+    }
 	
 	/* 팝업 */
     const popup = {
@@ -149,7 +163,7 @@
 
 	/* 스크롤 css모션 */
 	function scrCSSEff(){
-		let setScrT = parseInt(currentScr + ($(window).height()*0.9));		
+		let setScrT = parseInt(currentScr + ($(window).height()*0.75));		
 		$('.scr-eff').each(function(i){	
 			if(setScrT > $(this).offset().top){											
 				if(!$(this).hasClass('scr-eff-active')){
@@ -161,6 +175,34 @@
 				}
 			}
 		});
+	}
+
+	let scrolJSEFF = [
+		{
+			target: '.bg-a', 
+			parent: '.main-philosophy',
+			h: '20%',
+			obj: {
+				top: '10',
+				opacity: '1'
+			}
+
+		}
+	]
+	let text = 0+'n';
+	function scrollJSEff(obj){		
+		let $target = $(obj.target);
+		let $parent = obj.parent ? $(obj.parent) : $target.parent();
+		let fixT = obj.h.indexOf('%') !== -1? parseInt(obj.h)*0.01*$(window).height() : parseInt(obj.h)/$(window).height(); 
+		let setScrT = parseInt(currentScr + $(window).height());		
+
+		if(setScrT >= $parent.offset().top){
+
+		}else{
+
+		}
+		//let delta = 
+		//let delta = $(window).scrollTop()/($('.fake_bg').height()-$(window).height()) > 1 ? 1 :  $(this).scrollTop()/($('.fake_bg').height()-$(window).height());
 	}
 
 	/* Swiper */
@@ -176,7 +218,102 @@
 		return swiper;
 	}
 
-		// function scrollMotion(){		
+	/* main-spot */ 
+	function mainSpot(){
+		let $item = $('.spot-item'),
+			$playing = $item.eq(0),//현재 보이는 박스,
+			$prev,//전 박스
+			$next,//후 박스
+			$bullet,
+			mainSpotSwiper,
+		    playingIdx = 0, //현재 보이는 박스 idx,
+			visualLength = $item.length,//박스 총갯수
+			curDelay = 6,//재생시간
+			setTo, setTo2;//settimeout,
+
+		let spot = {
+			prev : function(target){
+				playingIdx--;
+				if(playingIdx < 0) playingIdx = visualLength-1;	
+				this.active();					
+			},
+			next : function(target){
+				playingIdx++;
+				if(playingIdx > visualLength-1) playingIdx = 0;	
+				this.active();		
+			},
+			active: function(){		
+				let _ = this;
+				mainSpotSwiper.slideTo(playingIdx, 300);				
+			},
+			slideControl: function(){
+				let _ = this;
+				if($playing.find('video').length > 0){
+					$playing.find('video')[0].play();
+				}				
+				if($playing.find('video').length > 0 && $playing.find('video')[0].duration){
+					curDelay = $playing.find('video')[0].duration;
+				}else{
+					curDelay = 5;
+				}
+				clearTimeout(setTo2);	
+								
+				setTo2 = setTimeout(function(){
+					$playing.find('.spot-text').addClass('on');
+				},800);
+
+				if($item.length == 1) return;
+				
+				_.autoPlay();   
+			},
+			autoPlay: function(init){
+				let _ = this;							
+				clearTimeout(setTo);		
+				
+				setTo = setTimeout(function(){    		
+					_.next();					    				 
+				}, curDelay * 1000);
+			},
+			init :function(){
+				mainSpotSwiper = new Swiper('.main-spot-swiper .swiper-container', {
+					slidesPerView: 1,
+					loop: true,
+					pagination: {
+						el: '.main-spot-swiper .swiper-pagination',
+						clickable: true,
+					}
+				});
+				spot.slideControl();//처음 실행
+
+				mainSpotSwiper.on('slideChangeTransitionStart', function(){
+					playingIdx = this.realIndex;
+					$playing = $item.eq(playingIdx);
+					if($playing.find('video').length > 0){
+						$playing.find('video')[0].pause();
+						$playing.find('video')[0].currentTime = 0;						
+					}
+					$('.spot-text').removeClass('on');
+				});
+				mainSpotSwiper.on('slideChangeTransitionEnd', function(){
+					spot.slideControl();
+				});
+			}		
+		}
+
+		if($('.spot-item video').length == 0){
+			spot.init();
+		}else {//video duration 읽어진 후
+			let loadCheck = setInterval(function(){
+				if($('.spot-item video')[0].duration > 0){
+					clearInterval(loadCheck);
+					spot.init();					
+				}    	   
+			});//첫 영상 로드 다되기까지 체크
+		}
+	}
+
+	
+	// function scrollMotion(){		
 	// 	//spot 효과
 	// 	const spotDelta = $(this).scrollTop()/($('.fake_bg').height()-$(window).height()) >= 1 ? 1 : $(this).scrollTop()/($('.fake_bg').height()-$(window).height());
 	// 	const spotT1 = $('.spot_txt_1').width()/2;
@@ -218,6 +355,7 @@
     exports.bodyScrollBlock = bodyScrollBlock
     exports.popup = popup;
 	exports.afterLoading = afterLoading;
+	exports.ani = ani;
 
 
 
@@ -228,6 +366,15 @@
 	function scrollEv(){
 		//현재 스크롤값
 		currentScr = $(window).scrollTop();	
+
+		/* 탑버튼 제어 */
+		if($(window).scrollTop() + $('header').height() > $('.main-spot').height()){
+			$('header').removeClass('white');
+			$('.btn-top').addClass('on');
+		}else{
+			$('header').addClass('white');
+			$('.btn-top').removeClass('on');
+		}
 		
 		//스크롤 영역 모션
 		scrCSSEff();
@@ -239,18 +386,13 @@
 		lastScr = currentScr;
 	}
 	
-	$(window).on('scroll', function(){
-		/* 탑버튼 제어 */
-		if($(window).scrollTop() + $('header').height() > $('.main-spot').height()){
-			$('header').removeClass('white');
-			$('.btn-top').addClass('on');
-		}else{
-			$('header').addClass('white');
-			$('.btn-top').removeClass('on');
-		}
-		scrollEv();
 
-	});
+	/* 푸터 패밀리 사이트 */
+	function toggleFamily(){
+		var $footer = $(".footer");
+		var $button = $footer.find($(".footer-familySelect"));
+		var $list = $footer.find($(".footer-familyList"));
+	}
 
 	/******** 공통 ********/
 	$(function(){
@@ -264,18 +406,87 @@
 		let headerH = $('header').height();
 		$('.btn-all-gnb').on('click', function(){			
 			if($(this).hasClass('on')){				
+				bodyScrollBlock(false);				
 				$('header').removeClass('nav-open');
 				$(this).removeClass('on');
-				bodyScrollBlock(false);				
 			}else{
+				bodyScrollBlock(true);
 				$('header').addClass('nav-open');
 				$(this).addClass('on');
-				bodyScrollBlock(true);
 			}
 			return false;
 		});
 		
+		//패밀리 사이트
+		$('.btn-family-site').on('click', function(){
+			$('.family-site-list').stop().slideToggle();
+		});
 
+		//메인
+		if(window.mainFlag){
+			$("html, body").animate({ scrollTop: 0}, 'fast'); 
+
+			/***** main *****/
+			//intro 시작
+			$('#intro').addClass('active');
+
+			//main-value 썸네일 커버
+			$('.main-value .thumb').append('<div class="img-cover"><span></span><span></span><span></span><span></span><span></span></div>');
+            
+			
+			// //메인 인트로 끝날 때
+			document.querySelector('#intro').addEventListener('animationend', function(e){
+				if(e.target == this) {
+					$('#intro').remove();					
+					$('.main-intro').addClass('main-intro-end');	
+				}
+			});
+			document.querySelector('.main-spot').addEventListener('animationstart', function(e){
+				if($('.spot-item').eq(0).find('video').length > 0){
+					$('.spot-item').eq(0).find('video')[0].pause();
+					$('.spot-item').eq(0).find('video')[0].currentTime = 0;
+				}	
+				setTimeout(function(){
+					$('header').addClass('white');	
+				}, 400);				
+			})
+			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+				if($('html').hasClass('main-intro')){	
+					$('html').removeClass('main-intro');						
+					mainSpot();						
+					$(window).on('scroll', scrollEv);
+				}		
+			});
+
+			//동아쏘시오 그룹 소개
+			let onceFlag, buiSetTArr = [];
+			$(window).on('scroll', function(){				
+				if($('.business-list').hasClass('scr-eff-active')){
+					if(!onceFlag){
+						onceFlag = true;
+						$('.business-item').each(function(idx){
+							var _ = $(this);
+							buiSetTArr[idx] = setTimeout(function(){
+								_.addClass('on');
+							}, (idx+1)*120);
+						});
+					}
+				}else{			
+					if(onceFlag){
+						onceFlag = false;
+						buiSetTArr.map((item)=>{
+							setTimeout(buiSetTArr);
+						}) 
+						$('.business-item').removeClass('on');
+					}
+				}
+			});
+		
+		}else{
+			$(window).on('scroll', scrollEv);
+		}
+
+		
 		if(!window.isMobile){
 			// $('a[href]').on('mouseenter', function(){
 			// 	//$('.mouse_cursor').addClass('click');

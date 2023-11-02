@@ -23,5 +23,19 @@
     .svg-right-arrow {
         width:16px; height: 16px; background: svgUpArrow('000'); background-size: 100% 100%;
     }
-  
+    .svg-right-arrow {
+        width:16px; height: 16px; background: svgUpArrow('000'); background-size: 100% 100%;
+    }
+    .svg-pin {
+        width:20px; height: 20px; background: svgPin('fff'); background-size: 100% 100%;
+    }
+    .svg-tel {
+        width:20px; height: 21px; background: svgPhone('fff'); background-size: 100% 100%;
+    }
+    .svg-main-bg-A {
+        width:642px; height: 739px; background: svgMainA('FF4002'); background-size: 100% 100%;
+    }  
+    .svg-main-bg-D {
+        width:642px; height: 750px; background: svgMainD('2F75FF'); background-size: 100% 100%;
+    }
 }
