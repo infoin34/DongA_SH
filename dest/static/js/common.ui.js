@@ -2,7 +2,8 @@
 
 ((exports, $)=>{
 	window.isMobile = 'ontouchstart' in window || window.DocumentTouch  && document instanceof DocumentTouch;
-    
+	window.isMain = window.isMain || undefined;
+
     /* 로딩 후 콜백 */  
 	function afterLoading(cb){
 		window.addEventListener('load', completed, false);
@@ -16,14 +17,17 @@
 	let scrollHeight = 0;
 	function bodyScrollBlock(flag){
 		if(flag) {
-			scrollHeight = ($(window).scrollTop() );
+			scrollHeight = ($(window).scrollTop());
 			$('html, body').addClass('no-scr');
-			$('html, body').css({
-				'marin-top': -(scrollHeight)+'px',
+			$('#wrap').css({
+				'margin-top': -(scrollHeight)+'px',
 			})
 		}else {
 			$('html, body').removeAttr('style');
 			$('html, body').removeClass('no-scr');
+			$('#wrap').css({
+				'margin-top': 0
+			})
 			$('html, body').scrollTop(scrollHeight);
 		}
 	}
@@ -49,85 +53,78 @@
 	
 	/* 팝업 */
     const popup = {
-		targetLayer : '',
 		guideZindex : 1020,
 		targetArr : [],
 		freezeTop : 0,
 		popupObj : {},
 		popupSetTimer : null,
 		oldHeight : 0,
-		layerPopup : function(obj) {
+		open : function(obj) {
 			'use strict'
-			var $obj = (typeof obj === 'string') ? $(obj) : obj ;
+			let $obj = (typeof obj === 'string') ? $(obj) : obj ;
 
-			popupBase.layerPopupInit($obj);
+			popup.layerPopupInit($obj);
 		},
-		layerPopupInit: function($obj) {
+		layerPopupInit: function(obj) {
 			'use strict'
-			var $obj = $obj,
-				$wrapper = $obj.find('.wrapper'),
-				$closeBtn = $obj.find('.close, .fn-close, .btn-close'),
-				$popup = $obj.find('.popup'),
-				$close = $obj.find('.btn.close');
+			let $obj = obj,
+				$wrapper = $obj.find('.popup-wrap'),
+				$closeBtn = $obj.find('.close, .btn-close');
 
-			popupBase.targetLayer = $obj;
-			$.each(popupBase.targetArr, function(i) {
-				if (popupBase.targetArr[i].attr('id') == $obj.attr('id')) popupBase.targetArr.splice(i,1);
+			$.each(popup.targetArr, function(i) {
+				if (popup.targetArr[i].attr('data-pop') == $obj.attr('data-pop')) popup.targetArr.splice(i,1);
 			})
-			popupBase.targetArr.push($obj);
+			popup.targetArr.push($obj);
+			console.log(popup.targetArr,'ss')
 
+			popup.guideZindex++;
+			$obj.attr('data-pop', popup.guideZindex);
 			$obj.css({
 				'display': 'block',
-				'z-index': popupBase.guideZindex + (popupBase.targetArr.length + 1)
+				'z-index': popup.guideZindex
 			});
 
-			$popup.css({
-				'margin-top': '10px',
-			});
-
-			if (popupBase.targetArr.length == 1) {
-				if( !$body.hasClass('layer-open') ) {
+			if (popup.targetArr.length == 1) {
+				if(!$('html').hasClass('layer-open') ) {
 					bodyScrollBlock(true);
 				}
 			}
-			$body.append($obj);
+			$('html').append($obj);
 
 			$closeBtn.click(function (e) {
 				e.preventDefault();
-				popupBase.closePopup('#'+$obj.attr('id'));
+				popup.closePopup(this);
 			});
 
-			// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음  20-10-23
+			// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음 
 			$obj.on('click', function(e) {				
-				if ( !$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrapper') || e.target.classList.contains('layer-popup') ) {
-					popupBase.closePopup('#'+$obj.attr('id'))
-				} else {
-					
+				console.log(this, e.target.classList.contains('popup-wrap'))
+				if (!$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrap')) {
+					popup.closePopup(this);
 				}
 			});
 		},
 		popupCloseAllFn : function() {
 			'use strict'
-
-			$.each(popupBase.targetArr, function(i) {
-				popupBase.closePopup();
+			$.each(popup.targetArr, function(i) {
+				popup.closePopup();
 			});
 		},
-		closePopup : function(id) {
-			var $tg = id ? $(id) : popupBase.targetArr[popupBase.targetArr.length - 1] ;
-			$tg.css({ 'display': 'none', 'z-index': 0 });
-			$.each(popupBase.targetArr, function(i) {
-				if (popupBase.targetArr[i].attr('id') == $tg.attr('id')) {
-					popupBase.targetArr.splice(i,1);
-					return false;
+		closePopup : function(target) {
+			let $target = $(target),
+			    $pop = $target.hasClass('layer-popup') ? $target : $target.parents('.layer-popup');
+			
+			$.each(popup.targetArr, function(i) {
+				if (popup.targetArr[i].attr('data-pop') == $pop.attr('data-pop')) {
+					popup.targetArr.splice(i,1);
 				}
-			})
-			popupBase.targetLayer = '';
-			if (popupBase.targetArr.length == 0) {
-				if( !$body.hasClass('layer-open') ) {
+			});
+			if (popup.targetArr.length == 0) {
+				if( !$('html').hasClass('layer-open') ) {
 					bodyScrollBlock(false);
 				}
-			}
+			}			
+			$pop.css({ 'display': 'none', 'z-index': 0 });
 		}		
 	};
 
@@ -317,62 +314,44 @@
 	exports.plx = plx;
 
 
-
+	/************************************************/
+	/************************************************/
 	/************************************************/
 	/******** 스크롤 ********/
 	let currentScr, lastScr = 0;
-	// 스크롤 감지 메뉴 hidden
+	
 	function scrollEv(){
-		//현재 스크롤값
+		//---현재 스크롤값
 		currentScr = $(window).scrollTop();	
 
-		/* 탑버튼 제어 */
+		//---헤더, 탑버튼
 		if($(window).scrollTop() + $('header').height() > $('.main-spot').height()){
-			$('header').removeClass('white');
+			if(window.isMain) $('header').removeClass('white');
 			$('.btn-top').addClass('on');
 		}else{
-			$('header').addClass('white');
+			if(window.isMain) $('header').addClass('white');
 			$('.btn-top').removeClass('on');
 		}
-				
-		plx({
-			target:'.bg-d',
-			parent: '.main-philosophy',
-			increment: '-0.4'
-		});
 
-		// plx({
-		// 	target:'.bg-a',
-		// 	increment: '-0.35'
-		// });
-
-		//스크롤 영역 모션
+		//---스크롤 영역 모션
 		scrCSSEff();
 
-		//gnb
+		//---gnb
 		gnbScr();
 
-		// 현재 스크롤값은 저장
+		//---현재 스크롤값은 저장
 		lastScr = currentScr;
-	}
-	
-
-	/* 푸터 패밀리 사이트 */
-	function toggleFamily(){
-		var $footer = $(".footer");
-		var $button = $footer.find($(".footer-familySelect"));
-		var $list = $footer.find($(".footer-familyList"));
 	}
 
 	/******** 공통 ********/
 	$(function(){
-		/* 탑버튼 클릭 */
+		//---탑버튼 클릭
 		$('.btn-top').on('click', function(){
 			$('html, body').animate({scrollTop: 0}, 'linear');
 			return false;
 		});  
 
-		/* 전체메뉴 */
+		//---전체메뉴
 		let headerH = $('header').height();
 		$('.btn-all-gnb').on('click', function(){			
 			if($(this).hasClass('on')){				
@@ -387,15 +366,15 @@
 			return false;
 		});
 		
-		//패밀리 사이트
+		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(){
 			$('.family-site-list').stop().slideToggle();
 		});
 
 		
-		
-		if(!window.isMobile){//pc일때
-			/* 마우스 커서 */
+		//---pc일때
+		if(!window.isMobile){
+			//마우스 커서
 			$(document).on('mousemove', function(e){
 				let mouseX = e.clientX-($('.mouse-cursor').width()/2);
 				let mouseY = e.clientY-($('.mouse-cursor').height()/2);
@@ -421,16 +400,14 @@
 				$('.mouse-cursor').removeClass('click');
 				$(this).removeClass('over');
 			});
-
 		}	
 
-
-		//only main
-		if(window.mainFlag){
+		//---only main
+		if(window.isMain){
 			//새로고침 - 스크롤 상단
+			console.log("ㄴㄴ")
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
-			/***** main *****/
 			//intro 시작
 			//$('#intro').addClass('active');
 
@@ -441,11 +418,6 @@
 			mainSpot();						
 			$(window).on('scroll', scrollEv);
 
-
-			//main-value 썸네일 커버
-			// $('.main-value .thumb').append('<div class="img-cover"><span></span><span></span><span></span><span></span><span></span></div>');
-            
-			
 			// //메인 인트로 끝날 때
 			// document.querySelector('#intro').addEventListener('animationend', function(e){
 			// 	if(e.target == this) {
@@ -472,7 +444,13 @@
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let onceFlag, buiSetTArr = [];
-			$(window).on('scroll', function(){				
+			$(window).on('scroll', function(){
+				//---스크롤 모션
+				plx({
+					target:'.bg-d',
+					parent: '.main-philosophy',
+					increment: '-0.4'
+				});				
 				if($('.business-list').hasClass('scr-eff-active')){
 					if(!onceFlag){
 						onceFlag = true;
@@ -498,6 +476,4 @@
 			$(window).on('scroll', scrollEv);
 		}
 	});
-
-	
 })(window, jQuery);
