@@ -1,5 +1,5 @@
 /*************메인*************/
-a.btn-more {
+a.btn-detail {
     display: inline-block; width: 19.8rem; font-size: 1.8rem; line-height: 6.4rem; color:#fff; background-color: #000; border-radius: 5rem; text-align: center;
     &:after {
         content:''; margin-left: 2.3rem; display: inline-block; vertical-align: middle;  width: 2.4rem; height: 2.4rem; background: svgUrlArrow2('fff'); background-size: 100% 100%;
@@ -10,7 +10,7 @@ a.btn-more {
         opacity: 0.8;
     }
 }
-a.btn-more.white {
+a.btn-detail.white {
     background-color: transparent;
     border:1px solid #fff;    
     &:hover {
@@ -18,7 +18,7 @@ a.btn-more.white {
     }
 }
 .main {
-    #container {padding-top: 0;}
+    #container {padding-top: 0; padding-bottom: 0;}
     //인트로
     &-intro {
         width:100%; height:100%; overflow: hidden;
@@ -140,7 +140,7 @@ a.btn-more.white {
     }     
     .section-head {
         position: relative; padding-right: 23rem; margin-bottom: 7rem;
-        .btn-more {
+        .btn-detail {
             position: absolute; right: 0; bottom:0; 
         }
     }   
@@ -235,7 +235,7 @@ a.btn-more.white {
         }
         .section-head {       
             padding: 0;    
-            .btn-more {
+            .btn-detail {
                 position:static; margin-top: 70px;
             }                
         
