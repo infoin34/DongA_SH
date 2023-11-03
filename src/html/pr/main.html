@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+<head>
+    @@include('../../include/meta.html')    
+    <title>동아쏘시오홀딩스</title>
+    @@include('../../include/resource.html')
+</head>
+<body>  
+    <div id="wrap">   
+        @@include('../../include/header.html', {
+            "class" : ""
+        }) 
+        <main role="main">            
+            <div id="container">       
+                <section class="main-business">
+                    <div class="section-inner">
+                        <div class="section-head">            
+                            <h2 class="main-title">
+                                <span>Business</span>
+                                <strong class="title-h2">동아쏘시오그룹 소개</strong>
+                            </h2>
+                            <p  class="text-1">사업 영역의 경쟁력 Global Healthcare</p>
+                            <a href="" class="btn-more"><span>자세히 보기</span></a>
+                        </div> 
+                        <div class="section-contents">
+                            <ul class="business-list scr-eff">
+                                @@for(var i = 0; i < 1; i++){
+                                    <li class="business-item">
+                                        <a href="#" title="물류"></a>
+                                        <div class="content">                        
+                                            <i class="ico">
+                                                <img src="../../static/images/main/business_ico_1.png" alt="물류" class="off">
+                                                <img src="../../static/images/main/business_ico_1_over.png" alt="물류" class="on">
+                                            </i>                                   
+                                            <p class="title-s2">물류</p>                                                
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        @@include('../../include/footer.html')
+    </div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+    $(function(){});
+</script>
+<!--//페이지 관련 스크립트 -->
+</html>
