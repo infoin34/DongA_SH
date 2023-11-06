@@ -34,6 +34,35 @@ $speed : 0.3s;
 }
 
 @mixin font0(){
-	text-indent: -100000000em;
+	text-indent: -1000000em;
 	font-size: 0;
+}
+
+//placeholder
+@mixin placeholder($color: #666) {
+	&::-webkit-input-placeholder { // Chrome/Opera/Safari
+		color: $color;
+		opacity: 1;
+		font-size: 14px;
+	}
+	&::-moz-placeholder { // Firefox 19+
+		color: $color;
+		opacity: 1;
+		font-size: 14px;
+	}
+	&:-ms-input-placeholder { // IE 10+
+		color: $color;
+		opacity: 1;
+		font-size: 14px;
+	}
+	&:-moz-placeholder { // Firefox 18-
+		color: $color;
+		opacity: 1;
+		font-size: 14px;
+	}
+	&:placeholder { // Firefox 18-
+		color: $color;
+		opacity: 1;
+		font-size: 14px;
+	}
 }

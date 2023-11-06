@@ -511,15 +511,30 @@ footer {
 
 
 @media screen and (max-width: 1200px) {
-    html{font-size: 0.89vw;}
+    html{font-size: 49.5%;}
 } 
 
-@media screen and (max-width: 992px) {
-    
-    .header-gnb {position: relative; opacity: 0; z-index: -10000;}
+@media screen and (max-width: 992px) {    
+    html {font-size: 0.95vw;}
+    .header-inner {padding: 2.1rem 2rem;}
+    .header-gnb {position: relative; display: none;}
     .nav-open .header-gnb {opacity: 1; z-index: 0;}
 }
 
 @media screen and (max-width: 768px) {
-
+    .header {
+        &-etc-link {display: none;}
+        &-menu {
+            margin: 0;
+            .header-util {gap: 3rem; top: 2rem; right: 2rem;}
+        }
+    }
+    html {font-size: 62.5%;}
+    footer {
+        .footer {
+            &-inner {
+                padding: 5rem 2rem;
+            }
+        }
+    }
 }
