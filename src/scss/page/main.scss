@@ -209,7 +209,9 @@ a.btn-detail.white {
             transition: all .9s ease, opacity 0.1s ease;
         }   
         .philosophy-item {
-            display: flex; width: 11.6%; flex-wrap: wrap; align-content: center; justify-content: center; height: 52rem; text-align: center; color: #fff; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; border-radius: 2rem;               
+            position: relative; display: flex; width: 11.6%; flex-wrap: wrap; align-content: center; justify-content: center; height: 52rem; text-align: center; color: #fff; border-radius: 2rem;  overflow: hidden;             
+            .thumb {position: absolute; top: 0; left: 0; width: 100%; height: 100%;  background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}
+            .info {position: relative;}
             .title {width: 100%; font-size: 2.4rem; font-weight: 600; transition: font 0.3s ease-out;}
             .text-1 {margin-top: 2rem; width:100%;}
             .text-1, .btn-wrap {display: none;}
