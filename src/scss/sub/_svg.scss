@@ -24,12 +24,16 @@
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7L7 1L13 7' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
     @return url($icon);
 }
+@function svgDownArrow($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66699 1.33301L7.00033 6.66634L12.3337 1.33301' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
 @function svgClock($color){
     $color: '%23'+$color;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.25' stroke='#{$color}' stroke-width='1.5'/%3E%3Crect x='9.5' y='5' width='1.5' height='6' rx='0.75' fill='#{$color}'/%3E%3Crect x='5' y='11' width='1.5' height='6' rx='0.75' transform='rotate(-90 5 11)' fill='#{$color}'/%3E%3C/svg%3E";
     @return url($icon);
 }
-
 @function svgPuzzle($color, $color2){
     $color: '%23'+$color;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 384 384' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_895_211' fill='#{$color}'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M208 32H322C338.569 32 352 45.4315 352 62V176C369.673 176 384 190.327 384 208C384 225.673 369.673 240 352 240V354C352 370.569 338.569 384 322 384H207C207 366.879 193.121 353 176 353C158.879 353 145 366.879 145 384H30C13.4315 384 0 370.569 0 354V239C17.1208 239 31 225.121 31 208C31 190.879 17.1208 177 0 177V62C0 45.4314 13.4315 32 30 32H144C144 14.3269 158.327 0 176 0C193.673 0 208 14.3269 208 32Z'/%3E%3C/mask%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M208 32H322C338.569 32 352 45.4315 352 62V176C369.673 176 384 190.327 384 208C384 225.673 369.673 240 352 240V354C352 370.569 338.569 384 322 384H207C207 366.879 193.121 353 176 353C158.879 353 145 366.879 145 384H30C13.4315 384 0 370.569 0 354V239C17.1208 239 31 225.121 31 208C31 190.879 17.1208 177 0 177V62C0 45.4314 13.4315 32 30 32H144C144 14.3269 158.327 0 176 0C193.673 0 208 14.3269 208 32Z' fill='#{$color}'/%3E%3Cpath d='M208 32H207V33H208V32ZM352 176H351V177H352V176ZM352 240V239H351V240H352ZM207 384H206V385H207V384ZM145 384V385H146V384H145ZM0 239V238H-1V239H0ZM0 177H-1V178H0V177ZM144 32V33H145V32H144ZM208 33H322V31H208V33ZM322 33C338.016 33 351 45.9837 351 62H353C353 44.8792 339.121 31 322 31V33ZM351 62V176H353V62H351ZM385 208C385 189.775 370.225 175 352 175V177C369.121 177 383 190.879 383 208H385ZM352 241C370.225 241 385 226.225 385 208H383C383 225.121 369.121 239 352 239V241ZM351 240V354H353V240H351ZM351 354C351 370.016 338.016 383 322 383V385C339.121 385 353 371.121 353 354H351ZM322 383H207V385H322V383ZM208 384C208 366.327 193.673 352 176 352V354C192.569 354 206 367.431 206 384H208ZM176 352C158.327 352 144 366.327 144 384H146C146 367.431 159.431 354 176 354V352ZM145 383H30V385H145V383ZM30 383C13.9837 383 1 370.016 1 354H-1C-1 371.121 12.8792 385 30 385V383ZM1 354V239H-1V354H1ZM0 240C17.6731 240 32 225.673 32 208H30C30 224.569 16.5685 238 0 238V240ZM32 208C32 190.327 17.6731 176 0 176V178C16.5685 178 30 191.431 30 208H32ZM1 177V62H-1V177H1ZM1 62C1 45.9837 13.9837 33 30 33V31C12.8792 31 -1 44.8792 -1 62H1ZM30 33H144V31H30V33ZM176 -1C157.775 -1 143 13.7746 143 32H145C145 14.8792 158.879 1 176 1V-1ZM209 32C209 13.7746 194.225 -1 176 -1V1C193.121 1 207 14.8792 207 32H209Z' fill='%23#{$color2}' mask='url(%23path-1-inside-1_895_211)'/%3E%3C/svg%3E";
@@ -98,5 +102,10 @@
     $color: '%23'+$color;
     $color2: '%23'+$color2;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='12' fill='#{$color2}'/%3E%3Cpath d='M8 8L16 16' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M8 16L16 8' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E";
+    @return url($icon);
+}
+@function svgCheck($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 15 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L5.33333 9.33333L13.6667 1' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }

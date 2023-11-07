@@ -42,8 +42,8 @@ html {font-family:Apple SD Gothic Neo, arial, sans-serif;}
 .urlList {margin-top:5px; border-bottom:1px solid #414042; border-top:1px solid #414042; font-size:14px;}
 .urlList .ing .depth_2 {color:red;}
 .urlList .end .depth_2 {background-color:rgb(253, 225, 134);}
-.urlList .allEnd .depth_1 {background-color:#1ea31e; color:#fff;}
-.urlList .allEnd .depth_2 {background-color:transparent;}
+.urlList .allEnd .end:nth-child(1) .depth_1  {background-color:#1ea31e; color:#fff;}
+.urlList .allEnd .depth_2 {background-color:rgb(134, 253, 153, 0.5);;}
 .urlList > li {}
 .urlList > li + li {border-top:1px solid #000;}
 li.head {display:table; table-layout:fixed; width:100%; text-align:center; background-color: #000; color:#fff;}

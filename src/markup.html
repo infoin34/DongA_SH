@@ -7,9 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=960">
 	<title>마크업</title>
+	<!-- build:css -->
 	<link rel="stylesheet" href="../markup/markup.css" />
+	<!-- endbuild -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- build:js -->
 	<script src="../markup/markup.js"></script>
+	<!-- endbuild -->
 	<script>
 		//state-> 완료: end , 진행중: ing 		  
 		const markupList = [
@@ -68,13 +72,12 @@
 					{'depth2': '그룹뉴스', 'info': '', 'src': 'pr/news', 'state': 'end'},
 					{'depth2': '그룹뉴스 - 상세', 'info': '', 'src': 'pr/news', 'state': 'end'},
 					{'depth2': '미디어룸', 'info': '팝업(#youtebePop)', 'src': 'pr/media', 'state': 'end'},
-					{'depth2': '사회공헌', 'info': '', 'src': ''}
+					{'depth2': '사회공헌', 'info': '', 'src': 'pr/contribution', 'state': 'end'}
 				]
 			},
 			{
-				'Etc' : [
-					{'depth2': '인재채용', 'info': '', 'src': 'iii'},
-					{'depth2': '상담/문의', 'info': '팝업(#pop1, #pop2)', 'src': 'eee'}
+				'customer' : [
+					{'depth2': '상담/문의', 'info': '팝업(#pop1, #pop2)', 'src': 'customer/inquiry', 'state': 'ing'}
 				]
 			},				
 		]

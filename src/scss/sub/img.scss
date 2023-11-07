@@ -6,10 +6,10 @@
         width: 209px; height: 23px; background: svgLogo('000', '00B4D6'); background-size: 100% 100%;
     }
     .svg-lang {
-        width: 28px; height: 28px; background: svgLang('000'); background-size: 100% 100%;  
+        width: 28px; height: 28px; background: svgLang('fff'); background-size: 100% 100%;  
     }
     .svg-link {
-        width: 12px; height: 13px; background: svgUrlArrow('000'); background-size: 100% 100%;
+        width: 12px; height: 13px; background: svgUrlArrow('fff'); background-size: 100% 100%;
     }
     .svg-link-2 {
         width: 24px; height: 24px; background: svgUrlArrow2('fff'); background-size: 100% 100%;
@@ -20,11 +20,11 @@
     .svg-puzzle{
         width: 400px; height: 400px; background: svgPuzzle('fff', '000'); background-size: 100% 100%;
     }
-    .svg-right-arrow {
-        width: 16px; height: 16px; background: svgUpArrow('000'); background-size: 100% 100%;
+    .svg-down-arrow {
+        width: 16px; height: 16px; background: svgDownArrow('fff'); background-size: 100% 100%;
     }
-    .svg-right-arrow {
-        width: 16px; height: 16px; background: svgUpArrow('000'); background-size: 100% 100%;
+    .svg-up-arrow {
+        width: 16px; height: 16px; background: svgUpArrow('fff'); background-size: 100% 100%;
     }
     .svg-pin {
         width: 20px; height: 20px; background: svgPin('fff'); background-size: 100% 100%;
@@ -39,7 +39,7 @@
         width: 642px; height: 750px; background: svgMainD('2F75FF'); background-size: 100% 100%;
     }
     .svg-search {
-        width: 28px; height: 28px; background: svgSearch('000'); background-size: 100% 100%;
+        width: 28px; height: 28px; background: svgSearch('fff'); background-size: 100% 100%;
     }
     .svg-close {
         width: 38px; height: 38px; background: svgClose('fff'); background-size: 100% 100%;
@@ -49,5 +49,8 @@
     }
     .svg-input-reset {
         width: 23px; height: 23px; background: svgInputReset('fff', 'aaa'); background-size: 100% 100%;
+    }
+    .svg-chk {
+        width: 15px; height: 11px; background: svgCheck('fff'); background-size: 100% 100%;        
     }
 }

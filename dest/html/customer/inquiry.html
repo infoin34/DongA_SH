@@ -12,7 +12,7 @@
 
 
 
-	<title>동아쏘시오홀딩스 - 레이아웃</title>
+	<title>동아쏘시오홀딩스</title>
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="../../static/css/common.css">
 	<link rel="stylesheet" type="text/css" href="../../static/css/swiper.css">
@@ -223,11 +223,143 @@
 			<!-- //전체메뉴 -->
 		</header>
 
-		<main role="main" class="pr-center">
+		<main role="main" class="customer">
 			<div id="container">
-				<section>
+				<section class="customer-inquiry">
 					<div class="section-inner">
-						<p style="font-size: 30px;">여기가 내용들어갈 곳</p>
+						<div class="section-contents">
+							<div class="inquiry-form">
+								<div class="form-head">
+									<div class="title-h3">문의하시는 분의 정보와<br>내용을 입력해주세요.</div>
+									<p class="text-3">문의하신 내용의 답변은 입력하신 이메일로 발송되오니 정확히 입력해주세요.</p>
+								</div>
+								<form method="post" name="">
+									<fieldset>
+										<legend>문의</legend>
+										<!--기본 정보-->
+										<div class="field-table">
+											<div class="field-table-title title-s2">기본 정보</div>
+											<div class="field-table-wrap">
+												<div class="field-wrap">
+													<div class="field user half">
+														<strong class="field-name">이름<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<input type="text" name="">
+														</div>
+													</div>
+													<div class="field phone half">
+														<strong class="field-name">전화번호<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<input type="text" name="" placeholder="전화번호(숫자만 입력)">
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap">
+													<div class="field email half">
+														<strong class="field-name">이메일<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<input type="text" name="">
+															<span class="input-mark">@</span>
+															<input type="text" name="">
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap">
+													<div class="field address">
+														<strong class="field-name">주소<span class="ess">*</span></strong>
+														<div class="field-insert half">
+															<input type="text" name="" class="addr-1">
+															<a href="" class="btn-type-b">우편번호 검색</a>
+														</div>
+														<div class="field-insert">
+															<input type="text" name="" class="addr-2" placeholder="상세 주소를 입력해주세요.">
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //기본 정보-->
+											<!-- 문의 사항-->
+											<div class="field-table-title title-s2">문의 사항</div>
+											<div class="field-table-wrap">
+												<div class="field-wrap half">
+													<div class="field type">
+														<strong class="field-name">문의유형<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<select name="">
+																<option>선택</option>
+																<option>문의유형1</option>
+																<option>문의유형2</option>
+																<option>문의유형3</option>
+																<option>문의유형4</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap">
+													<div class="field title">
+														<strong class="field-name">제목<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<input type="text" name="">
+														</div>
+													</div>
+												</div>
+												<div class="field-wrap">
+													<div class="field content">
+														<strong class="field-name">내용<span class="ess">*</span></strong>
+														<div class="field-insert">
+															<textarea name="" placeholder="문의하실 내용을 입력해주세요."></textarea>
+														</div>
+														<p class="text-size">1,300 Byte</p>
+													</div>
+												</div>
+												<div class="field-wrap">
+													<div class="field attachment">
+														<strong class="field-name">첨부파일</strong>
+														<div class="field-insert">
+															<input type="text" class="file" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly>
+															<input type="file" id="addFile" name="">
+															<label for="addFile" class="btn-type-b">파일 추가</label>
+														</div>
+														<div class="field-insert">
+															<input type="text" class="file" value="dongasocioholdings_IR자료.pdf" readonly>
+															<input type="file" id="fileEx" name="">
+															<label for="fileEX" class="btn-type-b">파일 추가</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //문의 사항-->
+											<!-- 개인정보 수집 및 이용동의 -->
+											<div class="term-agree">
+												<div class="field-table-title">
+													<span class="title-s2">개인정보 수집 및 이용동의</span>
+													<a href="#" onclick="popup.open('.pop-user-terms'); return false;" class="btn-privacy">자세히 보기</a>
+												</div>
+												<span class="check-type-a">
+                                                    <input type="checkbox" name="" id="agree01">
+                                                    <label for="agree01">개인정보 수진 밑 이용에 동의합니다.</label>
+                                                </span>
+											</div>
+											<!-- //개인정보 수집 및 이용동의-->
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<div class="bottom-btn-wrap">
+								<a href="#" class="btn-more btn-type-a"><span>문의하기</span></a>
+							</div>
+							<div class="inquiry-notice-box">
+								<div class="title-s2">궁금하신 사항에 대하여 답변 드리겠습니다.</div>
+								<div class="inquiry-info">
+									<strong>대표전화번호</strong>
+									<p><a href="tel:080-920-2002">080-920-2002</a></p>
+								</div>
+								<div class="inquiry-info">
+									<strong>상담/운영시간</strong>
+									<p>09:30~17:00(점심시간 12:30~13:00)<br>토, 일요일 및 법정 공휴일/정기휴가 제외</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -280,10 +412,42 @@
 			<div class="mouse-pointer"></div>
 		</div>
 	</div>
+	<div class="layer-popup pop-policy-privacy">
+		<div class="popup-wrap">
+			<div class="popup-inner">
+				<div class="popup-head">
+					<div class="">개인정보 수집 및 이용동의</div>
+					<p>※일반의약품/전문의약품관련 문의사항은 제3자 제공으로 동의됩니다.</p>
+					<a href="#" class="btn-close">닫기</svg>
+				</div>
+				<div class="popup-body">
+					<div class="agree-conent">
+						수집하는 개인정보 항목<br>
+                        회사는 고객의 온라인 문의, 사이버감사 신고등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br><br><br>
+                        수집항목 : 이름, 주소, 전화번호, 이메일, 접속 IP, 서비스 이용 기록<br>
+                        개인정보 수집방법 : 홈페이지<br><br><br>
+                        개인정보의 수집 및 이용목적<br>
+                        고객님께서 제공한 모든 정보는 다음에 기술한 목적 이외로는 사용되지 않으며, 이용 목적이 변경될시에는 사전 동의를 구할 것입니다.회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br><br>
+                        이름, 주소, 전화번호, 이메일 : 고객문의, 본인확인, 문의사항 확인, 사실확인, 처리결과 통보<br><br>
+                        접속IP, 서비스 이용 기록 : 접속빈도 파악에 대한 통계<br><br><br>
+                        개인정보의 보유 및 이용기간<br>
+                        원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이류를 명시한 기간 동안 보존합니다.<br><br>
+                        3-1. 회사 내부 방침에 의한 보존<br>
+                        불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조 : 1년<br>
+                        온라인문의 : 문의사항이 등록 후 1년이 지난 시점<br>
+                        관계법령 위반에 따른 수사, 조사 등이 진행중인 경우에는 해당 수사, 조사 종료 시 까지<br><br>
+                        3-2. 관련법령에 의한 보존<br>
+                        계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래 등에서의 소비자보호에 관한 법
+                        률)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-	$(function() {});
+	$(function() {})
 </script>
 <!--//페이지 관련 스크립트 -->
 

@@ -18,6 +18,7 @@
     "gulp-copy": "^4.0.1",
     "gulp-dart-sass": "^1.1.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-html-replace": "^1.6.2",
     "gulp-html-replace-v": "^1.6.4",
     "gulp-if-else": "^1.0.3",
     "gulp-livereload": "^4.0.2",

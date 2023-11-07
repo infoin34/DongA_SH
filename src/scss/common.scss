@@ -14,7 +14,8 @@
 
 //page
 @import "./sub/font.scss";
-@import "./page/base.scss"; //공통 css
-@import "./page/layout.scss"; //기본 header, container, footer
+@import "./page/base.scss";//공통 css
+@import "./page/layout.scss";//기본 header, container, footer
 @import "./page/main.scss";
-@import "./page/pr-center.scss";
+@import "./page/pr-center.scss";//pr-center
+@import "./page/etc.scss";//inquiry

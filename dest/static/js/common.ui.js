@@ -75,7 +75,6 @@
 				if (popup.targetArr[i].attr('data-pop') == $obj.attr('data-pop')) popup.targetArr.splice(i,1);
 			})
 			popup.targetArr.push($obj);
-			console.log(popup.targetArr,'ss')
 
 			popup.guideZindex++;
 			$obj.attr('data-pop', popup.guideZindex);
@@ -98,7 +97,6 @@
 
 			// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음 
 			$obj.on('click', function(e) {				
-				console.log(this, e.target.classList.contains('popup-wrap'))
 				if (!$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrap')) {
 					popup.closePopup(this);
 				}
@@ -410,10 +408,17 @@
 
 			$('a[href]').on('mouseenter', function(){
 				$('.mouse-cursor').addClass('click');
-				$(this).addClass('over')
 			});
 	
 			$('a[href]').on('mouseleave', function(){
+				$('.mouse-cursor').removeClass('click');
+			});
+
+			$('.over-eff').on('mouseenter', function(){
+				$('.mouse-cursor').addClass('click');
+				$(this).addClass('over')
+			});
+			$('.over-eff').on('mouseleave', function(){
 				$('.mouse-cursor').removeClass('click');
 				$(this).removeClass('over');
 			});
