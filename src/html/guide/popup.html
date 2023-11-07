@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    @@include('../../include/meta.html')    
+    <title>popup</title>
+    @@include('../../include/resource.html')
+    <link rel="stylesheet" href="../../static/css/guide.css">
+</head>
+<style>
+    .design-guide-wrap {display:none;} 
+    .code-view .layer-popup {position: relative; height:1080px; display: block;}
+</style>
+<body>     
+    <div id="wrapper" class="design-guide"> 
+        <main>
+            <!-- popup -->
+            <div class="design-guide-wrap is-on">
+                <h1>POPUP</h1>
+                <div class="text-box">
+                   **팝업 실행: <span style="color:red;">popup.open('class나 id');</span><br>
+                    **팝업 종료: <span style="color:red;">popup.closePopup('class나 id');</span><br>
+                </div>
+                <table class="table-a">
+                    <caption>팝업</caption>
+                    <colgroup>
+                        <col style="width:200px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">코드</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>유튜브 팝업</th>
+                            <td>
+                                <div class="code-box">
+                                    <p>pr/media.html</p>
+                                    <div class="code-view">
+                                        <div class="layer-popup pop-youtube" id="youtebePop">
+                                            <div class="popup-wrap">
+                                                <div class="popup-inner">
+                                                    <div class="popup-head">
+                                                        <div class="youtube-title title-s1">[동아IR주유소] 올리고를 알면 길이 보인다! 필요한 정보 쪽집게 과외</div>
+                                                        <p class="text-3">✌ 동아IR주유소 ✌ '올리고가 뭐지?편’은 글로벌 CDMO 비즈니스를 하는 에스티팜의 주력 사업, 올리고 약물에 대해 쉽게 이해하기 위해 준비한 이야기입니다.</p>
+                                                        <a href="#" class="btn-close">닫기
+                                                        </a>
+                                                    </div>
+                                                    <div class="youtube">
+                                                        <iframe src="https://www.youtube.com/embed/IBG4hCwqq6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>알림창</th>
+                            <td>
+                                <div class="code-box">
+                                    <div class="code-view">
+                                        <a href="javascript:void(0);" class="btn-a">버튼</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- // popup -->
+        </main>
+    </div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+    $(function(){
+        $('.code-box').each(function(){
+            let str = $(this).find('.code-view').html(),
+                _ = $(this);
+                _.append('<div class="code-text-wrap"><a href="javascript:void(0);" class="code-toggle">코드 보기</a><div class="code-text"></div></div>');
+            _.find('.code-text').text(str);
+            _.find('.code-toggle').on('click', function(){
+                _.find('.code-text-wrap').toggleClass('on');
+            }); 
+        });
+    });
+</script>
+<!--//페이지 관련 스크립트 -->
+</html>

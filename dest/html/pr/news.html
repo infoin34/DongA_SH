@@ -225,126 +225,185 @@
 
 		<main role="main" class="pr-center">
 			<div id="container">
-				<section class="pr-center-media">
+				<section class="pr-center-news">
 					<div class="section-inner">
-						<!-- <div class="section-head">            
-                            <h2 class="main-title">
-                                <strong class="title-h2">동아쏘시오그룹 소개</strong>
-                            </h2>
-                            <p  class="text-1">사업 영역의 경쟁력 Global Healthcare</p>
-                        </div>  -->
 						<div class="section-contents">
 							<div class="search-box">
 								<div class="search-form">
 									<div class="input-wrap">
-										<input type="text" class="input-search" placeholder="검색어를 입력하세요">
-										<a href="#" class="btn-input-reset" data-reset=".input-search">제거</a>
+										<input type="text" class="input-search" id="serchInput" placeholder="검색어를 입력하세요">
+										<a href="#" class="btn-input-reset" data-reset="serchInput">제거</a>
 									</div>
 									<div class="search-btns">
+										<a href="#" class="btn-search">검색</a>
+										<a href="#" class="btn-filter" onclick="$('.search-box').toggleClass('filter-on'); return false;">필터</a>
+									</div>
+								</div>
+								<div class="filter-wrap">
+									<a href="#" class="btn-filter-reset"><span>초기화</span></a>
+									<div class="filter-title">그룹사</div>
+									<ul class="filter-list">
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck01">
+											<label for="ck01">전체</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck02">
+											<label for="ck02">동아ST</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck03">
+											<label for="ck03">동아제약</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck04">
+											<label for="ck04">에스티팜</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck05">
+											<label for="ck05">타이틀길게길게 길게길게</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck06">
+											<label for="ck06">타이틀길게길게 길게길게</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck07">
+											<label for="ck07">타이틀길게길게 길게길게2</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck08">
+											<label for="ck08">타이틀길게길게 길게길게3</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck09">
+											<label for="ck09">타이틀길게길게 길게길게4</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck10">
+											<label for="ck10">타이틀</label>
+										</li>
+									</ul>
+									<div class="filter-btn">
 										<a href="#" class="btn-search">검색</a>
 									</div>
 								</div>
 							</div>
-							<ul class="media-list">
+							<ul class="news-list list-type-a">
 								<!-- 9개 고정 -->
 
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="x6i3_LfeTjY">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/x6i3_LfeTjY/maxresdefault.jpg" alt="타이틀">
-										</div>
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
 										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
-											<div class="date text-2">2023.10.05</div>
-										</div>
-									</a>
-								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="IBG4hCwqq6U">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/IBG4hCwqq6U/maxresdefault.jpg" alt="타이틀">
-										</div>
-										<div class="info">
-											<div class="title-s2 ell-2">[동아약보-건강한삶+] 긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트</div>
-											<div class="date text-2">2023.10.05</div>
-										</div>
-									</a>
-								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="GjjhrDwM95Q">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/GjjhrDwM95Q/maxresdefault.jpg" alt="타이틀">
-										</div>
-										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
 											<div class="date text-2">2023.10.05</div>
 										</div>
 									</a>
 								</li>
 
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="x6i3_LfeTjY">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/x6i3_LfeTjY/maxresdefault.jpg" alt="타이틀">
-										</div>
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
 										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
-											<div class="date text-2">2023.10.05</div>
-										</div>
-									</a>
-								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="IBG4hCwqq6U">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/IBG4hCwqq6U/maxresdefault.jpg" alt="타이틀">
-										</div>
-										<div class="info">
-											<div class="title-s2 ell-2">[동아약보-건강한삶+] 긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트</div>
-											<div class="date text-2">2023.10.05</div>
-										</div>
-									</a>
-								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="GjjhrDwM95Q">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/GjjhrDwM95Q/maxresdefault.jpg" alt="타이틀">
-										</div>
-										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
 											<div class="date text-2">2023.10.05</div>
 										</div>
 									</a>
 								</li>
 
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="x6i3_LfeTjY">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/x6i3_LfeTjY/maxresdefault.jpg" alt="타이틀">
-										</div>
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
 										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
 											<div class="date text-2">2023.10.05</div>
 										</div>
 									</a>
 								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="IBG4hCwqq6U">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/IBG4hCwqq6U/maxresdefault.jpg" alt="타이틀">
-										</div>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
 										<div class="info">
-											<div class="title-s2 ell-2">[동아약보-건강한삶+] 긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트</div>
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
 											<div class="date text-2">2023.10.05</div>
 										</div>
 									</a>
 								</li>
-								<li class="media-item">
-									<a href="javascript:void(0);" data-id="GjjhrDwM95Q">
-										<div class="thumb">
-											<img src="https://img.youtube.com/vi/GjjhrDwM95Q/maxresdefault.jpg" alt="타이틀">
-										</div>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
 										<div class="info">
-											<div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
+											<div class="date text-2">2023.10.05</div>
+										</div>
+									</a>
+								</li>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="info">
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
+											<div class="date text-2">2023.10.05</div>
+										</div>
+									</a>
+								</li>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="info">
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
+											<div class="date text-2">2023.10.05</div>
+										</div>
+									</a>
+								</li>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="info">
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
+											<div class="date text-2">2023.10.05</div>
+										</div>
+									</a>
+								</li>
+
+								<li class="news-item">
+									<a href="detail.html">
+										<div class="thumb pc-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="thumb mo-part" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+										<div class="info">
+											<div class="brand">에스티팜</div>
+											<div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
+											<p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
 											<div class="date text-2">2023.10.05</div>
 										</div>
 									</a>
@@ -407,7 +466,7 @@
 			<div class="mouse-pointer"></div>
 		</div>
 	</div>
-	<div class="layer-popup pop-youtube" id="youtebePop">
+	<div class="layer-popup pop-youtube">
 		<div class="popup-wrap">
 			<div class="popup-inner">
 				<div class="popup-head">
@@ -422,6 +481,25 @@
 			</div>
 		</div>
 	</div>
+	<!-- <div class="layer-popup pop-youtube">
+        <div class="popup-wrap">
+            <div class="popup-inner">
+                <div class="popup-head">
+                    <a href="#" class="btn-close">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.34863 2.34766L33.653 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M33.6514 2.34766L2.34702 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="popup-body">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>

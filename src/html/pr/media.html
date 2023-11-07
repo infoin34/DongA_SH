@@ -24,70 +24,56 @@
                         <div class="section-contents">
                             <div class="search-box">
                                 <div class="search-form">
-                                    <input type="text" class="" placeholder="검색어를 입력하세요">
+                                    <div class="input-wrap">
+                                        <input type="text" class="input-search" placeholder="검색어를 입력하세요">
+                                        <a href="#" class="btn-input-reset" data-reset=".input-search">제거</a>
+                                    </div>
                                     <div class="search-btns">
-                                        <a href="#" class="btn-remove"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="14" cy="14" r="12" fill="#AAAAAA"/>
-                                            <path d="M10 10L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                            <path d="M10 18L18 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                            </svg>
-                                            </a>
-                                        <a href="" class="btn-search">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M24.2929 25.7071C24.6834 26.0976 25.3166 26.0976 25.7071 25.7071C26.0976 25.3166 26.0976 24.6834 25.7071 24.2929L24.2929 25.7071ZM18.2929 19.7071L24.2929 25.7071L25.7071 24.2929L19.7071 18.2929L18.2929 19.7071Z" fill="#222222"/>
-                                            <circle cx="12" cy="12" r="10" stroke="#222222" stroke-width="2"/>
-                                        </svg></a>
-                                        <a href="" class="btn-filter">
-                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M25 3H2L10.4737 14.7018V26L16.9298 19.5439V14.7018L25 3Z" stroke="#00B4D6" stroke-width="1.8" stroke-linejoin="round"/>
-                                            </svg>
-                                         </a>
-                                    </div>
-                                </div>
-                                <div class="filter-wrap">
-                                    <div class="fliter-list">
-                                        <div class="filter-title">그룹사</div>
-                                        <ul>
-                                            <li>
-                                                <input type="checkbox" name="filter" id="ck01">
-                                                <label for="ck01">전체</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="filter" id="ck02">
-                                                <label for="ck01">동아ST</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="filter" id="ck03">
-                                                <label for="ck01">동아제약</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="filter" id="ck04">
-                                                <label for="ck01">에스티팜</label>
-                                            </li>
-                                            <li>
-                                                <input type="checkbox" name="filter" id="ck05 ">
-                                                <label for="ck01">에스티젠바이오</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="filter-btn">
                                         <a href="#" class="btn-search">검색</a>
                                     </div>
                                 </div>
                             </div>
-                            <ul class="media-list list-type-a">
-                                @@for(var i = 0; i < 9; i++){
-                                    <li class="media-item">
-                                        <a href="#" onclick="popup.open('.pop-youtube'); return false;">
-                                            <div class="thumb" style="background-image: url('https://dummyimage.com/500x500/cbbaa3/fff.jpg');"></div>                                            
-                                            <div class="info">
-                                                <div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
-                                                <div class="date text-2">2023.10.05</div>
-                                            </div>
-                                        </a>
-                                    </li>
+                            <ul class="media-list">
+                                <!-- 9개 고정 -->
+                                @@for(var i = 0; i < 3; i++){
+                                <li class="media-item">
+                                    <a href="javascript:void(0);" data-id="x6i3_LfeTjY">
+                                        <div class="thumb">
+                                            <img src="https://img.youtube.com/vi/x6i3_LfeTjY/maxresdefault.jpg"alt="타이틀">
+                                        </div>                                            
+                                        <div class="info">
+                                            <div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+                                            <div class="date text-2">2023.10.05</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="media-item">
+                                    <a href="javascript:void(0);"  data-id="IBG4hCwqq6U">
+                                        <div class="thumb">
+                                            <img src="https://img.youtube.com/vi/IBG4hCwqq6U/maxresdefault.jpg"alt="타이틀">
+                                        </div>                                            
+                                        <div class="info">
+                                            <div class="title-s2 ell-2">[동아약보-건강한삶+] 긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트긴타이틀 테스트</div>
+                                            <div class="date text-2">2023.10.05</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="media-item">
+                                    <a href="javascript:void(0);" data-id="GjjhrDwM95Q">
+                                        <div class="thumb">
+                                            <img src="https://img.youtube.com/vi/GjjhrDwM95Q/maxresdefault.jpg" alt="타이틀">
+                                        </div>                                            
+                                        <div class="info">
+                                            <div class="title title-s2">[동아약보-건강한삶+] 성조숙증 검사와 치료, 왜 중요할까?</div>
+                                            <div class="date text-2">2023.10.05</div>
+                                        </div>
+                                    </a>
+                                </li>
                                 }
                             </ul>
+                            <div class="bottom-btn-wrap">
+                                <a href="#" class="btn-more btn-type-a"><span>더 보기</span></a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -95,41 +81,17 @@
         </main>
         @@include('../../include/footer.html')
     </div>
-    <div class="layer-popup pop-youtube">
+    <div class="layer-popup pop-youtube" id="youtebePop">
         <div class="popup-wrap">
             <div class="popup-inner">
                 <div class="popup-head">
-                    <a href="#" class="btn-close">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.34863 2.34766L33.653 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M33.6514 2.34766L2.34702 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                    <div class="youtube-title title-s1">[동아IR주유소] 올리고를 알면 길이 보인다! 필요한 정보 쪽집게 과외</div>
+                    <p class="text-3">✌ 동아IR주유소 ✌ '올리고가 뭐지?편’은 글로벌 CDMO 비즈니스를 하는 에스티팜의 주력 사업, 올리고 약물에 대해 쉽게 이해하기 위해 준비한 이야기입니다.</p>
+                    <a href="#" class="btn-close">닫기</svg>
                     </a>
                 </div>
-                <div class="popup-body">
-                    <div class="youtube">
-                        내용찌
-                        <a href="#" onclick="popup.open('.pop-youtube2'); return false;" style="font-size: 50px;">ㅇㄴ머ㅏㅇ리ㅏㅇㅁ너리ㅏㅁㅇ너</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="layer-popup pop-youtube2">
-        <div class="popup-wrap">
-            <div class="popup-inner">
-                <div class="popup-head">
-                    <a href="#" class="btn-close">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.34863 2.34766L33.653 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M33.6514 2.34766L2.34702 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="popup-body">
-                    <div class="youtube">
-                        내용찌2dassfdsfasdf
-                    </div>
+                <div class="youtube">
+                    <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -137,7 +99,13 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-    $(function(){});
+    $(function(){
+        $('.media-item a').on('click', function(){
+            let ytbId = $(this).data('id');
+            $('.pop-youtube iframe').attr('src', `https://www.youtube.com/embed/${ytbId}`);
+            popup.open('.pop-youtube'); return false;
+        });
+    })
 </script>
 <!--//페이지 관련 스크립트 -->
 </html>

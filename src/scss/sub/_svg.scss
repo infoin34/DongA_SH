@@ -79,3 +79,24 @@
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 642 750' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.1' d='M321 0L0 0L0 750H321C498.32 750 642 582.15 642 375C642 167.85 498.32 0 321 0Z' fill='#{$color}'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }
+@function svgSearch($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.2929 25.7071C24.6834 26.0976 25.3166 26.0976 25.7071 25.7071C26.0976 25.3166 26.0976 24.6834 25.7071 24.2929L24.2929 25.7071ZM18.2929 19.7071L24.2929 25.7071L25.7071 24.2929L19.7071 18.2929L18.2929 19.7071Z' fill='#{$color}'/%3E%3Ccircle cx='12' cy='12' r='10' stroke='#{$color}' stroke-width='2'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
+@function svgClose($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2207 36.4082L36.3962 1.22812' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M1.5957 1.60352L36.7712 36.7836' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
+@function svgFilter($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 1H1L9.47368 12.7018V24L15.9298 17.5439V12.7018L24 1Z' stroke='#{$color}' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E";
+    @return url($icon);
+}
+@function svgInputReset($color, $color2){
+    $color: '%23'+$color;
+    $color2: '%23'+$color2;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='12' fill='#{$color2}'/%3E%3Cpath d='M8 8L16 16' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M8 16L16 8' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E";
+    @return url($icon);
+}

@@ -371,7 +371,24 @@
 			$('.family-site-list').stop().slideToggle();
 		});
 
-		
+
+		//---input[type="text"] 초기화
+		$('input[type="text"]').on('keydown', function(){
+			if($(this).val().length > 0) $(this).siblings('.btn-input-reset').show();
+			else $(this).siblings('.btn-input-reset').hide();
+		});
+		$('.input-wrap .btn-input-reset').on('click', function(){
+			$('#'+ $(this).data('reset')).val('');
+			$(this).hide();
+			return false;
+		});
+		$('.btn-filter-reset').on('click', function(){
+			$('.search-box .filter-item input').prop('checked', false);
+			console.log('.ss')
+			return false;			
+		});
+
+
 		//---pc일때
 		if(!window.isMobile){
 			//마우스 커서
