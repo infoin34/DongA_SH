@@ -305,7 +305,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 			&-btn {
 				margin: 2.8rem -4rem 0; border-top: 1px solid #ccc;
 				.btn-search {
-					display: block; margin: 1.6rem auto 0; width: 14rem; height: 51px; background-color: #000081; text-align: center; color: #fff; font-size: 1.6rem; line-height: 5.1rem; border-radius: 5rem; 
+					display: block; margin: 1.6rem auto 0; width: 14rem; height: 5.1rem; background-color: #000081; text-align: center; color: #fff; font-size: 1.6rem; line-height: 5.1rem; border-radius: 5rem; 
 				}
 			}
 		}
@@ -377,11 +377,47 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 		> * {position: relative; width: calc((100% - 3rem)/2); } 		
 	}
    
+	.search {
+		&-box {
+			padding: 2.4rem 2rem;
+			.filter {
+				&-wrap {
+					margin: 2rem 1.5rem;
+				}
+				&-btn {
+					margin: 2.8rem -1.5rem 0
+				}
+			}
+		}		
+	}
 }
 
 @media screen and (max-width: 768px) {		
 	.list-type-a { 
 		gap: 4rem 0;
 		> * {position: relative; width: 100%; } 		
+	}
+	.search {
+		&-box {
+			padding: 2.4rem 2rem;
+			.filter {
+				&-wrap {
+					margin: 2rem 1.5rem;
+				}
+				&-btn {
+					margin: 2.8rem -1.5rem 0
+				}
+			}
+			.search-form {
+				padding-right: 2rem;
+				input[type=text] {padding: 0 3rem 0 2rem;}
+				.btn-input-reset {right:1rem; width: 2rem;}
+			}	
+			.search-btns {
+				gap: 1rem;
+				a {width: 2rem;}
+			}
+		}
+			
 	}
 }

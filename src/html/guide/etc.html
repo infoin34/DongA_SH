@@ -101,7 +101,94 @@
                             <th scope="col" colspan="2">구분</th>
                         </tr>
                     </thead>
-                    <tbody>                       
+                    <tbody>
+                        <tr>
+                            <th>검색폼</th>
+                            <td>
+                                <div class="code-box">
+                                    <p>상단 검색 - 필터 x</p>
+                                    <div class="code-view">
+                                        <div class="search-box">
+                                            <div class="search-form">
+                                                <div class="input-wrap">
+                                                    <input type="text" class="input-search" id="serchInput" placeholder="검색어를 입력하세요">
+                                                    <a href="#" class="btn-input-reset" data-reset="serchInput">제거</a>
+                                                </div>
+                                                <div class="search-btns">
+                                                    <a href="#" class="btn-search">검색</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="code-box">
+                                    <p>상단 검색 - 필터 o</p>
+                                    <div class="code-view">
+                                        <div class="search-box">
+                                            <div class="search-form">
+                                                <div class="input-wrap">
+                                                    <input type="text" class="input-search" id="serchInput" placeholder="검색어를 입력하세요">
+                                                    <a href="#" class="btn-input-reset" data-reset="serchInput">제거</a>
+                                                </div>
+                                                <div class="search-btns">
+                                                    <a href="#" class="btn-search">검색</a>
+                                                    <a href="#" class="btn-filter" onclick="$('.search-box').toggleClass('filter-on'); return false;">필터</a>
+                                                </div>
+                                            </div>
+                                            <div class="filter-wrap">
+                                                <a href="#" class="btn-filter-reset"><span>초기화</span></a>
+                                                <div class="filter-title">그룹사</div>
+                                                <ul class="filter-list">
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck01">
+                                                        <label for="ck01">전체</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck02">
+                                                        <label for="ck02">동아ST</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck03">
+                                                        <label for="ck03">동아제약</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck04">
+                                                        <label for="ck04">에스티팜</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck05">
+                                                        <label for="ck05">타이틀길게길게 길게길게</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck06">
+                                                        <label for="ck06">타이틀길게길게 길게길게</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck07">
+                                                        <label for="ck07">타이틀길게길게 길게길게2</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck08">
+                                                        <label for="ck08">타이틀길게길게 길게길게3</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck09">
+                                                        <label for="ck09">타이틀길게길게 길게길게4</label>
+                                                    </li>
+                                                    <li class="filter-item">
+                                                        <input type="checkbox" name="filter" id="ck10">
+                                                        <label for="ck10">타이틀</label>
+                                                    </li>
+                                                </ul>
+                                                <div class="filter-btn">
+                                                    <a href="#" class="btn-search">검색</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>                       
                         <tr>
                             <th>checkbox</th>
                             <td>
@@ -141,10 +228,13 @@
         $('.design-guide-wrap.'+ location.href.split('?')[1]).addClass('is-on');
 
         $('.code-box').each(function(){
-            let str = $(this).find('.code-view').html();
-            $(this).append('<div class="code-text"></div>');
-            console.log(str)
-            $(this).find('.code-text').text(str);
+            let str = $(this).find('.code-view').html(),
+                _ = $(this);
+                _.append('<div class="code-text-wrap"><a href="javascript:void(0);" class="code-toggle">코드 보기</a><div class="code-text"></div></div>');
+            _.find('.code-text').text(str);
+            _.find('.code-toggle').on('click', function(){
+                _.find('.code-text-wrap').toggleClass('on');
+            }); 
         });
     });
 </script>
