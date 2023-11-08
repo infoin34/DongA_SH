@@ -123,8 +123,39 @@
 				}
 			}			
 			$pop.css({ 'display': 'none', 'z-index': 0 });
+		},
+		confirm : function(obj){
+			let btns = '';
+			let _ = this;
+
+			if(typeof(obj) == 'string'){
+				$('.pop-confirm .confirm-text').html(obj);
+			}else{
+				$('.pop-confirm .confirm-text').html(obj.text);
+			}
+
+			if(obj.cancel) btns += '<a href="#" class="btn-type-c btn-cancel">취소</a>';
+			btns += '<a href="#" class="btn-type-b btn-check">확인</a>';
+
+			$('.pop-confirm .btn-wrap').html(btns);
+
+			$('.pop-confirm .btn-check').off('click');
+			$('.pop-confirm .btn-check').on('click', function(){
+				obj.check && obj.check();
+				_.closePopup('.pop-confirm');				
+				return false;
+			});
+			
+			$('.pop-confirm .btn-cancel').off('click');
+			$('.pop-confirm .btn-cancel').on('click', function(){
+				obj.cancel && obj.cancel();
+				_.closePopup('.pop-confirm');
+				return false;
+			});			
+			_.open('.pop-confirm');			
 		}		
 	};
+
 
 	/* gnb */
 	function gnbScr(){
@@ -172,6 +203,27 @@
 		});
 	}
 
+	 /* 바이트 개수 체크 */
+	 function byteCheck(target, limit, show){
+        let $target = $(target);
+        let maxByte = limit ? limit : 1300;
+        let txt = $target.val();
+        let sz = 0;
+        let rleng = 0;
+
+        for(let i = 0; i < txt.length; i++){
+            sz = escape(txt.charAt[i]).length > 4 ? sz + 2 : sz++; 
+            if(sz <= maxByte) rleng = i+1;     
+        }
+        if(sz > maxByte){
+            $target.val(txt.substr(0, rleng));
+            $(show).text(maxByte);
+            return;
+        }else{
+            $(show).text(sz);
+        }
+        return false;
+    }
 
 	/* scroll-motion */
 	function plx(obj){
@@ -305,11 +357,12 @@
 	}
 
     exports.scrollMove = scrollMove;
-    exports.bodyScrollBlock = bodyScrollBlock
+    exports.bodyScrollBlock = bodyScrollBlock;
     exports.popup = popup;
 	exports.afterLoading = afterLoading;
 	exports.ani = ani;
 	exports.plx = plx;
+	exports.byteCheck = byteCheck;
 
 
 	/************************************************/
@@ -404,8 +457,12 @@
 
 			$(document).on('mouseleave', function(e){
 				$('.mouse-cursor').fadeOut();
-			});		
-
+			});
+			
+			$('input[type="file"], select').on('click', function(){
+				$('.mouse-cursor').fadeOut();
+			})
+			
 			$('a[href]').on('mouseenter', function(){
 				$('.mouse-cursor').addClass('click');
 			});
@@ -413,21 +470,11 @@
 			$('a[href]').on('mouseleave', function(){
 				$('.mouse-cursor').removeClass('click');
 			});
-
-			$('.over-eff').on('mouseenter', function(){
-				$('.mouse-cursor').addClass('click');
-				$(this).addClass('over')
-			});
-			$('.over-eff').on('mouseleave', function(){
-				$('.mouse-cursor').removeClass('click');
-				$(this).removeClass('over');
-			});
 		}	
 
 		//---only main
 		if(window.isMain){
 			//새로고침 - 스크롤 상단
-			console.log("ㄴㄴ")
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
