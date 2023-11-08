@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="../../static/css/guide.css">
 </head>
 <style>
+
     .design-guide-wrap {display:none;} 
     .code-view .layer-popup {position: relative; height:1080px; display: block;}
+    .red {color:red;}
 </style>
 <body>     
     <div id="wrapper" class="design-guide"> 
@@ -17,8 +19,8 @@
             <div class="design-guide-wrap is-on">
                 <h1>POPUP</h1>
                 <div class="text-box">
-                   **팝업 실행: <span style="color:red;">popup.open('class나 id');</span><br>
-                    **팝업 종료: <span style="color:red;">popup.closePopup('class나 id');</span><br>
+                    **팝업 실행: <span class="red">popup.open('class나 id');</span><br>
+                    **팝업 종료: <span class="red">popup.closePopup('class나 id');</span><br>
                 </div>
                 <table class="table-a">
                     <caption>팝업</caption>
@@ -33,6 +35,69 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <th>알림창</th>
+                            <td>
+                                <div class="code-box">
+                                    <p>확인 버튼</p>
+                                    <div class="js-code">
+                                        **실행방법
+                                        <span class="red">
+                                            popup.confirm('들어갈 텍스트');
+                                        </span>
+                                    </div>
+                                    <div class="code-view">
+                                        <div class="layer-popup pop-confirm" style="height: 300px;">
+                                            <div class="popup-wrap">
+                                                <div class="popup-inner">
+                                                    <div class="popup-body">
+                                                        <p class="confirm-text title-s2">들어갈 텍스트</p>
+                                                        <div class="btn-wrap"><a href="#" class="btn-type-b btn-check">확인</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="code-box">
+                                    <p>취소, 확인 버튼</p>
+                                    <div class="js-code">
+                                        **실행방법
+                                        <span class="red">
+
+                                            버튼에 기능 넣고 싶을 때
+                                            
+                                            popup.confirm({
+                                                text: '들어갈 텍스트',
+                                                cancel: function(){ 처리할 취소 fn(); },
+                                                check: function(){ 처리할 확인 fn(); }
+                                            });
+
+
+                                            없으면 지워도 됩니다.
+
+
+                                            popup.confirm({
+                                                text: '들어갈 텍스트',
+                                                check: function(){ 처리할 확인 fn(); }
+                                            });
+                                        </span>
+                                    </div>
+                                    <div class="code-view">
+                                        <div class="layer-popup pop-confirm" style="height: 300px;">
+                                            <div class="popup-wrap">
+                                                <div class="popup-inner">
+                                                    <div class="popup-body">
+                                                        <p class="confirm-text title-s2">들어갈 텍스트</p>
+                                                        <div class="btn-wrap"><a href="#" class="btn-type-c btn-cancel">취소</a><a href="#" class="btn-type-b btn-check">확인</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <th>유튜브 팝업</th>
                             <td>
                                 <div class="code-box">
@@ -44,8 +109,7 @@
                                                     <div class="popup-head">
                                                         <div class="youtube-title title-s1">[동아IR주유소] 올리고를 알면 길이 보인다! 필요한 정보 쪽집게 과외</div>
                                                         <p class="text-3">✌ 동아IR주유소 ✌ '올리고가 뭐지?편’은 글로벌 CDMO 비즈니스를 하는 에스티팜의 주력 사업, 올리고 약물에 대해 쉽게 이해하기 위해 준비한 이야기입니다.</p>
-                                                        <a href="#" class="btn-close">닫기
-                                                        </a>
+                                                        <a href="#" class="btn-close">닫기</a>
                                                     </div>
                                                     <div class="youtube">
                                                         <iframe src="https://www.youtube.com/embed/IBG4hCwqq6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
@@ -53,16 +117,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>알림창</th>
-                            <td>
-                                <div class="code-box">
-                                    <div class="code-view">
-                                        <a href="javascript:void(0);" class="btn-a">버튼</a>
                                     </div>
                                 </div>
                             </td>

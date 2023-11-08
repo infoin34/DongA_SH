@@ -2,7 +2,7 @@
 
 /********** guide ***********/
 html {cursor: auto;}
-a:hover {cursor: pointer;}
+:link, :hover {cursor: pointer;}
 .design-guide {
     margin: 0 auto;
     max-width: 2040px;
@@ -97,10 +97,11 @@ a:hover {cursor: pointer;}
     }
     .code-box {
         + .code-box {margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee;}
-        p {
+        > p, .js-code {
             font-size: 16px; font-weight: 600;
             + .code-view {margin-top: 20px;}
         } 
+        .js-code {white-space: pre-line; text-align: left;}
         .code-text {
             margin-top: 15px;
             padding: 20px;

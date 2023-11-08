@@ -15,7 +15,20 @@
             <div id="container">       
                 <section class="customer-inquiry">
                     <div class="section-inner">
-                        <div class="section-contents">                            
+                        <div class="section-contents">   
+                            <div class="inquiry-notice-box">
+                                <div class="title-s2">궁금하신 사항에 대하여 답변 드리겠습니다.</div>
+                                <div class="inquiry-notice-content">
+                                    <div class="inquiry-info">
+                                        <strong class="text-3">대표전화번호</strong>
+                                        <p class="text-1"><a href="tel:080-920-2002">080-920-2002</a></p>
+                                    </div>
+                                    <div class="inquiry-info">
+                                        <strong class="text-3">상담/운영시간</strong>
+                                        <p class="text-1">09:30~17:00(점심시간 12:30~13:00)<br>토, 일요일 및 법정 공휴일/정기휴가 제외</p>
+                                    </div>
+                                </div>
+                            </div>                         
                             <div class="inquiry-form">
                                 <div class="form-head">
                                     <div class="title-h3">문의하시는 분의 정보와<br>내용을 입력해주세요.</div>
@@ -26,107 +39,98 @@
                                         <legend>문의</legend>
                                         <!--기본 정보-->
                                         <div class="field-table">
-                                            <div class="field-table-title title-s2">기본 정보</div>
-                                            <div class="field-table-wrap">
-                                                <div class="field-wrap">
-                                                    <div class="field user half">
-                                                        <strong class="field-name">이름<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <input type="text" name="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="field phone half">
-                                                        <strong class="field-name">전화번호<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <input type="text" name="" placeholder="전화번호(숫자만 입력)">
-                                                        </div>
+                                            <div class="field-wrap">
+                                                <div class="field user half">
+                                                    <strong class="field-name">이름<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <input type="text" name="">
                                                     </div>
                                                 </div>
-                                                <div class="field-wrap">
-                                                    <div class="field email half">
-                                                        <strong class="field-name">이메일<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <input type="text" name="">
-                                                            <span class="input-mark">@</span>
-                                                            <input type="text" name="">
-                                                        </div>
-                                                    </div>                                               
-                                                </div>
-                                                <div class="field-wrap">
-                                                    <div class="field address">
-                                                        <strong class="field-name">주소<span class="ess">*</span></strong>
-                                                        <div class="field-insert half">
-                                                            <input type="text" name="" class="addr-1">
-                                                            <a href="" class="btn-type-b">우편번호 검색</a>
-                                                        </div>
-                                                        <div class="field-insert">
-                                                            <input type="text" name="" class="addr-2" placeholder="상세 주소를 입력해주세요.">
-                                                        </div>
+                                                <div class="field phone half">
+                                                    <strong class="field-name">전화번호<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <input type="text" name="" placeholder="전화번호(숫자만 입력)">
                                                     </div>
                                                 </div>
-                                            </div>   
+                                            </div>
+                                            <div class="field-wrap">
+                                                <div class="field email half">
+                                                    <strong class="field-name">이메일<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <input type="text" name="">
+                                                        <span class="input-mark">@</span>
+                                                        <input type="text" name="">
+                                                    </div>
+                                                </div>      
+                                                <div class="field type half">
+                                                    <strong class="field-name">문의유형<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <select name="">
+                                                            <option>선택</option>
+                                                            <option>문의유형1</option>
+                                                            <option>문의유형2</option>
+                                                            <option>문의유형3</option>
+                                                            <option>문의유형4</option>
+                                                        </select>
+                                                    </div>
+                                                </div>                                       
+                                            </div>                                                
+                                            <div class="field-wrap">
+                                                <div class="field address">
+                                                    <strong class="field-name">주소<span class="ess">*</span></strong>
+                                                    <div class="field-insert half">
+                                                        <input type="text" name="" clas="postcode">
+                                                        <a href="" class="btn-type-b">우편번호 검색</a>
+                                                    </div>
+                                                    <div class="field-insert" style="gap:4rem;">
+                                                        <input type="text" name="" class="addr-1" readonly>
+                                                        <input type="text" name="" class="addr-2" placeholder="상세 주소를 입력해주세요.">
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <!-- //기본 정보-->
-                                            <!-- 문의 사항-->
-                                            <div class="field-table-title title-s2">문의 사항</div>
-                                            <div class="field-table-wrap">
-                                                <div class="field-wrap half">
-                                                    <div class="field type">
-                                                        <strong class="field-name">문의유형<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <select name="">
-                                                                <option>선택</option>
-                                                                <option>문의유형1</option>
-                                                                <option>문의유형2</option>
-                                                                <option>문의유형3</option>
-                                                                <option>문의유형4</option>
-                                                            </select>
-                                                        </div>
+                                            <!-- 문의 사항-->                                              
+                                            <div class="field-wrap">
+                                                <div class="field title">
+                                                    <strong class="field-name">제목<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <input type="text" name="">
                                                     </div>
                                                 </div>
-                                                <div class="field-wrap">
-                                                    <div class="field title">
-                                                        <strong class="field-name">제목<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <input type="text" name="">
-                                                        </div>
+                                            </div>
+                                            <div class="field-wrap">
+                                                <div class="field content">
+                                                    <strong class="field-name">내용<span class="ess">*</span></strong>
+                                                    <div class="field-insert">
+                                                        <textarea name="" placeholder="문의하실 내용을 입력해주세요." onkeyup="byteCheck(this, 1300, '.writing-size');"></textarea>
+                                                    </div>
+                                                    <p class="limit-size"><b class="writing-size">0</b> / 1,300 Byte</p>
+                                                </div>
+                                            </div>
+                                            <div class="field-wrap">
+                                                <div class="field attachment">
+                                                    <strong class="field-name">첨부파일</strong>
+                                                    <div class="field-insert">
+                                                        <input type="text" class="upload-name" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly>
+                                                        <input type="file" id="addFile" name="" accept="">
+                                                        <label for="addFile" class="btn-type-b">파일 추가</label>
+                                                    </div>
+                                                    <div class="field-insert">
+                                                        <input type="text" class="upload-name" value="dongasocioholdings_IR자료.pdf" readonly>
+                                                        <a href="javascript:void(0);" class="btn-type-b">파일 추가</a>
                                                     </div>
                                                 </div>
-                                                <div class="field-wrap">
-                                                    <div class="field content">
-                                                        <strong class="field-name">내용<span class="ess">*</span></strong>
-                                                        <div class="field-insert">
-                                                            <textarea name="" placeholder="문의하실 내용을 입력해주세요."></textarea>
-                                                        </div>
-                                                        <p class="text-size">1,300 Byte</p>
-                                                    </div>
-                                                </div>
-                                                <div class="field-wrap">
-                                                    <div class="field attachment">
-                                                        <strong class="field-name">첨부파일</strong>
-                                                        <div class="field-insert">
-                                                            <input type="text" class="file" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly>
-                                                            <input type="file" id="addFile" name="">
-                                                            <label for="addFile" class="btn-type-b">파일 추가</label>
-                                                        </div>
-                                                        <div class="field-insert">
-                                                            <input type="text" class="file" value="dongasocioholdings_IR자료.pdf" readonly>
-                                                            <input type="file" id="fileEx" name="">
-                                                            <label for="fileEX" class="btn-type-b">파일 추가</label>
-                                                        </div>
-                                                    </div>
-                                                </div>                                             
-                                            </div>  
+                                            </div>    
                                             <!-- //문의 사항-->
                                             <!-- 개인정보 수집 및 이용동의 -->
-                                            <div class="term-agree">
-                                                <div class="field-table-title">
-                                                    <span class="title-s2">개인정보 수집 및 이용동의</span>
-                                                    <a href="#" onclick="popup.open('.pop-user-terms'); return false;" class="btn-privacy">자세히 보기</a>
-                                                </div>                                               
-                                                <span class="check-type-a">
-                                                    <input type="checkbox" name="" id="agree01">
-                                                    <label for="agree01">개인정보 수진 밑 이용에 동의합니다.</label>
-                                                </span>
+                                            <div class="field-wrap">
+                                                <div class="term-agree">                                                                    
+                                                    <div class="check-type-a">
+                                                        <input type="checkbox" name="" id="agree01">
+                                                        <label for="agree01">개인정보 수집 및 이용에 동의합니다.</label>
+                                                        <a href="#" onclick="popup.open('.pop-policy-privacy'); return false;" class="btn-privacy">약관 자세히 보기</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!-- //개인정보 수집 및 이용동의-->
                                         </div>
@@ -134,18 +138,7 @@
                                 </form>
                             </div>
                             <div class="bottom-btn-wrap">
-                                <a href="#" class="btn-more btn-type-a"><span>문의하기</span></a>
-                            </div>
-                            <div class="inquiry-notice-box">
-                                <div class="title-s2">궁금하신 사항에 대하여 답변 드리겠습니다.</div>
-                                <div class="inquiry-info">
-                                    <strong>대표전화번호</strong>
-                                    <p><a href="tel:080-920-2002">080-920-2002</a></p>
-                                </div>
-                                <div class="inquiry-info">
-                                    <strong>상담/운영시간</strong>
-                                    <p>09:30~17:00(점심시간 12:30~13:00)<br>토, 일요일 및 법정 공휴일/정기휴가 제외</p>
-                                </div>
+                                <a href="#" class="btn-more btn-type-a" onclick="popup.confirm('이름을\n입력해 주세요.'); return false;"><span>문의하기</span></a>
                             </div>
                         </div>
                     </div>
@@ -154,16 +147,16 @@
         </main>
         @@include('../../include/footer.html')
     </div>
-    <div class="layer-popup pop-policy-privacy">
+    <div class="layer-popup pop-policy-privacy" id="privacy">
         <div class="popup-wrap">
             <div class="popup-inner">
                 <div class="popup-head">
-                    <div class="">개인정보 수집 및 이용동의</div>
-                    <p>※일반의약품/전문의약품관련 문의사항은 제3자 제공으로 동의됩니다.</p>
-                    <a href="#" class="btn-close">닫기</svg>
+                    <div class="title-s2">개인정보 수집 및 이용동의</div>
+                    <p class="text-3">※일반의약품/전문의약품관련 문의사항은 제3자 제공으로 동의됩니다.</p>
+                    <a href="#" class="btn-close">닫기</a>
                 </div>
                 <div class="popup-body">
-                    <div class="agree-conent">
+                    <div class="agree-content text-3">
                         수집하는 개인정보 항목<br>
                         회사는 고객의 온라인 문의, 사이버감사 신고등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br><br><br>
                         수집항목 : 이름, 주소, 전화번호, 이메일, 접속 IP, 서비스 이용 기록<br>
@@ -189,8 +182,16 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-    $(function(){
-    })
+    // popup.confirm('text');
+	// popup.confirm({
+	// 	text:'들어갈 텍스트',
+	// 	cancel: function(){console.log('취소');},
+	// 	check: function(){console.log('확인');}
+	// })
+    
+    $('input[type="file"]').on('change', function(){
+        $(this).siblings('.upload-name').val(this.value);
+    });
 </script>
 <!--//페이지 관련 스크립트 -->
 </html>
