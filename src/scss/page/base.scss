@@ -111,6 +111,11 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	--ico-s2: 2rem;
 }  
 
+//텍스트 안보이게
+.blind {
+    @include font0;
+}
+
 //ellipsis
 .ell {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; word-break:break-all;}
 .ell-1 {display:block; display:-webkit-box !important; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:1; -webkit-box-orient:vertical; word-break:break-all;}
@@ -355,6 +360,16 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	
 }
 
+//tab-type
+.tab-type-a {
+    display: flex; gap: 0.8rem;
+    a {display: block;}
+    .item {
+        border: 1px solid #ccc; border-radius: 5rem;  color: #222; font-size: 1.4rem;
+        &.on {background-color: #000081; color: #fff; border-color: #000081;}
+    }
+}
+
 //list-type
 .list-type-a { 
 	display: flex; flex-wrap: wrap; gap: 3rem;
@@ -363,7 +378,6 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	.brand {padding:0 1.6rem; display: inline-block; height: 4.5rem; line-height: 4.5rem; border: 1px solid #162DA1; border-radius: 5rem; color: #162DA1; font-size: 1.8rem; font-weight: 700;}
 	.text-1 {color: #666;}	
 }
-
 
 
 //popup
@@ -446,14 +460,19 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
     
 }
 
+@media screen and (max-width: 1350px) {
+    
+
+} 
+
 @media screen and (max-width: 1200px) {
 	
 } 
 
+
 @media screen and (max-width: 992px) {
 	.list-type-a { 
 		gap: 2rem;
-		.ell-3 {-webkit-line-clamp: 2;}
 		> * {position: relative; width: calc((100% - 3rem)/2); } 		
 	}   
 
@@ -492,7 +511,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 					margin: 2rem 1.5rem;
 				}
 				&-btn {
-					margin: 2.8rem -1.5rem 0
+					margin: 2.8rem -1.5rem 0;
 				}
 			}
 			.search-form {

@@ -27,9 +27,10 @@
                     &:before {content:''; display: block; padding-bottom: 100%;} 
                     img {transition: transform 0.3s 0.2s ease;}                    
                 }
+                .info {padding-bottom: 9rem;}
                 .title-s2 {margin-top: 1.6rem;}
                 .text-1 {margin-top: calc(36/460)*100%;}
-                .date {margin-top: calc(62/460)*100%; }
+                .date {position: absolute; bottom: calc(50/460)*100%;}
             }
         }
     }
@@ -142,6 +143,10 @@
     }
     
 }
+@media screen and (max-width: 1350px) {
+    
+
+} 
 
 @media screen and (max-width: 1200px) {
     

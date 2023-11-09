@@ -103,7 +103,7 @@ h1 {
                     color: #162DA1; font-weight: 700;
                 }
                 &:hover, &.on {
-                    .gnb-depth3:before {transform: rotate(180deg); background-image: svgUpArrow('162da1');}
+                    .gnb-depth3:before {transform: rotate(0); background-image: svgUpArrow('162da1');}
                     .gnb-depth3-list {display: block;}                
                 }
                 + li {margin-top: 2rem;}
@@ -112,7 +112,7 @@ h1 {
     }
     .gnb-depth3 {
         &:before {
-            content: ''; position: absolute; top: 0; right: 0; width:1.2rem; height: 2.1rem; background: svgUpArrow('000'); background-size: 100% 100%; transition: transform 0.3s;
+            content: ''; position: absolute; top: 0; right: 0; width:1.2rem; height: 2.1rem; background: svgUpArrow('000'); background-size: 100% 100%; transform: rotate(180deg); transition: transform 0.3s;
         }
         &-list {
             padding-top: 10px; display: none; 
@@ -460,9 +460,11 @@ footer {
     
 }
 
+@media screen and (max-width: 1350px) {
+    html {font-size: 0.75vw;}
+} 
 
 @media screen and (max-width: 1200px) {
-    html{font-size: 49.5%;}
 } 
 
 @media screen and (max-width: 992px) {    
