@@ -53,4 +53,13 @@
     .svg-chk {
         width: 15px; height: 11px; background: svgCheck('fff'); background-size: 100% 100%;        
     }
+    .svg-page-prev {
+        width: 10px; height: 10px; background: svgPageArrow('fff'); background-size: 100% 100%;        
+    }
+    .svg-page-prev2 {
+        width: 15px; height: 10px; background: svgPageArrow2('fff'); background-size: 100% 100%;        
+    }
+    .svg-download {
+        width: 24px; height: 24px; background: svgDownload('162DA1'); background-size: 100% 100%;
+    }
 }

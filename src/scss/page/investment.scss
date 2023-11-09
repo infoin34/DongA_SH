@@ -1,0 +1,59 @@
+/*investment*/
+//ir
+.data-head {
+    padding-bottom:30px;
+}
+.investment {
+    h3 {
+        font-size: 3rem;
+    }
+    &-ir {
+        .ir {
+            &-data-list {
+                border-top: 2px solid #000;
+            }
+            &-data-item {
+                border-bottom: 1px solid #ccc; transition:box-shadow 0.3s;
+               > a {
+                    display: flex; padding: 4rem 0; width:100%; align-items: start; 
+                    &[download] {padding-right: 9rem; background: svgDownload('162DA1') no-repeat calc(100% - 4rem) 50% /2.4rem;}
+                }
+                .date-td {padding: 0 4rem; border-right: 1px solid #DBDBDB;}
+                .title-td {padding: 0 4rem;}
+            }
+        }
+        .inquiry-notice-box {margin-top: 8rem;}
+    }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+   .investment {
+    &-ir {
+        .ir-data-item:hover {
+            box-shadow: 0.1rem 0.1rem 3.2rem rgba(34,34,34,0.16);
+            .title-s3 {color:#2F75FF; border-bottom: 1px solid #2F75FF;}
+        }   
+    }
+   }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    
+
+} 
+
+@media screen and (max-width: 992px) {
+    .investment-ir .ir-data-item {
+        > a {
+            padding: 2.5rem 0;
+        }
+        .date-td {padding: 0 2.5rem;}
+        .title-td {padding: 0 2.5rem;}
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+}

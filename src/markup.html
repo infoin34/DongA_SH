@@ -45,7 +45,8 @@
 				'투자정보' : [
 					{'depth2': '주식정보', 'info': '', 'src': 'iii'},
 					{'depth2': '재무정보', 'info': '팝업(#pop1, #pop2)', 'src': 'eee'},
-					{'depth2': 'IR', 'info': '', 'src': ''},
+					{'depth2': 'IR', 'depth3': '공시자료', 'info': '다운로드X','src': 'investment/ir', 'state':'end'},
+					{'depth2': '', 'depth3': 'IR자료실', 'info': '다운로드O','src': 'investment/ir-2', 'state':'end'},
 					{'depth2': '기업지배구조', 'info': '', 'src': ''},
 					{'depth2': '공고', 'info': '', 'src': ''}
 				]
@@ -79,7 +80,12 @@
 				'customer' : [
 					{'depth2': '상담/문의', 'info': '팝업(#privacy)', 'src': 'customer/inquiry', 'state': 'end'}
 				]
-			},				
+			},		
+			{
+				'메일폼' : [
+					{'depth2': '상담/문의', 'info': '', 'src': 'email/inquiry', 'state': 'end'}
+				]
+			}		
 		]
 	</script>
 </head>

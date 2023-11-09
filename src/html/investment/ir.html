@@ -11,11 +11,12 @@
         @@include('../../include/header.html', {
             "class" : ""
         }) 
-        <main role="main" class="pr-center">            
+        <main role="main" class="investment">            
             <div id="container">       
-                <section class="pr-center-news">
+                <section class="investment-ir">
                     <div class="section-inner">
                         <div class="section-contents">
+                            <!-- 검색폼 -->
                             <div class="search-box">
                                 <div class="search-form">
                                     <div class="input-wrap">
@@ -77,26 +78,63 @@
                                     </div>
                                 </div>
                             </div>
-                            <ul class="news-list list-type-a">
-                                <!-- 9개 고정 -->
-                                @@for(var i = 0; i < 9; i++){
-                                <li class="news-item">
-                                    <a href="detail.html">
-                                        <div class="thumb pc-part" aria-label="유튜브 이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
-                                        <div class="thumb mo-part" aria-label="유튜브 이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
-                                        <div class="info">
-                                            <div class="brand">에스티팜</div>
-                                            <div class="title-s2 ell-2"><span>제2 올리고 생산기지 확보로 세계 1위 노린다</span></div>
-                                            <p class="text-1 ell-3">동아쏘시오홀딩스(대표이사 사장 정재훈)는 LS용산타워에서 전기차 충전 솔루션 회사인 LS이링크와 ‘EV충전 인프라 구축 업무 협약(MOU)’를 체결했습니다.</p>
-                                            <div class="date ico text-2">2023.10.05</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                }
-                            </ul>
-                            <div class="bottom-btn-wrap">
-                                <a href="#" class="btn-more btn-type-a"><span>더 보기</span></a>
+                            <!-- //검색폼 -->
+                            <div class="data-wrap">
+                                <div class="data-head">
+                                    <h3 class="title-s2">공시자료</h3>
+                                </div>
+                                <ul class="ir-data-list">
+                                    <!-- 10개 고정 -->
+                                    <li class="ir-data-item">
+                                        <a href="#">
+                                            <div class="date-td">
+                                                <div class="date ico text-2">2023.10.05</div>                                            
+                                            </div> 
+                                            <div class="title-td">
+                                                <span class="title-s3">긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!</span>
+                                            </div> 
+                                        </a>
+                                    </li>
+                                    @@for(var i = 0; i < 9; i++){
+                                    <li class="ir-data-item">
+                                        <a href="#">
+                                            <div class="date-td">
+                                                <div class="date ico text-2">2023.10.05</div>                                            
+                                            </div> 
+                                            <div class="title-td">
+                                                <span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+                                            </div> 
+                                        </a>
+                                    </li>
+                                    }
+                                </ul>
                             </div>
+                            <div class="paging-wrap">
+                                <ul class="paging">
+                                    <li class="paging-left-2 disable"><a href="#none"></a></li>
+                                    <li class="paging-left disable"><a href="#none"></a></li>
+                                    <li><strong>1</strong></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li class="paging-right"><a href="#"></a></li>
+                                    <li class="paging-right-2"><a href="#"></a></li>
+                                </ul>
+                            </div>
+                            <div class="inquiry-notice-box">
+                                <div class="title-s2">궁금하신 사항에 대하여 답변 드리겠습니다.</div>
+                                <div class="inquiry-notice-content">
+                                    <div class="inquiry-info">
+                                        <strong class="text-3">대표전화번호</strong>
+                                        <p class="text-1"><a href="tel:080-920-2002">080-920-2002</a></p>
+                                    </div>
+                                    <div class="inquiry-info">
+                                        <strong class="text-3">상담/운영시간</strong>
+                                        <p class="text-1">09:30~17:00(점심시간 12:30~13:00)<br>토, 일요일 및 법정 공휴일/정기휴가 제외</p>
+                                    </div>
+                                </div>
+                            </div>   
                         </div>
                     </div>
                 </section>
@@ -104,50 +142,10 @@
         </main>
         @@include('../../include/footer.html')
     </div>
-    <div class="layer-popup pop-youtube">
-        <div class="popup-wrap">
-            <div class="popup-inner">
-                <div class="popup-head">
-                    <div class="youtube-title title-s1">[동아IR주유소] 올리고를 알면 길이 보인다! 필요한 정보 쪽집게 과외</div>
-                    <p class="text-3">✌ 동아IR주유소 ✌ '올리고가 뭐지?편’은 글로벌 CDMO 비즈니스를 하는 에스티팜의 주력 사업, 올리고 약물에 대해 쉽게 이해하기 위해 준비한 이야기입니다.</p>
-                    <a href="#" class="btn-close">닫기</svg>
-                    </a>
-                </div>
-                <div class="youtube">
-                    <iframe src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="layer-popup pop-youtube">
-        <div class="popup-wrap">
-            <div class="popup-inner">
-                <div class="popup-head">
-                    <a href="#" class="btn-close">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.34863 2.34766L33.653 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M33.6514 2.34766L2.34702 33.652" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="popup-body">
-                    <div class="youtube">
-                        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-    $(function(){
-        $('.media-item a').on('click', function(){
-            let ytbId = $(this).data('id');
-            $('.pop-youtube iframe').attr('src', `https://www.youtube.com/embed/${ytbId}`);
-            popup.open('.pop-youtube'); return false;
-        });
-    })
+    $(function(){})
 </script>
 <!--//페이지 관련 스크립트 -->
 </html>

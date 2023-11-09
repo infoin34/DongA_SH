@@ -14,8 +14,9 @@
 
 //page
 @import "./sub/font.scss";
-@import "./page/base.scss";//공통 css
+@import "./page/base.scss";//공통 + default
 @import "./page/layout.scss";//기본 header, container, footer
-@import "./page/main.scss";
-@import "./page/pr-center.scss";//pr-center
-@import "./page/etc.scss";//inquiry
+@import "./page/main.scss";//메인
+@import "./page/investment.scss";//투자정보
+@import "./page/pr-center.scss";//PR Center
+@import "./page/etc.scss";//상담문의

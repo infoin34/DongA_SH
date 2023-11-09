@@ -257,11 +257,205 @@
 			<!-- //전체메뉴 -->
 		</header>
 
-		<main role="main" class="customer">
+		<main role="main" class="investment">
 			<div id="container">
-				<section class="customer-inquiry">
+				<section class="investment-ir">
 					<div class="section-inner">
 						<div class="section-contents">
+							<!-- 검색폼 -->
+							<div class="search-box">
+								<div class="search-form">
+									<div class="input-wrap">
+										<input type="text" class="input-search" id="serchInput" placeholder="검색어를 입력하세요">
+										<a href="#" class="btn-input-reset" data-reset="serchInput">제거</a>
+									</div>
+									<div class="search-btns">
+										<a href="#" class="btn-search">검색</a>
+										<a href="#" class="btn-filter" onclick="$('.search-box').toggleClass('filter-on'); return false;">필터</a>
+									</div>
+								</div>
+								<div class="filter-wrap">
+									<a href="#" class="btn-filter-reset"><span>초기화</span></a>
+									<div class="filter-title">그룹사</div>
+									<ul class="filter-list">
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck01">
+											<label for="ck01">전체</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck02">
+											<label for="ck02">동아ST</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck03">
+											<label for="ck03">동아제약</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck04">
+											<label for="ck04">에스티팜</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck05">
+											<label for="ck05">타이틀길게길게 길게길게</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck06">
+											<label for="ck06">타이틀길게길게 길게길게</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck07">
+											<label for="ck07">타이틀길게길게 길게길게2</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck08">
+											<label for="ck08">타이틀길게길게 길게길게3</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck09">
+											<label for="ck09">타이틀길게길게 길게길게4</label>
+										</li>
+										<li class="filter-item">
+											<input type="checkbox" name="filter" id="ck10">
+											<label for="ck10">타이틀</label>
+										</li>
+									</ul>
+									<div class="filter-btn">
+										<a href="#" class="btn-search">검색</a>
+									</div>
+								</div>
+							</div>
+							<!-- //검색폼 -->
+							<div class="data-wrap">
+								<div class="data-head">
+									<h3 class="title-s2">공시자료</h3>
+								</div>
+								<ul class="ir-data-list">
+									<!-- 10개 고정 -->
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!긴 줄 테스트!</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+									<li class="ir-data-item">
+										<a href="#">
+											<div class="date-td">
+												<div class="date ico text-2">2023.10.05</div>
+											</div>
+											<div class="title-td">
+												<span class="title-s3">제2 올리고 생산기지 확보로 세계 1위 노린다</span>
+											</div>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+							<div class="paging-wrap">
+								<ul class="paging">
+									<li class="paging-left-2 disable"><a href="#none"></a></li>
+									<li class="paging-left disable"><a href="#none"></a></li>
+									<li><strong>1</strong></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li class="paging-right"><a href="#"></a></li>
+									<li class="paging-right-2"><a href="#"></a></li>
+								</ul>
+							</div>
 							<div class="inquiry-notice-box">
 								<div class="title-s2">궁금하신 사항에 대하여 답변 드리겠습니다.</div>
 								<div class="inquiry-notice-content">
@@ -274,117 +468,6 @@
 										<p class="text-1">09:30~17:00(점심시간 12:30~13:00)<br>토, 일요일 및 법정 공휴일/정기휴가 제외</p>
 									</div>
 								</div>
-							</div>
-							<div class="inquiry-form">
-								<div class="form-head">
-									<div class="title-h3">문의하시는 분의 정보와<br>내용을 입력해주세요.</div>
-									<p class="text-3">문의하신 내용의 답변은 입력하신 이메일로 발송되오니 정확히 입력해주세요.</p>
-								</div>
-								<form method="post" name="">
-									<fieldset>
-										<legend>문의</legend>
-										<!--기본 정보-->
-										<div class="field-table">
-											<div class="field-wrap">
-												<div class="field user half">
-													<strong class="field-name">이름<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<input type="text" name="">
-													</div>
-												</div>
-												<div class="field phone half">
-													<strong class="field-name">전화번호<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<input type="text" name="" placeholder="전화번호(숫자만 입력)">
-													</div>
-												</div>
-											</div>
-											<div class="field-wrap">
-												<div class="field email half">
-													<strong class="field-name">이메일<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<input type="text" name="">
-														<span class="input-mark">@</span>
-														<input type="text" name="">
-													</div>
-												</div>
-												<div class="field type half">
-													<strong class="field-name">문의유형<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<select name="">
-															<option>선택</option>
-															<option>문의유형1</option>
-															<option>문의유형2</option>
-															<option>문의유형3</option>
-															<option>문의유형4</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="field-wrap">
-												<div class="field address">
-													<strong class="field-name">주소<span class="ess">*</span></strong>
-													<div class="field-insert half">
-														<input type="text" name="" clas="postcode">
-														<a href="" class="btn-type-b">우편번호 검색</a>
-													</div>
-													<div class="field-insert" style="gap:4rem;">
-														<input type="text" name="" class="addr-1" readonly>
-														<input type="text" name="" class="addr-2" placeholder="상세 주소를 입력해주세요.">
-													</div>
-												</div>
-											</div>
-											<!-- //기본 정보-->
-											<!-- 문의 사항-->
-											<div class="field-wrap">
-												<div class="field title">
-													<strong class="field-name">제목<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<input type="text" name="">
-													</div>
-												</div>
-											</div>
-											<div class="field-wrap">
-												<div class="field content">
-													<strong class="field-name">내용<span class="ess">*</span></strong>
-													<div class="field-insert">
-														<textarea name="" placeholder="문의하실 내용을 입력해주세요." onkeyup="byteCheck(this, 1300, '.writing-size');"></textarea>
-													</div>
-													<p class="limit-size"><b class="writing-size">0</b> / 1,300 Byte</p>
-												</div>
-											</div>
-											<div class="field-wrap">
-												<div class="field attachment">
-													<strong class="field-name">첨부파일</strong>
-													<div class="field-insert">
-														<input type="text" class="upload-name" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly>
-														<input type="file" id="addFile" name="" accept="">
-														<label for="addFile" class="btn-type-b">파일 추가</label>
-													</div>
-													<div class="field-insert">
-														<input type="text" class="upload-name" value="dongasocioholdings_IR자료.pdf" readonly>
-														<a href="javascript:void(0);" class="btn-type-b">파일 추가</a>
-													</div>
-												</div>
-											</div>
-											<!-- //문의 사항-->
-											<!-- 개인정보 수집 및 이용동의 -->
-											<div class="field-wrap">
-												<div class="term-agree">
-													<div class="check-type-a">
-														<input type="checkbox" name="" id="agree01">
-														<label for="agree01">개인정보 수집 및 이용에 동의합니다.</label>
-														<a href="#" onclick="popup.open('.pop-policy-privacy'); return false;" class="btn-privacy">약관 자세히 보기</a>
-													</div>
-												</div>
-											</div>
-											<!-- //개인정보 수집 및 이용동의-->
-										</div>
-									</fieldset>
-								</form>
-							</div>
-							<div class="bottom-btn-wrap">
-								<a href="#" class="btn-more btn-type-a" onclick="popup.confirm('이름을\n입력해 주세요.'); return false;"><span>문의하기</span></a>
 							</div>
 						</div>
 					</div>
@@ -451,51 +534,10 @@
 		</div>
 		<!--// 알림창 -->
 	</div>
-	<div class="layer-popup pop-policy-privacy" id="privacy">
-		<div class="popup-wrap">
-			<div class="popup-inner">
-				<div class="popup-head">
-					<div class="title-s2">개인정보 수집 및 이용동의</div>
-					<p class="text-3">※일반의약품/전문의약품관련 문의사항은 제3자 제공으로 동의됩니다.</p>
-					<a href="#" class="btn-close">닫기</a>
-				</div>
-				<div class="popup-body">
-					<div class="agree-content text-3">
-						수집하는 개인정보 항목<br>
-                        회사는 고객의 온라인 문의, 사이버감사 신고등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br><br><br>
-                        수집항목 : 이름, 주소, 전화번호, 이메일, 접속 IP, 서비스 이용 기록<br>
-                        개인정보 수집방법 : 홈페이지<br><br><br>
-                        개인정보의 수집 및 이용목적<br>
-                        고객님께서 제공한 모든 정보는 다음에 기술한 목적 이외로는 사용되지 않으며, 이용 목적이 변경될시에는 사전 동의를 구할 것입니다.회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br><br>
-                        이름, 주소, 전화번호, 이메일 : 고객문의, 본인확인, 문의사항 확인, 사실확인, 처리결과 통보<br><br>
-                        접속IP, 서비스 이용 기록 : 접속빈도 파악에 대한 통계<br><br><br>
-                        개인정보의 보유 및 이용기간<br>
-                        원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이류를 명시한 기간 동안 보존합니다.<br><br>
-                        3-1. 회사 내부 방침에 의한 보존<br>
-                        불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조 : 1년<br>
-                        온라인문의 : 문의사항이 등록 후 1년이 지난 시점<br>
-                        관계법령 위반에 따른 수사, 조사 등이 진행중인 경우에는 해당 수사, 조사 종료 시 까지<br><br>
-                        3-2. 관련법령에 의한 보존<br>
-                        계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래 등에서의 소비자보호에 관한 법
-                        률)
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-	// popup.confirm('text');
-	// popup.confirm({
-	// 	text:'들어갈 텍스트',
-	// 	cancel: function(){console.log('취소');},
-	// 	check: function(){console.log('확인');}
-	// })
-
-	$('input[type="file"]').on('change', function() {
-		$(this).siblings('.upload-name').val(this.value);
-	});
+	$(function() {})
 </script>
 <!--//페이지 관련 스크립트 -->
 
