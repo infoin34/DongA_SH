@@ -183,7 +183,10 @@
 				}				
 			}
 			// 스크롤 0일경우
-			if (currentScr == 0 ) {}
+			if (currentScr <= 0 ){
+				$('html').removeClass('scr-down');
+				$('html').addClass('scr-up');
+			}
 		}
 	}
 
