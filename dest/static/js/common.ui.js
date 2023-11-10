@@ -187,6 +187,7 @@
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-up');
 			}
+			$('#test').html(currentScr+' : last: '+ lastScr +'sss ::::' + (lastScr-currentScr))
 		}
 	}
 
