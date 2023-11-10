@@ -43,13 +43,50 @@
             display: flex; gap: 3rem;
             .chart-vertical {width: calc((100% - 6rem)/3);}
         }
+        .data-head {
+            .unit {
+                margin-top: 2rem; color: #888; font-size: 1.6rem;
+            }
+        }
+        .finance-stats-table {
+            .tbl-th, .tbl-td {
+                &:not(:first-child){text-align: center;} 
+            }
+        }
+    }
+}
+
+.table {
+    &-type-a {
+        font-size: 1.6rem;
+        .tbl {
+            &-head {
+                display: flex;
+                .tbl-th {flex: 1; padding: 2.4rem; background-color: #2F75FF; color: #fff; font-weight: 600; text-align: center;}
+            }
+            &-tr {
+                &.indent {
+                    color: #666;
+                    font-weight: 400;
+                }
+                display: flex; font-weight: 500;
+                &:last-child {
+                    .tbl-th, .tbl-td {border-color: #ccc;}
+                }                
+            }
+            &-th, &-td {border-bottom: 1px solid #e5e5e5;}
+            &-td {
+                flex: 1; padding: 2.4rem; 
+            }
+        }
+        
     }
 }
 
 
 /*그래프*/
 .chart {
-    &-vertical {position: relative; padding: 4rem; border: 1px solid #E5E5E5; border-radius: 2rem;}
+    &-vertical {position: relative; padding: 4rem 4rem 6rem; border: 1px solid #E5E5E5; border-radius: 2rem;}
     &-head {
         position: relative; padding-bottom: 4rem; display: flex; justify-content: space-between;  align-items: center;      
         .unit {font-size: 1.4rem; color: #888;}
@@ -57,10 +94,11 @@
     }
     &-content {
         position: relative;
-        display:flex;
-        margin-bottom: 45px;
-        box-sizing: border-box;
+        display:flex; 
         height: 26rem;
+        min-height: 26rem;
+        box-sizing: border-box;
+        // height: 26rem;
         .axis-y {
             display: flex;
             padding-right: 0.8rem;
@@ -69,27 +107,33 @@
             justify-content: space-between;
             height: 100%;
             font-size: 12px;
-            color: #4a4a4a;
+            border-right: 1px solid #d3d3d3;
+            color: #666666;
+            gap : 3.7rem 0;
+            &-item {
+                position: relative; height: 0;
+                span {position: relative; top: -0.7rem;}
+            }
         }
         .axis-x {
-            position: relative;
             display: flex;
             width: 100%;
             justify-content: center;
             padding: 0;
             box-sizing: border-box;
-            height: 100%;
-            border-left: 1px solid #d3d3d3;
+            height: 100%;           
             border-bottom: 1px solid #d3d3d3;
-            .item{
-                flex: 1;
+            opacity: 0;
+            &-item {
                 position: relative;
+                flex: 1;
                 .name {
+                    position: relative;
                     position: absolute;
-                    top: calc(100% + 0.9rem);
-                    left: 50%;
+                    // top: calc(100% + 0.9rem);
+                    width: 100%;
                     text-align: center;
-                    transform: translate(-50%, 0);
+                    //transform: translate(-50%, 0);
                     font-size: 1.4rem;
                     color: #444;
                 }
@@ -97,30 +141,37 @@
         }
         .graph {
             display: flex;
-            flex-direction: column-reverse;
-            position: relative;
+            //flex-direction: column-reverse;
+            justify-content: center;
             margin: 0 auto;
             padding: 0;
-            width: 4rem;
             height: 100%;
+            gap: 0.8rem;
+            @include font0;
             .data-bar {
                 display: block;
+                align-self: flex-end;
                 position: relative;
                 box-sizing: content-box;
-                width: 100%;
+                width: 38%;
+                max-width: 4rem;
                 border-radius: 1rem 1rem 0 0;
+                &.negative {top: calc(100% + 0.1rem); align-self: flex-start; border-radius: 0 0 1rem 1rem;}
                 &.bar-1 {
                     background: rgba(22, 45, 161, 0.2);
+                    .data {color: rgba(22, 45, 161, 0.2);}
                 }    
                 &.bar-2 {
                     background: #162DA1;
+                    .data {color: #162DA1;}
                 }
+                .data {position: absolute; bottom: calc(100% + 0.8rem); left: 50%; transform: translateX(-50%); font-size: 1.4rem; font-weight: 600;}
             }
             .tootip {
-                position: absolute; min-width: 10.5rem; bottom: calc(100% + 1rem); left: 50%; padding: 1rem 1.6rem; background-color: #222; color: #fff; text-align: center; transform: translateX(-50%); border-radius: 0.8rem; box-shadow: 0.1rem 0.4rem 0.4rem rgba(34,34,34,0.2); opacity: 0; transition: opacity 0.3s; 
+                position: absolute; min-width: 10.5rem; bottom: calc(100% + 1rem); left: 50%; padding: 1rem 1.6rem; background-color: #222; text-align: center; transform: translateX(-50%); border-radius: 0.8rem; box-shadow: 0.1rem 0.4rem 0.4rem rgba(34,34,34,0.2); opacity: 0; transition: opacity 0.3s; 
                 &:before {content: ''; position: absolute; top: 100%; left: 0; right: 0; width: 1rem; height: 1rem; border-radius: 0.2rem; background-color: #222; margin: -0.56rem auto; transform: rotate(45deg); box-shadow: 0.1rem 0.4rem 0.4rem rgba(34,34,34,0.2);}
-                span {font-size: 1.2rem;}
-                .graph-data {display: block; margin-top: 0.2rem; font-size: 1.4rem;}
+                span {font-size: 1.2rem; color: #fff;}
+                .graph-data {display: block; margin-top: 0.2rem; font-size: 1.4rem; color: #fff;}
             }
         }
     }

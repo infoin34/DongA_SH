@@ -164,12 +164,18 @@
 
 		// 스크롤 최하단으로 갔을때
 		if(currentScr + $(window).height() >= $('footer').offset().top + ($('footer').height()*0.8)){
+			if(!pageEnd) {
+				pageEnd = true;
+				console.log(pageEnd)
+			}
 			if(!$('html').hasClass('scr-bottom')){
 				$('html').removeClass('scr-up');
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-bottom');
 			}			
 		}else {			
+			
+			pageEnd = false;
 			$('html').removeClass('scr-bottom');
 			if ( currentScr > lastScr ){//아래로				
 				if(!$('html').hasClass('scr-down')){
@@ -187,7 +193,6 @@
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-up');
 			}
-			$('#test').html(currentScr+' : last: '+ lastScr +'sss ::::' + (lastScr-currentScr))
 		}
 	}
 
@@ -374,6 +379,7 @@
 	/************************************************/
 	/******** 스크롤 ********/
 	let currentScr, lastScr = 0;
+	let pageEnd;
 	
 	function scrollEv(){
 		//---현재 스크롤값
@@ -439,7 +445,6 @@
 		});
 		$('.btn-filter-reset').on('click', function(){
 			$('.search-box .filter-item input').prop('checked', false);
-			console.log('.ss')
 			return false;			
 		});
 
@@ -479,7 +484,7 @@
 		//---only main
 		if(window.isMain){
 			//새로고침 - 스크롤 상단
-			$("html, body").animate({ scrollTop: 0}, 'fast');
+			//$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
 			//$('#intro').addClass('active');
@@ -543,6 +548,15 @@
 						$('.business-item').removeClass('on');
 					}
 				}
+				if(pageEnd) {
+					if(!$('.bg-socio').hasClass('on')){
+						$('.bg-socio').addClass('on');
+					}else{
+						$('.bg-socio').removeClass('on');
+					}
+					
+				}
+
 			});
 		
 		}else{

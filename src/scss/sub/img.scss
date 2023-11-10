@@ -8,6 +8,22 @@
     .svg-lang {
         width: 28px; height: 28px; background: svgLang('fff'); background-size: 100% 100%;  
     }
+    //메인
+    .svg-main-s {
+        width: 384px; height: 384px; background: svgMainS('2F75FF'); background-size: 100% 100%;  
+    }
+    .svg-main-o {
+        width: 384px; height: 384px; background: svgMainO('666'); background-size: 100% 100%;  
+    }
+    .svg-main-c {
+        width: 384px; height: 384px; background: svgMainC('2F75FF'); background-size: 100% 100%;  
+    }
+    .svg-main-i {
+        width: 384px; height: 384px; background: svgMainI('B4986F'); background-size: 100% 100%;  
+    }
+    .svg-main-o-2 {
+        width: 384px; height: 384px; background: svgMainO('FF4002'); background-size: 100% 100%;  
+    }
     .svg-link {
         width: 12px; height: 13px; background: svgUrlArrow('fff'); background-size: 100% 100%;
     }
@@ -33,10 +49,10 @@
         width: 20px; height: 21px; background: svgPhone('fff'); background-size: 100% 100%;
     }
     .svg-main-bg-A {
-        width: 642px; height: 739px; background: svgMainA('FF4002'); background-size: 100% 100%;
+        width: 300px; height: 450px; background: svgMainA('FF4002'); background-size: 100% 100%;
     }  
     .svg-main-bg-D {
-        width: 642px; height: 750px; background: svgMainD('2F75FF'); background-size: 100% 100%;
+        width: 300px; height: 450px; background: svgMainD('2F75FF'); background-size: 100% 100%;
     }
     .svg-search {
         width: 28px; height: 28px; background: svgSearch('fff'); background-size: 100% 100%;

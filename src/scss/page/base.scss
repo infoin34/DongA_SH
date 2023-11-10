@@ -113,6 +113,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 
 //텍스트 안보이게
 .blind {
+	position: absolute;
     @include font0;
 }
 

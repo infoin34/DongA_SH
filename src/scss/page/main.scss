@@ -197,9 +197,6 @@ a.btn-detail.white {
 
     &-philosophy {
         background-color: #f7f7f7; 
-        .bg-d {
-            position:absolute; top: 0; right:0; width: 64.2rem; height: 75rem; background: svgMainD('2F75FF'); background-size: 100% 100%; z-index: 0;
-        }    
         .section-inner {position: relative;}
         .philosophy-list {
             padding-left: 70%;
@@ -279,33 +276,27 @@ a.btn-detail.white {
         }
     }
     &-news {
-        background-color: #FAFAFA;
         .scr-eff {
             opacity: 0; transform: translateY(15%); transition: opacity 0.5s ease-in, transform 0.5s ease-in-out;
             &.scr-eff-active {opacity: 1; transform: translateY(0);}
         }        
         .news-item {        
-            a {display: block; width: 100%; height:100%;  border: 1px solid #e5e5e5; transition: margin 0.3s ease-in, transform 0.3s ease; border-radius: 2rem; background-color: #fff; overflow: hidden;}
+            a {display: block; width: 100%; height:100%; border: 1px solid #e5e5e5; transition: margin 0.3s ease-in, transform 0.3s ease; border-radius: 2rem; background-color: #fff; overflow: hidden;}
+            .thumb-wrap {
+                position: relative; width: 100%; height: 100%; opacity: 0; transition: opacity 0.3s ease-out; 
+                &:before {
+                    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(22, 45, 161,0.7); 
+                }
+            }
             .thumb {   
-                opacity: 0; transition: opacity 0.3s ease-out; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; 
+               background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; 
                 &:before {content:''; display: block; padding-bottom: 100%;} 
             }
             .info {position: absolute; top:0; left:0; padding: 5rem; width:100%; height:100%; z-index:1;}
             .brand {padding:0 1.6rem; display: inline-block; height: 4.5rem; line-height: 4.5rem; border: 1px solid #162DA1; border-radius: 5rem; color: #162DA1; font-size: 1.8rem; font-weight: 700;}
             .title-s2 {margin-top: 1.6rem;}
             .text-1 {margin-top: 3.6rem; color: #666;}
-            .date {position: absolute; bottom: calc(50/460)*100%; padding-left: 3rem; color: #666; font-weight: 700;}        
-            &:hover {
-                a {transform:translateY(-4rem); box-shadow: 1rem 1rem 3.2rem rgba(34, 34, 34, 0.24); border: 0;}
-                .thumb {opacity: 1;}
-                .brand {border-color: #fff; color:#fff;}
-                .text-1 {color: #fff; }
-                .date {color: #fff; background-image: svgClock(fff);}
-                .title-s2 {
-                    color: #fff;
-                    span {border-bottom: 2px solid #fff;}
-                }
-            }
+            .date {position: absolute; bottom: calc(50/460)*100%; padding-left: 3rem; color: #666; font-weight: 700;}    
         }
         .swiper-scrollbar {margin-top: 6rem;}    
     }
@@ -333,7 +324,47 @@ a.btn-detail.white {
                 position:absolute; top: -9.5%; padding-right:9.5%; padding-top:9.5%; width: 109.5%; height: 109.5%; display: flex; align-content: center; flex-wrap: wrap; background: svgPuzzle('fff', 'DBDBDB') no-repeat 0 / 100%; text-align: center; transition: all 0.4s ease; z-index: 1;    
             }
         }
-        .bg-sosio {margin-top: 12rem}
-        .bg-sosio svg {width:100vw; height: calc(384/1920*100vw);}
-    }    
+    } 
+    .bg-socio {
+        margin-top: 12rem; display: flex;
+        div {width:calc(384/1920*100vw); height: calc(384/1920*100vw); background-size: 100%; opacity: 0.4; transform: translateY(100%);}
+        .s {background-image: svgMainS('2F75FF');}
+        .o {background-image: svgMainO('666');}
+        .c {background-image: svgMainC('2F75FF');}
+        .i {background-image: svgMainI('B4986F');}
+        .o {background-image: svgMainO('FF4002');}
+    }  
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .main-news {
+        .news-item {
+            &:hover {
+                a {transform:translateY(-4rem); box-shadow: 1rem 1rem 3.2rem rgba(34, 34, 34, 0.24); border: 0;}
+                .thumb-wrap {opacity: 1;}
+                .brand {border-color: #fff; color:#fff;}
+                .text-1 {color: #fff; }
+                .date {color: #fff; background-image: svgClock(fff);}
+                .title-s2 {
+                    color: #fff;
+                    span {border-bottom: 2px solid #fff;}
+                }
+            }
+        }
+    }
+     
+}
+ 
+@media screen and (max-width: 1200px) {
+     
+ 
+} 
+ 
+@media screen and (max-width: 992px) {
+   
+}
+ 
+@media screen and (max-width: 768px) {
+     
 }
