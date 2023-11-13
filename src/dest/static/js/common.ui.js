@@ -551,11 +551,13 @@
 				if(pageEnd) {
 					if(!$('.bg-socio').hasClass('on')){
 						$('.bg-socio').addClass('on');
-					}else{
+					}					
+				}else{
+					if($('.bg-socio').hasClass('on')){
 						$('.bg-socio').removeClass('on');
-					}
-					
+					}	
 				}
+				
 
 			});
 		

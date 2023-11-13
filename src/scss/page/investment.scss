@@ -40,7 +40,7 @@
     //재무정보
     &-finance {
         .finance-stats-chart {
-            display: flex; gap: 3rem;
+            display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;
             .chart-vertical {width: calc((100% - 6rem)/3);}
         }
         .data-head {
@@ -130,7 +130,7 @@
                 .name {
                     position: relative;
                     position: absolute;
-                    // top: calc(100% + 0.9rem);
+                    top: 26.9rem;
                     width: 100%;
                     text-align: center;
                     //transform: translate(-50%, 0);
@@ -198,6 +198,9 @@
 } 
 
 @media screen and (max-width: 992px) {
+    .investment-finance .finance-stats-chart .chart-vertical {
+        width: calc((100% - 3rem)/2);
+    }
     .investment-ir .ir-data-item {
         > a {
             padding: 2.5rem 0;
@@ -207,6 +210,11 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width: 768px) {    
+    .investment-finance .finance-stats-chart {
+        gap: 2rem;
+        .chart-vertical {
+            width: 100%;
+        }
+    }
 }
