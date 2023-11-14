@@ -166,16 +166,13 @@
 		if(currentScr + $(window).height() >= $('footer').offset().top + ($('footer').height()*0.8)){
 			if(!pageEnd) {
 				pageEnd = true;
-				console.log(pageEnd)
 			}
 			if(!$('html').hasClass('scr-bottom')){
 				$('html').removeClass('scr-up');
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-bottom');
 			}			
-		}else {			
-			
-			pageEnd = false;
+		}else {						
 			$('html').removeClass('scr-bottom');
 			if ( currentScr > lastScr ){//아래로				
 				if(!$('html').hasClass('scr-down')){
@@ -184,6 +181,7 @@
 				}	
 			} else{//위로
 				if(!$('html').hasClass('scr-up')){
+					pageEnd = false;
 					$('html').removeClass('scr-down');
 					$('html').addClass('scr-up');
 				}				
@@ -521,43 +519,56 @@
 			// });
 
 			//동아쏘시오 그룹 소개 - 퍼즐
-			let onceFlag, buiSetTArr = [];
+			let philosophyFlag, socioSetTArr = [];
 			$(window).on('scroll', function(){
 				//---스크롤 모션
-				plx({
-					target:'.bg-d',
-					parent: '.main-philosophy',
-					increment: '-0.4'
-				});				
-				if($('.business-list').hasClass('scr-eff-active')){
-					if(!onceFlag){
-						onceFlag = true;
-						$('.business-item').each(function(idx){
-							var _ = $(this);
-							buiSetTArr[idx] = setTimeout(function(){
-								_.addClass('on');
-							}, (idx+1)*120);
+				// plx({
+				// 	target:'.ba-a',
+				// 	parent: '.main-value',
+				// 	increment: '0.4',
+				// 	fn : function(delta, d){
+				// 		if(delta >= 0 && delta <= 1) $('.ba-a').css('bottom', -(100*dl))
+				// 	}
+				// });			
+
+
+				if($('.philosophy-list').hasClass('scr-eff-active')){ 
+					if(philosophyFlag){
+						$('.philosophy-list').addClass('no-click');
+						philosophyFlag = false;
+						$('.philosophy-list').stop().animate({opacity:1, paddingLeft: 0}, 500,
+						function(){
+							$('.philosophy-list').removeClass('no-click');
 						});
 					}
-				}else{			
-					if(onceFlag){
-						onceFlag = false;
-						buiSetTArr.map((item)=>{
-							setTimeout(buiSetTArr);
-						}) 
-						$('.business-item').removeClass('on');
+				}else{
+					if(!philosophyFlag){
+						philosophyFlag = true;
+						$('.philosophy-list').stop().animate({opacity:0, paddingLeft: '70%'}, 500);
 					}
 				}
+				
+					
+				//bg-socio
 				if(pageEnd) {
 					if(!$('.bg-socio').hasClass('on')){
 						$('.bg-socio').addClass('on');
+						$('.bg-socio > div').each(function(idx){
+							var _ = $(this);
+							socioSetTArr[idx] = setTimeout(function(){
+								_.addClass('on');
+							}, idx * 110);
+						});
 					}					
 				}else{
 					if($('.bg-socio').hasClass('on')){
+						socioSetTArr.map((item)=>{
+							clearTimeout(item);
+						});
 						$('.bg-socio').removeClass('on');
+						$('.bg-socio > div').removeClass('on'); 
 					}	
 				}
-				
 
 			});
 		

@@ -62,7 +62,7 @@ textarea {
 	}
 }
 select	{width: 100%; padding-right: 5rem; outline:none; border:1px solid #ddd; text-align:center; font-size: 1.8rem; font-family: inherit; line-height:1.6; background: svgDownArrow('222') no-repeat calc(100% - 2.4rem) 50% / 11px; border-radius: 0.4rem; box-shadow:none; vertical-align:middle; -webkit-appearance:none; -moz-appearance: none; appearance:none; cursor:pointer;}
-select:focus {border: 1px solid #000; color:#000;}
+select:focus {border: 1px solid #000; color:#000;} 
 select:disabled	{opacity:.5}
 select option { color:#999;}
 select option:first-child{color:#555;}
@@ -116,6 +116,10 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	position: absolute;
     @include font0;
 }
+.line-cut {overflow: hidden;}
+
+
+.no-click {pointer-events: none;}
 
 //ellipsis
 .ell {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; word-break:break-all;}

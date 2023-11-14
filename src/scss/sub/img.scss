@@ -30,11 +30,14 @@
     .svg-link-2 {
         width: 24px; height: 24px; background: svgUrlArrow2('fff'); background-size: 100% 100%;
     }
+    .svg-link-3 {
+        width: 41px; height: 18px; background: svgUrlArrow3('fff'); background-size: 100% 100%;
+    }
     .svg-time {
         width: 20px; height: 20px; background: svgClock('fff'); background-size: 100% 100%;
     }
     .svg-puzzle{
-        width: 400px; height: 400px; background: svgPuzzle('fff', '000'); background-size: 100% 100%;
+        width: 400px; height: 400px; background: svgPuzzle('fff'); background-size: 100% 100%;
     }
     .svg-down-arrow {
         width: 16px; height: 16px; background: svgDownArrow('fff'); background-size: 100% 100%;
