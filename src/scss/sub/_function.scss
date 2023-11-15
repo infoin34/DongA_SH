@@ -66,11 +66,11 @@ $img : '../images/';
 	0% { width:calc(705/1920*100vw); height:calc(78/1920*100vw);}
 	100% {width: 20.9rem; height: 2.3rem;}
 }
+//원 -> 점차 확대
 @keyframes clipPath1 {
 	from {clip-path: circle(0);}
 	to {clip-path: circle(100%);}
 }
-
 @keyframes fade_in_1 {
 	from {
 		opacity: 0;
@@ -81,7 +81,6 @@ $img : '../images/';
 		transform: translateY(0);
 	}	
 }
-
 @keyframes link {
 	from {
 		right: 2.5rem;		

@@ -35,13 +35,13 @@
 
 /*header*/
 header {
-    position: fixed; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.7); transition: background 0.3s, transform 0.4s cubic-bezier(0.2, 0.4, 0.9, 1); 
+    position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; transition: background 0.3s, transform 0.4s cubic-bezier(0.2, 0.4, 0.9, 1); 
     &.hidden {top: -100%;}
     &.white {
         background-color: transparent;
         .gnb-depth1-title {color: #fff;}
         .header-etc-link {
-            color: #fff;
+          color: #fff; background-color: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2);
             li + li:before {background-color: rgba(255, 255, 255, 0.2);}
             a:after {               
                 background-image: svgUrlArrow('fff');
@@ -61,10 +61,10 @@ header {
     }
 }
 .header-inner {
-    position: relative; padding: 4rem 8rem 3.4rem;
+    position: relative; padding: 4.8rem 8rem 3.4rem;
 }
 .header-etc-link {
-    position: absolute; top: 4rem; right: 8rem; display: flex; font-size: 1.6rem; font-weight: 500;
+    position: absolute; padding: 1.2rem 3.6rem; top: 4rem; right: 8rem; display: flex; font-size: 1.6rem; font-weight: 500;  background-color: rgba(0,0,0, 0.04); border: 1px solid rgba(0,0,0, 0.08); border-radius: 5rem;
     li + li::before {content: ''; margin:0 0.8rem; display: inline-block; width: 1px; height: 1rem; background-color: rgba(0, 0, 0, 0.2);}
     a:after {content: ''; margin-left: 0.4rem; display:inline-block; width: 1.2rem; height: 1.3rem; background: svgUrlArrow('000'); background-size: 100% 100%;}
 } 
@@ -124,7 +124,7 @@ h1 {
         
     }
     .header-util {
-        position: absolute; top: 9.3rem; right: 8rem; display: flex; gap: 3.8rem; align-items: center; z-index: 10;
+        position: absolute; top: 10.1rem; right: 8rem; display: flex; gap: 3.8rem; align-items: center; z-index: 10;
     }
     .btn-lang {
        display :block; width: 2.6rem; height: 2.6rem; background: svgLang('000'); background-size: 100% 100%; @include font0;

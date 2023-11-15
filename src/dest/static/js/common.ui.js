@@ -271,15 +271,17 @@
 	/* main-spot */ 
 	function mainSpot(){
 		let $item = $('.spot-item'),
+			$stopCv = $('.spot-change'),//바뀔때 큰 커버
 			$playing = $item.eq(0),//현재 보이는 박스,
-			$prev,//전 박스
-			$next,//후 박스
-			$bullet,
+			$durBar,//재생 바,
+			initFlag, //처음 재생
 			mainSpotSwiper,
 		    playingIdx = 0, //현재 보이는 박스 idx,
 			visualLength = $item.length,//박스 총갯수
 			curDelay = 6,//재생시간
-			setToAutoPlay,//setTimeout - autoplay
+			setToAutoPlayArr = [],//setTimeout - autoplay
+			setToBar,//setInterval - bar
+			setToStop,//setTimeout - cover
 			setToTxt;//setTimeout - spot-text
 
 		let spot = {
@@ -294,58 +296,120 @@
 				this.active();		
 			},
 			active: function(){		
-				let _ = this;
-				mainSpotSwiper.slideTo(playingIdx, 300);				
+				let _ = this;			
+				$('.swiper-pagination-bullet-'+ playingIdx).click();
 			},
-			slideControl: function(){
+			slideControl: function(did){
 				let _ = this;
-				if($playing.find('video').length > 0){
-					$playing.find('video')[0].play();
-				}				
-				if($playing.find('video').length > 0 && $playing.find('video')[0].duration){
-					curDelay = $playing.find('video')[0].duration;
-				}else{
-					curDelay = 5;
-				}
-				clearTimeout(setToTxt);	
-								
-				setToTxt = setTimeout(function(){
-					$playing.find('.spot-text').addClass('on');
-				},800);
-
-				if($item.length == 1) return;
+				let stopTime = 1300;
+				$item.removeClass('playing');
+				$playing.addClass('playing');	
+				$stopCv.attr('class', 'spot-change');
+				$playing.hasClass('spot-last') && $playing.removeClass('on');	
 				
-				_.autoplay();   
+				if(!initFlag){						
+					initFlag = true;		
+					stopTime = 0;
+				}
+				
+				clearTimeout(setToStop);
+				clearTimeout(setToTxt);		
+				$stopCv.css('left', '-150vw');
+				$stopCv.stop().animate({
+					left: 150 +'vw'
+				},
+				{	
+					duration: stopTime,
+					specialEasing: {
+					  left: 'linear'
+					},
+					complete : function(){//커버 지나간 후						
+						$playing.hasClass('spot-last') && $playing.addClass('on');	
+						if($playing.find('video').length > 0){
+							$playing.find('video')[0].play();
+						}			
+						if($playing.find('video').length > 0 && $playing.find('video')[0].duration){
+							curDelay = $playing.find('video')[0].duration;
+						}else{
+							curDelay = 5;
+						}				
+						let start = new Date;//시작 시간
+						setToBar = setInterval(function(){
+							let timePassed = new Date - start,
+							progress = timePassed / (curDelay*1000); // 지나간시간/이벤트 진행할시간 = 비율
+							$durBar.eq(playingIdx).css('width', progress*100 + '%');
+							if(progress > 1) progress = 1;
+							if(progress == 1) clearInterval(setToBar);
+						}, 50);		
+
+						if($item.length == 1) return;		
+						for(let i=0; i < setToAutoPlayArr.length; i++){
+							clearTimeout(setToAutoPlayArr[i]);
+						}					
+						setToAutoPlayArr = [];			
+						_.autoplay();   
+
+						setToTxt = setTimeout(function(){
+							$playing.find('.spot-text').addClass('on');
+						}, 200);
+					}
+				});
+				
 			},
 			autoplay: function(init){
-				let _ = this;							
-				clearTimeout(setToAutoPlay);		
-				
-				setToAutoPlay = setTimeout(function(){    		
+				let _ = this;	
+				let setT = setTimeout(function(){    	
 					_.next();					    				 
 				}, curDelay * 1000);
+				setToAutoPlayArr.push(setT);
+			},
+			reset: function(){
+				$playing = $item.eq(playingIdx);
+				if($playing.find('video').length > 0){
+					$playing.find('video')[0].pause();
+					$playing.find('video')[0].currentTime = 0;						
+				}
+				clearInterval(setToBar);		
+				$durBar.css('width', 0);
+				$('.spot-text').removeClass('on');
+				for(let i = 0; i < setToAutoPlayArr.length; i++){
+					clearTimeout(setToAutoPlayArr[i]);
+				}	
 			},
 			init :function(){
+				$item.eq($item.length-1).addClass('spot-last');
+				
 				mainSpotSwiper = new Swiper('.main-spot-swiper .swiper-container', {
 					slidesPerView: 1,
 					loop: true,
 					pagination: {
 						el: '.main-spot-swiper .swiper-pagination',
 						clickable: true,
+						renderBullet: function (index, className) {
+							let idx = (index+1) > 9 ? index+1 : '0'+ (index+1);
+							let str = '<div class="duration"><div class="bar spot-duration-bar"></div></div>'
+									+ '<div class="bullet-number">'+ idx +'</div>'
+									+ '<div class="bullet-title">'+ $('.spot-core').eq(index).text() +'</div>';
+							return '<div class="' + className + ' swiper-pagination-bullet-'+ index +' mouse-effect" data-cursor="click" style="width:'+ 100/this.slides.length +'%;">'+ str +"</div>";
+						}
+					},
+					effect: 'fade',
+					on : {
+						afterInit : function(){
+							$durBar = $('.spot-duration-bar');
+							!window.isMobile && mouseCursor();//마우스 커서
+							//spot.slideControl(true); //처음 실행
+						}
 					}
 				});
-				spot.slideControl();//처음 실행
-
-				mainSpotSwiper.on('slideChangeTransitionStart', function(){
+				
+				mainSpotSwiper.on('slideChangeTransitionEnd', function(e){
+					$('.spot-item.swiper-slide-active').focus();
+				});
+			
+				mainSpotSwiper.on('slideChange', function(){
 					playingIdx = this.realIndex;
-					$playing = $item.eq(playingIdx);
-					if($playing.find('video').length > 0){
-						$playing.find('video')[0].pause();
-						$playing.find('video')[0].currentTime = 0;						
-					}
-					$('.spot-text').removeClass('on');
-				});
-				mainSpotSwiper.on('slideChangeTransitionEnd', function(){
+					spot.reset();
 					spot.slideControl();
 				});
 			}		
@@ -356,8 +420,8 @@
 		}else {//video 있을 시
 			let loadCheck = setInterval(function(){//첫 영상 로드 다되기까지 체크
 				if($('.spot-item video')[0].duration > 0){
-					clearInterval(loadCheck);
 					spot.init();					
+					clearInterval(loadCheck);
 				}    	   
 			});
 		}
@@ -400,6 +464,44 @@
 
 		//---현재 스크롤값은 저장
 		lastScr = currentScr;
+	}
+
+	function mouseCursor(){
+		$(document).on('mousemove', function(e){
+			let mouseX = e.clientX-($('.mouse-cursor').width()/2);
+			let mouseY = e.clientY-($('.mouse-cursor').height()/2);
+
+			if(!$('.mouse-cursor').is(':visible')) $('.mouse-cursor').fadeIn();
+			
+			$('.mouse-cursor').css({
+				left: mouseX + 'px',
+				top: mouseY + 'px'
+			});				
+		});
+
+		$(document).on('mouseleave', function(e){
+			$('.mouse-cursor').fadeOut();
+		});
+		
+		$('input[type="file"], select').on('click', function(){
+			$('.mouse-cursor').fadeOut();
+		})
+		
+		$('a[href]').on('mouseenter', function(){
+			$('.mouse-cursor').addClass('click');
+		});
+
+		$('a[href]').on('mouseleave', function(){
+			$('.mouse-cursor').removeClass('click');
+		});
+
+		$('.mouse-effect').on('mouseenter', function(){
+			$('.mouse-cursor').addClass($(this).attr('data-cursor'));
+		});
+
+		$('.mouse-effect').on('mouseleave', function(){
+			$('.mouse-cursor').removeClass($(this).attr('data-cursor'));
+		});
 	}
 
 	/******** 공통 ********/
@@ -448,35 +550,9 @@
 
 
 		//---pc일때
-		if(!window.isMobile){
+		if(!window.isMobile){			
 			//마우스 커서
-			$(document).on('mousemove', function(e){
-				let mouseX = e.clientX-($('.mouse-cursor').width()/2);
-				let mouseY = e.clientY-($('.mouse-cursor').height()/2);
-
-				if(!$('.mouse-cursor').is(':visible')) $('.mouse-cursor').fadeIn();
-				
-				$('.mouse-cursor').css({
-					left: mouseX + 'px',
-					top: mouseY + 'px'
-				});				
-			});
-
-			$(document).on('mouseleave', function(e){
-				$('.mouse-cursor').fadeOut();
-			});
-			
-			$('input[type="file"], select').on('click', function(){
-				$('.mouse-cursor').fadeOut();
-			})
-			
-			$('a[href]').on('mouseenter', function(){
-				$('.mouse-cursor').addClass('click');
-			});
-	
-			$('a[href]').on('mouseleave', function(){
-				$('.mouse-cursor').removeClass('click');
-			});
+			!window.isMain && mouseCursor(); //메인 아닐때
 		}	
 
 		//---only main
@@ -485,38 +561,31 @@
 			//$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			//$('#intro').addClass('active');
+			$('#intro').addClass('active');
 
-			$('#intro').remove();
-			$('html').removeClass('main-intro');
-			$('html').addClass('main-intro-end');		
-			$('header').addClass('white');
-			mainSpot();						
-			$(window).on('scroll', scrollEv);
+			//$('#intro').remove();
+			// $('html').removeClass('main-intro');
+			// $('html').addClass('main-intro-end');		
+			// $('header').addClass('white');
+			// mainSpot();						
+			// $(window).on('scroll', scrollEv);
 
-			// //메인 인트로 끝날 때
-			// document.querySelector('#intro').addEventListener('animationend', function(e){
-			// 	if(e.target == this) {
-			// 		$('#intro').remove();					
-			// 		$('.main-intro').addClass('main-intro-end');	
-			// 	}
-			// });
-			// document.querySelector('.main-spot').addEventListener('animationstart', function(e){
-			// 	if($('.spot-item').eq(0).find('video').length > 0){
-			// 		$('.spot-item').eq(0).find('video')[0].pause();
-			// 		$('.spot-item').eq(0).find('video')[0].currentTime = 0;
-			// 	}	
-			// 	setTimeout(function(){
-			// 		$('header').addClass('white');	
-			// 	}, 400);				
-			// })
-			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-			// 	if($('html').hasClass('main-intro')){	
-			// 		$('html').removeClass('main-intro');						
-			// 		mainSpot();						
-			// 		$(window).on('scroll', scrollEv);
-			// 	}		
-			// });
+			// //메인 인트로 제거 후
+			document.querySelector('#intro').addEventListener('animationend', function(e){
+				if(e.target == this) {
+					$('#intro').remove();					
+					$('.main-intro').addClass('main-intro-end');	
+					$('header').addClass('white');	
+				}
+			});
+			//clip-path모션 끝난 후
+			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+				if($('html').hasClass('main-intro')){	
+					$('html').removeClass('main-intro');						
+					mainSpot();						
+					$(window).on('scroll', scrollEv);
+				}		
+			});
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
