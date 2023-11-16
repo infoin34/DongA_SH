@@ -31,10 +31,10 @@ a.btn-more {
 .mouse-cursor.scroll {
     mix-blend-mode: screen;
     &:after {
-        content:'SCROLL'; position: absolute; padding-left: 1.5rem; color: #FFF; font-size: 2rem;
+        content:'SCROLL'; position: absolute; padding-left: 1.5rem; color: #FFF; font-size: 1.6rem;
     }
     .mouse-pointer {
-        top: 1.2rem; width: 0.9rem; height: 0.9rem; border-radius: 50%;
+        top: 1rem; width: 0.9rem; height: 0.9rem; border-radius: 50%;
     }
     
 }
@@ -203,11 +203,31 @@ a.btn-more {
                 p {margin-top: 4rem; font-size: 3rem; opacity: 0; transform: translateX(-100%); transition: opacity 1s 1s, transform 1s 1s;}
             }
             &-change {
-                position: absolute; display: inline-flex; top: 0; left:-150vw; z-index: 10; font-size: 0; white-space: nowrap; 
-                &.color-2 * {background-color: #00B4D6;}
-                * { background-color: #162DA1; }
-                .mask-2 {width: 100vw; height: 100vh;} 
-                .mask-3 {width: 50vw; height: 100vh;border-top-right-radius: 50%; border-bottom-right-radius: 50%;}
+                position: absolute; display: inline-flex; top: 0; left:-150vw; z-index: 10; font-size: 0; white-space: nowrap; font-size: 0;
+                * {position: relative; }
+                &.color-1 {
+                    .mask-1 {background-image: introCover('00B4D6');}
+                    .mask-2, .mask-3 { background-color: #00B4D6;}                   
+                }
+                &.color-2 {
+                    .mask-1 {background-image: introCover('2F75FF');}
+                    .mask-2, .mask-3 { background-color: #2F75FF;}                   
+                }
+                &.color-3 {
+                    .mask-1 {background-image: introCover('162DA1');}
+                    .mask-2, .mask-3 { background-color: #162DA1;}                   
+                }
+                &.color-4 {
+                    .mask-1 {background-image: introCover('FF4002');}
+                    .mask-2, .mask-3 { background-color: #FF4002;}                   
+                }
+                &.color-5 {
+                    .mask-1 {background-image: introCover('000081');}
+                    .mask-2, .mask-3 { background-color: #000081;}                   
+                }
+                .mask-1 {width: calc(464/1080*100vh); height: 100vh;  background-size: 100% 100%;}
+                .mask-2 {left: -0.1vw; width: 100vw; height: 100vh;} 
+                .mask-3 {left: -0.1vw; width: 50vw; height: 100vh; border-top-right-radius: 50%; border-bottom-right-radius: 50%;}
                 
                 //&:before {content:''; position: absolute; top:0; right: 100%; width: 50vw; height: 100%; background-color: red;}
             }

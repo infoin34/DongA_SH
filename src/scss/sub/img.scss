@@ -81,4 +81,10 @@
     .svg-download {
         width: 24px; height: 24px; background: svgDownload('162DA1'); background-size: 100% 100%;
     }
+    .svg-all-gnb-bg {
+        width: 640px; height: 360px; background: allGnbBg('162DA1'); background-size: 100% 100%;
+    }
+    .svg-intro-cover {
+        width: 640px; height: 360px; background: introCover('fff'); background-size: 100% 100%;
+    }
 }
