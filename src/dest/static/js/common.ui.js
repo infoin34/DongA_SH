@@ -270,12 +270,8 @@
 
 	/* animate */ 
 	//specialEasing 추가
-	$.easing.makeEaseOut = function (x, curTime, begin, end, distance){
-		if (x < .5)
-			return 2*x /2
-		else
-			return (2 - 2*(1 - x)) / 2;
-		
+	$.easing.circle = function (x, curTime, begin, end, distance){
+		return 1- Math.sin(Math.acos(x));
 	}
 	
 	/* main-spot */ 
@@ -567,7 +563,7 @@
 		}	
 
 		//---only main
-		if(window.isMain){
+		if(window.isMain){			
 			//새로고침 - 스크롤 상단
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
