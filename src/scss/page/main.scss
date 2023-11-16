@@ -183,13 +183,15 @@ a.btn-more {
     //메인 비주얼
     &-spot {
         position: relative; width: 100vw; height: 100vh; padding: 0 !important;  clip-path: circle(0);
-        .section-inner {width: 100%;}           
+        .section-inner {width: 100%;}       
         .spot {
+            &-time-break {z-index: 1000 !important;}    
             &-media {  
                 position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto; width: 100vw; height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; //transform: translateX(-50%), t;
                 &.cover:after {
                     content: ''; position: absolute; top:0; left:0; width: 100%; height: 100%; background: rgba(34,34,34,0.2);
                 }
+                
             } 
             &-text {
                 position: relative; color: #fff; 
@@ -471,6 +473,7 @@ a.btn-more {
             color: #fff;
             mask-image: url('../images/main/clip_puzzle.svg');
             filter: brightness(0.5);
+            transform: rotate(-20deg);
             transition:filter 0.5s, transform 0.5s, opacity 0.5s;
         }
         .shadow {
@@ -479,6 +482,7 @@ a.btn-more {
             height: 100%;
             background: svgPuzzle('ffffff') no-repeat 0 / 100%;
             filter: opacity(1) drop-shadow(rgba(0, 0, 0, 0.8) 3rem 3rem 3.2rem);
+            transform: rotate(-20deg);
             transition: transform 0.5s;
         }
         .content {
@@ -522,7 +526,7 @@ a.btn-more {
         .page-info {font-size: 2.4rem; color:rgba(255,255,255,0.4)}
         .current-number {font-weight: 600; color: #fff;}
         .swiper-slide-active {
-            .puzzle, .shadow {transform: rotate(-20deg);}
+            .puzzle, .shadow {transform: rotate(0);}
             .puzzle {filter: brightness(1);}
             //.shadow {filter: opacity(0.33) drop-shadow(rgba(0, 0, 0, 1) 5rem 5rem 6.2rem);}
             //.puzzle {opacity: 0;}
