@@ -305,12 +305,14 @@
 				$item.removeClass('playing');
 				$playing.addClass('playing');	
 				$stopCv.attr('class', 'spot-change');
+				$stopCv.addClass('color-'+ playingIdx);
 				$playing.hasClass('spot-last') && $playing.removeClass('on');	
 				
 				if(!initFlag){						
 					initFlag = true;		
 					stopTime = 0;
 				}
+				
 				clearTimeout(setToStop);
 				clearTimeout(setToTxt);		
 				$stopCv.css('left', '-150vw');
@@ -397,7 +399,7 @@
 						afterInit : function(){
 							$durBar = $('.spot-duration-bar');
 							!window.isMobile && mouseCursor();//마우스 커서
-							//spot.slideControl(true); //처음 실행
+							spot.slideControl(); //처음 실행
 						}
 					}
 				});
