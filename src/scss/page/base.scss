@@ -366,7 +366,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
     a {display: block;}
     .item {
         border: 1px solid #ccc; border-radius: 5rem;  color: #222; font-size: 1.4rem;
-        &.on {background-color: #000081; color: #fff; border-color: #000081;}
+        &.on {background-color: #000081; color: #fff !important; border-color: #000081;}
     }
 }
 

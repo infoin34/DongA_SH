@@ -162,6 +162,14 @@
 		if($('header').hasClass('nav-open')) return;//전체메뉴
 		if(Math.abs(lastScr - currentScr) <= 5) return;
 
+		if($('.page-menu-list').length > 0){
+		    if($('.page-menu-wrap').offset().top <= currentScr){
+				!$('.page-menu-list').hasClass('fixed') && $('.page-menu-list').addClass('fixed');
+			}else {
+				$('.page-menu-list').hasClass('fixed') && $('.page-menu-list').removeClass('fixed');
+			}
+		}
+
 		// 스크롤 최하단으로 갔을때
 		if(currentScr + $(window).height() >= $('footer').offset().top + ($('footer').height()*0.8)){
 			if(!pageEnd) {
@@ -171,6 +179,7 @@
 				$('html').removeClass('scr-up');
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-bottom');
+				$('.page-menu-list').css('top', $('header').height());
 			}			
 		}else {						
 			$('html').removeClass('scr-bottom');
@@ -178,20 +187,24 @@
 				if(!$('html').hasClass('scr-down')){
 					$('html').removeClass('scr-up');
 					$('html').addClass('scr-down');
+					$('.page-menu-list').css('top', 0);
 				}	
 			} else{//위로
 				if(!$('html').hasClass('scr-up')){
 					pageEnd = false;
 					$('html').removeClass('scr-down');
 					$('html').addClass('scr-up');
+					$('.page-menu-list').css('top', $('header').height());
 				}				
 			}
 			// 스크롤 0일경우
 			if (currentScr <= 0 ){
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-up');
+				$('.page-menu-list').css('top', $('header').height());
 			}
 		}
+		
 	}
 
 	/* 스크롤 css모션 */
@@ -580,31 +593,31 @@
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			//$('#intro').addClass('active');
+			$('#intro').addClass('active');
 
-			$('#intro').remove();
-			$('html').removeClass('main-intro');
-			$('html').addClass('main-intro-end');		
-			$('header').addClass('white');
-			mainSpot();						
-			$(window).on('scroll', scrollEv);
+			// $('#intro').remove();
+			// $('html').removeClass('main-intro');
+			// $('html').addClass('main-intro-end');		
+			// $('header').addClass('white');
+			// mainSpot();						
+			// $(window).on('scroll', scrollEv);
 
-			// // //메인 인트로 제거 후
-			// document.querySelector('#intro').addEventListener('animationend', function(e){
-			// 	if(e.target == this) {
-			// 		$('#intro').remove();					
-			// 		$('.main-intro').addClass('main-intro-end');	
-			// 		$('header').addClass('white');	
-			// 	}
-			// });
-			// //clip-path모션 끝난 후
-			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-			// 	if($('html').hasClass('main-intro')){	
-			// 		$('html').removeClass('main-intro');						
-			// 		mainSpot();						
-			// 		$(window).on('scroll', scrollEv);
-			// 	}		
-			// });
+			// //메인 인트로 제거 후
+			document.querySelector('#intro').addEventListener('animationend', function(e){
+				if(e.target == this) {
+					$('#intro').remove();					
+					$('.main-intro').addClass('main-intro-end');	
+					$('header').addClass('white');	
+				}
+			});
+			//clip-path모션 끝난 후
+			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+				if($('html').hasClass('main-intro')){	
+					$('html').removeClass('main-intro');						
+					mainSpot();						
+					$(window).on('scroll', scrollEv);
+				}		
+			});
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
@@ -618,7 +631,6 @@
 				// 		if(delta >= 0 && delta <= 1) $('.ba-a').css('bottom', -(100*dl))
 				// 	}
 				// });			
-
 
 				if($('.philosophy-list').hasClass('scr-eff-active')){ 
 					if(philosophyFlag){
@@ -638,7 +650,7 @@
 				
 					
 				//bg-socio
-				if(pageEnd) {
+				if(currentScr + $(window).height() > $('.bg-socio').offset().top + $('.bg-socio').height()){
 					if(!$('.bg-socio').hasClass('on')){
 						$('.bg-socio').addClass('on');
 						$('.bg-socio > div').each(function(idx){
