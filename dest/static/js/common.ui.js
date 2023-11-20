@@ -341,13 +341,14 @@
 					left: 150 +'vw'
 				},
 				{	
-					
 					duration: stopTime,
 					specialEasing: {
 					  left: 'linear'
 					},
 					step: function(v, d){
-						if(d.pos > 0.3) $('.spot-time-break').removeClass('spot-time-break');	
+						if(d.pos > 0.5) {
+							$('.spot-time-break').removeClass('spot-time-break');	
+						}
 					},
 					complete : function(){//커버 지나간 후						
 						$playing.hasClass('spot-last') && $playing.addClass('on');	
@@ -437,9 +438,12 @@
 						}
 					}
 				});
-			
-				mainSpotSwiper.on('slideChange', function(){
-					$item.eq(playingIdx).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면
+				mainSpotSwiper.on('beforeSlideChangeStart', function(){
+					$item.eq(this.realIndex).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면				
+					console.log($item.eq(this.realIndex).attr('aria-label'))	
+				})
+				mainSpotSwiper.on('slideChange', function(){	
+					console.log('ss')
 					playingIdx = this.realIndex;
 					spot.reset();
 					spot.slideControl();
@@ -602,7 +606,7 @@
 			// mainSpot();						
 			// $(window).on('scroll', scrollEv);
 
-			// //메인 인트로 제거 후
+			//메인 인트로 제거 후
 			document.querySelector('#intro').addEventListener('animationend', function(e){
 				if(e.target == this) {
 					$('#intro').remove();					
