@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+<head>
+    @@include('../../include/meta.html')    
+    <title>동아쏘시오홀딩스</title>
+    @@include('../../include/resource.html')
+</head>
+<body>  
+    <div id="wrap">   
+        @@include('../../include/header.html', {
+            "class" : ""
+        }) 
+        <main role="main" class="investment">            
+            <div id="container">       
+                <section class="investment-governance">
+                    <div class="section-head scr-eff"> 
+                        <div class="section-inner">
+                            <div class="text-wrap">   
+                                <h2 class="main-title">
+                                    <div class="line-cut">
+                                        <strong class="title-h2">STOCK<br>INFORMATION</strong>
+                                    </div>                          
+                                </h2>
+                                <p class="sub-title text-1">동아쏘시오홀딩스는 주주의 정당한 권리실현을 위해<br>주식 관련 정보를 투명하게 제공합니다.</p>
+                                <div class="page-menu-wrap">
+                                    <ul class="tab-type-a">
+                                        <li class="item on"><a href="#">주주현황</a></li>
+                                        <li class="item"><a href="#">실시간 주가현황</a></li>
+                                        <li class="item"><a href="#">주주총회</a></li>
+                                        <li class="item"><a href="#">주주환원</a></li>
+                                    </ul>
+                                </div>
+                            </div> 
+                            <div class="img-wrap">
+                                <div class="img"><img src="" alt=""></div>
+                                <div class="img"><img src="" alt=""></div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="section-contents">
+                        <!-- 차트 -->
+                        <div class="data-wrap bg-a">
+                            <div class="section-inner">
+                                <div class="data-head">
+                                    <div class="title">
+                                        <h3 class="title-s2">주주구성</h3>
+                                        <div class="unit">2023년 3월 31일 기준(단위:주)</div>
+                                    </div>
+                                </div>  
+                                <div class="chart-circle">
+                                    <div class="chart-content">
+                                        <div class="graph">                         
+                                            <!-- data-ratio: 비율 -->
+                                            <svg  width="100%" height="100%" class="chart-pie" viewBox="0 0 80 80">
+                                                <circle class="pie pie-1" cx="40" cy="40" r="20" data-ratio="24.44" data-color="#2F75FF"></circle>
+                                                <circle class="pie pie-2" cx="40" cy="40" r="20" data-ratio="30.32" data-color="#000081"></circle>
+                                                <circle class="pie pie-3" cx="40" cy="40" r="20" data-ratio="31.54" data-color="#162DA1"></circle>
+                                                <circle class="pie pie-4" cx="40" cy="40" r="20" data-ratio="13.71" data-color="#00B4D6"></circle>
+                                            </svg>
+                                            <div class="logo"></div>
+                                            <ul class="chart-cate">
+                                                <li class="chart-item-1">
+                                                    <div class="ratio"><b class="graph-data">24.44</b><span>%</span></div>
+                                                    <div class="line"><span class="point"></span></div>
+                                                    <div class="name">기관</div>
+                                                </li>
+                                                <li class="chart-item-2">
+                                                    <div class="ratio"><b class="graph-data">30.32</b><span>%</span></div>
+                                                    <div class="line"><span class="point"></span></div>
+                                                    <div class="name">최대주주 및 그 특수관계인</div>
+                                                </li>
+                                                <li class="chart-item-3">
+                                                    <div class="ratio"><b class="graph-data">31.54</b><span>%</span></div>
+                                                    <div class="line"><span class="point"></span></div>
+                                                    <div class="name">개인 및 기타</div>
+                                                </li>
+                                                <li class="chart-item-4">
+                                                    <div class="ratio"><b class="graph-data">13.71</b><span>%</span></div>
+                                                    <div class="line"><span class="point"></span></div>
+                                                    <div class="name">외국인</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //차트 -->
+                        <!-- 표 -->
+                        <div class="data-wrap">
+                            <div class="section-inner">
+                                <div class="data-head">
+                                    <div class="title">
+                                        <h3 class="title-s2">최대주주 및<br>그 특수관계인의 주식소유 현황</h3>
+                                        <div class="unit">2023년 3월 31일 기준 </div>
+                                    </div>
+                                    <ul class="tab-type-a">
+                                        <li class="item on"><a href="#">최대주주</a></li>
+                                        <li class="item"><a href="#">5%이상주주</a></li>
+                                        <li class="item"><a href="#">기타주주</a></li>         
+                                    </ul>
+                                </div>             
+                                <div class="finance-stats-table">  
+                                    <table class="table-type-a">
+                                        <caption>공지사항 목록</caption>
+                                        <colgroup>
+                                            <col width="33.3%">
+                                            <col width="33.3%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">주주명</th>
+                                                <th scope="col">보유주식수(보통)</th>
+                                                <th scope="col">보유지분(%)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="tx-c">강정석</td>
+                                                <td class="tx-c">1,865,525</td>
+                                                <td class="tx-c">29.38</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tx-c">상주학원</td>
+                                                <td class="tx-c">30,519</td>
+                                                <td class="tx-c">0.48</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row" class="tx-c">수석문화재단</td>
+                                                <td class="tx-c">30,519</td>
+                                                <td class="tx-c">0.48</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-wrap">
+                            <div class="section-inner">
+                                <div class="data-head">
+                                    <div class="title">
+                                        <h3 class="title-s2">발행주식</h3>
+                                        <div class="unit">2023년 3월 31일 기준(단위:주)</div>
+                                    </div>
+                                </div>             
+                                <div class="finance-stats-table">                                                                
+                                    <table class="table-type-a">
+                                        <caption>공지사항 목록</caption>
+                                        <colgroup>
+                                            <col width="25%">
+                                            <col width="16.6%">
+                                            <col width="16.6%">
+                                            <col width="16.6%">
+                                            <col width="25%">
+                                        </colgroup>
+                                        <thead class="line">
+                                            <tr>
+                                                <th scope="col" rowspan="2">주주명</th>
+                                                <th scope="colgroup" colspan="3">주식의 종류</th>
+                                                <th scope="col" rowspan="2">비고</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">보통주</th>
+                                                <th scope="col">우선주</th>
+                                                <th scope="col">합계</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">I.발행할 주식의 총수</td>
+                                                <td class="tx-r">1,865,525</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-c">-</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">II.현재까지 발행한 주식의 총수</td>
+                                                <td class="tx-r">1,865,525</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-c">-</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">III.현재까지 감소한 주식의 총수</td>
+                                                <td class="tx-r">1,865,525</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-r">30,000,000</td>
+                                                <td class="tx-c">-</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">1. 감자</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-c">회사 분할</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">2. 감자</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-c">-</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">3. 감자</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-r">-</td>
+                                                <td class="tx-c">회사 분할</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>  
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //표 -->
+                    </div>
+                </section>
+            </div>
+        </main>
+        @@include('../../include/footer.html')
+    </div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+    $(function(){
+        let r = 20, // 반지름
+            diameter  = (r*2 * 3.1415926536),
+            dur = 500;
+        let pos = 0, chartSetIvArr = [], ratioArr=[];
+        let dx = [1, -1];
+        let dy = [-1, 1];
+        let curPosX = 0, curPosY = 0;
+        $('.chart-circle .pie:not(.pie-bg)').each(function(i){   
+            let idx = i;         
+            let ratio = Number($(this).attr('data-ratio'));
+            ratioArr.push(ratio);
+            $('.pie-'+ (idx+1)).css('transform', 'rotate('+ (pos*3.6) +'deg)');
+            $('.pie-'+ (idx+1)).css('stroke', $(this).attr('data-color'));
+            $('.pie-'+ (idx+1)).attr('stroke-dasharray', diameter);
+            $('.pie-'+ (idx+1)).attr('stroke-dashoffset', diameter);
+            $('.chart-item-'+ (idx+1) +' .ratio').css('color', $(this).attr('data-color'));
+            $('.chart-item-'+ (idx+1) +' .point').css('background-color', $(this).attr('data-color'));
+            
+            //x = 반지름 * sin(각도) , y = 반지름 * cos(각도)
+            let parentSize = $('.chart-pie').width()/2;
+            let itemX = (Math.floor(parentSize * Math.cos(pos*0.01*360*(Math.PI/180))));//x좌료
+            let itemY = (Math.floor(parentSize * Math.sin(ratio * (Math.PI / 180))));//y좌표
+            var 원중심_x = 55;
+
+
+            //console.log(itemX,'SS')
+            if(pos <= 90){
+                //$('.chart-item-'+ (idx+1)).css('left', itemX/($('.chart-pie').width())*100 +'%');
+                //$()
+            }else if(pos > 90 && pos <=180){
+
+            }else if(pos > 180 && pox <= 270){
+
+            }else {
+
+            }
+            console.log(Math.cos(pos*0.01*360*(Math.PI/180)))
+            curPosX += itemX;
+            curPosY += itemY;
+
+            //$('.chart-item-'+ (idx+1)).css('left', itemX/($('.chart-pie').width())*100 +'%');
+           // console.log('pos+ratio',  Math.sin(pos+ratio))
+            //$('.chart-item-'+ (idx+1)).css('top', itemX/($('.chart-pie').width())*100 +'%');
+            $('.chart-item-'+ (idx+1)).css('left', itemX/($('.chart-pie').width())*100 +'%');
+            $('.chart-item-'+ (idx+1)).css('top', itemY/($('.chart-pie').width())*100 +'%');
+
+            
+           // console.log(itemX/$('.chart-pie').width()/2*100, ($('.chart-pie').width()/2) + (Math.floor(50 * Math.cos(ratio))));
+            // if(pos+ratio > 50){
+            //     $('.chart-item-'+ (idx+1)).addClass('left');
+            //     $('.chart-item-'+ (idx+1))
+                
+            // }else{
+            //     $('.chart-item-'+ (idx+1)).addClass('right');
+            //     //$('.chart-item-'+ (idx+1)).css('top', ratio);
+            // }            
+            
+            pos += ratio;
+            setTimeout(function(){                
+                let start = new Date; 
+                let totalRatio = 0;
+                
+                for(let i=0; i < idx; i++){
+                    totalRatio += ratioArr[i];
+                }
+                chartSetIvArr[i] = setInterval(function(){
+                    
+                    let timePassed = new Date - start,
+                    progress = timePassed/dur;                    
+                    if(progress > 1) progress = 1;
+                    $('.pie-'+ (idx+1)).attr('stroke-dashoffset', diameter-(diameter * ((progress*ratio)/100)-0.8));
+                    if(progress == 1) {
+                        let t = $('.chart-circle .pie-'+ (idx+1)).offset().top-$('.chart-circle .graph').offset().top;
+                        // 
+                        // $('.chart-item-'+ (idx+1)).css('left', $('.chart-circle .pie-'+ (idx+1)).offset().left);
+                        clearInterval(chartSetIvArr[idx]);
+                    }
+                });
+               
+                //$('.chart-item-'+ (idx+1)).
+            }, dur*i);
+        });
+    });
+    
+</script>
+<!--//페이지 관련 스크립트 -->
+</html>

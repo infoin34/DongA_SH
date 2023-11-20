@@ -54,9 +54,8 @@
                 <section class="main-spot">   
                     <div class="main-spot-swiper">           
                         <div class="swiper-container mouse-effect" data-cursor="scroll">                              
-                            <div class="spot-list swiper-wrapper">
-                                
-                                <div class="spot-item swiper-slide">
+                            <ul class="spot-list swiper-wrapper">
+                                <li class="spot-item swiper-slide">
                                     <div class="spot-media pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_1.jpg')"></div>
                                     <div class="spot-media mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_1.jpg')"></div>
                                     <div class="section-inner">
@@ -65,8 +64,8 @@
                                             <div class="line-cut"><p class="spot-core">인류의 건강과 행복을 위한 끝없는 도전</p></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="spot-item swiper-slide">
+                                </li>
+                                <li class="spot-item swiper-slide">
                                     <div class="spot-media pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_2.jpg')"></div>
                                     <div class="spot-media mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_2.jpg')"></div>
                                     <div class="section-inner">
@@ -76,8 +75,8 @@
                                             <div class="line-cut"><p class="spot-core">끊임없는 발견의 연구현장</p></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="spot-item swiper-slide">
+                                </li>
+                                <li class="spot-item swiper-slide">
                                     <div class="spot-media pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_3.jpg')"></div>
                                     <div class="spot-media mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_3.jpg')"></div>
                                     <div class="section-inner">
@@ -87,8 +86,8 @@
                                             <div class="line-cut"><p class="spot-core">끊임없는 학습과 혁신 </p></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="spot-item swiper-slide">
+                                </li>
+                                <li class="spot-item swiper-slide">
                                     <div class="spot-media pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_4.jpg')"></div>
                                     <div class="spot-media mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/visual_img_4.jpg')"></div>
                                     <div class="section-inner">
@@ -98,8 +97,8 @@
                                             <div class="line-cut"><p class="spot-core">삶을 지키는 열쇠이자 미래를 여는 제약</p></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="spot-item swiper-slide">
+                                </li>
+                                <li class="spot-item swiper-slide">
                                     <div class="spot-media cover pc-part">
                                         <video src="../../static/images/main/visual_video_ex.mp4" autoplay muted></video>
                                     </div>
@@ -113,15 +112,8 @@
                                             <div class="line-cut"><p class="spot-core ell">한 걸음 더 넓은 세계, 한 걸음 더 넓은 가능성</p></div>
                                         </div>
                                     </div>
-                                </div> 
-                            </div>
-                            
-                            <!-- <div class="scroll-down">
-                                <p>SCROLL</p>
-                                <div class="track">
-                                    <div class="bar"></div>
-                                </div>
-                            </div> -->
+                                </li> 
+                            </ul>
                         </div>  
                         <div class="swiper-pagination"></div>
                     </div>  
@@ -523,6 +515,7 @@
         //     touchRatio: 0,//드래그 금지
         // });
         //사업 스와이프 - 썸네일
+        
         let mainBusinessSwiper = new Swiper('.main-business-swiper .swiper-container', {
             initialSlide: 0,
             slidesPerView: 'auto',

@@ -1,218 +1,435 @@
 /*investment*/
-//ir
+
+.bg-a {
+    background-color: #F7F7F7;
+}
+
 .data {
     &-wrap {
-        + .data-wrap {
+        &.bg-a {
+            padding: 12rem 0;
+        }
+
+        +.data-wrap {
             margin-top: 12rem;
         }
-    }
-    &-head {
-        position: relative;
-        padding-bottom:30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-.investment {    
-    .tab-type-a {
-        a {padding: 1rem 1.6rem;}
-    }
-    //IR
-    &-ir {
-        .ir {
-            &-data-list {
-                border-top: 2px solid #000;
-            }
-            &-data-item {
-                border-bottom: 1px solid #ccc; transition:box-shadow 0.3s;
-               > a {
-                    display: flex; padding: 4rem 0; width:100%; align-items: start; 
-                    &[download] {padding-right: 9rem; background: svgDownload('162DA1') no-repeat calc(100% - 4rem) 50% /2.4rem;}
-                }
-                .date-td {padding: 0 4rem; border-right: 1px solid #DBDBDB;}
-                .title-td {padding: 0 4rem;}
-            }
+
+        .tx-c {
+            text-align: center;
         }
-        .inquiry-notice-box {margin-top: 8rem;}
+
+        .tx-r {
+            text-align: right;
+        }
     }
 
-    //재무정보
-    &-finance {
-        .finance-stats-chart {
-            display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;
-            .chart-vertical {width: calc((100% - 6rem)/3);}
-        }
-        .data-head {
-            .unit {
-                margin-top: 2rem; color: #888; font-size: 1.6rem;
-            }
-        }
-        .finance-stats-table {
-            .tbl-th, .tbl-td {
-                &:not(:first-child){text-align: center;} 
-            }
-        }
+    &-head {
+        position: relative;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
     }
 }
 
 .table {
     &-type-a {
+        width: 100%;
         font-size: 1.6rem;
-        .tbl {
-            &-head {
-                display: flex;
-                .tbl-th {flex: 1; padding: 2.4rem; background-color: #2F75FF; color: #fff; font-weight: 600; text-align: center;}
-            }
-            &-tr {
-                &.indent {
-                    color: #666;
-                    font-weight: 400;
-                }
-                display: flex; font-weight: 500;
-                &:last-child {
-                    .tbl-th, .tbl-td {border-color: #ccc;}
-                }                
-            }
-            &-th, &-td {border-bottom: 1px solid #e5e5e5;}
-            &-td {
-                flex: 1; padding: 2.4rem; 
+        td,
+        th {
+            padding: 2.4rem;
+            font-weight: 500;
+        }
+        thead {
+            &.line th {border: 1px solid rgba(255, 255, 255, 0.2);}
+            th {
+                background-color: #2F75FF;
+                color: #fff;
+                font-weight: 600;
+                text-align: center;
             }
         }
-        
+        tbody {
+            tr {
+                &:last-child {
+
+                    th,
+                    td {
+                        border-color: #ccc;
+                    }
+                }
+
+                &.indent {
+
+                    th,
+                    td {
+                        color: #666;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            td,
+            th {
+                border-bottom: 1px solid #e5e5e5;
+            }
+        }
+
+
     }
 }
 
 
 /*그래프*/
 .chart {
-    &-vertical {position: relative; padding: 4rem 4rem 6rem; border: 1px solid #E5E5E5; border-radius: 2rem;}
-    &-head {
-        position: relative; padding-bottom: 4rem; display: flex; justify-content: space-between;  align-items: center;      
-        .unit {font-size: 1.4rem; color: #888;}
-        h4 {font-weight: 500;}
-    }
-    &-content {
+    &-vertical {
         position: relative;
-        display:flex; 
-        height: 26rem;
-        min-height: 26rem;
-        box-sizing: border-box;
-        // height: 26rem;
-        .axis-y {
+        padding: 4rem 4rem 6rem;
+        border: 1px solid #E5E5E5;
+        border-radius: 2rem;
+        background: #fff;
+
+        .chart-head {
+            position: relative;
+            padding-bottom: 4rem;
             display: flex;
-            padding-right: 0.8rem;
-            flex-direction: column-reverse;
-            align-items: center;
             justify-content: space-between;
-            height: 100%;
-            font-size: 12px;
-            border-right: 1px solid #d3d3d3;
-            color: #666666;
-            gap : 3.7rem 0;
-            &-item {
-                position: relative; height: 0;
-                span {position: relative; top: -0.7rem;}
+            align-items: center;
+
+            .unit {
+                font-size: 1.4rem;
+                color: #888;
+            }
+
+            h4 {
+                font-weight: 500;
             }
         }
-        .axis-x {
+
+        .chart-content {
+            position: relative;
             display: flex;
-            width: 100%;
-            justify-content: center;
-            padding: 0;
+            height: 26rem;
+            min-height: 26rem;
             box-sizing: border-box;
-            height: 100%;           
-            border-bottom: 1px solid #d3d3d3;
-            opacity: 0;
-            &-item {
-                position: relative;
-                flex: 1;
-                .name {
+
+            // height: 26rem;
+            .axis-y {
+                display: flex;
+                padding-right: 0.8rem;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                font-size: 12px;
+                border-right: 1px solid #d3d3d3;
+                color: #666666;
+                gap: 3.7rem 0;
+
+                &-item {
                     position: relative;
+                    height: 0;
+
+                    span {
+                        position: relative;
+                        top: -0.7rem;
+                    }
+                }
+            }
+
+            .axis-x {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                padding: 0;
+                box-sizing: border-box;
+                height: 100%;
+                border-bottom: 1px solid #d3d3d3;
+                opacity: 0;
+
+                &-item {
+                    position: relative;
+                    flex: 1;
+
+                    .name {
+                        position: relative;
+                        position: absolute;
+                        top: 26.9rem;
+                        width: 100%;
+                        text-align: center;
+                        //transform: translate(-50%, 0);
+                        font-size: 1.4rem;
+                        color: #444;
+                    }
+                }
+            }
+            .graph {
+                display: flex;
+                //flex-direction: column-reverse;
+                justify-content: center;
+                margin: 0 auto;
+                padding: 0;
+                height: 100%;
+                gap: 0.8rem;
+                @include font0;
+
+                .data-bar {
+                    display: block;
+                    align-self: flex-end;
+                    position: relative;
+                    box-sizing: content-box;
+                    width: 38%;
+                    max-width: 4rem;
+                    border-radius: 1rem 1rem 0 0;
+
+                    &.negative {
+                        top: calc(100% + 0.1rem);
+                        align-self: flex-start;
+                        border-radius: 0 0 1rem 1rem;
+                    }
+
+                    &.bar-1 {
+                        background: rgba(22, 45, 161, 0.2);
+
+                        .data {
+                            color: rgba(22, 45, 161, 0.2);
+                        }
+                    }
+
+                    &.bar-2 {
+                        background: #162DA1;
+
+                        .data {
+                            color: #162DA1;
+                        }
+                    }
+
+                    .data {
+                        position: absolute;
+                        bottom: calc(100% + 0.8rem);
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                    }
+                }
+                .tootip {
                     position: absolute;
-                    top: 26.9rem;
-                    width: 100%;
+                    min-width: 10.5rem;
+                    bottom: calc(100% + 1rem);
+                    left: 50%;
+                    padding: 1rem 1.6rem;
+                    background-color: #222;
                     text-align: center;
-                    //transform: translate(-50%, 0);
-                    font-size: 1.4rem;
-                    color: #444;
+                    transform: translateX(-50%);
+                    border-radius: 0.8rem;
+                    box-shadow: 0.1rem 0.4rem 0.4rem rgba(34, 34, 34, 0.2);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        width: 1rem;
+                        height: 1rem;
+                        border-radius: 0.2rem;
+                        background-color: #222;
+                        margin: -0.56rem auto;
+                        transform: rotate(45deg);
+                        box-shadow: 0.1rem 0.4rem 0.4rem rgba(34, 34, 34, 0.2);
+                    }
+
+                    span {
+                        font-size: 1.2rem;
+                        color: #fff;
+                    }
+
+                    .graph-data {
+                        display: block;
+                        margin-top: 0.2rem;
+                        font-size: 1.4rem;
+                        color: #fff;
+                    }
                 }
             }
         }
-        .graph {
-            display: flex;
-            //flex-direction: column-reverse;
-            justify-content: center;
-            margin: 0 auto;
-            padding: 0;
+    }
+
+    &-circle {
+        position: relative;
+        .logo {position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 63%; height: 63%; border-radius: 50%; background: #f7f7f7  svgLogo2('000', '00B4D6') no-repeat 50% 50%/ 62%;} 
+        .graph {       
+            position: relative;
+            width: calc((378/1440)*100vw);
+            height: calc((378/1440)*100vw);   
+            max-width: 37.8rem;
+            max-height: 37.8rem;  
+            transform-origin: center;
+            margin: 50px auto 32px;
+        }
+        .chart-pie {
+            transform: rotate(-90deg);
+            width: 100%;
             height: 100%;
-            gap: 0.8rem;
-            @include font0;
-            .data-bar {
-                display: block;
-                align-self: flex-end;
-                position: relative;
-                box-sizing: content-box;
-                width: 38%;
-                max-width: 4rem;
-                border-radius: 1rem 1rem 0 0;
-                &.negative {top: calc(100% + 0.1rem); align-self: flex-start; border-radius: 0 0 1rem 1rem;}
-                &.bar-1 {
-                    background: rgba(22, 45, 161, 0.2);
-                    .data {color: rgba(22, 45, 161, 0.2);}
-                }    
-                &.bar-2 {
-                    background: #162DA1;
-                    .data {color: #162DA1;}
-                }
-                .data {position: absolute; bottom: calc(100% + 0.8rem); left: 50%; transform: translateX(-50%); font-size: 1.4rem; font-weight: 600;}
+            transform-origin: center;
+        }
+        .pie {
+            transform-origin: center;
+            fill: none;
+            stroke-width: 40;
+        }
+        .chart-cate {
+            li {position: absolute;}
+            .left {right: 100%;}
+            .right {left: 100%;}
+            .name {font-size: 2rem; color: #444;}
+            .line {position: relative; margin: 1.2rem 0; width: 100%; height: 1px; background-color: #ccc;}
+            .point {position: absolute; left: 0; margin-top: -1rem; width: 2rem; height: 2rem; border-radius: 50%;}
+        }
+        .ratio {
+            .graph-data {font-size: 4.8rem; font-weight: 500;}
+            span {font-size: 3.5rem; font-weight: 500;}
+        }
+    }
+}
+@keyframes chartLoad {
+    100% {
+        stroke-dashoffset: -(2 * 3.1415926536 * 20);
+    }
+}
+
+.investment {
+    .tab-type-a {
+        a {
+            padding: 1rem 1.6rem;
+        }
+    }
+
+    .data-head {
+        .unit {
+            margin-top: 2rem;
+            color: #888;
+            font-size: 1.6rem;
+        }
+    }
+
+    .finance-stats-table {
+
+        .tbl-th,
+        .tbl-td {
+            &:not(:first-child) {
+                text-align: center;
             }
-            .tootip {
-                position: absolute; min-width: 10.5rem; bottom: calc(100% + 1rem); left: 50%; padding: 1rem 1.6rem; background-color: #222; text-align: center; transform: translateX(-50%); border-radius: 0.8rem; box-shadow: 0.1rem 0.4rem 0.4rem rgba(34,34,34,0.2); opacity: 0; transition: opacity 0.3s; 
-                &:before {content: ''; position: absolute; top: 100%; left: 0; right: 0; width: 1rem; height: 1rem; border-radius: 0.2rem; background-color: #222; margin: -0.56rem auto; transform: rotate(45deg); box-shadow: 0.1rem 0.4rem 0.4rem rgba(34,34,34,0.2);}
-                span {font-size: 1.2rem; color: #fff;}
-                .graph-data {display: block; margin-top: 0.2rem; font-size: 1.4rem; color: #fff;}
+        }
+    }
+
+    //IR
+    &-ir {
+        .ir {
+            &-data-list {
+                border-top: 2px solid #000;
+            }
+
+            &-data-item {
+                border-bottom: 1px solid #ccc;
+                transition: box-shadow 0.3s;
+
+                >a {
+                    display: flex;
+                    padding: 4rem 0;
+                    width: 100%;
+                    align-items: start;
+
+                    &[download] {
+                        padding-right: 9rem;
+                        background: svgDownload('162DA1') no-repeat calc(100% - 4rem) 50% /2.4rem;
+                    }
+                }
+
+                .date-td {
+                    padding: 0 4rem;
+                    border-right: 1px solid #DBDBDB;
+                }
+
+                .title-td {
+                    padding: 0 4rem;
+                }
+            }
+        }
+
+        .inquiry-notice-box {
+            margin-top: 8rem;
+        }
+    }
+
+    //재무정보
+    &-finance {
+        .finance-stats-chart {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+
+            .chart-vertical {
+                width: calc((100% - 6rem)/3);
             }
         }
     }
 }
+
 
 @media (hover: hover) and (pointer: fine) {
-   .investment {
+    .investment {
         &-ir {
             .ir-data-item:hover {
-                box-shadow: 0.1rem 0.1rem 3.2rem rgba(34,34,34,0.16);
-                .title-s3 {color:#2F75FF; border-bottom: 1px solid #2F75FF;}
-            }   
+                box-shadow: 0.1rem 0.1rem 3.2rem rgba(34, 34, 34, 0.16);
+
+                .title-s3 {
+                    color: #2F75FF;
+                    border-bottom: 1px solid #2F75FF;
+                }
+            }
         }
     }
+
     .chart-content .axis-x .graph:hover {
-        .tootip {opacity: 1;}
+        .tootip {
+            opacity: 1;
+        }
     }
-    
+
 }
 
-@media screen and (max-width: 1200px) {
-    
-
-} 
+@media screen and (max-width: 1200px) {}
 
 @media screen and (max-width: 992px) {
     .investment-finance .finance-stats-chart .chart-vertical {
         width: calc((100% - 3rem)/2);
     }
+
     .investment-ir .ir-data-item {
-        > a {
+        >a {
             padding: 2.5rem 0;
         }
-        .date-td {padding: 0 2.5rem;}
-        .title-td {padding: 0 2.5rem;}
+
+        .date-td {
+            padding: 0 2.5rem;
+        }
+
+        .title-td {
+            padding: 0 2.5rem;
+        }
     }
 }
 
-@media screen and (max-width: 768px) {    
+@media screen and (max-width: 768px) {
     .investment-finance .finance-stats-chart {
         gap: 2rem;
+
         .chart-vertical {
             width: 100%;
         }

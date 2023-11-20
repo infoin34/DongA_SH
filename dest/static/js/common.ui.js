@@ -270,12 +270,8 @@
 
 	/* animate */ 
 	//specialEasing 추가
-	$.easing.makeEaseOut = function (x, curTime, begin, end, distance){
-		if (x < .5)
-			return 2*x /2
-		else
-			return (2 - 2*(1 - x)) / 2;
-		
+	$.easing.circle = function (x, curTime, begin, end, distance){
+		return 1- Math.sin(Math.acos(x));
 	}
 	
 	/* main-spot */ 
@@ -283,6 +279,7 @@
 		let $item = $('.spot-item'),
 			$stopCv = $('.spot-change'),//바뀔때 큰 커버
 			$playing = $item.eq(0),//현재 보이는 박스,
+			$prev = $item.eq(0),//직전 박스
 			$durBar,//재생 바,
 			initFlag, //처음 재생
 			mainSpotSwiper,
@@ -325,14 +322,19 @@
 				
 				clearTimeout(setToStop);
 				clearTimeout(setToTxt);		
+				
 				$stopCv.css('left', -$stopCv.width() +'px');
 				$stopCv.stop().animate({
 					left: 150 +'vw'
 				},
 				{	
+					
 					duration: stopTime,
 					specialEasing: {
 					  left: 'linear'
+					},
+					step: function(v, d){
+						if(d.pos > 0.3) $('.spot-time-break').removeClass('spot-time-break');	
 					},
 					complete : function(){//커버 지나간 후						
 						$playing.hasClass('spot-last') && $playing.addClass('on');	
@@ -400,25 +402,31 @@
 							let idx = (index+1) > 9 ? index+1 : '0'+ (index+1);
 							let str = '<div class="duration"><div class="bar spot-duration-bar"></div></div>'
 									+ '<div class="bullet-number">'+ idx +'</div>'
-									+ '<div class="bullet-title">'+ $('.spot-core').eq(index).text() +'</div>';
+									+ '<div class="bullet-title ell">'+ $('.spot-core').eq(index).text() +'</div>';
 							return '<div class="' + className + ' swiper-pagination-bullet-'+ index +' mouse-effect" data-cursor="click" style="width:'+ 100/this.slides.length +'%;">'+ str +"</div>";
-						}
+						},
 					},
-					effect: 'fade',
+					effect: 'creative',
+					creativeEffect: {//cover넣기위한 꼼수
+						prev: {
+							opacity: 1,
+						},
+						next: {
+							opacity: 1,
+						},
+					},
 					on : {
 						afterInit : function(){
 							$durBar = $('.spot-duration-bar');
 							!window.isMobile && mouseCursor();//마우스 커서
+							$item.eq(playingIdx).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면
 							spot.slideControl(); //처음 실행
 						}
 					}
 				});
-				
-				mainSpotSwiper.on('slideChangeTransitionEnd', function(e){
-					$('.spot-item.swiper-slide-active').focus();
-				});
 			
 				mainSpotSwiper.on('slideChange', function(){
+					$item.eq(playingIdx).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면
 					playingIdx = this.realIndex;
 					spot.reset();
 					spot.slideControl();
@@ -567,36 +575,36 @@
 		}	
 
 		//---only main
-		if(window.isMain){
+		if(window.isMain){			
 			//새로고침 - 스크롤 상단
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			$('#intro').addClass('active');
+			//$('#intro').addClass('active');
 
-			// $('#intro').remove();
-			// $('html').removeClass('main-intro');
-			// $('html').addClass('main-intro-end');		
-			// $('header').addClass('white');
-			// mainSpot();						
-			// $(window).on('scroll', scrollEv);
+			$('#intro').remove();
+			$('html').removeClass('main-intro');
+			$('html').addClass('main-intro-end');		
+			$('header').addClass('white');
+			mainSpot();						
+			$(window).on('scroll', scrollEv);
 
-			// //메인 인트로 제거 후
-			document.querySelector('#intro').addEventListener('animationend', function(e){
-				if(e.target == this) {
-					$('#intro').remove();					
-					$('.main-intro').addClass('main-intro-end');	
-					$('header').addClass('white');	
-				}
-			});
-			//clip-path모션 끝난 후
-			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-				if($('html').hasClass('main-intro')){	
-					$('html').removeClass('main-intro');						
-					mainSpot();						
-					$(window).on('scroll', scrollEv);
-				}		
-			});
+			// // //메인 인트로 제거 후
+			// document.querySelector('#intro').addEventListener('animationend', function(e){
+			// 	if(e.target == this) {
+			// 		$('#intro').remove();					
+			// 		$('.main-intro').addClass('main-intro-end');	
+			// 		$('header').addClass('white');	
+			// 	}
+			// });
+			// //clip-path모션 끝난 후
+			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+			// 	if($('html').hasClass('main-intro')){	
+			// 		$('html').removeClass('main-intro');						
+			// 		mainSpot();						
+			// 		$(window).on('scroll', scrollEv);
+			// 	}		
+			// });
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];

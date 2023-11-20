@@ -187,7 +187,9 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 }
 .bottom-btn-wrap {
 	margin-top: 4rem; text-align: center;
-	.btn-type-a {width: 21.1rem; height: 6.1rem; font-size: 1.8rem; line-height: 6.1rem; text-align: center; border-radius: 5rem;}
+	.btn-type-a {
+		width: 21.1rem; height: 6.1rem; font-size: 1.8rem; line-height: 6.1rem; text-align: center; border-radius: 5rem;
+	}
 }
 
 //check
@@ -220,13 +222,6 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .paging-left-2 a {background: svgPageArrow2('000081') no-repeat 50% 50%/ 1.5rem; }
 .paging-right a {background: svgPageArrow('000081') no-repeat 50% 50%/ 1rem; transform: scaleX(-1);}
 .paging-right-2 a {background: svgPageArrow2('000081') no-repeat 50% 50%/ 1.5rem; transform: scaleX(-1);}
-
-// .paging-left {margin:0 10px 0 0 !important;}
-// .paging-left a:after {background: svgPageArrow('ccc'); width:7px;}
-// .paging-left-2 a:after {background:url(../images/common/paging_l_2.png); width:13px;}
-// .paging-right {margin:0 0 0 10px !important;}
-// .paging-right a:after {background:url(../images/common/paging_r_1.png); width:7px;}
-// .paging-right-2 a:after {background:url(../images/common/paging_r_2.png); width:13px;}
 
 //loader
 .loader-wrap {
