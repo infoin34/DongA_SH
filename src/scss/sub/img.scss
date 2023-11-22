@@ -45,8 +45,14 @@
     .svg-down-arrow {
         width: 16px; height: 16px; background: svgDownArrow('fff'); background-size: 100% 100%;
     }
+    .svg-down-arrow-2 {
+        width: 16px; height: 16px; background: svgDownArrow2('fff'); background-size: 100% 100%;
+    }
     .svg-up-arrow {
         width: 16px; height: 16px; background: svgUpArrow('fff'); background-size: 100% 100%;
+    }
+    .svg-up-arrow-2 {
+        width: 16px; height: 16px; background: svgUpArrow2('fff'); background-size: 100% 100%;
     }
     .svg-pin {
         width: 20px; height: 20px; background: svgPin('fff'); background-size: 100% 100%;
@@ -89,5 +95,14 @@
     }
     .svg-intro-cover {
         width: 640px; height: 360px; background: introCover('fff'); background-size: 100% 100%;
+    }
+    .svg-stock-icon {
+        width: 80px; height: 80px; background: svgStockIcon('FF0000', '444'); background-size: 100% 100%;
+    }
+    .svg-stock-icon-2 {
+        width: 80px; height: 80px; background: svgStockIcon2('FF0000', '444'); background-size: 100% 100%;
+    }
+    .svg-stock-icon-3 {
+        width: 80px; height: 80px; background: svgStockIcon3('FF0000', '444'); background-size: 100% 100%;
     }
 }

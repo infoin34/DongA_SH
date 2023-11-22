@@ -35,7 +35,7 @@
 			{
 				'동아쏘시오 그룹' : [
 					{'depth2': '그룹소개', 'info': '','src': 'sample/sample', 'state':''},
-					{'depth2': 'CEO 인사말', 'info': '','src': 'sample/sample', 'state':''},
+					{'depth2': 'CEO 인사말', 'info': '','src': 'brand/ceo', 'state':'end'},
 					{'depth2': '가치 및 비전', 'info': '', 'src': 'bb/bb', 'state':''},
 					{'depth2': '연혁', 'info': '', 'src': 'bb/aa', 'state':''},
 					{'depth2': 'CI소개', 'info': '', 'src': 'cc/aa', 'state':''}
@@ -43,13 +43,16 @@
 			},
 			{
 				'투자정보' : [
-					{'depth2': '기업지배구조', 'depth3': '지배구조 일반', 'info': '', 'src': ''},
-					{'depth2': '', 'depth3': '주식정보', 'info': '', 'src': ''},
+					{'depth2': '기업지배구조', 'depth3': '지배구조 일반', 'info': '', 'src': 'investment/governance', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보', 'info': '주주현황',  'src': 'investment/governance-2-1', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보', 'info': '실시간 주가현황', 'src': 'investment/governance-2-2', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보', 'info': '주주총회',  'src': 'investment/governance-2-3', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보', 'info': '주주환원',  'src': 'investment/governance-2-4', 'state': 'end'},
 					{'depth2': '', 'depth3': '이사회', 'info': '', 'src': ''},
 					{'depth2': '재무정보', 'info': '막대 그래프', 'src': 'investment/finance', 'state' :'end'},
 					{'depth2': 'IR', 'depth3': '공시자료', 'info': '다운로드X','src': 'investment/ir', 'state':'end'},
 					{'depth2': '', 'depth3': 'IR자료실', 'info': '다운로드O','src': 'investment/ir-2', 'state':'end'},					
-					{'depth2': '공고', 'info': '', 'src': ''}
+					{'depth2': '공고', 'info': '', 'src': 'investment/notice', 'state' :'end'}
 				]
 			},
 			{
@@ -86,6 +89,14 @@
 				'메일폼' : [
 					{'depth2': '상담/문의', 'info': '', 'src': 'email/inquiry', 'state': 'end'}
 				]
+			},	
+			{
+				'에러페이지' : [
+					{'depth2': '에러페이지1', 'info': '', 'src': '', 'state': ''},
+					{'depth2': '에러페이지2', 'info': '', 'src': '', 'state': ''},
+					{'depth2': '에러페이지3', 'info': '', 'src': '', 'state': ''},
+					
+				]
 			}		
 		]
 	</script>
@@ -98,8 +109,9 @@
                 <div class="notice">
 					<p class="pub"><strong>*담당자: 안선영, 김예빈</strong></p>
 					<p class="progress">*총 페이지 <strong id="totalCnt"></strong>개 중 <strong id="endCnt"></strong>개 완료 (<strong id="endCntP"></strong>%)</p>
+					<p>*현재 pc상황만 체크중입니다.</p>
 				</div>
-                <h2>동아쏘시오홀딩스</h2>
+                <h2>동아쏘시오홀딩스 PC</h2>
                 <div class="state"><span class="ing">진행중</span><span class="end">완료</span><span class="allEnd">모두완료</span></div>        
                 <ul class="urlList"> 
                     <li class="head">

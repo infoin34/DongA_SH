@@ -55,9 +55,19 @@
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7L7 1L13 7' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
     @return url($icon);
 }
+@function svgUpArrow2($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 9 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.915833 7.5L8.08417 7.5C8.47975 7.5 8.71867 7.06238 8.50476 6.72962L4.92059 1.15425C4.72377 0.848089 4.27623 0.848089 4.07941 1.15425L0.495243 6.72962C0.281329 7.06238 0.52025 7.5 0.915833 7.5Z' fill='#{$color}'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
 @function svgDownArrow($color){
     $color: '%23'+$color;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66699 1.33301L7.00033 6.66634L12.3337 1.33301' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
+@function svgDownArrow2($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 9 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.08417 0.500001L0.915833 0.5C0.52025 0.5 0.281329 0.937623 0.495243 1.27038L4.07941 6.84575C4.27623 7.15191 4.72377 7.15191 4.92059 6.84575L8.50476 1.27038C8.71867 0.937625 8.47975 0.500001 8.08417 0.500001Z' fill='#{$color}'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }
 @function svgClock($color){
@@ -168,5 +178,24 @@
 @function introCover($color){
     $color: '%23'+$color;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 464 1080' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2111_4466' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='0' y='0' width='464' height='1080'%3E%3Cpath d='M463.5 0H0V1080H463.5V0Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2111_4466)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M463.5 0H0C255.981 0 463.408 241.597 463.5 539.802V0ZM463.5 540.198C463.408 838.403 255.981 1080 0 1080H463.5V540.198Z' fill='#{$color}'/%3E%3C/g%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
+//투자정보
+@function svgStockIcon($color, $color2){
+    $color: '%23'+$color;
+    $color2: '%23'+$color2;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.0625 65.1138L26.8437 63.6014C28.7674 62.8319 30.9145 62.8387 32.8332 63.6204L44.9642 68.5627C46.9968 69.3908 49.2803 69.3474 51.2799 68.4428L73.0325 58.6024C74.9926 57.7157 75.8228 55.3774 74.8607 53.4533V53.4533C73.9513 51.6345 71.7688 50.8572 69.9145 51.6916L59.6735 56.3001' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M16.2812 50.2102L27.6872 45.322C29.5097 44.5409 31.5574 44.4645 33.4331 45.1076L50.9932 51.1282C52.811 51.7514 53.8117 53.6995 53.2595 55.5401V55.5401C52.6851 57.4548 50.6531 58.5273 48.7483 57.9212L37.2987 54.2781' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M3.39844 53.5461V74.7653C3.39844 76.2521 4.96306 77.2191 6.29286 76.5542L21.9967 68.7022C22.9659 68.2177 23.3729 67.0495 22.9147 66.0676L15.0717 49.2612C14.6126 48.2773 13.4524 47.8395 12.4577 48.2746L4.5968 51.7138C3.86883 52.0323 3.39844 52.7515 3.39844 53.5461Z' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M49.5625 18.8682L52.5827 30.4658L56.8111 18.8682L61.0394 30.4658L64.0596 18.8682' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M48.1172 24.2695L65.5137 24.2695' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='56.815' cy='24.1402' r='15.815' stroke='#{$color}' stroke-width='2'/%3E%3Cpath d='M56.8199 46.2821C62.6921 46.2821 68.3237 43.9493 72.476 39.7971C76.6282 35.6449 78.9609 30.0132 78.9609 24.141C78.9609 18.2689 76.6282 12.6372 72.476 8.48496C68.3237 4.33271 62.6921 2 56.8199 2' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M57.4297 43.374L54.7032 46.1005L57.4297 48.8269' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
+    @return url($icon);
+}
+@function svgStockIcon2($color, $color2){
+    $color: '%23'+$color;
+    $color2: '%23'+$color2;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 70 79' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 33V45' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M14 45V39H57V45' stroke='#{$color2}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='13' cy='56' r='7' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Cpath d='M1 78V76C1 69.3726 6.37258 64 13 64V64C19.6274 64 25 69.3726 25 76V78' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='57' cy='56' r='7' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Cpath d='M45 78V76C45 69.3726 50.3726 64 57 64V64C63.6274 64 69 69.3726 69 76V78' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='35' cy='56' r='7' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Cpath d='M47 76V79H23V76C23 69.3726 28.3726 64 35 64C41.6274 64 47 69.3726 47 76Z' fill='white'/%3E%3Cpath d='M23 78V76C23 69.3726 28.3726 64 35 64V64C41.6274 64 47 69.3726 47 76V78' stroke='#{$color}' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='16' y='9' width='39' height='21' stroke='#{$color2}' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M19 5L52 5' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M24 1L47 1' stroke='#{$color2}' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M32 13H47.7758C48.8061 14.6259 51 15.7857 51 15.7857V23.2143C49.0434 24.233 47.7758 26 47.7758 26H32' stroke='#{$color2}' stroke-width='2'/%3E%3Cpath d='M39 13H23.2242C22.1939 14.6259 20 15.7857 20 15.7857V23.2143C21.9566 24.233 23.2242 26 23.2242 26H39' stroke='#{$color2}' stroke-width='2'/%3E%3Ccircle cx='35.5' cy='19.5' r='3.5' fill='white' stroke='#{$color2}' stroke-width='2'/%3E%3Ccircle cx='27.5' cy='19.5' r='1.5' fill='#{$color2}'/%3E%3Ccircle cx='43.5' cy='19.5' r='1.5' fill='#{$color2}'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
+@function svgStockIcon3($color, $color2){
+    $color: '%23'+$color;
+    $color2: '%23'+$color2;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 76 75' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='73' width='76' height='2' rx='1' fill='#{$color2}'/%3E%3Crect x='4' y='49' width='14' height='25' stroke='#{$color2}' stroke-width='2' stroke-linejoin='round'/%3E%3Crect x='22' y='33' width='14' height='41' stroke='#{$color2}' stroke-width='2' stroke-linejoin='round'/%3E%3Crect x='40' y='44' width='14' height='30' stroke='#{$color2}' stroke-width='2' stroke-linejoin='round'/%3E%3Crect x='58' y='28' width='14' height='46' stroke='#{$color2}' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M11 29L29 11L47 24L65 6' stroke='#{$color}' stroke-width='2'/%3E%3Ccircle cx='29' cy='11' r='5' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Ccircle cx='47' cy='24' r='5' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Ccircle cx='65' cy='6' r='5' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3Ccircle cx='11' cy='29' r='5' fill='white' stroke='#{$color}' stroke-width='2'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }

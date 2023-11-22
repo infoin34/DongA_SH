@@ -162,14 +162,18 @@
 		if($('header').hasClass('nav-open')) return;//전체메뉴
 		if(Math.abs(lastScr - currentScr) <= 5) return;
 
-		if($('.page-menu-list').length > 0){
-		    if($('.page-menu-wrap').offset().top <= currentScr){
-				!$('.page-menu-list').hasClass('fixed') && $('.page-menu-list').addClass('fixed');
+		//page-menu
+		if($('.page-menu-wrap').length > 0){			
+			if($('.page-menu-wrap').offset().top <= $(window).scrollTop()+$('header').height()){				
+				if(!$('.page-menu-list').hasClass('fixed')){
+					$('.page-menu-list').addClass('fixed');
+				}
 			}else {
-				$('.page-menu-list').hasClass('fixed') && $('.page-menu-list').removeClass('fixed');
+				if($('.page-menu-list').hasClass('fixed')){
+					$('.page-menu-list').removeClass('fixed');
+				}
 			}
 		}
-
 		// 스크롤 최하단으로 갔을때
 		if(currentScr + $(window).height() >= $('footer').offset().top + ($('footer').height()*0.8)){
 			if(!pageEnd) {
@@ -439,11 +443,9 @@
 					}
 				});
 				mainSpotSwiper.on('beforeSlideChangeStart', function(){
-					$item.eq(this.realIndex).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면				
-					console.log($item.eq(this.realIndex).attr('aria-label'))	
+					$item.eq(this.realIndex).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면	
 				})
 				mainSpotSwiper.on('slideChange', function(){	
-					console.log('ss')
 					playingIdx = this.realIndex;
 					spot.reset();
 					spot.slideControl();
@@ -451,11 +453,11 @@
 			}		
 		}
 
-		if($('.spot-item video').length == 0){//video 없을 시
+		if($('.spot-item').eq(0).find('video').length == 0){//첫 슬라이드에 video 없을 시
 			spot.init();
 		}else {//video 있을 시
 			let loadCheck = setInterval(function(){//첫 영상 로드 다되기까지 체크
-				if($('.spot-item video')[0].duration > 0){
+				if($('.spot-item').eq(0).find('video')[0].duration > 0){
 					spot.init();					
 					clearInterval(loadCheck);
 				}    	   
@@ -476,7 +478,7 @@
 	/************************************************/
 	/************************************************/
 	/******** 스크롤 ********/
-	let currentScr, lastScr = 0;
+	let currentScr = 0, lastScr = 0;
 	let pageEnd;
 	
 	function scrollEv(){
@@ -497,6 +499,9 @@
 
 		//---gnb
 		gnbScr();
+
+		
+		
 
 		//---현재 스크롤값은 저장
 		lastScr = currentScr;
@@ -547,6 +552,8 @@
 			$('html, body').animate({scrollTop: 0}, 'linear');
 			return false;
 		});  
+
+		scrCSSEff();
 
 		//---전체메뉴
 		let headerH = $('header').height();
@@ -673,7 +680,6 @@
 						$('.bg-socio > div').removeClass('on'); 
 					}	
 				}
-
 			});
 		
 		}else{
