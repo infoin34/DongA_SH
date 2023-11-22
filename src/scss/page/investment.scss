@@ -29,10 +29,10 @@
 
     &-head {
         position: relative;
-        padding-bottom: 30px;
+        margin-bottom: 3rem;
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: flex-end;
     }
 }
 
@@ -352,6 +352,7 @@
                 }
             }
         }
+        //주식정보
         .stock {
             &-current{
                 &-box {
@@ -439,11 +440,48 @@
         .return-item-2 .ico {background-image: svgStockIcon2('FF0000', '444'); background-size: calc((68/160)*100%);}
         .return-item-3 .ico {background-image: svgStockIcon3('FF0000', '444'); background-size: calc((80/160)*100%);}
         
+        //이사회
+        .table-wrap {position: relative;}
+        .table-legend {
+            position: absolute; display: flex; right: 0; bottom: 0; font-size: 1.4rem; color: #444; gap: 1.6rem;
+            .color {
+                &:before {content: ''; display: inline-block; margin-right: 0.25rem; width: 1.2rem; height: 1.2rem; border-radius: 50%;  @include font0; vertical-align: middle;}
+            }
+            .color-a:before {background-color: #162DA1;}
+            .color-b:before {background-color: #00B4D6;}
+        }  
+        .director-name {
+            display: flex; gap: 2rem; flex-wrap: wrap;
+            li {
+                position: relative; flex-grow: 1; background-color: #F7F7F7; border-radius: 2rem; transition: all 0.3s;
+                &:before {content:''; position: absolute; top: 0; height: 0; bottom: 0; right: 4rem; margin: auto; width: 2.4rem; border-top: 2px solid #162DA1;}
+                &:after {content:''; position: absolute; top: 0; bottom: 0; right: 5.1rem; margin: auto; width: 0; height: 2.4rem; border-right: 2px solid #162DA1;}
+                a {display: block; padding: 4rem 8rem 4rem 4rem; font-size: 2.4rem;}
+                &.on {
+                    flex-grow: 3.25; background-color: #162DA1; color: #fff; opacity: 1; 
+                    &:before {border-color: #fff;}
+                    &:after {border-color: #fff; opacity: 0;}
+                }
+            }
+        }
+        .director-info {
+            position: relative; margin-top: 4rem;
+        }
+        .director-info-item {
+            position: absolute; top: 0; left:0; z-index: 0; opacity: 0;
+            &.on {position: relative; z-index: 1; opacity: 1;}
+            dl {display: flex; flex-wrap: wrap;}
+            dt {
+                padding-right: 1.2rem; color: #162DA1; font-weight: 500;
+                &:nth-of-type(n+2) {margin-left: 4rem;}
+                &.profile {padding-top: 2rem; margin-top: 2rem; margin-left: 0; width: 100%; border-top: 1px solid #E5E5E5;}
+            }
+        }
     }
 }
 
 @media (hover: hover) and (pointer: fine) {   
-    .chart-content .axis-x .graph:hover {
+    .chart-content .axis-x .data-bar:hover {
         .tooltip {
             opacity: 1;
         }

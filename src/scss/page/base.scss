@@ -395,6 +395,14 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
     }
 }
 
+//bullet
+.bullet-type-a {
+	li {
+		position: relative;
+		&:before {content:''; display: inline-block; margin: -0.2rem 1rem 0;  width: 3px; height: 3px; border-radius: 50%; background-color: #000; vertical-align: middle;}
+	}
+}
+
 //table-type
 .table {
     &-type-a {
@@ -468,7 +476,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
                 display: flex;
                 padding: 4rem 0;
                 width: 100%;
-                align-items: start;
+                align-items: flex-start;
 
                 &[download] { padding-right: 9rem; background: svgDownload('162DA1') no-repeat calc(100% - 4rem) 50% /2.4rem;}
             }

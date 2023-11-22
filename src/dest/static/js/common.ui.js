@@ -272,6 +272,32 @@
 		return _
 	}
 
+	/* css토글 */
+	function cssToggle(obj, target, idx){
+        let $btn = $(obj);
+        let $target = $(target);
+        let targetIdx = idx ? idx : 0;
+		
+        if(idx !== undefined && idx !== null){
+            if(!$btn.eq(targetIdx).hasClass('on')){
+                $btn.removeClass('on');
+                $target.removeClass('on');
+                $btn.eq(targetIdx).addClass('on');
+                $target.eq(targetIdx).addClass('on');
+            }    
+        }else{
+            if(!$btn.eq(targetIdx).hasClass('on')){
+                $btn.removeClass('on');
+                $target.removeClass('on');
+                $btn.eq(targetIdx).addClass('on');
+                $target.eq(targetIdx).addClass('on');
+            }else{
+                $btn.eq(targetIdx).removeClass('on');
+                $target.eq(targetIdx).removeClass('on');
+            } 
+        }
+		return false;
+    }
 	/* Swiper */
 	function swiperSlide(target){
 		var swiper = new Swiper(target + ' .swiper-container', {
@@ -469,6 +495,7 @@
     exports.bodyScrollBlock = bodyScrollBlock;
     exports.popup = popup;
 	exports.afterLoading = afterLoading;
+	exports.cssToggle = cssToggle;
 	exports.ani = ani;
 	exports.plx = plx;
 	exports.byteCheck = byteCheck;

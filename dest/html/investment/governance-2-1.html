@@ -94,11 +94,11 @@
 													<ul class="gnb-depth3-list">
 														<li><a href="../investment/governance.html">지배구조 일반</a></li>
 														<li><a href="../investment/governance-2-1.html">주식정보</a></li>
-														<li><a href="../investment/governance-3.html">이사회</a></li>
+														<li><a href="../investment/governance-3-1.html">이사회</a></li>
 													</ul>
 												</div>
 											</li>
-											<li><a href="../investment/finance.html" class="gnb-depth2-title">재무정보</a></li>
+											<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
 											<li><a href="../investment/ir.html" class="gnb-depth2-title">IR</a></li>
 											<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
 										</ul>
@@ -206,11 +206,11 @@
 												<ul class="gnb-depth3-list">
 													<li><a href="../investment/governance.html">지배구조 일반</a></li>
 													<li><a href="../investment/governance-2-1.html">주식정보</a></li>
-													<li><a href="../investment/governance-3.html">이사회</a></li>
+													<li><a href="../investment/governance-3-1.html">이사회</a></li>
 												</ul>
 											</div>
 										</li>
-										<li><a href="../investment/finance.html" class="gnb-depth2-title">재무정보</a></li>
+										<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
 										<li><a href="#" class="gnb-depth2-title">IR</a></li>
 										<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
 									</ul>
@@ -572,7 +572,8 @@
 		$('.chart-circle .pie').on('mouseenter', function(e) {
 			let parentSize = $('.chart-pie').width() / 2;
 			let angle = $(this).attr('data-angle');
-			//x = 반지름 * sin(각도) , y = 반지름 * cos(각도)            
+			/////// x = 반지름* sin(각도), y = 반지름*cos(각도) ///////
+			//svg는 0을 기준으로 시계방향, sin, cos 음,양수 반복은 반시계방향으로 x, y축을 바꿔 계산      
 			let itemX = (Math.floor(parentSize * Math.sin(angle * Math.PI / 180))); //x좌료
 			let itemY = -(Math.floor(parentSize * Math.cos(angle * Math.PI / 180))); //y좌표
 
@@ -616,7 +617,7 @@
 				}
 			}
 		});
-
+		//차트 원 모션
 		function circleChartAni(idx) {
 			let ratio = Number($('.pie-' + (idx + 1)).attr('data-ratio'));
 			chartSetTimeOut[idx] = setTimeout(function() {
@@ -633,7 +634,6 @@
 				});
 			}, dur * idx);
 		}
-
 	})();
 </script>
 <!--//페이지 관련 스크립트 -->

@@ -8,7 +8,7 @@
         }
         .postcode, .upload-name {width: calc(100% - 16.5rem);}
         .term-agree {
-            .field-table-title {position: relative; display: flex; justify-content: space-between; align-content: flex-end; align-items: end;}
+            .field-table-title {position: relative; display: flex; justify-content: space-between; align-content: flex-end; align-items: flex-end;}
             label {font-size: 1.6rem;}
         }
         .btn-privacy {margin-left: 0.8rem; color: #2F75FF; font-size: 1.4rem; font-weight: 500; border-bottom: 1px solid;}

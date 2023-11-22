@@ -51,7 +51,7 @@ header {
         .btn-lang {background-image: svgLang('fff');}
         .btn-lang {background-image: svgLang('fff');}
         .btn-all-gnb {
-            span {background-color: #fff;}
+            span {border-color: #fff;}
         }
     }
     &.nav-open{
@@ -160,8 +160,7 @@ h1 {
             top: 0;
             left: 0;
             width: 2.4rem; 
-            height: 0.3rem;
-            background-color: #000;
+            border: 1.5px solid #000;
             transition: transform ease-out 0.3s;
             border-radius:2px;
             &:nth-child(2) {
@@ -174,14 +173,14 @@ h1 {
         &.on {
             span {
                 &:nth-child(1) {
-                    background-color: #fff;
+                    border-color: #fff;
                     transform: translateY(0.8rem) rotate(-45deg);
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
                 &:nth-child(3) {
-                    background-color: #fff;
+                    border-color: #fff;
                     transform: translateY(-0.8rem) rotate(45deg);
                 } 
             }

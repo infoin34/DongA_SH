@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+<head>
+    @@include('../../include/meta.html')    
+    <title>동아쏘시오홀딩스</title>
+    @@include('../../include/resource.html')
+</head>
+<body>  
+    <div id="wrap">   
+        @@include('../../include/header.html', {
+            "class" : ""
+        }) 
+        <main role="main" class="investment">            
+            <div id="container">       
+                <section class="investment-finance">
+                    <div class="section-head"> 
+                        <div class="section-inner">
+                            <div class="text-wrap">   
+                                <h2 class="main-title">
+                                    <div class="line-cut">
+                                        <strong class="scr-eff">IR 자료실</strong>
+                                    </div>                          
+                                </h2>
+                                <div class="line-cut">
+                                    <p class="sub-title text-1 scr-eff">동아쏘시오홀딩스의 IR 정보를 빠르게 확인할 수 있습니다.</p>
+                                </div>
+                                <div class="page-menu-wrap">
+                                    <div class="page-menu-list scr-eff">
+                                        <ul class="tab-type-a">
+                                            <li class="item"><a href="finance-1-1.html">연결재무상태</a></li>
+                                            <li class="item"><a href="finance-1-2.html">연결손익계산서</a></li>
+                                            <li class="item on"><a href="finance-1-3.html">별도재무상태</a></li>
+                                            <li class="item"><a href="finance-1-4.html">별도손익계산서</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="head-img">
+                                <div class="img img-1 scr-eff">
+                                    <img src="../../static/images/title_img/investment_1.png" alt="" class="pc-part">
+                                    <img src="../../static/images/title_img/investment_1.png" alt="" class="mo-part">
+                                </div>
+                                <div class="img img-2 scr-eff">
+                                    <img src="../../static/images/title_img/investment_2.png" alt="" class="pc-part">
+                                    <img src="../../static/images/title_img/investment_2.png" alt="" class="mo-part">
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="section-contents">
+                        <div class="section-inner">
+                            <div class="data-wrap">
+                                <div class="data-head">
+                                    <div class="title">
+                                        <h3 class="title-s2">별도재무현황</h3>
+                                    </div>
+                                    <ul class="tab-type-a">
+                                        <li class="item on"><a href="#">1분기</a></li>
+                                        <li class="item"><a href="#">2분기</a></li>
+                                        <li class="item"><a href="#">3분기</a></li>
+                                        <li class="item"><a href="#">연간</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 연결재무현황 -->
+                                <div class="finance-stats-chart">
+                                    <div class="chart-vertical">
+                                        <div class="chart-head">
+                                            <h4 class="title-s3">자본총계</h4>
+                                            <div class="unit">(단위: 백만원)</div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <ul class="axis-y" data-total="1,000,000">
+                                                <li class="axis-y-item start"><span>0</span></li>
+                                                <li class="axis-y-item"><span>200,000</span></li>
+                                                <li class="axis-y-item"><span>400,000</span></li>
+                                                <li class="axis-y-item"><span>600,000</span></li>
+                                                <li class="axis-y-item"><span>800,000</span></li>
+                                                <li class="axis-y-item"><span>1,000,000</span></li>
+                                            </ul>
+                                            <ul class="axis-x">
+                                                <li class="axis-x-item">                                                    
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="100,000">
+                                                            <div class="data tooltip">
+                                                                <span>2021 영업수익</span>
+                                                                <strong class="graph-data">100,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2021</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="443000">
+                                                            <div class="data tooltip">
+                                                                <span>2022 영업수익</span>
+                                                                <strong class="graph-data">443,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2022</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-2" data-num="943,000">
+                                                            <div class="tooltip">
+                                                                <span>2023 영업수익</span>
+                                                                <strong class="graph-data">943,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2023 1Q</strong>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="chart-vertical">
+                                        <div class="chart-head">
+                                            <h4 class="title-s3">부채총계</h4>
+                                            <div class="unit">(단위: 백만원)</div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <ul class="axis-y" data-total="1,000,000">
+                                                <li class="axis-y-item start"><span>0</span></li>
+                                                <li class="axis-y-item"><span>200,000</span></li>
+                                                <li class="axis-y-item"><span>400,000</span></li>
+                                                <li class="axis-y-item"><span>600,000</span></li>
+                                                <li class="axis-y-item"><span>800,000</span></li>
+                                                <li class="axis-y-item"><span>1,000,000</span></li>
+                                            </ul>
+                                            <ul class="axis-x">
+                                                <li class="axis-x-item">                                                    
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="100,000">
+                                                            <div class="data tooltip">
+                                                                <span>2021 영업수익</span>
+                                                                <strong class="graph-data">100,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2021</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="443000">
+                                                            <div class="data tooltip">
+                                                                <span>2022 영업수익</span>
+                                                                <strong class="graph-data">443,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2022</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-2" data-num="943,000">
+                                                            <div class="tooltip">
+                                                                <span>2023 영업수익</span>
+                                                                <strong class="graph-data">943,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2023 1Q</strong>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="chart-vertical">
+                                        <div class="chart-head">
+                                            <h4 class="title-s3">자산총계</h4>
+                                            <div class="unit">(단위: 백만원)</div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <ul class="axis-y" data-total="1,000,000">
+                                                <li class="axis-y-item start"><span>0</span></li>
+                                                <li class="axis-y-item"><span>200,000</span></li>
+                                                <li class="axis-y-item"><span>400,000</span></li>
+                                                <li class="axis-y-item"><span>600,000</span></li>
+                                                <li class="axis-y-item"><span>800,000</span></li>
+                                                <li class="axis-y-item"><span>1,000,000</span></li>
+                                            </ul>
+                                            <ul class="axis-x">
+                                                <li class="axis-x-item">                                                    
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="100,000">
+                                                            <div class="data tooltip">
+                                                                <span>2021 영업수익</span>
+                                                                <strong class="graph-data">100,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2021</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-1" data-num="443000">
+                                                            <div class="data tooltip">
+                                                                <span>2022 영업수익</span>
+                                                                <strong class="graph-data">443,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2022</strong>
+                                                    </div>
+                                                </li>
+                                                <li class="axis-x-item">
+                                                    <div class="graph">
+                                                        <div class="data-bar bar-2" data-num="943,000">
+                                                            <div class="tooltip">
+                                                                <span>2023 영업수익</span>
+                                                                <strong class="graph-data">943,000</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="name">
+                                                        <strong>2023 1Q</strong>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 연결재무현황 -->
+                            <div class="data-wrap">
+                                <div class="data-head">
+                                    <div class="title">
+                                        <h3 class="title-s2">별도재무상태표</h3>
+                                        <div class="unit">(단위: 백만원)</div>
+                                    </div>
+                                </div>                               
+                                <div class="finance-stats-table"> 
+                                    <table class="table-type-a">
+                                        <caption>별도재무상태표</caption>
+                                        <colgroup>
+                                            <col width="20%">
+                                            <col width="25%">
+                                            <col width="25%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">과목</th>
+                                                <th scope="col">2023 1Q</th>
+                                                <th scope="col">2022</th>
+                                                <th scope="col">2021</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">자산총계</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">유동자산</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">비유동자산</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">부채총계</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">유동부채</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr class="indent">
+                                                <td scope="row">비유동부채</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">자본충계</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                                <td class="tx-c">985,709</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        @@include('../../include/footer.html')
+    </div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+    $(function(){
+        $('.chart-vertical').each(function(){
+            try {
+                let $parent = $(this);
+                let axisYH = 0; 
+                let total = Number($parent.find('.axis-y').data('total').replace(/,/g, ''));
+                //$parent.find('.chart-content').css('height', ($parent.find('.axis-y-item').length-1)*3.7+ 'rem');
+                
+                let zero = ($(this).find('.axis-y-item.start').position().top/$(this).find('.axis-y').height())*100;
+                $parent.find('.axis-x').css('height', zero +'%');
+                
+                //$parent.find('.axis-x-item .name').css('top', ($parent.find('.axis-y').height() + 9)*0.1 +'rem');
+                $parent.find('.data-bar').each(function(i){
+                    let num = Number($(this).attr('data-num').replace(/,/g, ''));
+                    if(num < 0){
+                    $(this).addClass('negative');
+                        num *= -1;
+                    }               
+                    $(this).attr('data-per', (num/total)*100);
+                    $(this).animate({
+                        height: (num/total)*100 + '%'
+                    }, 1000)
+                })
+                $(this).find('.axis-x').css('opacity', 1)
+            }catch(e){
+                
+            }
+        });
+    })
+</script>
+<!--//페이지 관련 스크립트 -->
+</html>
