@@ -164,7 +164,7 @@
 
 		//page-menu
 		if($('.page-menu-wrap').length > 0){			
-			if($('.page-menu-wrap').offset().top <= $(window).scrollTop()+$('header').height()){				
+			if($('.page-menu-wrap').offset().top <= $(window).scrollTop()){				
 				if(!$('.page-menu-list').hasClass('fixed')){
 					$('.page-menu-list').addClass('fixed');
 				}
@@ -174,39 +174,25 @@
 				}
 			}
 		}
-		// 스크롤 최하단으로 갔을때
-		if(currentScr + $(window).height() >= $('footer').offset().top + ($('footer').height()*0.8)){
-			if(!pageEnd) {
-				pageEnd = true;
-			}
-			if(!$('html').hasClass('scr-bottom')){
+		if ( currentScr > lastScr ){//아래로				
+			if(!$('html').hasClass('scr-down')){
 				$('html').removeClass('scr-up');
-				$('html').removeClass('scr-down');
-				$('html').addClass('scr-bottom');
-				$('.page-menu-list').css('top', $('header').height());
-			}			
-		}else {						
-			$('html').removeClass('scr-bottom');
-			if ( currentScr > lastScr ){//아래로				
-				if(!$('html').hasClass('scr-down')){
-					$('html').removeClass('scr-up');
-					$('html').addClass('scr-down');
-					$('.page-menu-list').css('top', 0);
-				}	
-			} else{//위로
-				if(!$('html').hasClass('scr-up')){
-					pageEnd = false;
-					$('html').removeClass('scr-down');
-					$('html').addClass('scr-up');
-					$('.page-menu-list').css('top', $('header').height());
-				}				
-			}
-			// 스크롤 0일경우
-			if (currentScr <= 0 ){
+				$('html').addClass('scr-down');
+				$('.page-menu-list').removeClass('hidden');
+			}	
+		} else{//위로
+			if(!$('html').hasClass('scr-up')){
+				pageEnd = false;
 				$('html').removeClass('scr-down');
 				$('html').addClass('scr-up');
-				$('.page-menu-list').css('top', $('header').height());
-			}
+				if($('.page-menu-list').hasClass('fixed')) $('.page-menu-list').addClass('hidden');
+			}				
+		}
+		// 스크롤 0일경우
+		if (currentScr <= 0 ){
+			$('html').removeClass('scr-down');
+			$('html').addClass('scr-up');
+			$('.page-menu-list').css('top', 0);
 		}
 		
 	}
@@ -513,7 +499,8 @@
 		currentScr = $(window).scrollTop();	
 
 		//---헤더, 탑버튼
-		if($(window).scrollTop() + $('header').height() > $('.main-spot').height()){
+		let mH = isMain ? $('.main-spot').height() : + $('header').height();
+		if($(window).scrollTop() > mH){
 			if(window.isMain) $('header').removeClass('white');
 			$('.btn-top').addClass('on');
 		}else{
@@ -623,7 +610,7 @@
 		if(!window.isMobile){			
 			//마우스 커서
 			!window.isMain && mouseCursor(); //메인 아닐때
-		}	
+		}
 
 		//---only main
 		if(window.isMain){			

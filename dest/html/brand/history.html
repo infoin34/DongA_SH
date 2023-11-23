@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+
+
+
+	<title>동아쏘시오홀딩스</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/swiper.css">
+	<!--//css -->
+
+
+	<!-- srcipt -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<!-- <script src="../../static/js/swiper.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="../../static/js/common.ui.js"></script>
+	<!--//srcipt -->
+</head>
+
+<body>
+	<div id="wrap">
+
+		<header id="header" class="">
+			<div class="header-inner">
+				<h1 class="logo"><a href="../main/main.html">로고</a></h1>
+				<!-- 헤더 메뉴 -->
+				<div class="header-menu">
+					<div class="header-gnb">
+						<div class="gnb-depth1">
+							<ul class="gnb-depth1-list">
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">동아쏘시오 그룹</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li><a href="#" class="gnb-depth2-title">그룹소개</a></li>
+											<li><a href="../brand/ceo.html" class="gnb-depth2-title">CEO 인사말</a> </li>
+											<li><a href="#" class="gnb-depth2-title">가치 및 비전</a></li>
+											<li><a href="../brand/history.html" class="gnb-depth2-title">연혁</a></li>
+											<li><a href="#" class="gnb-depth2-title">CI 소개</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="on">
+									<strong class="gnb-depth1-title"><a href="#">정도경영</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li class="on">
+												<a href="#" class="gnb-depth2-title">정도 경영 철학</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li class="on"><a href="#">정도 경영 철학</a></li>
+														<li><a href="#">사회책임협의회(DSC)</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#" class="gnb-depth2-title">인권경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">환경경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">준법경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">소비자중심경영</a></li>
+											<li>
+												<a href="#" class="gnb-depth2-title">CSR</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li><a href="#">전략 및 운영체계</a></li>
+														<li><a href="#">CSR 활동</a></li>
+														<li><a href="#">협력기관</a></li>
+														<li><a href="#">CSR 소식</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
+											<li><a href="#" class="gnb-depth2-title">윤리현장 및 규정</a></li>
+											<li><a href="#" class="gnb-depth2-title">통합보고서</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">투자정보</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li>
+												<a href="../investment/governance.html" class="gnb-depth2-title">기업지배구조</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li><a href="../investment/governance.html">지배구조 일반</a></li>
+														<li><a href="../investment/governance-2-1.html">주식정보</a></li>
+														<li><a href="../investment/governance-3-1.html">이사회</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
+											<li><a href="../investment/ir.html" class="gnb-depth2-title">IR</a></li>
+											<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">PR Center</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li><a href="../pr/news.html" class="gnb-depth2-title">그룹뉴스</a></li>
+											<li><a href="../pr/media.html" class="gnb-depth2-title">미디어룸</a></li>
+											<li><a href="../pr/contribution.html" class="gnb-depth2-title">사회공헌</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="header-util">
+						<div class="header-lang">
+							<a href="javscript:void(0);" class="btn-lang">언어</a>
+							<div class="lang-list-wrap">
+								<ul class="lang-list">
+									<li><a href="#">KO</a></li>
+									<li><a href="#">EN</a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" class="btn-all-gnb">
+							<div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //헤더 메뉴 -->
+				<ul class="header-etc-link">
+					<li><a href="#">정도 경영</a></li>
+					<li><a href="#">CLEAN :D</a></li>
+					<li><a href="#">인재채용</a></li>
+					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+				</ul>
+			</div>
+			<!-- 전체메뉴 -->
+			<nav class="all-gnb-view">
+				<div class="logo"><a href="../main/main.html" class="">로고</a></div>
+				<div class="nav-gnb">
+					<div class="gnb-depth1">
+						<ul class="gnb-depth1-list">
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">동아쏘시오 그룹</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li><a href="#" class="gnb-depth2-title">그룹소개</a></li>
+										<li><a href="../brand/ceo.html" class="gnb-depth2-title">CEO 인사말</a> </li>
+										<li><a href="#" class="gnb-depth2-title">가치 및 비전</a></li>
+										<li><a href="../brand/history.html" class="gnb-depth2-title">연혁</a></li>
+										<li><a href="#" class="gnb-depth2-title">CI 소개</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="on">
+								<strong class="gnb-depth1-title"><a href="#">정도경영</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li class="on">
+											<a href="#" class="gnb-depth2-title">정도 경영 철학</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li class="on"><a href="#">정도 경영 철학</a></li>
+													<li><a href="#">사회책임협의회(DSC)</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="#" class="gnb-depth2-title">인권경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">환경경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">준법경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">소비자중심경영</a></li>
+										<li>
+											<a href="#" class="gnb-depth2-title">CSR</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li><a href="#">전략 및 운영체계</a></li>
+													<li><a href="#">CSR 활동</a></li>
+													<li><a href="#">협력기관</a></li>
+													<li><a href="#">CSR 소식</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
+										<li><a href="#" class="gnb-depth2-title">윤리현장 및 규정</a></li>
+										<li><a href="#" class="gnb-depth2-title">통합보고서</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">투자정보</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li>
+											<a href="../investment/governance.html" class="gnb-depth2-title">기업지배구조</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li><a href="../investment/governance.html">지배구조 일반</a></li>
+													<li><a href="../investment/governance-2-1.html">주식정보</a></li>
+													<li><a href="../investment/governance-3-1.html">이사회</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
+										<li><a href="#" class="gnb-depth2-title">IR</a></li>
+										<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">PR Center</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li><a href="../pr/news.html" class="gnb-depth2-title">그룹뉴스</a></li>
+										<li><a href="../pr/media.html" class="gnb-depth2-title">미디어룸</a></li>
+										<li><a href="../pr/contribution.html" class="gnb-depth2-title">사회공헌</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="nav-etc-link">
+					<li><a href="#">정도 경영</a></li>
+					<li><a href="#">CLEAN :D</a></li>
+					<li><a href="#">인재채용</a></li>
+					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+				</ul>
+			</nav>
+			<!-- //전체메뉴 -->
+		</header>
+
+		<main role="main" class="brand">
+			<div id="container">
+				<section class="brand-history">
+					<div class="section-head">
+						<div class="section-inner">
+							<div class="text-wrap">
+								<h2 class="main-title">
+									<div class="line-cut">
+										<strong class="scr-eff">NEW FLOW<br>HISTORY</strong>
+									</div>
+								</h2>
+								<div class="line-cut">
+									<p class="sub-title text-1 scr-eff">
+										1932년 그룹의 출발과 함께한 가마솥 정신은 동아쏘시오그룹의 책임 있는 경영에 방향을 제시해 주었습니다.<br>
+                                        100년 기업을 향해 나아가는 지금에도, Global Healthcare Player로 성장할 미래에도,<br>
+                                        경제적/사회적/환경적으로 바르게 성장하고자 하는 동아의 다짐에는 변함이 없습니다.
+									</p>
+								</div>
+							</div>
+							<div class="head-img">
+								<div class="img img-1 scr-eff">
+									<img src="../../static/images/title_img/brand.png" alt="" class="pc-part">
+									<img src="../../static/images/title_img/brand.png" alt="" class="mo-part">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-contents">
+						<div class="history-gallery">
+							<div class="history-gallery-box">
+								<div class="gallery-grid-area">
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_1.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_1.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_2.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_2.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_3.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_3.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid gallery-mid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_4.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_4.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_5.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_5.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_6.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_6.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_7.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_7.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+									<div class="gallery-grid">
+										<div class="gallery-item">
+											<img src="../../static/images/brand/history_gallery_8.jpg" alt="" class="pc-part">
+											<img src="../../static/images/brand/history_gallery_8.jpg" alt="" class="mo-part">
+										</div>
+									</div>
+								</div>
+								<div class="gallery-text">
+									<strong class="year title-h2">1932 - 2023</strong>
+									<p class="text-1">동아쏘시오그룹은 이제 새로운 흐름, 새로운 변화를 준비합니다.<br>사회책임경영을 기반으로, 거스를 수 없는 흐름이 된 ESG를 새로운 성장의 기회로 삼아,<br>오늘의 우리를 넘어 다음 세대를 위한 지속가능한 내일을 열어갑니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="section-inner">
+							<div class="page-menu-wrap">
+								<div class="page-menu-list scr-eff scr-eff-active">
+									<ul class="tab-type-a">
+										<li class="tab-item on"><a href="javascritp:void(0);">현재~2020</a></li>
+										<li class="tab-item"><a href="javascritp:void(0);">2019~2010</a></li>
+										<li class="tab-item"><a href="javascritp:void(0);">2009~1980</a></li>
+										<li class="tab-item"><a href="javascritp:void(0);">1979~1932</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="history-list">
+								<div class="history-item">
+									<strong class="year title-s1">2023</strong>
+									<dl class="text-1">
+										<dt>06월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>04월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>03월</dt>
+										<dd>동아쏘시오홀딩스, 지구를 위하는 '60분' 어스아워 캠페인 실시</dd>
+									</dl>
+								</div>
+								<div class="history-item">
+									<strong class="year title-s1">2022</strong>
+									<dl class="text-1">
+										<dt>06월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+									</dl>
+								</div>
+								<div class="history-item">
+									<strong class="year title-s1">2021</strong>
+									<dl class="text-1">
+										<dt>06월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>04월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>03월</dt>
+										<dd>동아쏘시오홀딩스, 지구를 위하는 '60분' 어스아워 캠페인 실시</dd>
+									</dl>
+								</div>
+								<div class="history-item">
+									<strong class="year title-s1">2021</strong>
+									<dl class="text-1">
+										<dt>12월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>11월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>10월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>09월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>08월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>05월</dt>
+										<dd>동아쏘시오홀딩스, MSCI ESG 평가에서 AA등급 획득</dd>
+										<dt>03월</dt>
+										<dd>동아쏘시오홀딩스, 지구를 위하는 '60분' 어스아워 캠페인 실시</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer id="footer">
+			<div class="footer-inner">
+				<div class="footer-logo">
+					<h2><img src="../../static/images/common/footer_logo.png" alt="logo: go! new flow, new shift"></h2>
+				</div>
+				<div class="footer-contents">
+					<div class="footer-info">
+						<div class="info-item">
+							<strong>Address</strong>
+							<p class="address">서울시 동대문구 천호대로</p>
+						</div>
+						<div class="info-item">
+							<strong>Contact</strong>
+							<p><a href="tel:02-920-8114" class="contact">02-920-8114</a></p>
+						</div>
+					</div>
+					<div class="footer-link">
+						<div class="footer-family-site">
+							<a class="btn-family-site" href="javascript:void(0);">Family Site<i class="ico-plus"></i></a>
+							<ul class="family-site-list">
+								<li class="family-site-item"><a href="#">동아쏘시오홀딩스</a></li>
+								<li class="family-site-item"><a href="#">수석문화재단</a></li>
+								<li class="family-site-item"><a href="#">동아제약</a></li>
+							</ul>
+						</div>
+						<div class="footer-term">
+							<a href="#">개인정보보호정책</a>
+						</div>
+						<div class="footer-sns">
+							<ul class="sns-list">
+								<li><a class="sns-facebook" href="#">페이스북</a></li>
+								<li><a class="sns-instagram" href="#">인스타그램</a></li>
+								<li><a class="sns-youtube" href="#">유튜브</a></li>
+								<li><a class="sns-twitter" href="#">트위터</a></li>
+							</ul>
+						</div>
+					</div>
+					<p class="footer-copyright">Copyrightⓒ DONG-A SOCIO HOLDINGS. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
+		<a class="btn-top" href="javascript:void(0);">
+			<p>TOP</p>
+		</a>
+		<div class="mouse-cursor">
+			<div class="mouse-pointer"></div>
+		</div>
+		<!-- 알림창 - 공통 -->
+		<div class="layer-popup pop-confirm">
+			<div class="popup-wrap">
+				<div class="popup-inner">
+					<div class="popup-body">
+						<p class="confirm-text title-s2"></p>
+						<div class="btn-wrap"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 알림창 -->
+	</div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+	$(function() {
+		let $midImg = $('.gallery-mid');
+		let $galleryBox = $('.history-gallery-box');
+		let galleryAniEnd;
+		let stopGalleryDelta = 0;
+		let textDelta = 0;
+		let dw = 0,
+			dh = 0,
+			tb = 0;
+
+		const galleryReset = function() {
+			$('.gallery-grid-area').css({
+				width: $(window).width(),
+				height: $(window).height()
+			});
+			$('.gallery-text').css('bottom', $(window).height() + $('.gallery-text').height());
+			dw = $(window).width() / $midImg.width() * $(window).width() - $(window).width();
+			dh = $(window).height() / $midImg.height() * $(window).height() - $(window).height();
+			tb = ($(window).height() - $('.gallery-text').height()) / 2;
+		}
+		const galleryAni = () => {
+			let galleryH = $('.history-gallery').height() - $(window).height();
+			let ratio = ($(window).scrollTop() - $('.history-gallery').offset().top) / galleryH;
+			stopGalleryDelta = ratio * 1.45;
+			if (stopGalleryDelta > 1) {
+				stopGalleryDelta = 1;
+			}
+			if (stopGalleryDelta <= 1) {
+				$('.gallery-grid-area').css({
+					width: $(window).width() + dw * stopGalleryDelta,
+					height: $(window).height() + dh * stopGalleryDelta
+				});
+			}
+
+			textDelta = 1 - ((1 - ratio) / 0.3);
+			if (textDelta >= 0) {
+				!$galleryBox.hasClass('cover') && $galleryBox.addClass('cover');
+			} else {
+				$galleryBox.hasClass('cover') && $galleryBox.removeClass('cover');
+			}
+			$('.gallery-text').css({
+				bottom: textDelta * tb
+			});
+		}
+
+		const galleryScr = () => {
+			let galleryT = $('.history-gallery').offset().top;
+			let galleryB = galleryT + $('.history-gallery').height();
+			if ($(window).scrollTop() >= galleryT && $(window).scrollTop() + $(window).height() < galleryB) {
+				galleryAniEnd = false;
+				if (!$galleryBox.hasClass('fixed')) {
+					$galleryBox.addClass('fixed');
+					$galleryBox.css({
+						position: 'fixed',
+						top: 0,
+						bottom: 'auto'
+					});
+				}
+				galleryAni();
+			} else {
+				if ($galleryBox.hasClass('fixed')) {
+					$galleryBox.removeClass('fixed');
+				}
+				if (galleryAniEnd) return;
+				if ($(window).scrollTop() < galleryT) {
+					galleryAniEnd = true;
+					galleryReset();
+					$galleryBox.css({
+						position: 'absolute',
+						top: 0,
+						bottom: 'auto'
+					});
+				}
+				if ($(window).scrollTop() + $(window).height() > galleryB) {
+					galleryAniEnd = true;
+					$galleryBox.css({
+						position: 'absolute',
+						bottom: 0,
+						top: 'auto'
+					});
+					!$galleryBox.hasClass('cover') && $galleryBox.addClass('cover');
+					ratio = 1;
+					galleryAni();
+				}
+			}
+		}
+
+		//처음 한번 실행
+		galleryReset();
+
+		if (window.isMobile) { //mo
+			$(window).on('orientationchange', function(e) {
+				galleryReset();
+			});
+		} else { //pc
+			$(window).on('resize', function(e) {
+				galleryAniEnd = false;
+				galleryReset();
+				galleryScr();
+			});
+		}
+
+		$(window).on('scroll', galleryScr);
+
+	}());
+</script>
+<!--//페이지 관련 스크립트 -->
+
+</html>
