@@ -48,16 +48,16 @@ header {
             }
         }
         h1 a {background-image: svgLogo('fff', 'fff');}
-        .btn-lang {background-image: svgLang('fff');}
+        .btn-work-place {background-image: svgWorkPlace('fff');}
         .btn-lang {background-image: svgLang('fff');}
         .btn-all-gnb {
-            span {border-color: #fff;}
+            span {background-image: svgMenuBar('fff');}
         }
     }
     &.nav-open{
         .all-gnb-view {clip-path: circle(150% at 97% 5%)}
         .btn-lang {background-image: svgLang('fff');}
-
+        .btn-work-place {background-image: svgWorkPlace('fff');}
     }
 }
 .header-inner {
@@ -126,6 +126,9 @@ h1 {
     .header-util {
         position: absolute; top: 10.1rem; right: 8rem; display: flex; gap: 3.8rem; align-items: center; z-index: 10;
     }
+    .btn-work-place {
+        display :block; width: 2.2rem; height: 2.2rem; background: svgWorkPlace('000'); background-size: 100% 100%; @include font0;
+    }
     .btn-lang {
        display :block; width: 2.6rem; height: 2.6rem; background: svgLang('000'); background-size: 100% 100%; @include font0;
     }
@@ -160,9 +163,10 @@ h1 {
             top: 0;
             left: 0;
             width: 2.4rem; 
-            border: 1.5px solid #000;
+            height: 0.3rem;
+            background-image: svgMenuBar('000');
+            background-size: 100%;
             transition: transform ease-out 0.3s;
-            border-radius:2px;
             &:nth-child(2) {
                 top: 0.8rem;
             }
@@ -173,14 +177,14 @@ h1 {
         &.on {
             span {
                 &:nth-child(1) {
-                    border-color: #fff;
+                    background-image: svgMenuBar('fff');
                     transform: translateY(0.8rem) rotate(-45deg);
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
                 &:nth-child(3) {
-                    border-color: #fff;
+                    background-image: svgMenuBar('fff');
                     transform: translateY(-0.8rem) rotate(45deg);
                 } 
             }

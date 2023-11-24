@@ -13,6 +13,45 @@
 	    }
 	}
 
+	/* cookie값 확인 */
+	function getCookie(name) {
+		let Found = false;
+		let start, end;
+		let i = 0;
+		// cookie 문자열 전체를 검색
+		while(i <= document.cookie.length) {
+			start = i;
+			end = start + name.length;
+			// name과 동일한 문자가 있다면
+			if(document.cookie.substring(start, end) == name) {
+				Found = true;
+				break;
+			}
+			i++;
+		}
+
+		// name 문자열을 cookie에서 찾았다면
+		if(Found == true) {
+			start = end + 1;
+			end = document.cookie.indexOf(";", start);
+			// 마지막 부분이라는 것을 의미(마지막에는 ";"가 없다)
+			if(end < start)
+				end = document.cookie.length;
+			// name에 해당하는 value값을 추출하여 리턴한다.
+			return document.cookie.substring(start, end);
+		}
+		// 찾지 못했다면
+		return "";
+	}
+
+	/* cookie 저장 */
+	function setCookie(name, value, expiredays){
+		let todayDate = new Date();	
+
+		todayDate.setDate( todayDate.getDate() + expiredays );
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+	}
+
     /* 전체스크롤 막기/풀기 */
 	let scrollHeight = 0;
 	function bodyScrollBlock(flag){
@@ -92,23 +131,23 @@
 
 			$closeBtn.click(function (e) {
 				e.preventDefault();
-				popup.closePopup(this);
+				popup.close(this);
 			});
 
 			// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음 
 			$obj.on('click', function(e) {				
 				if (!$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrap')) {
-					popup.closePopup(this);
+					popup.close(this);
 				}
 			});
 		},
 		popupCloseAllFn : function() {
 			'use strict'
 			$.each(popup.targetArr, function(i) {
-				popup.closePopup();
+				popup.close();
 			});
 		},
-		closePopup : function(target) {
+		close : function(target) {
 			let $target = $(target),
 			    $pop = $target.hasClass('layer-popup') ? $target : $target.parents('.layer-popup');
 			
@@ -142,14 +181,14 @@
 			$('.pop-confirm .btn-check').off('click');
 			$('.pop-confirm .btn-check').on('click', function(){
 				obj.check && obj.check();
-				_.closePopup('.pop-confirm');				
+				_.close('.pop-confirm');				
 				return false;
 			});
 			
 			$('.pop-confirm .btn-cancel').off('click');
 			$('.pop-confirm .btn-cancel').on('click', function(){
 				obj.cancel && obj.cancel();
-				_.closePopup('.pop-confirm');
+				_.close('.pop-confirm');
 				return false;
 			});			
 			_.open('.pop-confirm');			
@@ -478,6 +517,8 @@
 	}
 
     exports.scrollMove = scrollMove;
+	exports.getCookie = getCookie;
+	exports.setCookie = setCookie;
     exports.bodyScrollBlock = bodyScrollBlock;
     exports.popup = popup;
 	exports.afterLoading = afterLoading;
@@ -513,9 +554,6 @@
 
 		//---gnb
 		gnbScr();
-
-		
-		
 
 		//---현재 스크롤값은 저장
 		lastScr = currentScr;
@@ -618,35 +656,36 @@
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			$('#intro').addClass('active');
+			//$('#intro').addClass('active');
 
-			// $('#intro').remove();
-			// $('html').removeClass('main-intro');
-			// $('html').addClass('main-intro-end');		
-			// $('header').addClass('white');
-			// mainSpot();						
-			// $(window).on('scroll', scrollEv);
+			$('#intro').remove();
+			$('html').removeClass('main-intro');
+			$('html').addClass('main-intro-end');		
+			$('header').addClass('white');
+			mainSpot();						
+			$(window).on('scroll', scrollEv);
 
 			//메인 인트로 제거 후
-			document.querySelector('#intro').addEventListener('animationend', function(e){
-				if(e.target == this) {
-					$('#intro').remove();					
-					$('.main-intro').addClass('main-intro-end');	
-					$('header').addClass('white');	
-				}
-			});
-			//clip-path모션 끝난 후
-			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-				if($('html').hasClass('main-intro')){	
-					$('html').removeClass('main-intro');						
-					mainSpot();						
-					$(window).on('scroll', scrollEv);
-				}		
-			});
+			// document.querySelector('#intro').addEventListener('animationend', function(e){
+			// 	if(e.target == this) {
+			// 		$('#intro').remove();					
+			// 		$('.main-intro').addClass('main-intro-end');	
+			// 		$('header').addClass('white');	
+			// 	}
+			// });
+			// //clip-path모션 끝난 후
+			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+			// 	if($('html').hasClass('main-intro')){	
+			// 		$('html').removeClass('main-intro');						
+			// 		mainSpot();						
+			// 		$(window).on('scroll', scrollEv);
+			// 	}		
+			// });
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
 			$(window).on('scroll', function(){
+
 				//---스크롤 모션
 				// plx({
 				// 	target:'.ba-a',

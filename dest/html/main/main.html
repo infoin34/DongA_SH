@@ -80,7 +80,7 @@
 											</li>
 											<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
 											<li><a href="#" class="gnb-depth2-title">윤리현장 및 규정</a></li>
-											<li><a href="#" class="gnb-depth2-title">통합보고서</a></li>
+											<li><a href="../management/synthesis-report.html" class="gnb-depth2-title">통합보고서</a></li>
 										</ul>
 									</div>
 								</li>
@@ -118,6 +118,7 @@
 						</div>
 					</div>
 					<div class="header-util">
+						<a href="#" class="btn-work-place">오피스 365</a>
 						<div class="header-lang">
 							<a href="javscript:void(0);" class="btn-lang">언어</a>
 							<div class="lang-list-wrap">
@@ -128,6 +129,7 @@
 							</div>
 						</div>
 						<a href="#" class="btn-all-gnb">
+							<span class=></span>
 							<div>
 								<span></span>
 								<span></span>
@@ -192,7 +194,7 @@
 										</li>
 										<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
 										<li><a href="#" class="gnb-depth2-title">윤리현장 및 규정</a></li>
-										<li><a href="#" class="gnb-depth2-title">통합보고서</a></li>
+										<li><a href="../management/synthesis-report.html" class="gnb-depth2-title">통합보고서</a></li>
 									</ul>
 								</div>
 							</li>
@@ -239,12 +241,10 @@
 			<!-- //전체메뉴 -->
 		</header>
 
-
 		<!-- 
             ** include 조건 줘서 class나 태그 다르게 가져오기 가능**
-            
-            예시)
-            
+                        
+            예시)            
             << contents.html >>
             include('../include/header.html',{
                 "type" : "light",
@@ -253,8 +253,7 @@
 
             << include-header.html >>
             if(type == "light"){<div class="header--light">@@title</div>}
-            if(type == "dark"){<div class="header--dark">@@title</div>} 
-        
+            if(type == "dark"){<div class="header--dark">@@title</div>}         
         -->
 		<main role="main">
 			<!-- 이미지 서서히 나오는 -->
@@ -823,13 +822,73 @@
 			</div>
 		</div>
 		<!--// 알림창 -->
+		<!-- 메인 팝업 -->
+		<div class="main-popup-list">
+			<div class="layer-popup pop-main" id="popMain1" style="left:10%; top: 10%;">
+				<div class="popup-wrap">
+					<div class="popup-inner">
+						<div class="popup-body">
+							<div class="pop-main-img">
+								<img src="https://dummyimage.com/705x560/ddd222/fff.jpg" class="pc-part" alt="">
+								<img src="https://dummyimage.com/705x560/ddd222/fff.jpg" class="mo-part" alt="">
+							</div>
+						</div>
+						<div class="popup-footer">
+							<div class="check-type-a">
+								<input type="checkbox" name="" id="oncePop1">
+								<label for="oncePop1"><span class="text-2">오늘 하루 보지 않기</span></label>
+							</div>
+							<a href="#" class="btn-close text-2">닫기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layer-popup pop-main" id="popMain2" style="left: 20%; top: 20%;">
+				<div class="popup-wrap">
+					<div class="popup-inner">
+						<div class="popup-body">
+							<div class="pop-main-img">
+								<img src="https://dummyimage.com/705x560/ac3233/fff.jpg" class="pc-part" alt="">
+								<img src="https://dummyimage.com/705x560/ac3233/fff.jpg" class="mo-part" alt="">
+							</div>
+						</div>
+						<div class="popup-footer">
+							<div class="check-type-a">
+								<input type="checkbox" name="" id="oncePop2">
+								<label for="oncePop2"><span class="text-2">오늘 하루 보지 않기</span></label>
+							</div>
+							<a href="#" class="btn-close text-2">닫기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //메인 팝업 -->
 	</div>
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
 	window.isMain = true;
 	$(function() {
-		//뉴스 스와이프
+		//메인 팝업 
+		if ($('.main-popup-list').length > 0) {
+			$('.pop-main').each(function() {
+				let str = $(this).attr('id');
+				let _ = $(this);
+				if (getCookie(str) != 'none') {
+					popup.open($(this));
+				}
+
+				$(this).find('.btn-close').on('click', function() {
+					if (_.find('input').is(':checked')) {
+						setCookie(_.attr('id'), 'none', 1);
+					}
+				});
+
+			});
+		}
+
+		//뉴스 슬라이드
 		let mainNewsSwiper = new Swiper('.main-news-swiper .swiper-container', {
 			slidesPerView: 3,
 			spaceBetween: 30,
@@ -864,16 +923,7 @@
 			}
 		});
 
-		//사업 스와이프 - 텍스트
-		// let mainBusinessTextSwiper =  new Swiper('.main-business-text-swiper .swiper-container', {
-		//     direction: 'vertical',
-		//     slidesPerView: 1,
-		//     loop: true,
-		//     speed: 900,
-		//     touchRatio: 0,//드래그 금지
-		// });
-		//사업 스와이프 - 썸네일
-
+		//사업 슬라이드
 		let mainBusinessSwiper = new Swiper('.main-business-swiper .swiper-container', {
 			initialSlide: 0,
 			slidesPerView: 'auto',
@@ -884,9 +934,6 @@
 				nextEl: '.main-business-swiper .swiper-button-next',
 				prevEl: '.main-business-swiper .swiper-button-prev'
 			},
-			// thumbs: {
-			//     swiper: mainBusinessTextSwiper,
-			// },
 			on: {
 				afterInit: function() {
 					$('.main-business-swiper .total-number').text(this.slides.length);
@@ -915,6 +962,8 @@
 			});
 		}
 	});
+
+
 
 	//소개 오버 효과
 	function listHoverFn(target) {

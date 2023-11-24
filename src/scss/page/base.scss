@@ -545,21 +545,26 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.4);	
-	overflow: hidden;
-	z-index: 99999;
+	z-index: 2000;
 	.popup {
 		&-wrap {
-			display: flex;
 			padding: 0 2rem;
 			width: 100%;
 			height: 100%;
-			justify-content: center;
-			align-items: center;
+			overflow: auto;
+			text-align: center;
+			font-size: 0;
+			&:before {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				width: 0;
+				vertical-align: middle;
+			}
 		}
 		&-inner {
-			padding: 5.7rem 4rem; background-color: #fff; border-radius: 2rem;
+			padding: 5.7rem 4rem; display: inline-block; background-color: #fff; border-radius: 2rem; vertical-align: middle; text-align: left;
 		}
-		&-body {}
 		&-head {
 			position: relative; padding-right: 6.5rem;
 			.btn-close {position: absolute; top: 0; right: 0; width:3.6rem; height:3.6rem; @include font0; background-image: svgClose(aaa); background-size: 100%;} 
