@@ -19,28 +19,76 @@
            strong {width: 100%; color: #fff;}
            .title-s3 {width: 100%; font-weight: 400; color: rgba(255,255,255,0.8)}
         }
-        .brand-group {
-            min-width: calc((455/1920)*100vw); 
-        }
-        .group-list { height: 100%; display: flex; flex-direction: column;  justify-content: center; gap: 2rem;}
-        .group-item {
-            position: relative; padding-left: 50%; font-size: 3rem; color: #aaa;
-            &:before {content:''; position: absolute; right: 50%; bottom: 0; width: 0; height: 2px;  background-color:#162DA1; transition: width 0.3s;} 
+        .brand-category {width: calc((455/975)*50vw);}
+        .category-list {height: 100%; display: flex; flex-direction: column;  justify-content: center; gap: 2rem;}
+        .category-item {
+            position: relative; padding-left: 30%; font-size: 3rem; color: #aaa;
+            &:before {content:''; position: absolute; right: 70%; bottom: 0; width: 0; height: 2px;  background-color:#162DA1; transition: width 0.3s;} 
             &.on {
                 color: #162DA1; font-weight: 600;
                 &:before {width: 50%;}
             }
         }
-        .brand-intro-swiper {
-            display: flex; width: 100%; height: 100vh;
-            .swiper-container {width: 100%; height: 100%; overflow: hidden;}
-            img {width: 100%; height:100%; object-fit: cover;}
-            .thumb {width: calc((1600/1920)*100vw); max-width: 52rem;}
-            .content {
-                padding: 0 8rem; display: flex; justify-content: center; flex-direction: column;
+        .map {
+            margin-top: 5.6rem; padding-bottom: 2.8rem; border-bottom: 1px solid rgba(0,0,0,0.4);
+            .title {
+                border-bottom: 2px solid;
+                a {padding: 16px 0; display: block; font-weight: 600;}
+            }
+            .info {
+                b {
+                    position: relative; padding-right: 1.2rem;
+                    &:before {content:''; display: inline-block; margin-right: 0.8rem; width:2rem; height: 2.1rem; vertical-align: middle; background-size: 100% 100%;}
+                }
+                .address b:before {
+                    background-image: svgPin('000'); 
+                }
+                .contact b:before {
+                    background-image: svgPhone('000');
+                }
             }
         }
-        .intro-item {display: flex;}
+        .map-frame {
+            margin-top: 2.8rem; height: 27.6rem;
+        }
+        .brand-intro-wrap {
+            display: flex; height: 100vh; flex-grow: 1;
+            .swiper-container {height: 100%; overflow: hidden;}
+            img {width: 100%; height:100%; object-fit: cover;}
+            .intro-item {position: relative; overflow: hidden;}
+            .bind {
+                position: absolute; display: flex; width: 100%; height: 100%; background-color: #fff; z-index: -1;
+                &.on {
+                    position: relative; z-index: 1;
+                    .thumb {
+                        opacity: 1;
+                    }
+                    .content {
+                        transform: translateX(0);
+                    }
+                }
+            }
+            .thumb {width: calc((520/975)*50vw); opacity: 0; transition: opacity 1.5s;}
+            .content {
+                position: relative; display: flex; margin-left: 8rem; margin-right: 3rem; padding-bottom: 15rem; width: 50vw; max-width: 72rem;  justify-content: center; flex-direction: column; transform: translateX(100%); transition: transform 0.5s;
+            }            
+            .text-3 {margin-top: 2.8rem;}
+            .btn-page-move {margin-top: 5rem;}
+        }
+        .brand-list {
+            position: absolute; width: 50vw; max-width: 72rem; right:0; display: flex; bottom: 2.8rem; width: 100%;  color: rgba(0,0,0,0.4); z-index: 2;
+            li {
+                flex-grow: 1; border-top: 2px solid rgba(0,0,0,0.1); transition: border 0.4s;
+                &.on {
+                    border-color: #162DA1;
+                    .num {color: #162DA1;}
+                    .brand-name {color: #000; font-weight: 500;}
+                }
+            }
+            a {display: block; padding-top: 3rem;}  
+            .num {font-size: 1.6rem; font-weight: 600;}
+            .brand-name {margin-top: 0.8rem; font-size: 1.4rem;}
+        }
     }
     //CEO 인사말
     &-ceo {

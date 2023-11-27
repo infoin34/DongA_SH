@@ -96,21 +96,21 @@ function css_compile(path, output, bool, done) {
 		}).on('error', sass.logError))				
 		.pipe(autoprefixer()) // Autoprefixer 브라우져리스트 - https://github.com/ai/browserslist, package.json에 포함
 		.pipe(
-			ifElse(
+			ifElse( 
 				(process.env.NODE_ENV === "development"),
 				function() { return dest(path.output, { sourcemaps: true }) },
-				function() { return dest(path.dest, { sourcemaps: false }) }
+				function() { return dest(path.dest, {sourcemaps: false }) }
 			)
 		)
 	done();
 };
 
 function css_pc_dev(done) {
-	css_compile(paths.pc.css, 'compact', true);
+	css_compile(paths.pc.css, 'compressed', false);
 	done();
 };
 function css_pc_build(done) {
-	css_compile(paths.pc.css, 'compact', false);
+	css_compile(paths.pc.css, 'compressed', false);
 	done();
 };
 

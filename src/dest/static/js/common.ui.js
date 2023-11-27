@@ -101,7 +101,7 @@
 		open : function(obj) {
 			'use strict'
 			let $obj = (typeof obj === 'string') ? $(obj) : obj ;
-
+			let $parent = $(parent);
 			popup.layerPopupInit($obj);
 		},
 		layerPopupInit: function(obj) {
@@ -121,25 +121,25 @@
 				'display': 'block',
 				'z-index': popup.guideZindex
 			});
-
-			if (popup.targetArr.length == 1) {
-				if(!$('html').hasClass('layer-open') ) {
-					bodyScrollBlock(true);
-				}
-			}
-			$('html').append($obj);
-
-			$closeBtn.click(function (e) {
+			
+			//$('html').append($obj);
+			$closeBtn.click(function(e){
 				e.preventDefault();
 				popup.close(this);
 			});
-
-			// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음 
-			$obj.on('click', function(e) {				
-				if (!$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrap')) {
-					popup.close(this);
+			if(!$obj.hasClass('no-dim')) {//dim 없으면
+				if (popup.targetArr.length == 1) {
+					if(!$('html').hasClass('layer-open') ) {
+						bodyScrollBlock(true);
+					}
 				}
-			});
+				// layer-popup-fix 클래스를 추가하면 dim 클릭해도 닫히지 않음 
+				$obj.on('click', function(e) {				
+					if (!$(this).hasClass('layer-popup-fix') && e.target.classList.contains('popup-wrap')) {
+						popup.close(this);
+					}
+				});
+			}
 		},
 		popupCloseAllFn : function() {
 			'use strict'
@@ -286,7 +286,6 @@
 		_.delta =  (currentScr - _.$parent.offset().top)/_.$parent.outerHeight();
 		let elY = (_.delta*100*_.increment);//퍼센트
 		
-		//console.log(currentScr, _.$parent.offset().top)
 		_.fn = function(){
 			_.$target.css('transform', 'translateY('+ elY +'%)');
 		}
@@ -623,9 +622,30 @@
 		});
 		
 		//---패밀리 사이트
-		$('.btn-family-site').on('click', function(){
-			$('.family-site-list').stop().slideToggle();
+		$('.btn-family-site').on('click', function(e){
+			var _ = $(this);
+			if(_.hasClass('on')){
+				closeFn(e);
+			}else{			
+				_.addClass('on');
+				$('#wrap').on('click', closeFn);			
+			}			
+			$('.pop-about-site .btn-close').off('click').on('click', function(){
+				closeFn(e);
+				return false;	
+			});
+			function closeFn(e){
+				if($(e.target).parents('.footer-family-site').length == 0 || $(e.target).hasClass('btn-family-site') || $(e.target).hasClass('btn-close')){
+					_.removeClass('on');
+					$('#wrap').off('click', closeFn);
+				}
+			}	
+			return false;
 		});
+		$('.about-site-tab > li').on('click', function(){
+			cssToggle('.about-site-tab li', '.about-site-list', $(this).index());
+		});
+		
 
 
 		//---input[type="text"] 초기화
