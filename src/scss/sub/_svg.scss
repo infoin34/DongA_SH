@@ -57,7 +57,7 @@
 }
 @function svgUrlArrow3($color){
     $color: '%23'+$color;
-    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 41 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.5C0.723858 8.5 0.5 8.72386 0.5 9C0.5 9.27614 0.723858 9.5 1 9.5V8.5ZM1 9.5L40 9.5L40 8.5L1 8.5V9.5Z' fill='#{$color}'/%3E%3Cpath d='M32 1L40 9L32 17' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 41 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.5C0.723858 8.5 0.5 8.72386 0.5 9C0.5 9.27614 0.723858 9.5 1 9.5L1 8.5ZM1 9.5L40 9.5V8.5L1 8.5L1 9.5Z' fill='#{$color}'/%3E%3Cpath d='M32 1L40 9L32 17' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }
 @function svgUpArrow($color){

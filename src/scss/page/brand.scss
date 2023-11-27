@@ -7,10 +7,45 @@
 }
 
 .brand {
+    //동아 그룹 소개
+    &-intro {
+        margin-bottom: -14rem;
+        .sub-visual {
+            position: relative;
+           img {width: 100%; height: 100%; object-fit: cover;}
+           .content {
+                position: absolute; top: 0; display: flex; flex-wrap: wrap; align-content: center; gap: 3rem; width: 100%; height: 100%; text-align: center;
+           }
+           strong {width: 100%; color: #fff;}
+           .title-s3 {width: 100%; font-weight: 400; color: rgba(255,255,255,0.8)}
+        }
+        .brand-group {
+            min-width: calc((455/1920)*100vw); 
+        }
+        .group-list { height: 100%; display: flex; flex-direction: column;  justify-content: center; gap: 2rem;}
+        .group-item {
+            position: relative; padding-left: 50%; font-size: 3rem; color: #aaa;
+            &:before {content:''; position: absolute; right: 50%; bottom: 0; width: 0; height: 2px;  background-color:#162DA1; transition: width 0.3s;} 
+            &.on {
+                color: #162DA1; font-weight: 600;
+                &:before {width: 50%;}
+            }
+        }
+        .brand-intro-swiper {
+            display: flex; width: 100%; height: 100vh;
+            .swiper-container {width: 100%; height: 100%; overflow: hidden;}
+            img {width: 100%; height:100%; object-fit: cover;}
+            .thumb {width: calc((1600/1920)*100vw); max-width: 52rem;}
+            .content {
+                padding: 0 8rem; display: flex; justify-content: center; flex-direction: column;
+            }
+        }
+        .intro-item {display: flex;}
+    }
+    //CEO 인사말
     &-ceo {
-        .ceo-intro{
+        .ceo-intro {
             position: relative; margin-bottom: 8rem; color: #fff; border-radius: 1.8rem; overflow: hidden;
-             //display: flex; align-content: center; flex-wrap: wrap; 
             .content {
                 position: relative; padding: 16rem 14rem 12.8rem;
             }

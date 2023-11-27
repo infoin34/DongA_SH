@@ -1,7 +1,6 @@
 /*management*/
-//synthesis-report
-
 .management {
+    //통합보고서
     &-synthesis-report {
         .title-s3 {
             font-weight: 500;
@@ -16,7 +15,7 @@
                     display: flex; height: 100%; font-size: 2.4rem;
                     background: svgDownload('162DA1') no-repeat calc(100% - 4rem) calc(100% - 4rem)/2.4rem; 
                 }
-                .thumnail {
+                .thumb {
                     padding: 3rem 0; flex-basis: calc((294/705*100%)); background-color: #F3F7FA; text-align: center; transition: background 0.3s;
                     img {margin: 0 auto;}
                 }
@@ -28,11 +27,12 @@
 
 @media (hover: hover) and (pointer: fine) {
     .management {
+        //통합보고서
         &-synthesis-report {
             .synthesis-report-list {
                 > li:hover {
                     box-shadow: 1rem 1rem 3.2rem rgba(22,45,161,.24); 
-                    .thumnail {background-color: #162DA1; border-color: #162DA1; color: #fff;}
+                    .thumb {background-color: #162DA1; border-color: #162DA1; color: #fff;}
                 }
             }
         }
