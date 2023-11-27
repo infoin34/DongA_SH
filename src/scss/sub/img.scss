@@ -120,4 +120,24 @@
     .svg-error-icon-3 {
         width: 222px; height: 173px; background: svgError3(); background-size: 100% 100%;
     }
+    .svg-ci-logo {
+        width: 350px; height: 350px; background: svgCiLogo(); background-size: 100% 100%;
+    }
+    .svg-ci-motif1  {width: 40px; height: 40px; background: svgCiMotif1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-motif2 {width: 40px; height: 40px; background: svgCiMotif2(); background-size: 100% 100%;}
+
+    .svg-ci-motif3 {width: 40px; height: 40px; background: svgCiMotif3(); background-size: 100% 100%;}
+
+    .svg-ci-typek1 {width: 195px; height: 22px; background: svgCiTypeK1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typek2 {width: 209px; height: 22px; background: svgCiTypeK2('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typec1 {width: 182px; height: 22px; background: svgCiTypeC1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typec2 {width: 206px; height: 22px; background: svgCiTypeC2('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typee1 {width: 295px; height: 16px; background: svgCiTypeE1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typee2 {width: 320px; height: 16px; background: svgCiTypeE2('fff'); background-size: 100% 100%;}
 }

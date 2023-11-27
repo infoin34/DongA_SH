@@ -141,7 +141,260 @@
             dd {width: calc(100% - 12rem); color: #666;}
         }
     }
+    // CI
+    &-ci {
+        .sub-wrap-gray {
+            background-color: #F7F7F7;
+            padding: 12rem 0;
+        }
+
+        .ci-motif {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8rem;
+
+            p {
+                text-align: center;
+                font-weight: 500;
+
+                em {
+                    font-weight: 700;
+                    color: #2F75FF;
+                }
+            }
+
+            .motif {
+                &-img {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    max-width: 120rem;
+                }
+                &-logo {
+                    display: flex;
+                    align-items: center;
+                    flex-basis: 29.1%;
     
+                    .logo {
+                        width: 100%;
+                        display: block;
+                        position: relative;
+                        background: svgCiLogo(); 
+                        background-size: 100% 100%;
+                        &::before {
+                            content: '';
+                            display: block;
+                            padding-bottom: 100%;
+                        }
+                    }
+                }
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 3rem;
+                    width: 84.615%;
+    
+                    &-wrap {
+                        display: flex;
+                        flex-basis: 70.9%;
+                        align-items: center;
+    
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            width: 15.385%;
+                            height: 100%;
+                            background: svgCiLine1(); 
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+                &-li {
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 4.8rem;
+                    height: 13.6rem;
+                    padding: 1rem;
+                    border: 2px solid #E5E5E5;
+                    border-radius: 10rem;
+                    background-color: #fff;
+                    position: relative;
+    
+                    p {
+                        text-align: start;
+                        color: #666;
+                    }
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        left: -0.1rem;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        box-sizing: border-box;
+                        border: 3px solid;
+                    }
+    
+    
+                    &:first-of-type {
+                        .motif-ico {
+                            background-color: #2F75FF;
+                        }
+    
+                        &::before {
+                            border-color: #2F75FF;
+                        }
+                    }
+    
+                    &:nth-of-type(2) {
+                        .motif-ico {
+                            background-color: #FF4002;
+                        }
+    
+                        &::before {
+                            border-color: #FF4002;
+                        }
+                    }
+    
+                    &:last-of-type {
+                        .motif-ico {
+                            background-color: #162DA1;
+                        }
+    
+                        &::before {
+                            border-color: #162DA1;
+                        }
+                    }
+                }
+                &-ico {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                    gap: 1.2rem;
+                    width: 11.6rem;
+                    height: 11.6rem;
+                    border-radius: 50%;
+    
+                    i {
+                        display: block;
+                        width: 4rem;
+                        height: 4rem;
+                    }
+    
+                    .num {
+                        font-weight: 700;
+                        font-size: 1.4rem;
+                        line-height: 1.4rem;
+                        letter-spacing: -0.02em;
+                        color: #fff;
+                    }
+                }
+            }
+    
+            .ico-motif {
+                &-heart {
+                    background: svgCiMotif1('fff'); background-size: 100% 100%;
+                }
+                &-enterprise {
+                    background: svgCiMotif2(); background-size: 100% 100%;
+                }
+                &-puzzle {
+                    background: svgCiMotif3(); background-size: 100% 100%;
+                }
+            }
+        }
+
+        .ci-type {
+            margin-top: 12rem;
+
+            .content {
+                &-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5rem;
+                    margin-top: 3rem;
+                }
+
+                strong {
+                    font-weight: 500;
+                }
+            }
+
+            .citype {
+                &-list {
+                    display: flex;
+                    align-items: center;
+                    gap: 3rem;
+                    margin-top: 3rem;
+                }
+                &-li {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 1.2rem;
+                    flex-basis: 100%;
+                    flex-shrink: 1;
+                    height: 18.2rem;
+                    background-color: #F7F7F7;
+                    border-radius: 2rem;
+                    padding-bottom: 4.4rem;
+
+                    span {
+                        color: #2F75FF;
+                    }
+
+                    i {
+                        display: block;
+                    }
+
+                    .citype-ico-kor1 {
+                        width: 19.5rem;
+                        height: 2.2rem;
+                        background: svgCiTypeK1('231916'); background-size: 100% 100%;
+                    }
+                    .citype-ico-kor2 {
+                        width: 20.9rem;
+                        height: 2.2rem;
+                        background: svgCiTypeK2('231916'); background-size: 100% 100%;
+                    }
+                    .citype-ico-cc1{
+                        width: 19.5rem;
+                        height: 2.2rem;
+                        background: svgCiTypeC1('231916'); background-size: 100% 100%;
+                    }
+                    .citype-ico-cc2{
+                        width: 19.5rem;
+                        height: 2.2rem;
+                        background: svgCiTypeC2('231916'); background-size: 100% 100%;
+                    }
+                    .citype-ico-eng1{
+                        width: 29.5rem;
+                        height: 1.6rem;
+                        background: svgCiTypeE1('231916'); background-size: 100% 100%;
+                        margin-bottom: 0.3rem;
+                    }
+                    .citype-ico-eng2{
+                        width: 32rem;
+                        height: 1.6rem;
+                        background: svgCiTypeE2('231916'); background-size: 100% 100%;
+                        margin-bottom: 0.3rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
