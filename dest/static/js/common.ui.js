@@ -322,6 +322,35 @@
         }
 		return false;
     }
+
+	/* layer토글 - 화면 클릭하면 none*/
+	function layerToggle(e, btn, target){
+		let $btn = $(btn);
+		let parent = target ? target : btn;
+
+		if($btn.hasClass('on')){			
+			closeFn(e);
+		}else{			
+			$(parent).addClass('on');
+			$btn.addClass('on');
+			$('#wrap').on('click', closeFn);			
+		}			
+
+		$(parent).find('.btn-close').off('click').on('click', function(){
+			closeFn(e);
+			return false;	
+		});
+			
+		function closeFn(e){
+			if($(e.target).parents(parent).length == 0 || e.target == btn || $(e.target).hasClass('btn-close')){
+				$(parent).removeClass('on');
+				$btn.removeClass('on');
+				$('#wrap').off('click', closeFn);
+			}
+		}	
+		return false;
+	}
+
 	/* Swiper */
 	function swiperSlide(target){
 		var swiper = new Swiper(target + ' .swiper-container', {
@@ -522,6 +551,7 @@
     exports.popup = popup;
 	exports.afterLoading = afterLoading;
 	exports.cssToggle = cssToggle;
+	exports.layerToggle = layerToggle;
 	exports.ani = ani;
 	exports.plx = plx;
 	exports.byteCheck = byteCheck;
@@ -623,23 +653,7 @@
 		
 		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(e){
-			var _ = $(this);
-			if(_.hasClass('on')){
-				closeFn(e);
-			}else{			
-				_.addClass('on');
-				$('#wrap').on('click', closeFn);			
-			}			
-			$('.pop-about-site .btn-close').off('click').on('click', function(){
-				closeFn(e);
-				return false;	
-			});
-			function closeFn(e){
-				if($(e.target).parents('.footer-family-site').length == 0 || $(e.target).hasClass('btn-family-site') || $(e.target).hasClass('btn-close')){
-					_.removeClass('on');
-					$('#wrap').off('click', closeFn);
-				}
-			}	
+			layerToggle(e, this, '.footer-family-site');
 			return false;
 		});
 		$('.about-site-tab > li').on('click', function(){
