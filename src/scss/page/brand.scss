@@ -7,6 +7,11 @@
 }
 
 .brand {
+    .tab-type-a {
+        a {
+            padding: 1rem 1.6rem;
+        }
+    }
     //동아 그룹 소개
     &-intro {
         margin-bottom: -14rem;
@@ -69,6 +74,202 @@
             
         }
     }
+    // 가치 및 비전
+    &-value {
+        .sub-wrap-gray {
+            background-color: #F7F7F7;
+            padding: 12rem 0;
+        }
+
+        .valuecont {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+
+            &-box {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+            }
+            &-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding-left: 9rem;
+                flex-basis: 50%;
+                flex-shrink: 1;
+
+                &:first-child {
+                    padding-left: 12rem;
+                }
+
+                i {
+                    display: block;
+                    width: 7.4rem;
+                    height: 7.4rem;
+                    margin-bottom: 4rem;
+
+                    &.ico-bulb {
+                        background: svgBulb('FF4002'); background-size: 100% 100%;
+                    }
+                    &.ico-heart {
+                        background: svgHeart('2F75FF'); background-size: 100% 100%;
+                    }
+                }
+
+                strong {
+                    font-weight: 700;
+                    font-size: 6.4rem;
+                    line-height: 7.64rem;
+                }
+
+                p {
+                    margin-top: 3rem;
+                    font-weight: 400;
+                    font-size: 2.4rem;
+                    line-height: 3.6rem;
+                    color: #666;
+                }
+            }
+            &-img {
+                flex-basis: 50%;
+                flex-shrink: 1;
+                border-radius: 2rem;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .value-slide {
+            margin-top: 12rem;
+
+            .data-head {
+                margin-bottom: 8.3rem;
+            }
+
+            .unit {
+                margin-top: 2rem;
+                font-weight: 500;
+                font-size: 2rem;
+                line-height: 2.39rem;
+                color: #444;
+            }
+        }
+
+        .valueslide {
+
+            &-nav {
+                display: flex;
+                align-items: flex-end;
+                gap: 1.5rem;
+
+                .swiper-button-prev {
+                    border: 1.5px solid #222;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    background: svgLinkLeft('222') no-repeat;
+                    background-position: center;
+                    background-size: 2.4rem 2.4rem;
+                }
+                .swiper-button-next {
+                    border: 1.5px solid #222;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    background: svgUrlArrow2('222') no-repeat;
+                    background-position: center;
+                    background-size: 2.4rem 2.4rem;
+                }
+            }
+
+            &-img {
+                position: relative;
+                border-radius: 2rem;
+                overflow: hidden;
+                width: 100%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &-txt {
+                dt {
+                    margin-bottom: 2rem;
+                }
+                dd {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.4rem;
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 3.4rem;
+                    margin-bottom: 0.5rem;
+                    color: #222;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background-color: #2F75FF;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            &-pagin {
+                display: block;
+                margin-top: 6rem;
+                height: 2px;
+
+                .swiper-pagination {
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.1);
+                }
+                .swiper-pagination-progressbar-fill {
+                    display: block;
+                    height: 100% !important;
+                    background-color: #2F75FF;
+                    transform-origin: left;
+                }
+            }
+        }
+
+        .swiper-slide {
+            width: 58.2rem;
+
+            .valueslide-txt {
+                margin: 4rem 0;
+            }
+            .valueslide-img {
+                height: 35rem;
+            }
+
+            &:nth-of-type(2n) {
+                width: 43rem;
+
+                .valueslide-txt {
+                    margin-top: 0;
+                }
+                .valueslide-img {
+                    height: 46rem;
+                }
+            }
+        }
+    }
+    // 연혁
     &-history {
         .page-menu-wrap {margin-top: 5rem;}
         .history-gallery {
@@ -148,6 +349,20 @@
             padding: 12rem 0;
         }
 
+        .ci-cont {
+            margin-top: 12rem;
+        }
+
+        .ci-box {
+            margin-top: 5rem;
+        }
+
+        .ci-subtit {
+            display: block;
+            margin-top: 1.6rem;
+            color: #666;
+        }
+
         .ci-motif {
             display: flex;
             flex-direction: column;
@@ -163,161 +378,159 @@
                     color: #2F75FF;
                 }
             }
+        }
 
-            .motif {
-                &-img {
-                    display: flex;
-                    justify-content: center;
+        .motif {
+            &-img {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                max-width: 120rem;
+            }
+            &-logo {
+                display: flex;
+                align-items: center;
+                flex-basis: 29.1%;
+
+                .logo {
                     width: 100%;
-                    max-width: 120rem;
-                }
-                &-logo {
-                    display: flex;
-                    align-items: center;
-                    flex-basis: 29.1%;
-    
-                    .logo {
-                        width: 100%;
-                        display: block;
-                        position: relative;
-                        background: svgCiLogo(); 
-                        background-size: 100% 100%;
-                        &::before {
-                            content: '';
-                            display: block;
-                            padding-bottom: 100%;
-                        }
-                    }
-                }
-                &-list {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    gap: 3rem;
-                    width: 84.615%;
-    
-                    &-wrap {
-                        display: flex;
-                        flex-basis: 70.9%;
-                        align-items: center;
-    
-                        &::before {
-                            content: '';
-                            display: inline-block;
-                            width: 15.385%;
-                            height: 100%;
-                            background: svgCiLine1(); 
-                            background-size: 100% 100%;
-                        }
-                    }
-                }
-                &-li {
-                    display: flex;
-                    width: 100%;
-                    justify-content: flex-start;
-                    align-items: center;
-                    gap: 4.8rem;
-                    height: 13.6rem;
-                    padding: 1rem;
-                    border: 2px solid #E5E5E5;
-                    border-radius: 10rem;
-                    background-color: #fff;
+                    display: block;
                     position: relative;
-    
-                    p {
-                        text-align: start;
-                        color: #666;
-                    }
-    
+                    background: svgCiLogo(); 
+                    background-size: 100% 100%;
                     &::before {
                         content: '';
-                        position: absolute;
-                        width: 1.2rem;
-                        height: 1.2rem;
-                        border-radius: 50%;
-                        background-color: #fff;
-                        left: -0.1rem;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        box-sizing: border-box;
-                        border: 3px solid;
-                    }
-    
-    
-                    &:first-of-type {
-                        .motif-ico {
-                            background-color: #2F75FF;
-                        }
-    
-                        &::before {
-                            border-color: #2F75FF;
-                        }
-                    }
-    
-                    &:nth-of-type(2) {
-                        .motif-ico {
-                            background-color: #FF4002;
-                        }
-    
-                        &::before {
-                            border-color: #FF4002;
-                        }
-                    }
-    
-                    &:last-of-type {
-                        .motif-ico {
-                            background-color: #162DA1;
-                        }
-    
-                        &::before {
-                            border-color: #162DA1;
-                        }
-                    }
-                }
-                &-ico {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    flex-shrink: 0;
-                    gap: 1.2rem;
-                    width: 11.6rem;
-                    height: 11.6rem;
-                    border-radius: 50%;
-    
-                    i {
                         display: block;
-                        width: 4rem;
-                        height: 4rem;
-                    }
-    
-                    .num {
-                        font-weight: 700;
-                        font-size: 1.4rem;
-                        line-height: 1.4rem;
-                        letter-spacing: -0.02em;
-                        color: #fff;
+                        padding-bottom: 100%;
                     }
                 }
             }
-    
-            .ico-motif {
-                &-heart {
-                    background: svgCiMotif1('fff'); background-size: 100% 100%;
+            &-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 3rem;
+                width: 84.615%;
+
+                &-wrap {
+                    display: flex;
+                    flex-basis: 70.9%;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 15.385%;
+                        height: 100%;
+                        background: svgCiLine1(); 
+                        background-size: 100% 100%;
+                    }
                 }
-                &-enterprise {
-                    background: svgCiMotif2(); background-size: 100% 100%;
+            }
+            &-li {
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 4.8rem;
+                height: 13.6rem;
+                padding: 1rem;
+                border: 2px solid #E5E5E5;
+                border-radius: 10rem;
+                background-color: #fff;
+                position: relative;
+
+                p {
+                    text-align: start;
+                    color: #666;
                 }
-                &-puzzle {
-                    background: svgCiMotif3(); background-size: 100% 100%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    left: -0.1rem;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    box-sizing: border-box;
+                    border: 3px solid;
+                }
+
+
+                &:first-of-type {
+                    .motif-ico {
+                        background-color: #2F75FF;
+                    }
+
+                    &::before {
+                        border-color: #2F75FF;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    .motif-ico {
+                        background-color: #FF4002;
+                    }
+
+                    &::before {
+                        border-color: #FF4002;
+                    }
+                }
+
+                &:last-of-type {
+                    .motif-ico {
+                        background-color: #162DA1;
+                    }
+
+                    &::before {
+                        border-color: #162DA1;
+                    }
+                }
+            }
+            &-ico {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                gap: 1.2rem;
+                width: 11.6rem;
+                height: 11.6rem;
+                border-radius: 50%;
+
+                i {
+                    display: block;
+                    width: 4rem;
+                    height: 4rem;
+                }
+
+                .num {
+                    font-weight: 700;
+                    font-size: 1.4rem;
+                    line-height: 1.4rem;
+                    letter-spacing: -0.02em;
+                    color: #fff;
                 }
             }
         }
 
-        .ci-type {
-            margin-top: 12rem;
+        .ico-motif {
+            &-heart {
+                background: svgCiMotif1('fff'); background-size: 100% 100%;
+            }
+            &-enterprise {
+                background: svgCiMotif2(); background-size: 100% 100%;
+            }
+            &-puzzle {
+                background: svgCiMotif3(); background-size: 100% 100%;
+            }
+        }
 
+        .ci-type {
             .content {
                 &-wrap {
                     display: flex;
@@ -330,67 +543,584 @@
                     font-weight: 500;
                 }
             }
+        }
 
-            .citype {
-                &-list {
-                    display: flex;
-                    align-items: center;
-                    gap: 3rem;
-                    margin-top: 3rem;
+        .citype {
+            &-list {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+                margin-top: 3rem;
+            }
+            &-li {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 1.2rem;
+                flex-basis: 100%;
+                flex-shrink: 1;
+                height: 18.2rem;
+                background-color: #F7F7F7;
+                border-radius: 2rem;
+                padding-bottom: 4.4rem;
+
+                span {
+                    color: #2F75FF;
                 }
-                &-li {
+
+                i {
+                    display: block;
+                }
+
+                .citype-ico-kor1 {
+                    width: 19.5rem;
+                    height: 2.2rem;
+                    background: svgCiTypeK1('231916'); background-size: 100% 100%;
+                }
+                .citype-ico-kor2 {
+                    width: 20.9rem;
+                    height: 2.2rem;
+                    background: svgCiTypeK2('231916'); background-size: 100% 100%;
+                }
+                .citype-ico-cc1{
+                    width: 19.5rem;
+                    height: 2.2rem;
+                    background: svgCiTypeC1('231916'); background-size: 100% 100%;
+                }
+                .citype-ico-cc2{
+                    width: 19.5rem;
+                    height: 2.2rem;
+                    background: svgCiTypeC2('231916'); background-size: 100% 100%;
+                }
+                .citype-ico-eng1{
+                    width: 29.5rem;
+                    height: 1.6rem;
+                    background: svgCiTypeE1('231916'); background-size: 100% 100%;
+                    margin-bottom: 0.3rem;
+                }
+                .citype-ico-eng2{
+                    width: 32rem;
+                    height: 1.6rem;
+                    background: svgCiTypeE2('231916'); background-size: 100% 100%;
+                    margin-bottom: 0.3rem;
+                }
+            }
+        }
+
+        .ci-combination {
+           .tab {
+                margin-top: 3rem;
+           }
+        }
+
+        .cicombi {
+             display: flex;
+             align-items: flex-start;
+             gap: 3rem;
+
+             &-box {
+                 flex-basis: 100%;
+                 flex-shrink: 1;
+
+                 strong {
+                     display: block;
+                     text-align: center;
+                     font-weight: 500;
+                 }
+
+                 ul {
+                     display: flex;
+                     height: 52.4rem;
+                     flex-direction: column;
+                     align-items: center;
+                     justify-content: center;
+                     gap: 8rem;
+                     background-color: #F7F7F7;
+                     margin-top: 4rem;
+                     border-radius: 2rem;
+
+                     &.gap-60x {
+                         padding-top: 0.8rem;
+                         gap: 6rem;
+                     }
+
+                     &.vertical {
+                         flex-direction: row;
+                     }
+                 }
+             }
+
+             &-ico {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+
+                 .symbol {
+                     background: svgCiSymbol('00ACCD'); 
+                     background-size: 100% 100%;
+                 }
+
+                 .logo {
+                     background-size: 100% 100%;
+                 }
+
+                 &.type1 {
+                     gap: 1.12rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 22rem;
+                         height: 2.51rem;
+                         background: svgCiTypeK1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type2 {
+                     gap: 1.13rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 21.54rem;
+                         height: 2.5rem;
+                         background: svgCiTypeC1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type3 {
+                     gap: 1.11rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 41.53rem;
+                         height: 2.35rem;
+                         background: svgCiTypeE1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type4 {
+                     gap: 1.01rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 25.14rem;
+                         height: 2.64rem;
+                         background: svgCiTypeK2('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type5 {
+                     gap: 1.01rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 24.75rem;
+                         height: 2.64rem;
+                         background: svgCiTypeC2('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type6 {
+                     gap: 1.01rem;
+                     .symbol {
+                         width: 3.1rem;
+                         height: 3rem;
+                     }
+
+                     .logo {
+                         width: 47.18rem;
+                         height: 2.35rem;
+                         background: svgCiTypeE2('231916'); background-size: 100% 100%;
+                     }
+                 }
+
+                 &.type7 {
+                     flex-direction: column;
+                     gap: 1.23rem;
+
+                     .symbol {
+                         width: 5.24rem;
+                         height: 5.07rem;
+                     }
+
+                     .logo {
+                         width: 18.33rem;
+                         height: 2.09rem;
+                         background: svgCiTypeK1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type8 {
+                     flex-direction: column;
+                     gap: 1.11rem;
+
+                     .symbol {
+                         width: 5.3rem;
+                         height: 5.13rem;
+                     }
+
+                     .logo {
+                         width: 18.14rem;
+                         height: 2.16rem;
+                         background: svgCiTypeC1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type9 {
+                     flex-direction: column;
+                     gap: 1.16rem;
+                     .symbol {
+                         width: 4.97rem;
+                         height: 4.81rem;
+                     }
+
+                     .logo {
+                         width: 28.3rem;
+                         height: 1.63rem;
+                         background: svgCiTypeE1('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type10 {
+                     flex-direction: column;
+                     gap: 1.13rem;
+                     .symbol {
+                         width: 5.24rem;
+                         height: 5.07rem;
+                     }
+
+                     .logo {
+                         width: 20.94rem;
+                         height: 2.2rem;
+                         background: svgCiTypeK2('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type11 {
+                     flex-direction: column;
+                     gap: 1.1rem;
+                     .symbol {
+                         width: 5.24rem;
+                         height: 5.07rem;
+                     }
+
+                     .logo {
+                         width: 20.62rem;
+                         height: 2.22rem;
+                         background: svgCiTypeC2('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type12 {
+                     flex-direction: column;
+                     gap: 1.16rem;
+                     .symbol {
+                         width: 4.97rem;
+                         height: 4.81rem;
+                     }
+
+                     .logo {
+                         width: 32.52rem;
+                         height: 1.62rem;
+                         background: svgCiTypeE2('231916'); background-size: 100% 100%;
+                     }
+                 }
+                 &.type13 {
+                     .logo {
+                         width: 3.8rem;
+                         height: 30.04rem;
+                         background:  svgCiTypeK3('00A0CA', '231916'); 
+                         background-size: 100% 100%;
+                     }
+                 }
+                 &.type14 {
+                     .logo {
+                         width: 3.8rem;
+                         height: 30.04rem;
+                         background:  svgCiTypeC3('00A0CA', '231916'); 
+                         background-size: 100% 100%;
+                     }
+                 }
+                 &.type15 {
+                     .logo {
+                         width: 3.8rem;
+                         height: 34rem;
+                         background:  svgCiTypeK4('00A0CA', '231916'); 
+                         background-size: 100% 100%;
+                     }
+                 }
+                 &.type16 {
+                     .logo {
+                         width: 3.8rem;
+                         height: 34rem;
+                         background:  svgCiTypeC4('00A0CA', '231916'); 
+                         background-size: 100% 100%;
+                     }
+                 }
+             }
+
+             &-btnG {
+                 display: flex;
+                 justify-content: flex-end;
+                 margin-top: 4rem;
+                 gap: 0.8rem;
+             }
+
+             &-btn {
+                 height: 4.2rem;
+                 line-height: 4.2rem;
+                 padding: 0 2.4rem;
+                 border: 1px solid #666;
+                 border-radius: 3rem;
+
+                 span {
+                     display: flex;
+                     align-items: center;
+                     gap: 0.4rem;
+                     font-weight: 500;
+                     font-size: 1.8rem;
+
+                     &::after {
+                         content: '';
+                         display: inline-block ;
+                         width: 1.8rem;
+                         height: 1.8rem;
+                         background: svgDownload('222'); background-size: 100% 100%;
+                         transform: translateY(-1px);
+                     }
+                 }
+             }
+        }
+
+        .ciincorrect {
+            &-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 3rem;
+                column-gap: 3rem;
+            }
+
+            &-li {
+            }
+
+            &-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 12rem;
+                border: 1px solid #E5E5E5;
+                border-radius: 0.8rem;
+                overflow: hidden;
+
+                img {
+                    display: block;
+
+                    &.type1 {
+                        height: 2rem;
+                    }
+
+                    &.type2 {
+                        height: 2rem;
+                    }
+
+                    &.type3 {
+                        height: 2.32rem;
+                    }
+
+                    &.type4 {
+                        height: 4.17rem;
+                    }
+
+                    &.type5 {
+                        height: 2rem;
+                    }
+
+                    &.type6 {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &-txt {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 1.5rem;
+                gap: 1rem;
+
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: #666;
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background: svgBan('FF0000'); background-size: 100% 100%;
+                }
+            }
+
+        }
+        
+        .cicolor {
+            &-list {
+                display: flex;
+                gap: 3rem;
+            }
+            &-li {
+                flex-basis: 100%;
+                flex-shrink: 1;
+            }
+            &-color {
+                display: block;
+                width: 100%;
+                height: 15rem;
+                padding: 2.5rem;
+                border-radius: 0.8rem;
+
+                span {
+                    font-weight: 700;
+                    line-height: 1.8rem;
+                    color: #fff;
+                }
+
+                &.blue {
+                    background-color: #00A0C9;
+                }
+                &.black {
+                    background-color: #231F20;
+                }
+                &.gold {
+                    background-color: #A29061;
+                }
+                &.silver {
+                    background-color: #A7A9AC;
+                }
+            }
+            &-text {
+                margin-top: 1.5rem;
+
+                strong {
+                    display: block;
+                    margin-bottom: 2px;
+                }
+
+                span {
+                    display: block;
+                    font-weight: 400;
+                    color: #666;
+                }
+            }
+        }
+
+        .cihistory {
+            &-img {
+                flex-basis: 7.1%;
+                flex-shrink: 1;
+
+                &-wrap {
+                    background-color: #F7F7F7;
+                    padding: 4rem;
+                    border-radius: 0.8rem;
+                }
+
+                &-group {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: 118.4rem;
+                    margin: 0 auto;
+                    gap: 4rem;
+                }
+
+                img {
+                    display: block;
+                    width: calc(100% - 4px);
+                    margin: 0 auto;
+                }
+                .year {
+                    display: block;
+                    margin-top: 2rem;
+                    text-align: center;
+                    color: #2F75FF;
+                }
+            }
+            &-arrow {
+                flex-basis: 17.5%;
+                flex-shrink: 1; 
+                height: 1.2rem;
+                background-image: url(../../static/images/brand/ci_history_arrow.svg);
+                background-size: 100% 100%;
+                margin-bottom: 4rem;
+            }
+
+            &-txt {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 7.2rem;
+
+                &-wrap {
+                    margin-top: 5rem;
+                } 
+
+                &-group {
                     display: flex;
                     flex-direction: column;
-                    justify-content: flex-end;
-                    align-items: center;
-                    gap: 1.2rem;
-                    flex-basis: 100%;
-                    flex-shrink: 1;
-                    height: 18.2rem;
-                    background-color: #F7F7F7;
-                    border-radius: 2rem;
-                    padding-bottom: 4.4rem;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 5rem;
+                    max-width: 119.4rem;
+                    margin: 0 auto;
+                }
 
-                    span {
-                        color: #2F75FF;
-                    }
+                &-box {
+                    margin-top: 1rem;
 
-                    i {
-                        display: block;
+                    strong {
+                        font-weight: 500;
+                        font-size: 2.4rem;
+                        line-height: 2.86rem;
                     }
 
-                    .citype-ico-kor1 {
-                        width: 19.5rem;
-                        height: 2.2rem;
-                        background: svgCiTypeK1('231916'); background-size: 100% 100%;
+                    p {
+                        margin-top: 1.6rem;
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        line-height: 3.2rem;
+                        color: #666666;
+
+                        em {
+                            color: #000;
+
+                            &.blue {
+                                color: #000081;
+                            }
+                        }
                     }
-                    .citype-ico-kor2 {
-                        width: 20.9rem;
-                        height: 2.2rem;
-                        background: svgCiTypeK2('231916'); background-size: 100% 100%;
+
+                    .ico-ci-text {
+                        display: inline-block;
+                        width: 2rem;
+                        height: 2rem;
+                        vertical-align: text-top;
+
+                        background-image: url(../../static/images/brand/ico_ci_text.svg);
                     }
-                    .citype-ico-cc1{
-                        width: 19.5rem;
-                        height: 2.2rem;
-                        background: svgCiTypeC1('231916'); background-size: 100% 100%;
-                    }
-                    .citype-ico-cc2{
-                        width: 19.5rem;
-                        height: 2.2rem;
-                        background: svgCiTypeC2('231916'); background-size: 100% 100%;
-                    }
-                    .citype-ico-eng1{
-                        width: 29.5rem;
-                        height: 1.6rem;
-                        background: svgCiTypeE1('231916'); background-size: 100% 100%;
-                        margin-bottom: 0.3rem;
-                    }
-                    .citype-ico-eng2{
-                        width: 32rem;
-                        height: 1.6rem;
-                        background: svgCiTypeE2('231916'); background-size: 100% 100%;
-                        margin-bottom: 0.3rem;
-                    }
+                }
+                
+                img {
+                    width: 5rem;
                 }
             }
         }
@@ -413,6 +1143,27 @@
                 }
             }
         }
+
+        &-ci {
+            .motif-list-wrap::before { width: 19.385%; }
+
+            .motif-list { width: 80.615%; }
+            .citype-list {
+                flex-direction: column;
+            }
+            .citype-li {
+                width: 100%;
+                padding: 4.4rem 0;
+            }
+            .cicombi {
+                flex-direction: column;
+            }
+
+            .cicombi-box {
+                width: 100%;
+            }
+
+        }
         
     }
 }
@@ -428,6 +1179,18 @@
                 }
             }
         }
-        
+
+        &-ci {
+            .ciincorrect-list {
+                grid-template-columns: 1fr;
+            }
+            .cicolor-list {
+                flex-wrap: wrap;
+            }
+
+            .cicolor-li {
+                flex-basis: calc(50% - 1.5rem);
+            }
+        }
     }
 }
