@@ -36,6 +36,9 @@
     .svg-link {
         width: 12px; height: 13px; background: svgUrlArrow('fff'); background-size: 100% 100%;
     }
+    .svg-link-left {
+        width: 24px; height: 24px; background: svgLinkLeft('fff'); background-size: 100% 100%;
+    }
     .svg-link-2 {
         width: 24px; height: 24px; background: svgUrlArrow2('fff'); background-size: 100% 100%;
     }
@@ -87,6 +90,9 @@
     .svg-chk {
         width: 15px; height: 11px; background: svgCheck('fff'); background-size: 100% 100%;        
     }
+    .svg-page-prevleft {
+        width: 10px; height: 10px; background: svgPageArrowLeft('fff'); background-size: 100% 100%;        
+    }
     .svg-page-prev {
         width: 10px; height: 10px; background: svgPageArrow('fff'); background-size: 100% 100%;        
     }
@@ -95,6 +101,15 @@
     }
     .svg-download {
         width: 24px; height: 24px; background: svgDownload('162DA1'); background-size: 100% 100%;
+    }
+    .svg-ban {
+        width: 24px; height: 24px; background: svgBan('FF0000'); background-size: 100% 100%;
+    }
+    .svg-bulb {
+        width: 74px; height: 74px; background: svgBulb('FF4002'); background-size: 100% 100%;
+    }
+    .svg-heart {
+        width: 74px; height: 74px; background: svgHeart('2F75FF'); background-size: 100% 100%;
     }
     .svg-all-gnb-bg {
         width: 640px; height: 360px; background: allGnbBg('162DA1'); background-size: 100% 100%;
@@ -120,4 +135,35 @@
     .svg-error-icon-3 {
         width: 222px; height: 173px; background: svgError3(); background-size: 100% 100%;
     }
+    .svg-ci-logo {
+        width: 350px; height: 350px; background: svgCiLogo(); background-size: 100% 100%;
+    }
+    .svg-ci-motif1  {width: 40px; height: 40px; background: svgCiMotif1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-motif2 {width: 40px; height: 40px; background: svgCiMotif2(); background-size: 100% 100%;}
+
+    .svg-ci-motif3 {width: 40px; height: 40px; background: svgCiMotif3(); background-size: 100% 100%;}
+
+    .svg-ci-typek1 {width: 195px; height: 22px; background: svgCiTypeK1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typek2 {width: 209px; height: 22px; background: svgCiTypeK2('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typek3 {width: 38px; height: 300px; background: svgCiTypeK3('00A0CA', '231916'); background-size: 100% 100%;}
+
+    .svg-ci-typek4 {width: 38px; height: 340px; background: svgCiTypeK4('00A0CA', '231916'); background-size: 100% 100%;}
+
+    .svg-ci-typec1 {width: 182px; height: 22px; background: svgCiTypeC1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typec2 {width: 206px; height: 22px; background: svgCiTypeC2('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typec3 {width: 38px; height: 300.4px; background: svgCiTypeC3('00A0CA', '231916'); background-size: 100% 100%;}
+
+    .svg-ci-typec4 {width: 38px; height: 340.6px; background: svgCiTypeC4('00A0CA', '231916'); background-size: 100% 100%;}
+
+
+    .svg-ci-typee1 {width: 295px; height: 16px; background: svgCiTypeE1('fff'); background-size: 100% 100%;}
+
+    .svg-ci-typee2 {width: 320px; height: 16px; background: svgCiTypeE2('fff'); background-size: 100% 100%;}
+
+    .svg-ci-symbol {width: 31px; height: 30px; background: svgCiSymbol('00ACCD'); background-size: 100% 100%;}
 }
