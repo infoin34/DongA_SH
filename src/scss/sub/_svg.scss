@@ -60,6 +60,11 @@
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 41 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.5C0.723858 8.5 0.5 8.72386 0.5 9C0.5 9.27614 0.723858 9.5 1 9.5L1 8.5ZM1 9.5L40 9.5V8.5L1 8.5L1 9.5Z' fill='#{$color}'/%3E%3Cpath d='M32 1L40 9L32 17' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
     @return url($icon);
 }
+@function svgUrlArrow4($color){
+    $color: '%23'+$color;
+    $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.71038 1.99609H1.99609V21.9961H21.9961V16.2818' stroke='#{$color}' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.8454 1.99609H21.9883M21.9883 1.99609V9.13895M21.9883 1.99609L11.9883 11.9961' stroke='#{$color}' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+    @return url($icon);
+}
 @function svgUpArrow($color){
     $color: '%23'+$color;
     $icon: "data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7L7 1L13 7' stroke='#{$color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E";
