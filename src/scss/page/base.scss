@@ -360,6 +360,12 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	
 }
 
+//bg
+.bg {
+   &-a {background-color: #F7F7F7;}
+}
+
+
 //tab-type
 .tab {
 	&-type-a {
@@ -384,7 +390,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	&-type-b {
 		display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;
         > li {
-            width: calc((100% - 9rem)/4); border:1px solid #E5E5E5; border-radius: 2rem; transition: all 0.3s;        
+            width: calc((100% - 9rem)/4); border: 1px solid #E5E5E5; border-radius: 2rem; transition: all 0.3s;        
             >a {
                 &[download] {
 					display: block; padding: 4rem 7rem 4rem 4rem; height: 100%; font-size: 2.4rem;
@@ -396,10 +402,12 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 }
 
 //bullet
-.bullet-type-a {
-	li {
-		position: relative; display: block; width: 100%;
-		&:before {content:''; display: inline-block; margin: -0.2rem 1rem 0;  width: 3px; height: 3px; border-radius: 50%; background-color: #000; vertical-align: middle;}
+.bullet {
+	&-type-a {
+		li {
+			position: relative; display: block; width: 100%;
+			&:before {content:''; display: inline-block; margin: -0.2rem 1rem 0;  width: 3px; height: 3px; border-radius: 50%; background-color: #000; vertical-align: middle;}
+		}
 	}
 }
 

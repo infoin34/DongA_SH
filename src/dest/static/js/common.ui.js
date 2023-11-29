@@ -364,6 +364,172 @@
 		return swiper;
 	}
 
+	/* slideStart */
+	function slideStart(obj, cnt, rolling){
+		let $self = obj;
+		let $slideSection = $self.find('.slide'); 
+		let $btnSlidePrev = $self.find('.btn-prev'); 
+		let $btnSlideNext = $self.find('.btn-next');
+		let slideLength = $slideSection.length;
+		let $initPageIdx = 0, 
+			$curPageIdx = 0, 
+			$prevPageIdx, 
+			$nextPageIdx,
+			$autoPlay = $self.attr('autoPlay'),
+			$setTo;
+			
+		let swipe = {
+			touchStart : function(e){
+				var touch = e.touches[0] || e.changedTouches[0];
+				this.touchX = touch.pageX;
+				this.touchY = touch.pageY;	
+			},
+			touchMove : function(e){	
+				var touch = e.touches[0] || e.changedTouches[0];
+				this.moveX = touch.pageX;
+				this.moveY = touch.pageY;
+				
+				var gapX = Math.abs(this.touchX - this.moveX);
+				var gapY = Math.abs(this.touchY - this.moveY);
+				
+				if(Math.abs(gapX) > Math.abs(gapY)){
+					e.preventDefault();
+					e.stopPropagation();
+				}
+					
+			},
+			touchEnd : function(e){	
+				var touch = e.touches[0] || e.changedTouches[0];
+				this.moveX = touch.pageX;
+				this.moveY = touch.pageY;
+				var gapX = Math.abs(this.touchX - this.moveX);
+				var gapY = Math.abs(this.touchY - this.moveY);
+		
+				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 40){	
+					clearTimeout(setTo);
+					if(this.moveX > this.touchX){
+						//this.prev();
+					}else{
+						//this.next();
+					}
+				} 						
+			},
+		}
+		function setting(){
+			let slidePaging = '';
+			for(var i = 0; i < slideLength; i++){
+				let className = '';
+				if(i == 0){
+					className = 'active';
+				}
+				slidePaging = slidePaging + ('<li class="'+ className +'">'+ Number(i + 1) +'</li>');
+			}
+			if(slideLength >= 3){
+				$slideSection.first().addClass('active');
+				$slideSection.first().next().addClass('next');
+				$slideSection.last().addClass('prev');
+				//$self.append('<ul class="slide-dots">'+ slidePaging +'</ul>');			
+				init();						
+			}else if (slideLength == 1){
+				$slideSection.addClass('active');
+				$btnSlidePrev.hide();
+				$btnSlideNext.hide();
+			}else{
+				$self.find('.slide-list').append($slideSection.eq(0).clone(true));
+				$self.find('.slide-list').append($slideSection.eq(1).clone(true));
+				$slideSection = $self.find('.slideSection'); 
+				slideLength = $slideSection.length;				
+				$slideSection.eq(0).addClass('active');
+				$slideSection.eq(1).addClass('next');
+				$slideSection.last().addClass('prev');
+				init();		
+			}
+		} 
+		
+		function init(){
+			if($autoPlay && !rolling) autoPlay();
+			if($autoPlay && rolling) rollingAutoPlay();
+			
+			$btnSlidePrev.on("click", function(e){
+				e.preventDefault();
+				clearTimeout($setTo); 
+				$curPageIdx--;		
+				setElement();
+			});
+			
+			$btnSlideNext.on("click", function(e){
+				e.preventDefault();
+				clearTimeout($setTo); 
+				$curPageIdx++;		
+				setElement();
+			});
+					
+			$slideSection.on("click", function(e){
+				clearTimeout($setTo); 
+				$curPageIdx = $(this).index();
+				setElement();
+			});
+		}
+		
+		function autoPlay(){
+			var autoSc=cnt? cnt : 5000;
+			$setTo = setTimeout(function(){
+				clearTimeout($setTo);
+				$curPageIdx++;
+				setElement();
+			},autoSc);
+		}
+		function rollingAutoPlay(){
+			$(window).on('scroll',function(){
+				var height = $(window).scrollTop() + $(window).height();
+				if (height < $self.offset().top || height >=$self.offset().top + 200 + $self.parents(".section").height()) {
+					$self.removeClass('playing');
+					clearTimeout($setTo);
+				}
+				else{
+					if(!$self.hasClass('playing')){
+						$self.addClass('playing')
+						setTimeout(function(){
+							$btnSlideNext.click();
+
+						},autoSc);
+					}
+				}
+			});
+			var autoSc = cnt;
+			$setTo = setTimeout(function(){
+				$btnSlideNext.click();
+			},autoSc);
+		}
+
+		function setElement(){		
+			if($curPageIdx < 0){
+				$curPageIdx = slideLength-1;
+			}else if($curPageIdx > slideLength-1){
+				$curPageIdx = 0;
+			}			
+			$prevPageIdx = ($curPageIdx-1) < 0 ? slideLength-1 : $curPageIdx-1;	
+			$nextPageIdx = ($curPageIdx+1) < slideLength ? $curPageIdx+1 : 0;
+			
+			$self.find('.slide.active').removeClass('active'); 				
+			$self.find('.slide.next').removeClass('next'); 				
+			$self.find('.slide.prev').removeClass('prev');
+		
+			$slideSection.eq($curPageIdx).addClass('active');
+			$slideSection.eq($prevPageIdx).addClass('prev');	
+			$slideSection.eq($nextPageIdx).addClass('next');			
+			
+			if($autoPlay) {
+				$setTo = setTimeout(function(){      	
+					autoPlay();
+				}, 2000);
+			}
+		}
+		
+		setting();
+	}
+
+
 	/* animate */ 
 	//specialEasing 추가
 	$.easing.circle = function (x, curTime, begin, end, distance){
@@ -549,6 +715,7 @@
 	exports.setCookie = setCookie;
     exports.bodyScrollBlock = bodyScrollBlock;
     exports.popup = popup;
+	exports.slideStart  = slideStart;
 	exports.afterLoading = afterLoading;
 	exports.cssToggle = cssToggle;
 	exports.layerToggle = layerToggle;
