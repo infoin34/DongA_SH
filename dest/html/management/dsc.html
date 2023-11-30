@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+
+
+
+	<title>동아쏘시오홀딩스</title>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../static/css/swiper.css">
+	<!--//css -->
+
+
+	<!-- srcipt -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<!-- <script src="../../static/js/swiper.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="../../static/js/common.ui.js"></script>
+	<!--//srcipt -->
+</head>
+
+<body>
+	<div id="wrap">
+
+		<header id="header" class="">
+			<div class="header-inner">
+				<h1 class="logo"><a href="../main/main.html">로고</a></h1>
+				<!-- 헤더 메뉴 -->
+				<div class="header-menu">
+					<div class="header-gnb">
+						<div class="gnb-depth1">
+							<ul class="gnb-depth1-list">
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">동아쏘시오 그룹</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li><a href="../brand/intro.html" class="gnb-depth2-title">그룹소개</a></li>
+											<li><a href="../brand/ceo.html" class="gnb-depth2-title">CEO 인사말</a> </li>
+											<li><a href="#" class="gnb-depth2-title">가치 및 비전</a></li>
+											<li><a href="../brand/history.html" class="gnb-depth2-title">연혁</a></li>
+											<li><a href="#" class="gnb-depth2-title">CI 소개</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="on">
+									<strong class="gnb-depth1-title"><a href="#">정도경영</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li class="on">
+												<a href="../management/philosophy.html" class="gnb-depth2-title">정도 경영 철학</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li class="on"><a href="../management/philosophy.html">정도 경영 철학</a></li>
+														<li><a href="../management/dsc.html">사회책임협의회(DSC)</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#" class="gnb-depth2-title">인권경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">환경경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">준법경영</a></li>
+											<li><a href="#" class="gnb-depth2-title">소비자중심경영</a></li>
+											<li>
+												<a href="#" class="gnb-depth2-title">CSR</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li><a href="#">전략 및 운영체계</a></li>
+														<li><a href="../management/csr-2.html">CSR 활동</a></li>
+														<li><a href="../management/csr-3.html">협력기관</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
+											<li><a href="../management/ethical.html" class="gnb-depth2-title">윤리현장 및 규정</a></li>
+											<li><a href="../management/synthesis-report.html" class="gnb-depth2-title">통합보고서</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">투자정보</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li>
+												<a href="../investment/governance.html" class="gnb-depth2-title">기업지배구조</a>
+												<div class="gnb-depth3">
+													<ul class="gnb-depth3-list">
+														<li><a href="../investment/governance.html">지배구조 일반</a></li>
+														<li><a href="../investment/governance-2-1.html">주식정보</a></li>
+														<li><a href="../investment/governance-3-1.html">이사회</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
+											<li><a href="../investment/ir.html" class="gnb-depth2-title">IR</a></li>
+											<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<strong class="gnb-depth1-title"><a href="#">PR Center</a></strong>
+									<div class="gnb-depth2">
+										<ul class="gnb-depth2-list">
+											<li><a href="../pr/news.html" class="gnb-depth2-title">그룹뉴스</a></li>
+											<li><a href="../pr/media.html" class="gnb-depth2-title">미디어룸</a></li>
+											<li><a href="../pr/contribution.html" class="gnb-depth2-title">사회공헌</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="header-util">
+						<a href="#" class="btn-work-place">오피스 365</a>
+						<div class="header-lang">
+							<a href="javscript:void(0);" class="btn-lang">언어</a>
+							<div class="lang-list-wrap">
+								<ul class="lang-list">
+									<li><a href="#">KO</a></li>
+									<li><a href="#">EN</a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" class="btn-all-gnb">
+							<span class=></span>
+							<div>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //헤더 메뉴 -->
+				<ul class="header-etc-link">
+					<li><a href="#">정도 경영</a></li>
+					<li><a href="#">CLEAN :D</a></li>
+					<li><a href="#">인재채용</a></li>
+					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+				</ul>
+			</div>
+			<!-- 전체메뉴 -->
+			<nav class="all-gnb-view">
+				<div class="logo"><a href="../main/main.html" class="">로고</a></div>
+				<div class="nav-gnb">
+					<div class="gnb-depth1">
+						<ul class="gnb-depth1-list">
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">동아쏘시오 그룹</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li><a href="../brand/intro.html" class="gnb-depth2-title">그룹소개</a></li>
+										<li><a href="../brand/ceo.html" class="gnb-depth2-title">CEO 인사말</a> </li>
+										<li><a href="#" class="gnb-depth2-title">가치 및 비전</a></li>
+										<li><a href="../brand/history.html" class="gnb-depth2-title">연혁</a></li>
+										<li><a href="#" class="gnb-depth2-title">CI 소개</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="on">
+								<strong class="gnb-depth1-title"><a href="#">정도경영</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li class="on">
+											<a href="../management/philosophy.html" class="gnb-depth2-title">정도 경영 철학</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li class="on"><a href="../management/philosophy.html">정도 경영 철학</a></li>
+													<li><a href="../management/dsc.html">사회책임협의회(DSC)</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="#" class="gnb-depth2-title">인권경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">환경경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">준법경영</a></li>
+										<li><a href="#" class="gnb-depth2-title">소비자중심경영</a></li>
+										<li>
+											<a href="#" class="gnb-depth2-title">CSR</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li><a href="#">전략 및 운영체계</a></li>
+													<li><a href="../management/csr-2.html">CSR 활동</a></li>
+													<li><a href="../management/csr-3.html">협력기관</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="#" class="gnb-depth2-title">공급망 관리</a></li>
+										<li><a href="../management/ethical.html" class="gnb-depth2-title">윤리현장 및 규정</a></li>
+										<li><a href="../management/synthesis-report.html" class="gnb-depth2-title">통합보고서</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">투자정보</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li>
+											<a href="../investment/governance.html" class="gnb-depth2-title">기업지배구조</a>
+											<div class="gnb-depth3">
+												<ul class="gnb-depth3-list">
+													<li><a href="../investment/governance.html">지배구조 일반</a></li>
+													<li><a href="../investment/governance-2-1.html">주식정보</a></li>
+													<li><a href="../investment/governance-3-1.html">이사회</a></li>
+												</ul>
+											</div>
+										</li>
+										<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
+										<li><a href="#" class="gnb-depth2-title">IR</a></li>
+										<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<strong class="gnb-depth1-title"><a href="#">PR Center</a></strong>
+								<div class="gnb-depth2">
+									<ul class="gnb-depth2-list">
+										<li><a href="../pr/news.html" class="gnb-depth2-title">그룹뉴스</a></li>
+										<li><a href="../pr/media.html" class="gnb-depth2-title">미디어룸</a></li>
+										<li><a href="../pr/contribution.html" class="gnb-depth2-title">사회공헌</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="nav-etc-link">
+					<li><a href="#">정도 경영</a></li>
+					<li><a href="#">CLEAN :D</a></li>
+					<li><a href="#">인재채용</a></li>
+					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+				</ul>
+			</nav>
+			<!-- //전체메뉴 -->
+		</header>
+
+		<main role="main" class="management">
+			<div id="container" class="pb-0x">
+				<section class="management-philosophy">
+					<div class="section-head">
+						<div class="section-inner">
+							<div class="text-wrap">
+								<h2 class="main-title">
+									<div class="line-cut">
+										<strong class="scr-eff">정도 경영 철학</strong>
+									</div>
+								</h2>
+								<div class="line-cut">
+									<p class="sub-title text-1 scr-eff">동아쏘시오그룹의 ‘정도경영’은 보편적으로 쓰이는 글자,<br>바를 정(正)이 아닌 그룹 고유의 창업정신을 상징하는 글자,솥 정(鼎)으로 재정의하였습니다.<br>동아쏘시오그룹 경영철학인 ‘정도경영(鼎道經營)’은 곧 ‘사회책임경영’입니다.</p>
+								</div>
+								<div class="page-menu-wrap">
+									<div class="page-menu-list scr-eff scr-eff-active">
+										<ul class="tab-type-a">
+											<li class="tab-item"><a href="philosophy.html">정도 경영 철학</a></li>
+											<li class="tab-item on"><a href="dsc.html">사회책임협의회(DSC)</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="head-img">
+								<div class="img img-1 scr-eff">
+									<img src="../../static/images/title_img/management.png" alt="" class="pc-part">
+									<img src="../../static/images/title_img/management.png" alt="" class="mo-part">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 사회책임협의회(DSC) -->
+					<div class="section-contents on">
+						<div class="philosophycont">
+							<div class="section-inner">
+								<div class="blind">사회책임협의회(DSC)</div>
+								<ul class="plank-list">
+									<li class="plank-item">
+										<strong class="title-s2">
+                                            동아쏘시오그룹<br>
+                                            사회책임협의회<br>
+                                            (Dong-A socio group<br>
+                                            Social responsibility<br>
+                                            Council, DSC)
+                                        </strong>
+										<div class="plank-cont">
+											<span class="title-s3">기능 : 그룹 사회책임경영 관련 사안 심의 및 의사결정</span>
+											<ul class="philosophycont-mean">
+												<li class="text-2">1. 사회적 책임 활동 전략, 목표 및 성과</li>
+												<li class="text-2">2. 주요 ESG(Environment, Social, Governance) 현황 및 대응</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="philosophycont gray">
+							<div class="section-inner">
+								<ul class="plank-list">
+									<li class="plank-item">
+										<strong class="title-s2">조직도</strong>
+										<div class="plank-cont">
+											<div class="organization-img">
+												<img src="../../static/images/management/organization_img_pc.svg" alt="조직도 이미지 PC" class="pc-part">
+											</div>
+											<div class="organization-table">
+												<ol class="conference-list">
+													<li class="conference-li">
+														<div class="head">
+															<strong>7차<br>사회책임협의회</strong>
+															<span class="time">2022.12.16</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>한국ESG기준원 평가 결과</li>
+																<li>그룹 ISO26000 진단결과 이행현황</li>
+																<li>23년 그룹사 ABMS 구축 계획</li>
+																<li>사회책임기획국 운영(안)</li>
+																<li>23년 인권경영 운영 계획</li>
+																<li>조직문화진단 경과 및 후속 프로세스</li>
+																<li>22년 CSR활동 리뷰 및 23년도 계획</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>6차<br>사회책임협의회</strong>
+															<span class="time">2022.06.24</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>ISO26000 그룹사 진단 보고</li>
+																<li>21년도 그룹 통합보고서 발행 보고</li>
+																<li>KCGS, MSCI ESG 등급 보고</li>
+																<li>그룹 인권경영 추진안</li>
+																<li>CSR 상반기 보고 및 하반기 계획</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>5차<br>사회책임협의회</strong>
+															<span class="time">2021.06.25</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>20년 그룹 통합보고서 발행</li>
+																<li>비상장사 사회책임경영</li>
+																<li>동아쏘시오그룹 CSR프로그램</li>
+																<li>동아ST 천안공장 태양광 발전 계획</li>
+																<li>페이퍼리스 전략</li>
+																<li>중대재해처벌법 주요 내용과 대응방안</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>4차<br>사회책임협의회</strong>
+															<span class="time">2021.01.29</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>20년 ESG 평가 결과</li>
+																<li>21년 부패방지경영시스템 구축사 결정</li>
+																<li>지속가능경영 성과 관리 시스템 구축</li>
+																<li>사회책임협의회 운영 방안 변경</li>
+																<li>그룹 CSR 체계화</li>
+																<li>환경부문 그룸 공통지표 소개</li>
+																<li>임직원 비대면 CSR 활동 방안</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>3차<br>사회책임협의회</strong>
+															<span class="time">2020.09.25</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>그룹사별 사회공헌 비율 분석</li>
+																<li>동아쏘시오홀딩스 UNGC 가입</li>
+																<li>UN SDGs와 ISO26000 연계를 통한 그룹 사회책임경영 방향</li>
+																<li>그룹 CSR 전략 수립</li>
+																<li>그룹사 온실가스 인벤토리 구축 계획</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>2차<br>사회책임협의회</strong>
+															<span class="time">2020.06.26</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>동아쏘시오그룹 첫번째 통합보고서 발간</li>
+																<li>20년도 부패방지경영시스템 구축 세부 일정</li>
+																<li>그룹사 사회적 책임 전략과제 분석</li>
+																<li>사회책임협의회 운영 방안</li>
+																<li>동아제약 사회적가치위원회 출범 및 위원회 소개</li>
+																<li>동아ST 사회적가치위원회 출범 및 위원회 소개</li>
+															</ul>
+														</div>
+													</li>
+													<li class="conference-li">
+														<div class="head">
+															<strong>1차<br>사회책임협의회</strong>
+															<span class="time">2020.03.27</span>
+														</div>
+														<div class="cont">
+															<ul>
+																<li>정도경영 그룹사 확대 계획</li>
+																<li>지속가능경영 전략수립 및 그룹사 진단 현황</li>
+															</ul>
+														</div>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--// 사회책임협의회(DSC) -->
+				</section>
+			</div>
+		</main>
+		<footer id="footer">
+			<div class="footer-inner">
+				<div class="footer-logo">
+					<h2><img src="../../static/images/common/footer_logo.png" alt="logo: go! new flow, new shift"></h2>
+				</div>
+				<div class="footer-content">
+					<div class="footer-info">
+						<div class="info-item">
+							<strong>Address</strong>
+							<p class="address">서울시 동대문구 천호대로</p>
+						</div>
+						<div class="info-item">
+							<strong>Contact</strong>
+							<p><a href="tel:02-920-8114" class="contact">02-920-8114</a></p>
+						</div>
+					</div>
+					<div class="footer-link">
+						<div class="footer-family-site">
+							<a class="btn-family-site" href="#">Family Site<i class="ico-plus"></i></a>
+							<!-- 관련사이트 팝업 -->
+							<div class="layer-popup pop-about-site no-dim">
+								<div class="popup-wrap">
+									<div class="popup-inner">
+										<div class="popup-body">
+											<a href="javascript:void(0);" class="btn-close">닫기</a>
+											<div class="about-site-tab">
+												<li class="on"><a href="javascript:void(0);" aria-label="펼치기">Family Site</a></li>
+												<li><a href="javascript:void(0);" aria-label="펼치기">Brand</a></li>
+											</div>
+											<div class="about-site-box">
+												<div class="blind">Family Site</div>
+												<ul class="about-site-list on">
+													<li><a href="#">동아 ST</a></li>
+													<li><a href="#">동아 제약</a></li>
+													<li><a href="#">에스티팜</a></li>
+													<li><a href="#">에스티젠바이오</a></li>
+													<li><a href="#">동아참메드</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아 ST</a></li>
+													<li><a href="#">동아 제약</a></li>
+													<li><a href="#">에스티팜</a></li>
+													<li><a href="#">에스티젠바이오</a></li>
+													<li><a href="#">동아참메드</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아 ST</a></li>
+													<li><a href="#">동아 제약</a></li>
+													<li><a href="#">에스티팜</a></li>
+													<li><a href="#">에스티젠바이오</a></li>
+													<li><a href="#">동아참메드</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아 ST</a></li>
+													<li><a href="#">동아 제약</a></li>
+													<li><a href="#">에스티팜</a></li>
+													<li><a href="#">에스티젠바이오</a></li>
+													<li><a href="#">동아참메드</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+													<li><a href="#">동아오츠카</a></li>
+												</ul>
+												<div class="blind">Brand</div>
+												<ul class="about-site-list">
+													<li><a href="#">브랜드1</a></li>
+													<li><a href="#">브랜드2</a></li>
+													<li><a href="#">브랜드3</a></li>
+													<li><a href="#">브랜드4</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- // 관련사이트 팝업 -->
+						</div>
+						<div class="footer-term">
+							<a href="#" onclick="popup.open('.pop-policy-privacy'); return false;">개인정보보호정책</a>
+						</div>
+						<div class="footer-sns">
+							<ul class="sns-list">
+								<li><a class="sns-facebook" href="#">페이스북</a></li>
+								<li><a class="sns-instagram" href="#">인스타그램</a></li>
+								<li><a class="sns-youtube" href="#">유튜브</a></li>
+								<li><a class="sns-twitter" href="#">트위터</a></li>
+							</ul>
+						</div>
+					</div>
+					<p class="footer-copyright">Copyrightⓒ DONG-A SOCIO HOLDINGS. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
+		<a class="btn-top" href="javascript:void(0);">
+			<p>TOP</p>
+		</a>
+		<div class="mouse-cursor">
+			<div class="mouse-pointer"></div>
+		</div>
+		<!-- 알림창 - 공통 -->
+		<div class="layer-popup pop-confirm">
+			<div class="popup-wrap">
+				<div class="popup-inner">
+					<div class="popup-body">
+						<p class="confirm-text title-s2"></p>
+						<div class="btn-wrap"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 알림창 -->
+
+		<!-- 개인정보보호정책 - 공통 -->
+		<div class="layer-popup pop-policy-privacy">
+			<div class="popup-wrap">
+				<div class="popup-inner">
+					<div class="popup-head">
+						<div class="title-s2">개인정보 처리방침</div>
+						<div class="select-wrap">
+							<strong class="label">시행일 정보</strong>
+							<div class="select-ui">
+								<select name="" id="">
+									<option>2023.01.01</option>
+									<option>날짜</option>
+									<option>2023.01.01</option>
+								</select>
+							</div>
+						</div>
+						<a href="#" class="btn-close">닫기</a>
+					</div>
+					<div class="popup-body">
+						<div class="agree-content text-3">
+							수집하는 개인정보 항목<br>
+                    회사는 고객의 온라인 문의, 사이버감사 신고등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br><br><br>
+                    수집항목 : 이름, 주소, 전화번호, 이메일, 접속 IP, 서비스 이용 기록<br>
+                    개인정보 수집방법 : 홈페이지<br><br><br>
+                    개인정보의 수집 및 이용목적<br>
+                    고객님께서 제공한 모든 정보는 다음에 기술한 목적 이외로는 사용되지 않으며, 이용 목적이 변경될시에는 사전 동의를 구할 것입니다.회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br><br>
+                    이름, 주소, 전화번호, 이메일 : 고객문의, 본인확인, 문의사항 확인, 사실확인, 처리결과 통보<br><br>
+                    접속IP, 서비스 이용 기록 : 접속빈도 파악에 대한 통계<br><br><br>
+                    개인정보의 보유 및 이용기간<br>
+                    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이류를 명시한 기간 동안 보존합니다.<br><br>
+                    3-1. 회사 내부 방침에 의한 보존<br>
+                    불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조 : 1년<br>
+                    온라인문의 : 문의사항이 등록 후 1년이 지난 시점<br>
+                    관계법령 위반에 따른 수사, 조사 등이 진행중인 경우에는 해당 수사, 조사 종료 시 까지<br><br>
+                    3-2. 관련법령에 의한 보존<br>
+                    계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래 등에서의 소비자보호에 관한 법
+                    률)
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //개인정보보호정책 - 공통 -->
+	</div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+</script>
+<!--//페이지 관련 스크립트 -->
+
+</html>

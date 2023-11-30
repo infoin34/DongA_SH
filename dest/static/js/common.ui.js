@@ -72,8 +72,11 @@
 	}
    
     /* 특정 위치로 스크롤 */
-	function scrollMove (val, time){
-        $('html, body').animate({scrollTop: val}, time || 300);
+	function scrollMove (val, time, cd){
+        $('html, body').animate(
+			{scrollTop: val}, time || 300, function(){
+				cd && cd();
+			});
     }   
 
 	/* animate - 타겟, {바뀔 속성}, 걸리는 시간, 지연 시간, 속도, fn(콜백)  */ 
