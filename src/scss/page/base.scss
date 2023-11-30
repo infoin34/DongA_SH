@@ -61,7 +61,7 @@ textarea {
 		outline: none;
 	}
 }
-select	{width: 100%; padding-right: 5rem; outline:none; border:1px solid #ddd; text-align:center; font-size: 1.8rem; font-family: inherit; line-height:1.6; background: svgDownArrow('222') no-repeat calc(100% - 2.4rem) 50% / 11px; border-radius: 0.4rem; box-shadow:none; vertical-align:middle; -webkit-appearance:none; -moz-appearance: none; appearance:none; cursor:pointer;}
+select	{width: 100%; padding-right: 5rem; outline:none; border:1px solid #ddd; font-size: 1.8rem; font-family: inherit; line-height:1.6; background: svgDownArrow('222') no-repeat calc(100% - 2.4rem) 50% / 11px; border-radius: 0.4rem; box-shadow:none; vertical-align:middle; -webkit-appearance:none; -moz-appearance: none; appearance:none; cursor:pointer;}
 select:focus {border: 1px solid #000; color:#000;} 
 select:disabled	{opacity:.5}
 select option { color:#999;}

@@ -33,7 +33,8 @@
         }
     }
 }
-.pop-policy-privacy {
+//개인정보동의
+.pop-policy-privacy-agree {
     .popup {
         &-head {
             .title-s2 {}
@@ -43,6 +44,7 @@
         &-body {margin-top: 5rem; padding: 3rem; height: 47.695vh; background-color: #F3F7FA; border-radius: 0.8rem; overflow: auto;}
     }
 }
+//알림창
 .pop-confirm {
     .popup-inner {padding: 4rem; max-width: 46rem; width: calc(100% - 4rem);}
     .confirm-text {text-align: center; white-space: pre-line; }

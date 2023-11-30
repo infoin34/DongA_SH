@@ -367,52 +367,93 @@
 	/* slideStart */
 	function slideStart(obj, cnt, rolling){
 		let $self = obj;
+		let $list = $self.find('.slide-list')
 		let $slideSection = $self.find('.slide'); 
 		let $btnSlidePrev = $self.find('.btn-prev'); 
 		let $btnSlideNext = $self.find('.btn-next');
 		let slideLength = $slideSection.length;
-		let $initPageIdx = 0, 
-			$curPageIdx = 0, 
-			$prevPageIdx, 
-			$nextPageIdx,
-			$autoPlay = $self.attr('autoPlay'),
-			$setTo;
+		let initPageIdx = 0, 
+			curPageIdx = 0, 
+			prevPageIdx, 
+			nextPageIdx,
+			autoPlayFlag = $self.attr('autoPlay'),
+			setTo;
 			
+		let touchX = 0, touchY = 0, moveX = 0, moveY = 0;
+		let clickable = false;
 		let swipe = {
-			touchStart : function(e){
-				var touch = e.touches[0] || e.changedTouches[0];
-				this.touchX = touch.pageX;
-				this.touchY = touch.pageY;	
-			},
-			touchMove : function(e){	
-				var touch = e.touches[0] || e.changedTouches[0];
-				this.moveX = touch.pageX;
-				this.moveY = touch.pageY;
-				
-				var gapX = Math.abs(this.touchX - this.moveX);
-				var gapY = Math.abs(this.touchY - this.moveY);
-				
-				if(Math.abs(gapX) > Math.abs(gapY)){
+			handStart : function(e){
+				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
+				touchX = ev.pageX;
+				touchY = ev.pageY;	
+
+				if(!window.isMobile){
 					e.preventDefault();
 					e.stopPropagation();
+				}			
+				$list.removeClass('no-click');				
+				if(!window.isMobile){
+					$self[0].onmousemove = null;
+					$self[0].onmousemove = $.proxy(swipe.handMove, swipe);
+				}else{				
+					$self[0].addEventListener('touchmove',  $.proxy(swipe.handMove, swipe), false);
 				}
-					
 			},
-			touchEnd : function(e){	
-				var touch = e.touches[0] || e.changedTouches[0];
-				this.moveX = touch.pageX;
-				this.moveY = touch.pageY;
-				var gapX = Math.abs(this.touchX - this.moveX);
-				var gapY = Math.abs(this.touchY - this.moveY);
-		
-				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 40){	
-					clearTimeout(setTo);
-					if(this.moveX > this.touchX){
-						//this.prev();
-					}else{
-						//this.next();
+			handMove : function(e){	
+				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
+
+				moveX = ev.pageX;
+				moveY = ev.pageY;
+				
+				$list.addClass('no-click');	
+
+				if(!window.isMobile) {//PC
+					$self[0].onmouseleave = null;
+					$self[0].onmouseleave = $.proxy(swipe.handMove, swipe);
+				}				
+			},
+			handEnd : function(e){	
+				e.preventDefault();
+				e.stopPropagation();
+				e.stopImmediatePropagation();
+
+				if(!window.isMobile) {
+					$self[0].onmousemove = null;	
+				}else{
+					$self[0].removeEventListener('touchmove', $.proxy(swipe.handMove, swipe), false);
+				}		
+				
+				
+
+				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
+
+				moveX = ev.pageX;
+				moveY = ev.pageY;
+				
+				let gapX = Math.abs(touchX - moveX);
+				let gapY = Math.abs(touchY - moveY);
+
+				clickable = gapX != 0 ? false : true;	
+				
+				if(!clickable){
+					e.preventDefault();
+					e.stopPropagation();
+					e.cancelBubble = true;
+					e.stopImmediatePropagation();				
+				}else{
+					$list.removeClass('no-click');
+				}
+
+				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 20){	
+					if(moveX > touchX){//prev
+						prev();
+					}else{//next
+						next();
 					}
-				} 						
+				}else{
+				}
+				
+				
 			},
 		}
 		function setting(){
@@ -428,54 +469,98 @@
 				$slideSection.first().addClass('active');
 				$slideSection.first().next().addClass('next');
 				$slideSection.last().addClass('prev');
+				$self.addClass('draggable');
 				//$self.append('<ul class="slide-dots">'+ slidePaging +'</ul>');			
 				init();						
-			}else if (slideLength == 1){
-				$slideSection.addClass('active');
+			}else {
+				//$slideSection.addClass('active');
+				$self.addClass('default');
 				$btnSlidePrev.hide();
 				$btnSlideNext.hide();
+			}
+			
+			// else{
+			// 	$self.find('.slide-list').append($slideSection.eq(0).clone(true));
+			// 	$self.find('.slide-list').append($slideSection.eq(1).clone(true));
+			// 	$slideSection = $self.find('.slideSection'); 
+			// 	slideLength = $slideSection.length;				
+			// 	$slideSection.eq(0).addClass('active');
+			// 	$slideSection.eq(1).addClass('next');
+			// 	$slideSection.last().addClass('prev');
+			// 	init();		
+			// }
+
+			if(!window.isMobile){		
+				$self[0].onmouseup = null;
+				$self[0].onmousedown = null;
+				$self[0].onmousedown = $.proxy(swipe.handStart, swipe);	
+				$self[0].onmouseup = $.proxy(swipe.handEnd, swipe);		 	
+				$self[0].onclick = function(e){		 				
+					if(!clickable){
+						e.preventDefault();
+						e.stopPropagation();	
+					}
+					$list.removeClass('no-click');
+				}	
 			}else{
-				$self.find('.slide-list').append($slideSection.eq(0).clone(true));
-				$self.find('.slide-list').append($slideSection.eq(1).clone(true));
-				$slideSection = $self.find('.slideSection'); 
-				slideLength = $slideSection.length;				
-				$slideSection.eq(0).addClass('active');
-				$slideSection.eq(1).addClass('next');
-				$slideSection.last().addClass('prev');
-				init();		
+				$self[0].addEventListener('touchstart', $.proxy(swipe.handStart, swipe), false);
+				$self[0].addEventListener('touchend', $.proxy(swipe.handEnd, swipe), false);				
 			}
 		} 
 		
 		function init(){
-			if($autoPlay && !rolling) autoPlay();
-			if($autoPlay && rolling) rollingAutoPlay();
+			if(autoPlayFlag && !rolling) autoPlay();
+			if(autoPlayFlag && rolling) rollingAutoPlay();
 			
-			$btnSlidePrev.on("click", function(e){
-				e.preventDefault();
-				clearTimeout($setTo); 
-				$curPageIdx--;		
-				setElement();
-			});
-			
-			$btnSlideNext.on("click", function(e){
-				e.preventDefault();
-				clearTimeout($setTo); 
-				$curPageIdx++;		
-				setElement();
-			});
-					
-			$slideSection.on("click", function(e){
-				clearTimeout($setTo); 
-				$curPageIdx = $(this).index();
-				setElement();
-			});
+			$btnSlidePrev.on('click', prev);			
+			$btnSlideNext.on('click', next);					
+			// $slideSection.on('click', function(e){
+			// 	clearTimeout(setTo); 
+			// 	curPageIdx = $(this).index();
+			// 	setElement();
+			// 	return false;
+			// });
 		}
+		function prev(){
+			clearTimeout(setTo); 
+			curPageIdx--;		
+			setElement();
+			return false;
+		}
+		function next(){  
+			clearTimeout(setTo); 
+			curPageIdx++;		
+			setElement();
+			return false;
+		}	
+		function setElement(){		
+			if(curPageIdx < 0){
+				curPageIdx = slideLength-1;
+			}else if(curPageIdx > slideLength-1){
+				curPageIdx = 0;
+			}			
+			prevPageIdx = (curPageIdx-1) < 0 ? slideLength-1 : curPageIdx-1;	
+			nextPageIdx = (curPageIdx+1) < slideLength ? curPageIdx+1 : 0;
+			
+			$self.find('.slide.active').removeClass('active'); 				
+			$self.find('.slide.next').removeClass('next'); 				
+			$self.find('.slide.prev').removeClass('prev');
 		
+			$slideSection.eq(curPageIdx).addClass('active');
+			$slideSection.eq(prevPageIdx).addClass('prev');	
+			$slideSection.eq(nextPageIdx).addClass('next');			
+			
+			if(autoPlayFlag) {
+				setTo = setTimeout(function(){      	
+					autoPlay();
+				}, 2000);
+			}
+		}			
 		function autoPlay(){
 			var autoSc=cnt? cnt : 5000;
-			$setTo = setTimeout(function(){
-				clearTimeout($setTo);
-				$curPageIdx++;
+			setTo = setTimeout(function(){
+				clearTimeout(setTo);
+				curPageIdx++;
 				setElement();
 			},autoSc);
 		}
@@ -484,7 +569,7 @@
 				var height = $(window).scrollTop() + $(window).height();
 				if (height < $self.offset().top || height >=$self.offset().top + 200 + $self.parents(".section").height()) {
 					$self.removeClass('playing');
-					clearTimeout($setTo);
+					clearTimeout(setTo);
 				}
 				else{
 					if(!$self.hasClass('playing')){
@@ -497,36 +582,12 @@
 				}
 			});
 			var autoSc = cnt;
-			$setTo = setTimeout(function(){
+			setTo = setTimeout(function(){
 				$btnSlideNext.click();
-			},autoSc);
+			}, autoSc);
 		}
-
-		function setElement(){		
-			if($curPageIdx < 0){
-				$curPageIdx = slideLength-1;
-			}else if($curPageIdx > slideLength-1){
-				$curPageIdx = 0;
-			}			
-			$prevPageIdx = ($curPageIdx-1) < 0 ? slideLength-1 : $curPageIdx-1;	
-			$nextPageIdx = ($curPageIdx+1) < slideLength ? $curPageIdx+1 : 0;
-			
-			$self.find('.slide.active').removeClass('active'); 				
-			$self.find('.slide.next').removeClass('next'); 				
-			$self.find('.slide.prev').removeClass('prev');
-		
-			$slideSection.eq($curPageIdx).addClass('active');
-			$slideSection.eq($prevPageIdx).addClass('prev');	
-			$slideSection.eq($nextPageIdx).addClass('next');			
-			
-			if($autoPlay) {
-				$setTo = setTimeout(function(){      	
-					autoPlay();
-				}, 2000);
-			}
-		}
-		
 		setting();
+
 	}
 
 
@@ -760,21 +821,26 @@
 			let mouseX = e.clientX-($('.mouse-cursor').width()/2);
 			let mouseY = e.clientY-($('.mouse-cursor').height()/2);
 
+			if(e.target.tagName =='SELECT') {
+				$('.mouse-cursor').fadeOut();
+				return;
+			}
 			if(!$('.mouse-cursor').is(':visible')) $('.mouse-cursor').fadeIn();
 			
 			$('.mouse-cursor').css({
 				left: mouseX + 'px',
 				top: mouseY + 'px'
 			});				
+			return false;
 		});
 
 		$(document).on('mouseleave', function(e){
 			$('.mouse-cursor').fadeOut();
 		});
 		
-		$('input[type="file"], select').on('click', function(){
+		$('input[type="file"]').on('click', function(){
 			$('.mouse-cursor').fadeOut();
-		})
+		});
 		
 		$('a[href]').on('mouseenter', function(){
 			$('.mouse-cursor').addClass('click');
