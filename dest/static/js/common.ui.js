@@ -160,7 +160,7 @@
 				}
 			});
 			if (popup.targetArr.length == 0) {
-				if( !$('html').hasClass('layer-open') ) {
+				if( !$('html').hasClass('layer-open') && !$pop.hasClass('no-dim')) {
 					bodyScrollBlock(false);
 				}
 			}			

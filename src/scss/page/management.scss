@@ -177,6 +177,10 @@
     }
     //csr
     &-csr {
+        //전략 및 운영체계
+        .strategy-list {
+            margin-top: 5rem; text-align: center;
+        }
         //csr활동         
         .csr-activity {
             .section-contents {
@@ -240,10 +244,8 @@
             .section-inner {display: flex;}  
             h3 {width: calc(368/1440*100%);} 
             .content {width: calc(100% - 368/1440*100%);} 
-            .img-wrap {
-                margin-top: 5rem; display: flex; flex-wrap: wrap; gap: 3rem; font-size: 0;
-            }
             .text-2 {
+                color: #444;
                 + .text-2 {margin-top: 3rem;}
                 b {color: #000081; font-weight: 600;}
             }

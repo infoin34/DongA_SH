@@ -464,7 +464,7 @@
         @@include('../../include/footer.html')
         <!-- 메인 팝업 -->
         <div class="main-popup-list">
-            <div class="layer-popup pop-main no-dim" id="popMain1"  style="left:10%; top: 10%;">
+            <div class="layer-popup pop-main no-dim" id="popMain3"  style="left:10%; top: 10%;">
                 <div class="popup-wrap">
                     <div class="popup-inner">
                         <div class="popup-body">
@@ -478,12 +478,12 @@
                                 <input type="checkbox" name="" id="oncePop1">
                                 <label for="oncePop1"><span class="text-2">오늘 하루 보지 않기</span></label>
                             </div>
-                            <a href="#" class="btn-close text-2">닫기</a>
+                            <a href="javascript:void(0);" class="btn-close text-2">닫기</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="layer-popup pop-main no-dim" id="popMain2"  style="left:20%; top: 20%;">
+            <div class="layer-popup pop-main no-dim" id="popMain4"  style="left:20%; top: 20%;">
                 <div class="popup-wrap">
                     <div class="popup-inner">
                         <div class="popup-body">
@@ -497,7 +497,7 @@
                                 <input type="checkbox" name="" id="oncePop2">
                                 <label for="oncePop2"><span class="text-2">오늘 하루 보지 않기</span></label>
                             </div>
-                            <a href="#" class="btn-close text-2">닫기</a>
+                            <a href="javascript:void(0);" class="btn-close text-2">닫기</a>
                         </div>
                     </div>
                 </div>
@@ -523,6 +523,7 @@
                     if(_.find('input').is(':checked')){
                         setCookie(_.attr('id'), 'none', 1);
                     }
+                    return false;
                 });
                 
             });

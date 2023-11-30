@@ -133,7 +133,9 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .scroll_container::-webkit-scrollbar{ display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
 .scr-x {display:inline-flex; width:100%; white-space:nowrap; justify-content:flex-start; overflow-x:auto; overflow-y:hidden;}
 .scr-x::-webkit-scrollbar { display:none; width:0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none; }
-
+.scr-x {
+	img {max-width: none;}
+}
 
 //text
 .title-h2 {font-size: 6.4rem; line-height: calc(76/64); font-weight: 700;}
@@ -541,6 +543,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .date.ico {padding-left: 3rem; background: svgClock('aaa') no-repeat 0 50%/2rem; color: #aaa; font-weight: 700;}
 
 .pc-part {display: block;}
+img.pc-part {display: inline-block;}
 .mo-part {display: none;}
 
 
