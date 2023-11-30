@@ -427,7 +427,7 @@ footer {
             }
         }      
 
-        &-term {margin-top: 1.6rem; font-size: 1.6rem;}
+        &-term {margin-top: 1.6rem; font-size: 1.6rem; font-weight: 600;}
         &-sns {
             margin-top: 3rem; 
             .sns-list {
@@ -481,7 +481,22 @@ footer {
     }
 }
 
-//아이콘
+/*개인정보 처리방침*/
+.pop-policy-privacy {
+    .popup {
+        &-head {
+            padding: 0;
+            .text-3 {margin-top: 2rem;}
+        }
+        &-wrap {padding: 12rem 2rem; background-color: #fff;}
+        &-inner {padding: 0; width: 100%; max-width: 119.4rem; height: 100%;}
+        &-body {margin-top: 1.6rem; padding: 3rem; height: 58.695vh; background-color: #F3F7FA; border-radius: 0.8rem; overflow: auto;}
+    }
+    .select-wrap {margin-top: 3.3rem; text-align: right;}
+    select {padding-left: 2.2rem; width: 24.2rem; height: 5.1rem; text-align: left;}
+}
+
+/*아이콘*/
 .ico {
     &-plus{
         width: 13px;

@@ -94,7 +94,7 @@
                     <!-- // 관련사이트 팝업 -->
                 </div>
                 <div class="footer-term">
-                    <a href="#">개인정보보호정책</a>
+                    <a href="#" onclick="popup.open('.pop-policy-privacy'); return false;">개인정보보호정책</a>
                 </div>
                 <div class="footer-sns">
                     <ul class="sns-list">
@@ -125,3 +125,47 @@
     </div>
 </div>
 <!--// 알림창 -->
+
+<!-- 개인정보보호정책 - 공통 -->
+<div class="layer-popup pop-policy-privacy">
+    <div class="popup-wrap">
+        <div class="popup-inner">
+            <div class="popup-head">
+                <div class="title-s2">개인정보 처리방침</div>
+                <div class="select-wrap">
+                    <strong class="label">시행일 정보</strong>
+                    <div class="select-ui">
+                        <select name="" id="">
+                            <option>2023.01.01</option>
+                            <option>날짜</option>
+                            <option>2023.01.01</option>
+                        </select>
+                    </div>
+                </div>
+                <a href="#" class="btn-close">닫기</a>
+            </div>
+            <div class="popup-body">
+                <div class="agree-content text-3">
+                    수집하는 개인정보 항목<br>
+                    회사는 고객의 온라인 문의, 사이버감사 신고등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br><br><br>
+                    수집항목 : 이름, 주소, 전화번호, 이메일, 접속 IP, 서비스 이용 기록<br>
+                    개인정보 수집방법 : 홈페이지<br><br><br>
+                    개인정보의 수집 및 이용목적<br>
+                    고객님께서 제공한 모든 정보는 다음에 기술한 목적 이외로는 사용되지 않으며, 이용 목적이 변경될시에는 사전 동의를 구할 것입니다.회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br><br>
+                    이름, 주소, 전화번호, 이메일 : 고객문의, 본인확인, 문의사항 확인, 사실확인, 처리결과 통보<br><br>
+                    접속IP, 서비스 이용 기록 : 접속빈도 파악에 대한 통계<br><br><br>
+                    개인정보의 보유 및 이용기간<br>
+                    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이류를 명시한 기간 동안 보존합니다.<br><br>
+                    3-1. 회사 내부 방침에 의한 보존<br>
+                    불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조 : 1년<br>
+                    온라인문의 : 문의사항이 등록 후 1년이 지난 시점<br>
+                    관계법령 위반에 따른 수사, 조사 등이 진행중인 경우에는 해당 수사, 조사 종료 시 까지<br><br>
+                    3-2. 관련법령에 의한 보존<br>
+                    계약 또는 청약철회 등에 관한 기록 : 5년 (전자상거래 등에서의 소비자보호에 관한 법
+                    률)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //개인정보보호정책 - 공통 -->
