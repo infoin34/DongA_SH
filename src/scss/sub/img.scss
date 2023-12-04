@@ -66,6 +66,9 @@
     .svg-up-arrow-2 {
         width: 16px; height: 16px; background: svgUpArrow2('fff'); background-size: 100% 100%;
     }
+    .svg-right-arrow {
+        width: 20px; height: 20px; background: svgRightArrow('fff'); background-size: 100% 100%;
+    }
     .svg-pin {
         width: 20px; height: 20px; background: svgPin('fff'); background-size: 100% 100%;
     }
@@ -170,5 +173,10 @@
 
     .svg-ci-symbol {width: 31px; height: 30px; background: svgCiSymbol('00ACCD'); background-size: 100% 100%;}
     .svg-profile {width: 90px; height: 90px; background: svgProfile('00ACCD'); background-size: 100% 100%;}
+
+    .svg-environmental-1 {width: 52px; height: 54px; background: svgEnvironmental1(); background-size: 100% 100%;}
+    .svg-environmental-2 {width: 52px; height: 54px; background: svgEnvironmental2(); background-size: 100% 100%;}
+    .svg-environmental-3 {width: 52px; height: 54px; background: svgEnvironmental3(); background-size: 100% 100%;}
+    .svg-environmental-4 {width: 52px; height: 54px; background: svgEnvironmental4(); background-size: 100% 100%;}
     
 }

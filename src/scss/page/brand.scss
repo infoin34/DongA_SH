@@ -288,6 +288,7 @@
                 .swiper-pagination {
                     height: 100%;
                     background-color: rgba(0,0,0,0.1);
+                    opacity: 1 !important;
                 }
                 .swiper-pagination-progressbar-fill {
                     display: block;
@@ -920,32 +921,34 @@
                  justify-content: flex-end;
                  margin-top: 4rem;
                  gap: 0.8rem;
-             }
 
-             &-btn {
-                 height: 4.2rem;
-                 line-height: 4.2rem;
-                 padding: 0 2.4rem;
-                 border: 1px solid #666;
-                 border-radius: 3rem;
-
-                 span {
-                     display: flex;
-                     align-items: center;
-                     gap: 0.4rem;
-                     font-weight: 500;
-                     font-size: 1.8rem;
-
-                     &::after {
-                         content: '';
-                         display: inline-block ;
-                         width: 1.8rem;
-                         height: 1.8rem;
-                         background: svgDownload('222'); background-size: 100% 100%;
-                         transform: translateY(-1px);
+                 .btn-type-a {
+                     display: block;
+                     height: 4.2rem;
+                     line-height: 4.2rem;
+                     padding: 0 2.4rem;
+                     border: 1px solid #666;
+                     border-radius: 3rem;
+    
+                     span {
+                         display: flex;
+                         align-items: center;
+                         gap: 0.4rem;
+                         font-weight: 500;
+                         font-size: 1.8rem;
+    
+                         &::after {
+                             content: '';
+                             display: inline-block ;
+                             width: 1.8rem;
+                             height: 1.8rem;
+                             background: svgDownload('222'); background-size: 100% 100%;
+                             transform: translateY(-1px);
+                         }
                      }
                  }
              }
+
         }
 
         .ciincorrect {

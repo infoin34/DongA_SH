@@ -583,7 +583,49 @@ img.pc-part {display: inline-block;}
 			.btn-close {position: absolute; top: 0; right: 0; width:3.6rem; height:3.6rem; @include font0; background-image: svgClose(aaa); background-size: 100%;} 
 		}
 	}
-	
+	&.pop-humanright {
+		.popup {
+			&-inner {
+				padding: 4rem;
+				max-width: 50rem;
+				width: calc(100% - 3.2rem);
+			}
+		}
+
+		.humanright {
+			&-title {
+				letter-spacing: -0.02em;
+			}
+			&-cont {
+				display: block;
+				margin-top: 2.4rem;
+				padding: 3rem;
+				background-color: #F3F7FA;
+				width: 100%;
+				min-height: 20rem;
+
+				li {
+					display: flex;
+					align-items: center;
+					font-weight: 400;
+					font-size: 1.6rem;
+					line-height: 2.8rem;
+					letter-spacing: -0.02em;
+					color: #666;
+
+					&::before {
+						content: '';
+						display: inline-block;
+						width: 0.3rem;
+						height: 0.3rem;
+						background-color: #666;
+						border-radius: 50%;
+						margin: 1.1rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 
