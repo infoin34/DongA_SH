@@ -302,15 +302,15 @@
 
 
     //스크롤
-    // $(window).on('scroll', function(e){
-    //     if($(window).scrollTop() >= $('.brand-intro-wrap').offset().top){
-    //         if(!$('.brand-intro-swiper').hasClass('fixed') && brandIntroIdx == -1){
-    //             $('.brand-intro-swiper').addClass('fixed');
-    //             bodyScrollBlock(true);
-    //             $('#wrap').on('wheel', brandIntoWheel);
-    //         } 
-    //     }
-    // });
+    $(window).on('scroll', function(e){
+        if($(window).scrollTop() >= $('.brand-intro-wrap').offset().top){
+            if( brandIntroIdx == -1){
+                $('.brand-intro-swiper').addClass('fixed');
+                bodyScrollBlock(true);
+                $('#wrap').on('wheel', brandIntoWheel);
+            } 
+        }
+    });
 
     // function brandIntoWheel(e){
     //     // if($('.brand-intro-swiper').hasClass('no-wheel') ) {
