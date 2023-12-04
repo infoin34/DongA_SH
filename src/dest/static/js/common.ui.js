@@ -866,7 +866,7 @@
 	$(function(){
 		//---탑버튼 클릭
 		$('.btn-top').on('click', function(){
-			$('html, body').animate({scrollTop: 0}, 'linear');
+			$('html, body').animate({scrollTop: 0}, 300, 'linear');
 			return false;
 		});  
 

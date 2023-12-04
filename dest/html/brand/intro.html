@@ -303,8 +303,8 @@
 														<h3 class="title-s2">동아쏘시오홀딩스</h3>
 														<p class="text-3">동아쏘시오홀딩스는 그룹사 관리 및 경영관리 서비스를 주사업으로 하는 지주회사로써 견고한 중심(Stable Core)과 파괴적 혁신(Disruptive Edge)을 바탕으로 다가올 창립 100년을 넘어 다음 100년을 위한 차별화된 가치를 창출할 것입니다. </p>
 														<div class="map">
-															<div class="title text-2"><a href="#" aria-label="펼치기">오시는 길</a></div>
-															<div class="map-frame">
+															<div class="title text-2 on"><a href="javascript:void(0);" aria-label="펼치기">오시는 길</a><i class="ico"></i></div>
+															<div class="map-frame on">
 																<!-- 지도 -->
 																<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2137639734315!2d127.027657712724!3d37.57358377192021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca35291441e61%3A0x98e03e6059ad4904!2z7ISc7Jq47Yq567OE7IucIOuPmeuMgOusuOq1rCDsspztmLjrjIDroZwgNjQ!5e0!3m2!1sko!2skr!4v1701058669341!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 																</iframe>
@@ -669,9 +669,8 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-	let brandIntroSwiper; //브랜드 그룹 소개 스와이퍼
-	let brandIntroSetT;
-	let brandIntroIdx = -1;
+	let brandIntroSwiper; //브랜드 그룹 소개 스와이퍼   
+	let scrZero = false;
 	$(function() {
 		//브랜드 그룹 소개 스와이퍼
 		brandIntroSwiper = new Swiper('.brand-cate-info-swiper .swiper-container', {
@@ -681,7 +680,25 @@
 
 		});
 
-		brandIntroSwiper.on('slideChange', function() {
+		//탑버튼
+		$('.btn-top').on('click', function() {
+			scrZero = true;
+			brandIntroSwiper.slideTo(0);
+			$('.brand-intro-swiper').removeClass('fixed');
+			setTimeout(function() {
+				scrZero = false;
+			}, 300)
+			return false;
+		});
+
+		//브랜드 그룹 소개 스와이퍼
+		brandIntroSwiper.on('slideChange', function(e) {
+			brandIntroIdx = this.realIndex;
+			if (!$('.brand-intro-swiper').hasClass('fixed')) {
+				$('.brand-intro-swiper').addClass('fixed');
+				$(window).scrollTop($('.brand-intro-wrap').offset().top);
+				beforeScr = $(window).scrollTop();
+			}
 			$('.brand-intro .category-item').removeClass('on');
 			$('.brand-intro .category-item').eq(this.realIndex).addClass('on');
 			$('.brand-intro .brand-item').removeClass('on');
@@ -694,81 +711,86 @@
 			return false;
 		});
 
-		//각 계열 브랜드 리스트
+		//각 계열 브랜드 리스트 토글
 		$('.brand-intro .brand-item').on('click', function() {
 			cssToggle($(this).parents('.intro-item').find('.brand-item'), $(this).parents('.intro-item').find('.bind'), $(this).index());
+			return false;
+		});
+
+		//맵 토글
+		$('.map .title').on('click', function() {
+			cssToggle('.map .title', '.map-frame');
 			return false;
 		});
 	});
 
 
 	//스크롤
+	let beforeScr = 0;
+	let brandIntroSetT;
+	let brandIntroIdx = 0;
 	$(window).on('scroll', function(e) {
-		if ($(window).scrollTop() >= $('.brand-intro-wrap').offset().top) {
-			if (brandIntroIdx == -1) {
-				$('.brand-intro-swiper').addClass('fixed');
-				bodyScrollBlock(true);
-				$('#wrap').on('wheel', brandIntoWheel);
+		if (scrZero) return; //탑버튼
+		if (beforeScr > $(window).scrollTop()) { //위로
+			if ($(window).scrollTop() + $(window).height() <= $('.brand-intro-wrap').offset().top + $(window).height()) {
+				if (!$('.brand-intro-swiper').hasClass('fixed') && brandIntroIdx == $('.brand-intro .category-item').length - 1) {
+					$('.brand-intro-swiper').addClass('fixed');
+				}
 			}
+		} else { //아래로     
+			if ($(window).scrollTop() >= $('.brand-intro-wrap').offset().top) {
+				if (!$('.brand-intro-swiper').hasClass('fixed') && brandIntroIdx == 0) {
+					$('.brand-intro-swiper').addClass('fixed');
+				}
+			}
+
 		}
+		beforeScr = $(window).scrollTop();
 	});
+	$('#wrap').on('wheel', brandIntroWheel);
 
-	// function brandIntoWheel(e){
-	//     // if($('.brand-intro-swiper').hasClass('no-wheel') ) {
-	//     //     return false;
-	//     // };
-	//     // clearTimeout(brandIntroSetT);
-	//     // $('.brand-intro-swiper').addClass('no-wheel');
-	//     // brandIntroSetT = setTimeout(function(){
-	//     //     $('.brand-intro-swiper').removeClass('no-wheel');
-	//     // }, 1000);
+	function brandIntroWheel(e) {
+		if ($('.brand-intro-swiper').hasClass('fixed')) {
+			e.preventDefault();
+			e.stopPropagation();
+			if ($('.brand-intro-swiper').hasClass('no-wheel')) return false;
 
-	//     if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) { //위로
-	//         brandIntroIdx--;             
-	//     }else {//아래로
-	//         brandIntroIdx++;
-	//     }
+			if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) { //위로
+				brandIntroIdx--;
+				if (brandIntroIdx < 0) {
+					brandIntroIdx = 0;
+					brandIntroMotion();
+					return false;
+				}
+			} else { //아래로
+				brandIntroIdx++;
+				if (brandIntroIdx > $('.brand-intro .category-item').length - 1) {
+					brandIntroIdx = $('.brand-intro .category-item').length - 1;
+					brandIntroMotion();
+					return false;
+				}
+			}
 
-	//     if(brandIntroIdx < 0){
-	//         brandIntroIdx = -1;
-	//         bodyScrollBlock(false);
-	//         $('.brand-intro-swiper').removeClass('fixed');
-	//         $('#wrap').off('wheel', brandIntoWheel);
-	//     }else if(brandIntroIdx > $('.category-item').length-1){
-	//         brandIntroIdx = $('.category-item').length-1;
-	//         bodyScrollBlock(false);
-	//         $('.brand-intro-swiper').removeClass('fixed');
-	//         $('#wrap').off('wheel', brandIntoWheel);
-	//     }else{
-	//         $('.brand-intro-swiper').addClass('fixed');
-	//         bodyScrollBlock(true);
-	//     }
+			$('.brand-intro-swiper').addClass('no-wheel');
+			$('.category-item').eq(brandIntroIdx).click();
 
+			brandIntroSetT = setTimeout(function() {
+				if (brandIntroIdx == 0 || brandIntroIdx == $('.brand-intro .category-item').length - 1) {
+					clearTimeout(brandIntroSetT);
+					brandIntroMotion();
+				}
+				$('.brand-intro-swiper').removeClass('no-wheel');
+			}, 1000);
 
-	//     $('.category-item').eq(brandIntroIdx).click();
-	//     return false;
-	// }
-	// 휠
-	// $(window).on('wheel', function(e){       
-	//     if($('.brand-intro-swiper').hasClass('fixed'))  e.preventDefault(); 
-	//     if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {            
-	//     // scroll up
-	//             //brandIntroIdx--;
-	//             if(brandIntroIdx == 0) {
-	//                // bodyScrollBlock(false);
-	//                // $('.brand-intro-swiper').removeClass('fixed');
-	//             }
+			return false;
+		}
+	}
 
-	//     }else {
-	//     // scroll down
-	//         if($('.brand-intro-swiper').hasClass('fixed')){
-	//             //brandIntroIdx++;
-
-	//         }
-
-	//     }
-
-	// });
+	function brandIntroMotion() {
+		$(window).scrollTop($('.brand-intro-wrap').offset().top);
+		beforeScr = $(window).scrollTop();
+		$('.brand-intro-swiper').removeClass('fixed');
+	}
 </script>
 <!--//페이지 관련 스크립트 -->
 
