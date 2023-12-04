@@ -926,31 +926,31 @@
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			//$('#intro').addClass('active');
+			$('#intro').addClass('active');
 
-			$('#intro').remove();
-			$('html').removeClass('main-intro');
-			$('html').addClass('main-intro-end');		
-			$('header').addClass('white');
-			mainSpot();						
-			$(window).on('scroll', scrollEv);
+			// $('#intro').remove();
+			// $('html').removeClass('main-intro');
+			// $('html').addClass('main-intro-end');		
+			// $('header').addClass('white');
+			// mainSpot();						
+			// $(window).on('scroll', scrollEv);
 
 			//메인 인트로 제거 후
-			// document.querySelector('#intro').addEventListener('animationend', function(e){
-			// 	if(e.target == this) {
-			// 		$('#intro').remove();					
-			// 		$('.main-intro').addClass('main-intro-end');	
-			// 		$('header').addClass('white');	
-			// 	}
-			// });
-			// //clip-path모션 끝난 후
-			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-			// 	if($('html').hasClass('main-intro')){	
-			// 		$('html').removeClass('main-intro');						
-			// 		mainSpot();						
-			// 		$(window).on('scroll', scrollEv);
-			// 	}		
-			// });
+			document.querySelector('#intro').addEventListener('animationend', function(e){
+				if(e.target == this) {
+					$('#intro').remove();					
+					$('.main-intro').addClass('main-intro-end');	
+					$('header').addClass('white');	
+				}
+			});
+			//clip-path모션 끝난 후
+			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+				if($('html').hasClass('main-intro')){	
+					$('html').removeClass('main-intro');						
+					mainSpot();						
+					$(window).on('scroll', scrollEv);
+				}		
+			});
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
