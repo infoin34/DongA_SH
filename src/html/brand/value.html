@@ -69,8 +69,8 @@
                                         <div class="unit">2023년 3월 31일 기준 </div>
                                     </div>
                                     <div class="valueslide-nav">
-                                        <div class="swiper-button-prev"></div>
-                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev btn-type-a"></div>
+                                        <div class="swiper-button-next btn-type-a"></div>
                                     </div>
                                 </div>
                                 <div class="valueslide">
@@ -180,9 +180,9 @@
         var swiper = new Swiper('.valueslide', {
             slidesPerView: "auto",
             spaceBetween: 120,
-            pagination: {
+            scrollbar: {
                 el: ".valueslide-pagin .swiper-pagination",
-                type: "progressbar",
+                hide: true,
             },
             navigation: {
                 nextEl: ".valueslide-nav .swiper-button-next",
