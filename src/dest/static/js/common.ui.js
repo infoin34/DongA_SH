@@ -864,6 +864,7 @@
 
 	/******** 공통 ********/
 	$(function(){
+
 		//---탑버튼 클릭
 		$('.btn-top').on('click', function(){
 			$('html, body').animate({scrollTop: 0}, 300, 'linear');
@@ -915,9 +916,12 @@
 
 
 		//---pc일때
-		if(!window.isMobile){			
+		if(!window.isMobile){
+			$('html').addClass('window-pc');			
 			//마우스 커서
 			!window.isMain && mouseCursor(); //메인 아닐때
+		}else{//---mo 일때
+			$('html').addClass('window-mo');
 		}
 
 		//---only main
@@ -926,31 +930,31 @@
 			$("html, body").animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
-			$('#intro').addClass('active');
+			//$('#intro').addClass('active');
 
-			// $('#intro').remove();
-			// $('html').removeClass('main-intro');
-			// $('html').addClass('main-intro-end');		
-			// $('header').addClass('white');
-			// mainSpot();						
-			// $(window).on('scroll', scrollEv);
+			$('#intro').remove();
+			$('html').removeClass('main-intro');
+			$('html').addClass('main-intro-end');		
+			$('header').addClass('white');
+			mainSpot();						
+			$(window).on('scroll', scrollEv);
 
 			//메인 인트로 제거 후
-			document.querySelector('#intro').addEventListener('animationend', function(e){
-				if(e.target == this) {
-					$('#intro').remove();					
-					$('.main-intro').addClass('main-intro-end');	
-					$('header').addClass('white');	
-				}
-			});
-			//clip-path모션 끝난 후
-			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-				if($('html').hasClass('main-intro')){	
-					$('html').removeClass('main-intro');						
-					mainSpot();						
-					$(window).on('scroll', scrollEv);
-				}		
-			});
+			// document.querySelector('#intro').addEventListener('animationend', function(e){
+			// 	if(e.target == this) {
+			// 		$('#intro').remove();					
+			// 		$('.main-intro').addClass('main-intro-end');	
+			// 		$('header').addClass('white');	
+			// 	}
+			// });
+			// //clip-path모션 끝난 후
+			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+			// 	if($('html').hasClass('main-intro')){	
+			// 		$('html').removeClass('main-intro');						
+			// 		mainSpot();						
+			// 		$(window).on('scroll', scrollEv);
+			// 	}		
+			// });
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
