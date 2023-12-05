@@ -130,15 +130,8 @@ a.btn-page-move {
                     animation-duration: 1s;
                     animation-name: introV4;
                     animation-fill-mode: forwards;
-                    animation-timing-function: ease;                 
-                }
-                // .intro-logo-wrap {
-                //      animation-delay: 4s;
-                //      animation-duration: 0.3s;
-                //      animation-name: introV5;
-                //      animation-fill-mode: forwards;
-                //      animation-timing-function: ease-out;
-                // }                
+                    animation-timing-function: linear;                 
+                }               
             }
             
         }

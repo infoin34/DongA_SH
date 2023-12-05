@@ -29,7 +29,7 @@ $img : '../images/';
 @function iurl($str) {
 	@return image-url($str);
 }
-
+ 
 
 /**********************************
 ***************************/
@@ -53,7 +53,7 @@ $img : '../images/';
 //로고 보이기
 @keyframes introV4 {
 	20% {opacity: 1;} 
-	50% {opacity: 1; width:calc(77/1920*100vw);}
+	70% {opacity: 1; width:calc(77/1920*100vw);}
 	100% {width:calc(705/1920*100vw); opacity: 1;}
 }
 //로고 올라가기
