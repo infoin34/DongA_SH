@@ -413,6 +413,24 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 }
 
+//excel-table
+.excel-table {
+	table {
+		table-layout: fixed; width: 100%; font-size: 1.6rem; border: 0;
+		th, td {
+            padding: 2.4rem;
+            font-weight: 500;
+		}
+		.header td {
+			text-align: center; background-color: #2F75FF; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+		.cn td {
+			color: #666;
+			border: 0;
+			border-bottom: 1px solid #E5E5E5;
+		}
+	}
+}
 //table-type
 .table {
     &-type-a {
@@ -444,7 +462,6 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
                         border-color: #ccc;
                     }
                 }
-
                 &.indent {
                     td {
                         color: #666;
