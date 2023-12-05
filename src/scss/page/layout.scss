@@ -269,6 +269,7 @@ h1 {
     .section-inner {position: relative; margin: 0 auto; padding: 0 3rem; max-width: 150rem;}
     &:not(.main){        
         .section-head {
+            &.no-h .section-inner {height: auto;}
             .section-inner {height: calc(760/1440*100vw); max-height: 76rem;}
             .sub-title {margin-top: 2rem; color: #666;}
             .text-wrap {padding-top: calc(200/1440*100%);}

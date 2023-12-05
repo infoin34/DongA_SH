@@ -51,6 +51,9 @@
     .svg-time {
         width: 20px; height: 20px; background: svgClock('fff'); background-size: 100% 100%;
     }
+    .svg-time-2 {
+        width: 42px; height: 40px; background: svgTime('fff'); background-size: 100% 100%;
+    }
     .svg-puzzle{
         width: 400px; height: 400px; background: svgPuzzle('fff'); background-size: 100% 100%;
     }
@@ -74,6 +77,9 @@
     }
     .svg-tel {
         width: 20px; height: 21px; background: svgPhone('fff'); background-size: 100% 100%;
+    }
+    .svg-tel-2 {
+        width: 48px; height: 46px; background: svgPhone2('fff'); background-size: 100% 100%;
     }
     .svg-main-bg-A {
         width: 300px; height: 450px; background: svgMainA('FF4002'); background-size: 100% 100%;
