@@ -27,7 +27,6 @@
                     &:before {content:''; display: block; padding-bottom: 100%;} 
                     img {transition: transform 0.3s 0.2s ease;}                    
                 }
-                .info {padding-bottom: 9rem;}
                 .title-s2 {margin-top: 1.6rem;}
                 .text-1 {margin-top: calc(36/460)*100%;}
                 .date {position: absolute; bottom: calc(50/460)*100%;}
@@ -35,6 +34,7 @@
         }
     }
     &-detail {
+        margin-top: 20rem;
         .detail {
             &-head {
                 padding-bottom: 5rem; border-bottom: 1px solid #E5E5E5;
@@ -53,7 +53,7 @@
                  border-top: 1px solid #E5E5E5; 
                 .bottom-btn-wrap {position: relative;}
                 .btn-page {
-                    position:absolute ;margin: auto;  top: 0; bottom: 0; height: 2.1rem;  color: #666; font-size: 1.8rem;
+                    position: absolute ;margin: auto;  top: 0; bottom: 0; height: 2.1rem;  color: #666; font-size: 1.8rem;
                     &.prev {
                         left: 0;
                         &:before {
@@ -65,6 +65,7 @@
                             height: 2rem;
                             background: svgUrlArrow2('666');
                             transform: scaleX(-1);
+                            background-repeat: no-repeat;
                             background-size: 100% 100%;     
                             vertical-align: middle;                   
                         }
@@ -79,6 +80,7 @@
                             width: 2rem;
                             height: 2rem;
                             background: svgUrlArrow2('666');
+                            background-repeat: no-repeat;
                             background-size: 100% 100%;  
                             vertical-align: middle;                               
                         }
@@ -108,7 +110,7 @@
     }
 }
 .pop-youtube {
-    background-color: #000; padding: 0 3rem;
+    background-color: #000;
     .popup-head {
         color: #fff;
         .btn-close {top: 0.5rem; right: 0; background-image: svgClose(fff);}
@@ -143,14 +145,19 @@
     }
     
 }
-@media screen and (max-width: 1350px) {
-    
-
+@media screen and (max-width: 1350px) {    
+    .pr-center {
+        &-news {
+            .news-item {
+                .title-s2 {margin-top: 1rem;}
+                .text-1 {margin-top: 1.5rem;}
+            }
+        }
+    }
 } 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {    
     
-
 } 
 
 @media screen and (max-width: 992px) {
@@ -166,11 +173,11 @@
                 }
             
             }
-        }
+        }       
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 766px) {
     .pr-center {
         &-media {
             .media {
@@ -179,11 +186,45 @@
                 }
                 &-item {
                     width: 100%;
-                    &:nth-of-type(n+1) {margin-top: 5rem;}
+                    &:nth-of-type(n+2) {margin-top: 4rem;}      
+                    .title-s2 {margin-top: 1rem;}              
+                    .date {margin-top: 1.6rem;}
                 }
             
             }
         }
+        &-contribution {
+            .contribution-item {
+                a {padding: 3rem;}
+                .text-1 {margin-top: 2rem;}
+                .thumb {margin-top: 1.2rem;}
+            }
+        }
+        &-news {
+            .news-item {
+                .text-1 {margin-top: 2rem;}
+                .date {bottom: 3rem;}
+            }
+        }
+        &-detail {
+            margin-top: 10rem;
+            .detail-head {
+                padding-bottom: 2.8rem;
+                .brand {height: 3.8rem; line-height: 3.8rem; font-size: 1.2rem;}
+                .date {margin-top: 1.6rem; font-size: 1.3rem;}
+            }           
+            .detail-content {
+                padding: 2.8rem 0;
+            } 
+            .detail-footer {
+                .btn-page {
+                    font-size: 1.4rem;
+                }
+                .btn-page.next:after, .btn-page.prev:before {width: 1.3rem; height: 1.3rem;}
+            }
+
+        }
     }
+    .pop-youtube .youtube {margin-top: 0.8rem}
 
 }

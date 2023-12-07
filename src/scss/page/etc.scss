@@ -101,7 +101,22 @@
    
 }
 
-@media screen and (max-width: 768px) {
-    
-
+@media screen and (max-width: 766px) {
+    .inquiry {
+        &-notice-content {
+            margin-top: 3.4rem;
+            display: block;
+            gap: 15.3rem;
+            .text-3 {
+                font-size: 1.2rem;
+            }
+            .text-1 {
+                line-height: calc(34/20);
+                font-weight: 600;
+            }
+            .inquiry-info {
+                margin-top: 2.4rem;
+            }
+        }
+    }
 }

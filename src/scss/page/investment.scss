@@ -62,10 +62,7 @@
             position: relative;
             display: flex;
             height: 26rem;
-            min-height: 26rem;
             box-sizing: border-box;
-
-            // height: 26rem;
             .axis-y {
                 display: flex;
                 padding-right: 0.8rem;
@@ -73,11 +70,10 @@
                 align-items: center;
                 justify-content: space-between;
                 height: 100%;
-                font-size: 12px;
+                font-size: 1.2rem;
                 border-right: 1px solid #d3d3d3;
                 color: #666666;
-                gap: 3.7rem 0;
-
+                //gap: 3.7rem 0;
                 &-item {
                     position: relative;
                     height: 0;
@@ -212,21 +208,25 @@
     }
 
     &-circle {
-        position: relative;
         .chart-content {
-            display: flex; align-items: center; justify-content: center; gap: 4rem;
+            position: relative;
         }
         .chart-cate {
+            position: absolute; left: 0; top: 0; width: 100%; height: 100%;  display: grid; gap: 5rem calc((378/1200)*100vw); justify-content: space-around;
+            align-content: center;
             li {width: calc((360/1200)*100vw); max-width: 36rem;}
             .left {
-                + .left {margin-top: 5rem;}
                 .point {right: 0;}
             }
             .right {
-                text-align: right;
-                + .right {margin-top: 5rem;}
+               text-align: right;
                 .point {left: 0;}
+               
             }
+            .chart-item-1 {grid-area: 1/2/2/3;}
+            .chart-item-2 {grid-area: 2/2/3/3;}
+            .chart-item-3 {grid-area: 2/1/3/2;}
+            .chart-item-4 {grid-area: 1/1/2/2;}
             .name {font-size: 2rem; color: #444;}
             .point {position: absolute; bottom: 0; margin-bottom: -1rem; width: 2rem; height: 2rem; border-radius: 50%;}
             .ratio { 
@@ -238,6 +238,7 @@
         .logo {position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 63%; height: 63%; border-radius: 50%; background: #f7f7f7  svgLogo2('000', '00B4D6') no-repeat 50% 50%/ 62%;} 
         .graph {       
             position: relative;
+            margin: 0 auto;
             width: calc((378/1200)*100vw);
             height: calc((378/1200)*100vw);   
             max-width: 37.8rem;
@@ -307,8 +308,8 @@
             padding: 1rem 1.6rem;
         }
     }
-
     .data-head {
+        .title-s3 {margin-top: 5rem; display: block;}
         .unit {
             margin-top: 2rem;
             color: #888;
@@ -327,7 +328,6 @@
             flex-wrap: wrap;
             gap: 3rem;
             justify-content: center;
-
             .chart-vertical {
                 width: calc((100% - 6rem)/3);
             }
@@ -352,35 +352,34 @@
         .stock {
             &-current{
                 &-box {
-                    padding: 4rem 6rem; display: flex; flex-wrap: wrap; align-items: center; border: 1px solid #E5E5E5; border-radius: 2rem; box-shadow: 0.1rem 0.1rem 3.2rem rgba(34, 34, 34, 0.16);
+                    padding: 4rem 6rem; display: flex; flex-wrap: wrap; align-items: center; border: 1px solid #E5E5E5; border-radius: 2rem; background-color: #fff;
                     ul {
-                        display: inline-flex; flex-wrap: wrap; align-items: center; font-size: 2rem; font-weight: 500;
-                        li {display: flex; align-items: center;}
-                       .dt {padding-right: 0.8rem; color: #444;}
-                    }
-                    .left {
-                        li + li {margin-left: 2.8rem;}
-                    }
-                    .line { margin: 0 calc(72/1440*100%); width:1px; height: 4rem; background-color: #dbdbdb;}
-                    .right {
-                        li + li {margin-left: 4rem;}
-                    } 
-                    .current-price {
-                        font-size: 4.8rem;
-                        + dt {margin-left: 6rem;}
-                    }
+                        display: inline-flex; flex-wrap: wrap; flex: 1; align-items: center; justify-content: space-between; font-size: 2rem; font-weight: 500;                        
+                    }                    
+                    .dt {color: #444;}
+                    .line { margin: 0 6rem; width:1px; height: 4rem; background-color: #dbdbdb;}                   
                     .down {
                         padding-left: 1.6rem; background: svgDownArrow2('162DA1') no-repeat 0 50% / 1.2rem; color: #162DA1;
                     }
                     .up {
                         padding-left: 1.6rem; background: svgUpArrow2('FF4002') no-repeat 0 50% / 1.2rem; color: #FF4002;
                     }
+                    li {
+                        &:not(.current-price) {
+                            .dt {padding-bottom: 0.8rem;}
+                        }
+
+                    }
+                    .current-price {
+                        display: flex; align-items: center; gap: 1.6rem;
+                        .dd {font-size: 3rem;}
+                    }
                 }
             }
             &-list {
                 margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 3rem; 
                 > li {
-                    padding: 3.8rem calc(60/1440*100%); display: flex; flex-wrap: wrap; gap: 2.8rem; width: calc((100% - 6rem)/3); border: 1px solid #E5E5E5; border-radius: 2rem; font-weight: 500;
+                    padding: 3.8rem calc(60/1440*100%); display: flex; flex-wrap: wrap; gap: 2.8rem; width: calc((100% - 6rem)/3);  background-color: #fff; border: 1px solid #E5E5E5; border-radius: 2rem; font-weight: 500;
                     .name {color: #444; font-size: 1.8rem; line-height: 3.6rem;}
                     .price {font-size: 3rem; font-weight: 500;}
                     span {margin-top: 0.8rem; display: block; font-size: 1.8rem;}
@@ -409,9 +408,9 @@
         } 
         
         .by-year {
-            margin-top: 7rem;
+            margin-top: 7rem; border-bottom: 2px solid #e5e5e5; 
             .year-list {
-               border-bottom: 2px solid #e5e5e5; text-align: center; font-size: 0;
+               text-align: center; font-size: 0;
             }           
             li {
                 position: relative; display: inline-block; margin: 0 1.6rem;
@@ -525,34 +524,217 @@
 
 }
 
-@media screen and (max-width: 1200px) {}
-
-@media screen and (max-width: 992px) {
-    .investment-finance .finance-stats-chart .chart-vertical {
-        width: calc((100% - 3rem)/2);
-    }
-
-    .investment-ir .ir-data-item {
-        >a {
-            padding: 2.5rem 0;
-        }
-
-        .date-td {
-            padding: 0 2.5rem;
-        }
-
-        .title-td {
-            padding: 0 2.5rem;
+@media screen and (max-width: 1200px) {
+    .investment-governance {
+        .stock {
+            &-current{
+                &-box {
+                    padding: 3.5rem 3rem;
+                    .line {margin: 0 3rem;}
+                }
+            }
+            &-list {
+                gap: 2rem;
+                > li {padding: 3.5rem 3rem; width: calc((100% - 4rem)/3); gap: 1.5rem;}
+            } 
+            &-price-table {
+                display: flex; gap: 3rem;
+                
+            }
         }
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {   
     .investment-finance .finance-stats-chart {
         gap: 2rem;
-
         .chart-vertical {
-            width: 100%;
+            width: calc((100% - 3rem)/2);
         }
     }
+    .investment-governance {
+        .stock {
+            &-current{
+                &-box {
+                    padding: 3.8rem 3rem; display: block;
+                    .line {display: none;}
+                    ul {display: flex; font-size: 1.6rem; justify-content: flex-start; gap: 1.6rem;}
+                    .right {border-top: 1px solid #dbdbdb; margin-top: 2.8rem; padding-top: 2.8rem;}
+                    .current-price {
+                        width: 100%;
+                        .dt {min-width: 20%;}
+                        .dd {font-size: 2.4rem;}
+                    }
+                    li:not(.current-price){
+                        min-width: 20%;
+                    }                        
+                }
+            }
+            &-list {
+                margin-top: 0.8rem; gap: 0.8rem;
+                > li {padding: 3.5rem 2.8rem; width: 100%; gap: 3.5rem;}
+                .name {min-width: 10rem;}
+            } 
+            &-price-table {
+                display: flex; gap: 3rem;
+                
+            }
+        }
+        .sub-visual {padding: 10vw 8vw;}
+        .stockholder-return-info {gap: 2rem;}
+        .return-item {padding: 5rem 3rem;}
+        .director-info {gap: 1rem;}
+        .director-info-item {            
+            a {padding: 2rem 2.2rem;}
+        }  
+    }
+}
+
+@media screen and (max-width: 766px) {
+    /*investment*/
+    .data {
+        &-wrap {
+            &.bg-a {
+                padding: 6.4rem 0;
+            }
+
+            +.data-wrap {
+                margin-top: 6.4rem;
+            }
+        }
+        &-head {
+            margin-bottom: 1.6rem; display: block;
+            .tab-type-a {margin-top: 2.8rem;}
+        }
+    }
+    /*그래프*/
+    .chart {
+        &-circle {
+            .chart-cate {
+                position: relative; display: block;
+                li {
+                    position: relative; width: 100%; max-width: none;
+                    margin-top: 2.3rem;
+                }
+                .right {
+                    text-align: left;
+                    .point {width: 1.5rem; height: 1.5rem; left: auto; right: 0;}
+                }
+                .point {width: 1.5rem; height: 1.5rem;}
+                .ratio {
+                    margin-bottom: 0; padding-bottom: 1.5rem;
+                    .graph-data {font-size: 3rem;}
+                    span {font-size: 2rem;}
+                }
+                .name {position: absolute;  bottom: 2.3rem; right: 0; padding-left: 50%; font-size: 1.5rem; text-align: right;}
+            }
+            .graph {
+                margin: 2.8rem auto; width: calc(176/360*100vw); height: calc(176/360*100vw);
+            }
+        }
+        &-vertical {
+            .chart-head {
+                padding-bottom: 3rem;
+                .unit {
+                    font-size: 1.2rem;
+                }
+                h4 {font-size: 1.8rem;}
+            }
+            .chart-content {
+                height: 20rem;
+                .axis-x-item {
+                    .name {top: 20.8rem; font-size: 1.2rem;}
+                }
+            }
+           
+        }
+    }
+    .investment {
+        .tab-type-a a {padding: 1rem 1.2rem;}
+        .data-wrap {
+            &.pb-0x {
+                margin-bottom: -9rem;
+            }           
+            &:nth-child(1) {padding: 6.4rem 0; background-color: #F7F7F7;}
+        }
+        .data-head {
+            .title-s3 {margin-top: 3rem;}
+            .unit {margin-top: 0.8rem; font-size: 1.2rem;}
+        }
+        .table-type-b>li {
+            a {display: flex; flex-direction: column-reverse; flex-wrap: wrap; gap: 0.5rem;}
+            .date-td, .title-td {width: 100%;}
+            .date-td {border: 0;}
+        }
+        .inquiry-notice-box {margin-top: 5.6rem; padding: 4rem 3rem;}        
+        &-governance {        
+            .stock-current-box {
+                li:not(.current-price) {min-width: 40%;}
+                .current-price .dt {min-width: 40%;}
+            }       
+            .sub-head {padding-bottom: 6.4rem;}
+            .sub-visual {padding: 10.8rem 1.6rem;}
+            .by-year {
+                margin: 2rem -1.6rem 0; white-space: nowrap; overflow-x: auto;
+                a {font-size: 1.5rem;}
+            }      
+            .stockholder-return-info {flex-wrap: wrap; gap: 0.8rem;}
+            .return-item {
+                width: 100%; padding: 4rem 1rem;
+                .ico {width: 14rem; height: 14rem;}
+            }      
+            .table-legend {
+                position: static; font-size: 1.2rem; text-align: right; justify-content: flex-end; gap: 1.6rem;
+                .color:before {width: 1rem; height: 1rem;}
+            }          
+            .esg-table {
+                table {min-width: 61.7rem;}
+            }
+            .governance-rule-table  {
+                .rule-item {
+                    position: relative; height: auto;
+                    &:after {content: ''; display: block; padding-bottom: 100%;}
+                    a {position: absolute; padding: 2rem; top:0; left: 0; width: 100%; height: 100%;}
+                }
+            }   
+            .meeting-data-item {
+                width: 100%;
+                a {padding: 2.4rem; background-position: calc(100% - 2.4rem) 50%;}
+            }     
+            .director-info {display: block; margin-top: 0;}
+            .director-profile {width: 100%;}
+            .director-info-item {        
+                min-height: auto; width: 100% !important;   
+                + .director-info-item {
+                    margin-top: 0.8rem;
+                }
+                .director-info-dl > li.career {padding-top: 1.2rem; margin-top: 1.2rem;}
+                .photo {display: none;}
+                .name {margin-top: 0; font-size: 1.8rem; text-align: left;}
+                a {
+                    padding: 2rem;
+                    &:before {top: 0; bottom: 0; left: auto; right: 2rem; width: 2rem;}
+                    &:after {top: 0; bottom: 0; left: auto; right: 3rem; margin-right: -1px; height: 2rem;}
+                }
+                &.on {
+                    width: 100% !important;
+                    + .director-info-item {margin-top: 2.8rem;}                    
+                    a {padding: 4rem 2rem;}
+                    .photo {display: block;}
+                    .name {margin-top: 1.2rem; font-size: 2.4rem; text-align: center;}
+                }
+                
+            }   
+        }
+        &-finance {
+            .finance-stats-chart {
+                gap: 0.8rem;        
+                .chart-vertical {
+                    padding: 2.8rem 2.8rem 6rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 }

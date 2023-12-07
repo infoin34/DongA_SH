@@ -345,11 +345,13 @@
 		});
 			
 		function closeFn(e){
+			console.log("ㄴㄴㄴ")
 			if($(e.target).parents(parent).length == 0 || e.target == btn || $(e.target).hasClass('btn-close')){
 				$(parent).removeClass('on');
 				$btn.removeClass('on');
 				$('#wrap').off('click', closeFn);
 			}
+			return false;
 		}	
 		return false;
 	}
@@ -593,6 +595,26 @@
 
 	}
 
+	/* tab on */
+	function tabMenuMove(target, children, onIdx){
+		var $target = $(target),
+			$child = $(target).find(children);
+		var halfVW = $(window).width()/2;
+		var $onTab = $child.eq(onIdx);
+		var onMenuWidth = $onTab.outerWidth();
+		var onMenuXPos = 0;
+		
+		$child.each(function(idx){
+			if(idx < onIdx) {
+				onMenuXPos += $child.eq(idx).outerWidth();
+			}
+		});
+		$child.removeClass('on');
+		$onTab.addClass('on');
+		var moveWidth = (onMenuXPos + onMenuWidth/2) - halfVW;	
+		console.log(onMenuWidth,'ss', moveWidth)
+		$target.stop().animate({scrollLeft:moveWidth});
+	} 
 
 	/* animate */ 
 	//specialEasing 추가
@@ -779,6 +801,7 @@
 	exports.setCookie = setCookie;
     exports.bodyScrollBlock = bodyScrollBlock;
     exports.popup = popup;
+	exports.tabMenuMove = tabMenuMove;
 	exports.slideStart  = slideStart;
 	exports.afterLoading = afterLoading;
 	exports.cssToggle = cssToggle;
@@ -864,28 +887,27 @@
 
 	/******** 공통 ********/
 	$(function(){
-
 		//---탑버튼 클릭
 		$('.btn-top').on('click', function(){
 			$('html, body').animate({scrollTop: 0}, 300, 'linear');
-			return false;
 		});  
 
 		scrCSSEff();
 
 		//---전체메뉴
 		let headerH = $('header').height();
-		$('.btn-all-gnb').on('click', function(){			
+		$('.btn-all-gnb').on('click', function(e){			
+			e.preventDefault();
 			if($(this).hasClass('on')){				
 				bodyScrollBlock(false);				
 				$('header').removeClass('nav-open');
 				$(this).removeClass('on');
+				$('.btn-lang').removeClass('on');
 			}else{
 				bodyScrollBlock(true);
 				$('header').addClass('nav-open');
 				$(this).addClass('on');
 			}
-			return false;
 		});
 		
 		//---패밀리 사이트
@@ -922,6 +944,44 @@
 			!window.isMain && mouseCursor(); //메인 아닐때
 		}else{//---mo 일때
 			$('html').addClass('window-mo');
+						
+			//gnb
+			//--3뎁스 없을 시
+			$('.gnb-depth2-list > li').each(function(){
+				if($(this).find('.gnb-depth3').length > 0) $(this).addClass('depth-3-y');
+			});
+
+			//--1뎁스 클릭
+			$('.gnb-depth1-title').on('click', function(){
+				if(!$(this).parent().hasClass('on')){
+					$('.gnb-depth1-list > li').removeClass('on');
+					$(this).parent().addClass('on');
+				}else{
+					$(this).parent().removeClass('on');
+				}				
+				return false;
+			});
+
+			//--3뎁스 있는 2뎁스 클릭
+			$('.depth-3-y .gnb-depth2-title').on('click', function(){
+				if(!$(this).parent().hasClass('on')){
+					$('.gnb-depth2-list > li').removeClass('on');
+					$(this).parent().addClass('on');
+				}else{
+					$(this).parent().removeClass('on');
+				}				
+				return false;
+			});
+
+			//언어
+			$('.btn-lang').on('click', function(){
+				$('.btn-lang').toggleClass('on');
+				return false;
+			});			
+
+			if($('.page-menu-list').length > 0) {
+				tabMenuMove('.page-menu-list', '.tab-item', $('.page-menu-list .tab-item').index($('.page-menu-list .on')));
+			}
 		}
 
 		//---only main
@@ -985,8 +1045,7 @@
 						$('.philosophy-list').stop().animate({opacity:0, paddingLeft: '70%'}, 500);
 					}
 				}
-				
-					
+
 				//bg-socio
 				if(currentScr + $(window).height() > $('.bg-socio').offset().top + $('.bg-socio').height()){
 					if(!$('.bg-socio').hasClass('on')){

@@ -212,7 +212,7 @@
 											</div>
 										</li>
 										<li><a href="../investment/finance-1-1.html" class="gnb-depth2-title">재무정보</a></li>
-										<li><a href="#" class="gnb-depth2-title">IR</a></li>
+										<li><a href="../investment/ir.html" class="gnb-depth2-title">IR</a></li>
 										<li><a href="../investment/notice.html" class="gnb-depth2-title">공고</a></li>
 									</ul>
 								</div>
@@ -285,9 +285,9 @@
 								</div>
 								<div class="stock-current-box">
 									<ul class="left">
-										<li>
+										<li class="current-price">
 											<div class="dt"><b>현재가</b></div>
-											<div class="dd current-price red">98,300</div>
+											<div class="dd red">98,300</div>
 										</li>
 										<li>
 											<div class="dt">전일대비</div>
@@ -322,9 +322,9 @@
 								<!-- down -->
 								<div class="stock-current-box">
 									<ul class="left">
-										<li>
+										<li class="current-price">
 											<div class="dt"><b>현재가</b></div>
-											<div class="dd current-price red">98,300</div>
+											<div class="dd red">98,300</div>
 										</li>
 										<li>
 											<div class="dt">전일대비</div>
@@ -388,7 +388,7 @@
 										<h3 class="title-s3">현재가 정보</h3>
 									</div>
 								</div>
-								<div class="stock-price-table">
+								<div class="stock-price-table scr-x">
 									<!-- 표 -->
 									<table class="table-type-a">
 										<caption>현재가 정보</caption>
@@ -530,7 +530,9 @@
 								<div class="chart-line">
 									<div class="graph scr-eff">
 										<!-- 차트 들어갈 곳 -->
-										<img src="../../static/images/investment/line_graph.jpg" alt="선그래프 예제">
+										<div class="scr-x">
+											<img src="../../static/images/investment/line_graph.jpg" alt="선그래프 예제">
+										</div>
 										<!--.// 차트 들어갈 곳 -->
 									</div>
 								</div>
@@ -541,69 +543,71 @@
 								</div>
 								<div class="time-period-stock-table">
 									<!-- 표 -->
-									<table class="table-type-a">
-										<caption>시간대별 정보</caption>
-										<colgroup>
-											<col width="16.6%">
-											<col width="16.6%">
-											<col width="16.6%">
-											<col width="16.6%">
-											<col width="16.6%">
-											<col width="*">
-										</colgroup>
-										<thead>
-											<tr>
-												<th scope="col">시간</th>
-												<th scope="col">현재가</th>
-												<th scope="col">전일대비</th>
-												<th scope="col">등락률</th>
-												<th scope="col">체결량</th>
-												<th scope="col">거래량</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="tx-c">09:58</td>
-												<td class="tx-c">98,400</td>
-												<td class="tx-c up">100</td>
-												<td class="tx-c red">0.10%</td>
-												<td class="tx-c">5</td>
-												<td class="tx-c">1,394</td>
-											</tr>
-											<tr>
-												<td class="tx-c">09:57</td>
-												<td class="tx-c">98,100</td>
-												<td class="tx-c down">200</td>
-												<td class="tx-c blue">-0.20%</td>
-												<td class="tx-c">2</td>
-												<td class="tx-c">1,389</td>
-											</tr>
-											<tr>
-												<td class="tx-c">09:56</td>
-												<td class="tx-c">98,100</td>
-												<td class="tx-c down">200</td>
-												<td class="tx-c blue">-0.20%</td>
-												<td class="tx-c">2</td>
-												<td class="tx-c">1,389</td>
-											</tr>
-											<tr>
-												<td class="tx-c">09:55</td>
-												<td class="tx-c">98,100</td>
-												<td class="tx-c down">200</td>
-												<td class="tx-c blue">-0.20%</td>
-												<td class="tx-c">2</td>
-												<td class="tx-c">1,389</td>
-											</tr>
-											<tr>
-												<td class="tx-c">09:54</td>
-												<td class="tx-c">98,100</td>
-												<td class="tx-c down">200</td>
-												<td class="tx-c blue">-0.20%</td>
-												<td class="tx-c">2</td>
-												<td class="tx-c">1,389</td>
-											</tr>
-										</tbody>
-									</table>
+									<div class="scr-x">
+										<table class="table-type-a">
+											<caption>시간대별 정보</caption>
+											<colgroup>
+												<col width="16.6%">
+												<col width="16.6%">
+												<col width="16.6%">
+												<col width="16.6%">
+												<col width="16.6%">
+												<col width="*">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">시간</th>
+													<th scope="col">현재가</th>
+													<th scope="col">전일대비</th>
+													<th scope="col">등락률</th>
+													<th scope="col">체결량</th>
+													<th scope="col">거래량</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="tx-c">09:58</td>
+													<td class="tx-c">98,400</td>
+													<td class="tx-c up">100</td>
+													<td class="tx-c red">0.10%</td>
+													<td class="tx-c">5</td>
+													<td class="tx-c">1,394</td>
+												</tr>
+												<tr>
+													<td class="tx-c">09:57</td>
+													<td class="tx-c">98,100</td>
+													<td class="tx-c down">200</td>
+													<td class="tx-c blue">-0.20%</td>
+													<td class="tx-c">2</td>
+													<td class="tx-c">1,389</td>
+												</tr>
+												<tr>
+													<td class="tx-c">09:56</td>
+													<td class="tx-c">98,100</td>
+													<td class="tx-c down">200</td>
+													<td class="tx-c blue">-0.20%</td>
+													<td class="tx-c">2</td>
+													<td class="tx-c">1,389</td>
+												</tr>
+												<tr>
+													<td class="tx-c">09:55</td>
+													<td class="tx-c">98,100</td>
+													<td class="tx-c down">200</td>
+													<td class="tx-c blue">-0.20%</td>
+													<td class="tx-c">2</td>
+													<td class="tx-c">1,389</td>
+												</tr>
+												<tr>
+													<td class="tx-c">09:54</td>
+													<td class="tx-c">98,100</td>
+													<td class="tx-c down">200</td>
+													<td class="tx-c blue">-0.20%</td>
+													<td class="tx-c">2</td>
+													<td class="tx-c">1,389</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 									<!--// 표 -->
 								</div>
 							</div>
