@@ -184,7 +184,7 @@ h1 {
     }    
 }
 .all-gnb-view {
-    position: absolute; padding: 9.5rem 8rem; width:100vw; height: 100vh; right: 0; top: 0; background-color: #101e5d; transition: clip-path 1s; clip-path: circle(0rem at 97% 5%); overflow-y: auto; background: #101e5d allGnbBg('0E1B55') no-repeat 50% 50%/ cover;
+    position: fixed; padding: 9.5rem 8rem; width:100vw; height: 100vh; right: 0; top: 0; background-color: #101e5d; transition: clip-path 1s; clip-path: circle(0rem at 97% 5%); overflow-y: auto; background: #101e5d allGnbBg('0E1B55') no-repeat 50% 50%/ cover;
     .logo { 
        width: 20.9rem; height: 2.3rem;
         a {display: block; width: 100%; height: 100%; background-image: svgLogo('fff', 'fff'); background-repeat: no-repeat;}
