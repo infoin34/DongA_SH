@@ -430,7 +430,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .table-note {margin-top: 2rem; text-align: right; color: #888;}
 .table {
     &-type-a {
-        width: 100%;
+        min-width: 100%;
         font-size: 1.6rem;
         td,
         th {
@@ -716,7 +716,6 @@ img.pc-part {display: inline-block;}
 		> *:first-child {margin-left: 1.6rem;}
 		> *:last-child {margin-right: 1.6rem;}
 	}
-	.scr-x-table {width: 100%;}
 	.scr-x {
 		img {max-width: none;}
 	}
