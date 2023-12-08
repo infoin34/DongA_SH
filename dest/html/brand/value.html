@@ -258,8 +258,7 @@
 							</div>
 							<div class="head-img">
 								<div class="img img-1 scr-eff">
-									<img src="../../static/images/title_img/brand.png" alt="" class="pc-part">
-									<img src="../../static/images/title_img/brand.png" alt="" class="mo-part">
+									<img src="../../static/images/title_img/brand.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -275,12 +274,14 @@
 											<p>전 사업 영역의 차별적 경쟁력 확보를 통한<br>Global Healthcare Player 도약</p>
 										</div>
 										<div class="valuecont-img">
-											<img src="../../static/images/brand/valuecont_vision.png" alt="">
+											<img src="../../static/images/brand/valuecont_vision.jpg" alt="" class="pc-part">
+											<img src="../../static/images/mo/brand/valuecont_vision.jpg" alt="" class="mo-part">
 										</div>
 									</li>
 									<li class="valuecont-box">
 										<div class="valuecont-img">
-											<img src="../../static/images/brand/valuecont_mission.png" alt="">
+											<img src="../../static/images/brand/valuecont_mission.jpg" alt="" class="pc-part">
+											<img src="../../static/images/mo/brand/valuecont_mission.jpg" alt="" class="mo-part">
 										</div>
 										<div class="valuecont-text">
 											<i class="ico-heart"></i>
@@ -295,8 +296,8 @@
 							<div class="value-slide">
 								<div class="data-head">
 									<div class="title">
-										<h3 class="title-s2">최대주주 및<br>그 특수관계인의 주식소유 현황</h3>
-										<div class="unit">2023년 3월 31일 기준 </div>
+										<h3 class="title-h2">Core Value</h3>
+										<div class="text-1">사회책임경영 전략 수립 및의사결정을 통한 그룹사회책임경영 내재화</div>
 									</div>
 									<div class="valueslide-nav">
 										<div class="swiper-button-prev btn-type-a"></div>
@@ -307,7 +308,8 @@
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_01.png" alt="지배구조">
+												<img src="../../static/images/brand/value_1.jpg" alt="지배구조" class="pc-part">
+												<img src="../../static/images/mo/brand/value_1.jpg" alt="지배구조" class="mo-part">
 											</div>
 											<div class="valueslide-txt">
 												<dl>
@@ -326,12 +328,14 @@
 												</dl>
 											</div>
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_02.png" alt="인권">
+												<img src="../../static/images/brand/value_2.jpg" alt="인권" class="pc-part">
+												<img src="../../static/images/mo/brand/value_2.jpg" alt="인권" class="mo-part">
 											</div>
 										</div>
 										<div class="swiper-slide">
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_03.png" alt="인권">
+												<img src="../../static/images/brand/value_3.jpg" alt="인권" class="pc-part">
+												<img src="../../static/images/mo/brand/value_3.jpg" alt="인권" class="mo-part">
 											</div>
 											<div class="valueslide-txt">
 												<dl>
@@ -350,12 +354,14 @@
 												</dl>
 											</div>
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_04.png" alt="환경">
+												<img src="../../static/images/brand/value_4.jpg" alt="환경" class="pc-part">
+												<img src="../../static/images/mo/brand/value_4.jpg" alt="환경" class="mo-part">
 											</div>
 										</div>
 										<div class="swiper-slide">
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_05.png" alt="준법경영">
+												<img src="../../static/images/brand/value_5.jpg" alt="준법경영" class="pc-part">
+												<img src="../../static/images/mo/brand/value_5.jpg" alt="준법경영" class="mo-part">
 											</div>
 											<div class="valueslide-txt">
 												<dl>
@@ -374,12 +380,14 @@
 												</dl>
 											</div>
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_06.png" alt="지역사회 참여 발전">
+												<img src="../../static/images/brand/value_6.jpg" alt="지역사회 참여 발전" class="pc-part">
+												<img src="../../static/images/mo/brand/value_6.jpg" alt="지역사회 참여 발전" class="mo-part">
 											</div>
 										</div>
 										<div class="swiper-slide">
 											<div class="valueslide-img">
-												<img src="../../static/images/brand/value_07.png" alt="소비자 이슈">
+												<img src="../../static/images/brand/value_7.jpg" alt="소비자 이슈" class="pc-part">
+												<img src="../../static/images/mo/brand/value_7.jpg" alt="소비자 이슈" class="mo-part">
 											</div>
 											<div class="valueslide-txt">
 												<dl>
@@ -579,19 +587,53 @@
 <!-- 페이지 관련 스크립트 -->
 <script>
 	$(function() {
-		var swiper = new Swiper('.valueslide', {
-			slidesPerView: "auto",
-			spaceBetween: 120,
-			scrollbar: {
-				el: ".valueslide-pagin .swiper-pagination",
-				hide: true,
-			},
-			navigation: {
-				nextEl: ".valueslide-nav .swiper-button-next",
-				prevEl: ".valueslide-nav .swiper-button-prev",
-			},
+		initValueSlideSwiper();
+	});
+
+	if (window.isMobile) { //mo
+		$(window).on('orientationchange', function(e) {
+			$(window).one('resize', function() {
+				swiperOnceFlag = $(window).width() < 768 ? false : true;
+				initValueSlideSwiper();
+			});
 		});
-	})
+	} else { //pc
+		$(window).on('resize', function(e) {
+			initValueSlideSwiper();
+		});
+	}
+
+	let swiperOnceFlag = $(window).width() < 768 ? false : true;
+
+	function initValueSlideSwiper() {
+		if ($(window).width() < 768) {
+			if (!swiperOnceFlag) {
+				swiperOnceFlag = true;
+				$('.valueslide-nav').hide();
+				$('.valueslide-pagin').hide();
+				if (window.valueSlideSwiper) window.valueSlideSwiper.destroy();
+			}
+		} else {
+			if (swiperOnceFlag) {
+				swiperOnceFlag = false;
+				$('.valueslide-nav').show();
+				$('.valueslide-pagin').show();
+				window.valueSlideSwiper = new Swiper('.valueslide', {
+					slidesPerView: 'auto',
+					spaceBetween: 120,
+					scrollbar: {
+						el: '.valueslide-pagin .swiper-pagination',
+						hide: true,
+					},
+					navigation: {
+						nextEl: '.valueslide-nav .swiper-button-next',
+						prevEl: '.valueslide-nav .swiper-button-prev',
+					}
+				});
+			}
+		}
+		return false;
+	}
 </script>
 <!--//페이지 관련 스크립트 -->
 

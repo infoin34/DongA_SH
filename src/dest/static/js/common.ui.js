@@ -330,7 +330,6 @@
 	function layerToggle(e, btn, target){
 		let $btn = $(btn);
 		let parent = target ? target : btn;
-
 		if($btn.hasClass('on')){			
 			closeFn(e);
 		}else{			
@@ -345,8 +344,8 @@
 		});
 			
 		function closeFn(e){
-			console.log("ㄴㄴㄴ")
-			if($(e.target).parents(parent).length == 0 || e.target == btn || $(e.target).hasClass('btn-close')){
+			console.log($(e.target).parents(btn).length)
+			if($(e.target).parents(parent).length == 0 || $(e.target).parents(btn).length > 0 || e.target == $(btn)[0] || $(e.target).hasClass('btn-close')){
 				$(parent).removeClass('on');
 				$btn.removeClass('on');
 				$('#wrap').off('click', closeFn);
@@ -427,9 +426,6 @@
 				}else{
 					$self[0].removeEventListener('touchmove', $.proxy(swipe.handMove, swipe), false);
 				}		
-				
-				
-
 				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
 
 				moveX = ev.pageX;
@@ -823,7 +819,7 @@
 		currentScr = $(window).scrollTop();	
 
 		//---헤더, 탑버튼
-		let mH = isMain ? $('.main-spot').height() : + $('header').height();
+		let mH = isMain ? $('.main-spot').height() : $('header').height();
 		if($(window).scrollTop() > mH){
 			if(window.isMain) $('header').removeClass('white');
 			$('.btn-top').addClass('on');
@@ -913,7 +909,7 @@
 		
 		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(e){
-			layerToggle(e, this, '.footer-family-site');
+			layerToggle(e, '.btn-family-site', '.footer-family-site');
 			return false;
 		});
 		$('.about-site-tab > li').on('click', function(){

@@ -817,15 +817,21 @@ img.pc-part {display: inline-block;}
 		}
 			
 	}
-	.title-h2 {font-size: 6.4rem;}
+	.title-h2 {font-size: 3.6rem;}
 	.title-h3 {font-size: 2.4rem;}
 	.title-s1 {font-size: 2.2rem;}
 	.title-s2 {font-size: 2rem;}
 	.title-s3 {font-size: 1.5rem;}
 	.text-1 {font-size: 1.5rem;}
-	.text-2 {font-size: 1.3rem;}
+	.text-2 {font-size: 1.5rem;}
 	.text-3 {font-size: 1.6rem;}
 	.text-4 {font-size: 1.4rem;}
 
 	.date.ico {padding-left: 2rem; background-size: 1.4rem;}
+
+	.pc-part {display: none;}
+	.mo-part {display: block;}
+	img.pc-part {display: none;}
+	img.mo-part {display: inline-block}
+
 }

@@ -58,3 +58,6 @@ li.head > * {padding:13px 15px; display:table-cell; vertical-align:middle; font-
 .fileName {width:25%; text-align:center;}
 h2 {margin-top:50px; padding-bottom:20px; font-size:25px;}
 h3 {padding:15px 20px; font-size:18px; border-bottom:1px solid;}
+.tab-a {display: flex; text-align: center; gap: 10px;}
+.tab-a a {padding: 10px 0; flex: 1; font-size: 30px; border: 1px solid #aaa; color: #aaa;}
+a.on {background-color: #000; color: #fff;}

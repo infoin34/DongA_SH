@@ -16,7 +16,7 @@
 	<!-- endbuild -->
 	<script>
 		//state-> 완료: end , 진행중: ing 		  
-		const markupList = [
+		const markupPcList = [
 			{
 				'공통' : [
 					{'depth2': 'img', 'info': '아이콘, 로고, 이미지 모음', 'src': 'guide/svg', 'state':''},
@@ -99,12 +99,98 @@
 			},	
 			{
 				'에러페이지' : [
-					{'depth2': '에러페이지1', 'info': '404에러', 'src': 'error/404.html', 'state': 'end'},
-					{'depth2': '에러페이지2', 'info': '500에러', 'src': 'error/500.html', 'state': 'end'},
-					{'depth2': '에러페이지3', 'info': '점검중', 'src': 'error/check.html', 'state': 'end'},
+					{'depth2': '에러페이지1', 'info': '404에러', 'src': 'error/404', 'state': 'end'},
+					{'depth2': '에러페이지2', 'info': '500에러', 'src': 'error/500', 'state': 'end'},
+					{'depth2': '에러페이지3', 'info': '점검중', 'src': 'error/check', 'state': 'end'},
 					
 				]
 			}		
+		]
+
+		const markupMoList = [
+		{
+				'공통' : [
+					{'depth2': 'img', 'info': '아이콘, 로고, 이미지 모음', 'src': 'guide/svg', 'state':''},
+					{'depth2': 'layout','info': 'header, footer, nav, 알림창', 'src': 'guide/layout', 'state': 'end'},
+					{'depth2': 'button', 'info': 'style', 'src': 'guide/etc?button'},
+					{'depth2': 'form', 'info': 'input, select', 'src': 'guide/etc?component'},
+					{'depth2': 'component', 'info': 'block요소 공통', 'src': 'guide/etc?component'},
+					{'depth2': 'popup', 'info': 'style', 'src': 'guide/popup'}
+				]
+			},
+			{
+				'메인' : [
+					{'depth2': '메인',  'depth3': '', 'info': '','src': 'main/main', 'state':''}
+				]
+			},	
+			{
+				'동아쏘시오 그룹' : [
+					{'depth2': '그룹소개', 'info': '','src': 'brand/intro', 'state':''},
+					{'depth2': 'CEO 인사말', 'info': '','src': 'brand/ceo', 'state':'end'},
+					{'depth2': '가치 및 비전', 'info': '', 'src': 'brand/value', 'state':'end'},
+					{'depth2': '연혁', 'info': '', 'src': 'brand/history', 'state':'end'},
+					{'depth2': 'CI소개', 'info': '', 'src': 'brand/ci', 'state':''}
+				]
+			},
+			{
+				'투자정보' : [
+					{'depth2': '기업지배구조', 'depth3': '지배구조 일반', 'info': '', 'src': 'investment/governance', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보-주주현황', 'info': '원 그래프',  'src': 'investment/governance-2-1', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보-실시간 주가현황', 'info': '선 그래프', 'src': 'investment/governance-2-2', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보-주주총회', 'info': '',  'src': 'investment/governance-2-3', 'state': 'end'},
+					{'depth2': '', 'depth3': '주식정보-주주환원', 'info': '',  'src': 'investment/governance-2-4', 'state': 'end'},
+					{'depth2': '', 'depth3': '이사회-개요', 'info': '위원회 구성원', 'src': 'investment/governance-3-1', 'state' :'end'},
+					{'depth2': '', 'depth3': '이사회-이사회', 'info': '타이틀 + 엑셀 들어가는 부분', 'src': 'investment/governance-3-2', 'state' :'end'},
+					{'depth2': '재무정보-연결재무상태', 'info': '막대 그래프', 'src': 'investment/finance-1-1', 'state' :'end'},
+					{'depth2': '재무정보-연결손익계산서', 'info': '', 'src': 'investment/finance-1-2', 'state' :'end'},
+					{'depth2': '재무정보-별도재무상태', 'info': '', 'src': 'investment/finance-1-3', 'state' :'end'},
+					{'depth2': '재무정보-별도손익계산서', 'info': '막대 그래프 두 줄', 'src': 'investment/finance-1-4', 'state' :'end'},
+					{'depth2': 'IR', 'depth3': '공시자료', 'info': '다운로드X','src': 'investment/ir', 'state':'end'},
+					{'depth2': '', 'depth3': 'IR자료실', 'info': '다운로드O','src': 'investment/ir-2', 'state':'end'},					
+					{'depth2': '공고', 'info': '', 'src': 'investment/notice', 'state' :'end'}
+				]
+			},
+			{
+				'정도경영' : [
+					{'depth2': '정도경영 철학', 'depth3': '정도경영 철학', 'info': '','src': 'management/philosophy', 'state':''},
+					{'depth2': '', 'depth3': '사회책임협의회(DSC)', 'info': '','src': 'management/dsc', 'state':''},
+					{'depth2': '인권경영', 'info': '','src': 'management/humanright', 'state':''},
+					{'depth2': '환경경영', 'info': '','src': 'management/environmental', 'state':''},
+					{'depth2': '준법경영', 'info': '','src': 'management/compliance', 'state':''},
+					{'depth2': '소비자중심경영', 'depth3': '', 'info': '','src': 'management/consumer', 'state':''},
+					{'depth2': 'CSR', 'depth3': '전략 및 운영체계', 'info': '','src': 'management/csr-1', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 활동-건강', 'info': 'tab이동','src': 'management/csr-2', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 활동-환경', 'info': 'tab이동','src': 'management/csr-2', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 활동-사람', 'info': 'tab이동','src': 'management/csr-2', 'state':''},
+					{'depth2': '', 'depth3': 'CSR 활동-사회', 'info': 'tab이동','src': 'management/csr-2', 'state':''},
+					{'depth2': '', 'depth3': '협력기관', 'info': '','src': 'management/csr-3', 'state':''},
+					{'depth2': '공급망 관리', 'info': '','src': '', 'src': 'management/supply-chain', 'state': ''},
+					{'depth2': '윤리현장 및 규정', 'depth3': '윤리현장', 'info': 'tab이동','src': 'management/ethical', 'state':''},
+					{'depth2': '', 'depth3': '행동강령', 'info': 'tab이동','src': 'management/ethical', 'state':''},
+					{'depth2': '통합보고서', 'info': '','src': 'management/synthesis-report', 'state':''},
+				]
+			},
+			{
+				'PR Center' : [
+					{'depth2': '그룹뉴스', 'info': '', 'src': 'pr/news', 'state': 'end'},
+					{'depth2': '그룹뉴스 - 상세', 'info': '', 'src': 'pr/detail', 'state': 'end'},
+					{'depth2': '미디어룸', 'info': '팝업(#youtebePop)', 'src': 'pr/media', 'state': 'end'},
+					{'depth2': '사회공헌', 'info': '', 'src': 'pr/contribution', 'state': 'end'}
+				]
+			},
+			{
+				'customer' : [
+					{'depth2': '상담/문의', 'info': '팝업(#privacy)', 'src': 'customer/inquiry', 'state': ''}
+				]
+			},	
+			{
+				'에러페이지' : [
+					{'depth2': '에러페이지1', 'info': '404에러', 'src': 'error/404', 'state': 'end'},
+					{'depth2': '에러페이지2', 'info': '500에러', 'src': 'error/500', 'state': 'end'},
+					{'depth2': '에러페이지3', 'info': '점검중', 'src': 'error/check', 'state': 'end'},
+					
+				]
+			}	
 		]
 	</script>
 </head>
@@ -112,11 +198,14 @@
 	<div id="wrap">
 		<!-- container -->
 		<div id="container">
-			<div class="pcMarkup"> 
+			<div class="markup"> 
+				<div class="tab-a">
+					<a href="javascript:void(0);" class="on">PC</a>
+					<a href="javascript:void(0);">MO</a>
+				</div>
                 <div class="notice">
 					<p class="pub"><strong>*담당자: 안선영, 김예빈</strong></p>
 					<p class="progress">*총 페이지 <strong id="totalCnt"></strong>개 중 <strong id="endCnt"></strong>개 완료 (<strong id="endCntP"></strong>%)</p>
-					<p>*현재 pc상황만 체크중입니다.</p>
 				</div>
                 <h2>동아쏘시오홀딩스 PC</h2>
                 <div class="state"><span class="ing">진행중</span><span class="end">완료</span><span class="allEnd">모두완료</span></div>        

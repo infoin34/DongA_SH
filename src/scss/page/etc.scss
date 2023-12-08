@@ -1,6 +1,7 @@
 /*etc*/
 //inquiry
 .customer-inquiry {
+    .section-head .section-inner {padding-right: 0 !important;}
     .inquiry-notice {
         margin-top: 8rem; display: flex; gap: 13%;
     }
@@ -12,7 +13,7 @@
         &-2:before {background-image: svgTime('fff'); background-size: 4.2rem;}
     }
 }
-.inquiry {
+.inquiry {   
     &-form {
         padding-bottom: 14rem; margin-bottom: -14rem;
         .form-head {
@@ -81,7 +82,7 @@
         display: inline-block; padding: 2.8rem 4rem; margin-top: 6rem; color:#666; background-color: #f7f7f7; border: 1px solid #ccc; border-radius: 1rem;
         b {color: #222;}
     }
-    .bottom-btn-wrap {flex: 1 0 100%;}
+    .bottom-btn-wrap {flex: 1 0 100%; padding: 0 1.6rem;}
     &.error-404 .content:before { width: 253px; height: 192px; background-image: svgError(); }
     &.error-500 .content:before {width: 28.4rem; height: 16.7rem; background-image: svgError2();}
     &.error-check .content:before {width: 22rem; height: 17.1rem; background-image: svgError3();}
@@ -102,6 +103,17 @@
 }
 
 @media screen and (max-width: 766px) {
+    .customer-inquiry {
+        .inquiry-notice {
+            margin-top: 4rem; padding-bottom: 6.4rem; gap: 2.8rem; flex-direction: column; align-items: center;
+         }
+        .inquiry-info {
+            padding-left: 8.8rem; width: 80vw;
+            &:before {width: 5.6rem; height: 5.6rem;}   
+            &-1:before {background-size: 3.328rem;} 
+            &-2:before {background-size: 2.94rem;} 
+        }
+    }
     .inquiry {
         &-notice-content {
             margin-top: 3.4rem;
@@ -114,9 +126,35 @@
                 line-height: calc(34/20);
                 font-weight: 600;
             }
-            .inquiry-info {
-                margin-top: 2.4rem;
+        }
+        &-form {
+            padding-bottom: 14rem; margin-bottom: -14rem;
+            .form-head {
+                padding-top: 6.4rem;
+                .text-3 {margin-top: 2.4rem;}
             }
+        }
+    }
+    
+    .error {
+        .content {
+            padding: 0 1.6rem;
+            .title-s1 {margin-top: 5rem;}
+            .text-1 {margin-top: 1rem;}
+        }
+        .notice-box {margin-top: 2.8rem; padding: 1.6rem 2rem; width: 100%;}
+        &.error-404 .content:before {width: 50vw; height: calc(192/253*50vw);}
+        &.error-500 .content:before {width: 50vw; height: calc(167/284*50vw);}
+        &.error-check .content:before {width: 50vw;height: calc(171/220*50vw);}
+    }
+
+    //알림창
+    .pop-confirm {
+        .popup-inner {padding: 3.2rem 2.8rem; width: 100%;}
+        .confirm-text {font-size: 2.4rem;}
+        .btn-wrap {
+            margin-top: 2rem;
+            a {line-height: 4.9rem; height: 4.9rem; border-radius: 5rem; font-size: 1.4rem;}
         }
     }
 }
