@@ -424,10 +424,10 @@
                 hH = $('header').height();
            
             for (var i = 0; i < setSection.length; i++) {
-                if (scrollT + ($(window).height() * 0.5) >= $(setSection).eq(i).offset().top - hH) {
+                if (scrollT + ($(window).height() * 0.7) >= $(setSection).eq(i).offset().top - hH) {
                     $('.year-item').removeClass('on');
-                    $('.year-item').eq(i).addClass('on');
-                    if($('.year-item').eq(i).hasClass('on')) {
+                    if(!$('.year-item').eq(i).hasClass('on')) {
+                        $('.year-item').eq(i).addClass('on');
                         tabMenuMove('.page-menu-list', '.tab-item', $('.page-menu-list .tab-item').index($('.page-menu-list .on')));
                     }
                 }
@@ -435,24 +435,29 @@
             return false;
         }
         $(window).on('scroll', tabScrollEvent);
-
+        let textSET;
         //연도 클릭 
         $('.year-item').on('click', function(e){
             if($(this).hasClass('on')) return;
-            e.preventDefault();
             var hH = $('header').height();
             var _this = $(this);
             $(window).off('scroll', tabScrollEvent);
-            $('html, body').stop().animate({
+            $(window).off('scroll', scrollEv);
+            clearTimeout(textSET);
+            $('html').stop().animate({
                 scrollTop: $('.history-list').eq($(this).index()).offset().top - hH
             }, {
                 duration: 300,
                 complete: function() {
                     tabScrollEvent();
                     $(window).on('scroll', tabScrollEvent);
+
                     $('html').removeClass('scr-up');
                     $('html').addClass('scr-down');
                     $('.page-menu-list').removeClass('hidden');
+                    textSET= setTimeout(function(){
+                        $(window).on('scroll', scrollEv);
+                    }, 300);
                 }
             });
             return false;

@@ -608,7 +608,6 @@
 		$child.removeClass('on');
 		$onTab.addClass('on');
 		var moveWidth = (onMenuXPos + onMenuWidth/2) - halfVW;	
-		console.log(onMenuWidth,'ss', moveWidth)
 		$target.stop().animate({scrollLeft:moveWidth});
 	} 
 
@@ -792,6 +791,7 @@
 		}
 	}
 
+	exports.scrollEv = scrollEv;
     exports.scrollMove = scrollMove;
 	exports.getCookie = getCookie;
 	exports.setCookie = setCookie;

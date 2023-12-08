@@ -338,7 +338,7 @@
             position: relative;
             width: 100vw;
             height: 100vh;
-            background-color: #000;
+            background-color: #fff;
             overflow: hidden;
             &.fixed {
                 position: fixed;
@@ -1245,6 +1245,9 @@
                     }
                     a {position: relative; padding: 1.8rem 0 1.6rem;}
                 }
+            }
+            .history-gallery-box .gallery-grid {
+                margin: 0.2rem;
             }
         }
     }
