@@ -711,7 +711,11 @@ img.pc-part {display: inline-block;}
 }
 
 @media screen and (max-width: 766px) {	
-	.scr-x {margin: 0 -1.6rem; padding: 0 1.6rem; overflow-x: auto; white-space: nowrap;}
+	.scr-x {
+		margin: 0 -1.6rem; overflow-x: auto; white-space: nowrap;
+		> *:first-child {margin-left: 1.6rem;}
+		> *:last-child {margin-right: 1.6rem;}
+	}
 	.scr-x {
 		img {max-width: none;}
 	}

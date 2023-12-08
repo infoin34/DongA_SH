@@ -891,7 +891,8 @@
 		$('.btn-top').on('click', function(){
 			$('html, body').animate({scrollTop: 0}, 300, 'linear');
 		});  
-
+		
+	
 		scrCSSEff();
 
 		//---전체메뉴
@@ -939,9 +940,15 @@
 
 		//---pc일때
 		if(!window.isMobile){
-			$('html').addClass('window-pc');			
+			$('html').addClass('window-pc');				
+				
 			//마우스 커서
 			!window.isMain && mouseCursor(); //메인 아닐때
+
+			//pc에서 가로 스크롤 할 때
+			$('.scr-x').on('scroll', function(){
+				$('.mouse-cursor').hide();
+			})	
 		}else{//---mo 일때
 			$('html').addClass('window-mo');
 						
