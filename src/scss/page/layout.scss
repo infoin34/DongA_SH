@@ -263,28 +263,29 @@ h1 {
             display: block;  /* opacity: 1; transition: opacity 1.5s ease;transform: translateY(150%) skew(-20deg, 0);*/
             /* &.scr-eff-active {opacity: 1;transform: translateY(0) skew(0, 0);}*/
         }
-        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%); z-index: 1;}
+        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%);}
+        .page-menu-list {  
+            position: absolute; top: 0; left: 0; transition: top 0.4s cubic-bezier(0.2, 0.4, 0.9, 1);               
+            &.fixed {
+                position: fixed; margin: 0; left: 0; width: 100%; background-color: #fff; z-index: 1001; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12); transition: transform 0.6s; 
+                &.hidden {transform: translateY(-100%);}
+                .tab-type-a {display: block; text-align: center;}
+                li {
+                    display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 2.4rem;
+                    //+ li {margin-left: 6.4rem;}
+                    &.on a {color:#000081; font-weight: 600; background-color: #fff;}
+                }
+                a {padding: 2.4rem 0; height: auto;}
+            }
+            .tab-type-a {
+                width: 100%; gap: 0; white-space: nowrap;
+                li {border: 0; font-size: 1.8rem; color: #aaa; font-weight: 400;}
+                a {padding: 2rem 3.6rem; height: 6.1rem;}
+            }
+        }
     }
     .page-menu-wrap {position: relative; height: 6.1rem;}
-    .page-menu-list {  
-        position: absolute; top: 0; left: 0; transition: top 0.4s cubic-bezier(0.2, 0.4, 0.9, 1);               
-        &.fixed {
-            position: fixed; margin: 0; left: 0; width: 100%; background-color: #fff; z-index: 1001; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12); transition: transform 0.6s; 
-            &.hidden {transform: translateY(-100%);}
-            .tab-type-a {display: block; text-align: center;}
-            li {
-                display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 2.4rem;
-                //+ li {margin-left: 6.4rem;}
-                &.on a {color:#000081; font-weight: 600; background-color: #fff;}
-            }
-            a {padding: 2.4rem 0; height: auto;}
-        }
-        .tab-type-a {
-            width: 100%; gap: 0; white-space: nowrap;
-            li {border: 0; font-size: 1.8rem; color: #aaa; font-weight: 400;}
-            a {padding: 2rem 3.6rem; height: 6.1rem;}
-        }
-    }
+   
     .section-contents {
         padding-top: 12rem;
     }
@@ -710,8 +711,8 @@ footer {
     html {font-size: 62.5%;}
     #wrap:not(.main) {
         .head-img {display: none;}
-        .page-menu-list {position: static; margin: 0 -1.6rem; overflow-x: auto;}
         .section-head {
+            .page-menu-list {position: static; margin: 0 -1.6rem; overflow-x: auto;}
             .section-inner {padding: 0 2rem 0 1.6rem; height: auto;}
             .text-wrap {padding-top: 10rem;}
             .main-title {font-size: 3.6rem;}

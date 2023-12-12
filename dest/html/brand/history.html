@@ -870,7 +870,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 			}
-			let scrollT = $(window).scrollTop() + ($(window).height() * 0.8);
+			let scrollT = $(window).scrollTop() + ($(window).height() * 0.5);
 			let hH = $('header').height();
 
 			$('.history-list').each(function() {
@@ -884,71 +884,39 @@
 			tabMenuIdx.push(temp);
 			tabMenuIdx.length > 2 && tabMenuIdx.shift();
 			if (tabMenuIdx[0] != tabMenuIdx[1]) {
-				tabMenuMove();
+				tabMenuMove('.page-menu-list');
 			}
 			return false;
 		}
 		$(window).on('scroll', tabScrollEvent);
 		let textSET;
 		//연도 클릭 
+
 		$('.year-item').on('click', function(e) {
 			if ($(this).hasClass('on')) return;
 			var hH = $('header').height();
 			var _this = $(this);
-			clearTimeout(textSET);
 			$(window).off('scroll', tabScrollEvent);
-			$('html, body').stop().animate({
+			clearTimeout(textSET);
+			$('html').stop().animate({
 				scrollTop: $('.history-list').eq($(this).index()).offset().top - hH
 			}, {
 				duration: 300,
 				complete: function() {
-					$(window).on('scroll', tabScrollEvent);
 					$('.year-item').removeClass('on');
 					_this.addClass('on');
+					tabMenuMove('.page-menu-list');
 					textSET = setTimeout(function() {
 						$('html').removeClass('scr-up');
 						$('html').addClass('scr-down');
 						$('.page-menu-list').removeClass('hidden');
+						$(window).on('scroll', tabScrollEvent);
 					}, 200);
 				}
 			});
 			return false;
 		})
-
-		/* tab on */
-		function tabMenuMove() {
-			let halfVW = $(window).width() / 2;
-			let onMenuXPos = $(".page-menu-list .on").position().left;
-			let onMenuWidth = $('.page-menu-list .on').width();
-			let moveWidth = (onMenuXPos + onMenuWidth / 2) - halfVW;
-			if (onMenuXPos > halfVW) {
-				$(".page-menu-list").stop().animate({
-					scrollLeft: moveWidth
-				});
-			} else {
-				$(".page-menu-list").stop().animate({
-					scrollLeft: moveWidth
-				});
-			}
-		}
-
 	}());
-
-
-	// $(".subHistory-box").each(function() {
-	//     let $scrTop = $(this).offset().top - ($height * 1.5);
-	//     let $scrBt = $(this).offset().top + parseInt($(this).css("height")) - ($height * 2);
-
-	//     if ($scrBt > $scrollTop && $scrollTop > $scrTop) {
-	//         let $index = $(this).index();
-	//         let $btnParent = $(".tabCont-btn").parent().eq($index);
-	//         let $btn = $btnParent.find(".tabCont-btn");
-
-	//         $btn.addClass("on");
-	//         $(".tabCont-btn").not($btn).removeClass("on");
-	//         tabCont.slideTo($index, 1000);
-	//     }
-	// })
 </script>
 <!--//페이지 관련 스크립트 -->
 
