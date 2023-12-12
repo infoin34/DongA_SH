@@ -281,8 +281,8 @@
 						<div class="brand-intro-wrap">
 							<div class="brand-intro-swiper">
 								<!-- 카테고리 리스트 -->
-								<div class="brand-category">
-									<div class="category-list">
+								<div class="brand-category page-menu-wrap">
+									<div class="category-list page-menu-list">
 										<div class="category-item on"><a href="#" aria-label="해당 슬라이드 보기">지주회사</a></div>
 										<div class="category-item"><a href="#" aria-label="해당 슬라이드 보기">제약</a></div>
 										<div class="category-item"><a href="#" aria-label="해당 슬라이드 보기">포장용기</a></div>
@@ -699,7 +699,7 @@
 	if (window.isMobile) { //mo
 		$(window).on('orientationchange', function(e) {
 			$(window).one('resize', function() {
-				swiperOnceFlag = $(window).width() < 768 ? false : true;
+				swiperOnceFlag = (!window.isMobile && $(window).width() < 768) || window.isMobile ? false : true;
 				initBrandIntroSlideSwiper();
 			});
 		});
@@ -710,24 +710,27 @@
 	}
 
 	let swiperOnceFlag = (!window.isMobile && $(window).width() < 768) || window.isMobile ? false : true;
-	console.log((!window.isMobile && $(window).width() < 768))
 
 	function initBrandIntroSlideSwiper() {
 		if (!window.isMobile && $(window).width() < 768 || window.isMobile) {
 			if (!swiperOnceFlag) {
 				swiperOnceFlag = true;
-				$(window).off('scroll', brandIntroScr);
+				$(window).off('scroll', brandIntroScrPc);
 				$('#wrap').off('wheel', brandIntroWheel);
 
+				$('.brand-intro-swiper').removeClass('fixed');
 				if (brandIntroSwiper) brandIntroSwiper.destroy();
+				$(window).on('scroll', brandIntroScrMo);
 			}
 		}
 		if (!window.isMobile && $(window).width() >= 768) {
 			if (swiperOnceFlag) {
 				swiperOnceFlag = false;
 
-				$(window).off('scroll', brandIntroScr);
+				$(window).off('scroll', brandIntroScrPc);
 				$('#wrap').off('wheel', brandIntroWheel);
+
+				if (brandIntroSwiper) brandIntroSwiper.destroy();
 
 				//브랜드 그룹 소개 스와이퍼
 				brandIntroSwiper = new Swiper('.brand-cate-info-swiper .swiper-container', {
@@ -773,14 +776,26 @@
 					return false;
 				});
 
-				$(window).on('scroll', brandIntroScr);
+				$(window).on('scroll', brandIntroScrPc);
 				$('#wrap').on('wheel', brandIntroWheel);
 			}
 		}
 		return false;
 	}
 
-	function brandIntroScr() {
+	function brandIntroScrMo() {
+		// if($('.brand-category').offset().top <= $(window).scrollTop()){				
+		//     if(!$('.category-list').hasClass('fixed')){
+		//         $('.category-list').addClass('fixed');
+		//     }
+		// }else {
+		//     if($('.category-list').hasClass('fixed')){
+		//         $('.category-list').removeClass('fixed');
+		//     }
+		// }
+	}
+
+	function brandIntroScrPc() {
 		if (scrZero) return; //탑버튼
 		if (beforeScr > $(window).scrollTop()) { //위로
 			if ($(window).scrollTop() + $(window).height() <= $('.brand-intro-wrap').offset().top + $(window).height()) {
