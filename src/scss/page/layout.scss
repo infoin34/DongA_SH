@@ -488,6 +488,39 @@ footer {
     select {padding-left: 2.2rem; width: 24.2rem; height: 5.1rem; text-align: left;}
 }
 
+
+/*개인정보 처리방침*/
+.pop-map {
+    .popup {
+        &-head {
+            padding: 0;
+            .text-3 {margin-top: 2rem;}
+        }
+        &-wrap {padding: 12rem 2rem; background-color: #fff;}
+        &-inner {padding: 0; width: 100%; max-width: 119.4rem; height: 100%;}
+        &-body {margin-top: 1.6rem; overflow: auto;}
+    }
+    .map {
+        margin-top: calc(56/1080*100vh); padding-bottom: 2.8rem; border-bottom: 1px solid rgba(0,0,0,0.4);       
+        .info {
+            margin-top: 2rem;
+            b {
+                position: relative; padding-right: 1.2rem;
+                &:before {content:''; display: inline-block; margin-right: 0.8rem; width:2rem; height: 2.1rem; vertical-align: middle; background-size: 100% 100%;}
+            }
+            .address b:before {
+                background-image: svgPin('000'); 
+            }
+            .contact b:before {
+                background-image: svgPhone('000');
+            }
+        }
+    }
+    .map-frame {
+       height: 40vh; overflow: hidden; transition: height 0.3s;
+    }
+}
+
 /*아이콘*/
 .ico {
     &-plus{
@@ -742,11 +775,18 @@ footer {
         }
     }
     .ico-plus {width: 2.4rem; height: 2.4rem;}
+    .btn-top {
+        width: 6.4rem; height: 6.4rem;
+        p {
+            font-size: 1.4rem;
+            &:before {width: 1.2rem; height: 1.2rem;}
+        }
+    }
 }
 
 //마우스 없는 기기
 @media (hover:none) {
-    ::-webkit-scrollbar{ display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
+    ::-webkit-scrollbar { display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
     .all-gnb-view {
         padding: 0;
         .nav-gnb {padding: 0 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.2); color: #fff;}
@@ -845,6 +885,10 @@ footer {
         .btn-close {display: none;}
         .about-site-tab li {font-size: 1.6rem;}
         .about-site-tab li a {padding-bottom: 0.6rem;}
-        .about-site-box {margin-top: 1.4rem; padding: 1.6rem; height: calc(190/770*100vh);}
+        .about-site-box {
+            margin-top: 1.4rem; padding: 1.6rem; height: calc(190/770*100vh);
+            &::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}
+        }
     }
+    
 }

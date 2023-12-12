@@ -387,7 +387,7 @@
             } 
             &-price-table {
                 display: flex; gap: 3rem;
-                
+                .tab-type-a {width: 50%;}
             }
         }
         .stockholder-meeting-info {

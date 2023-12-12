@@ -445,7 +445,7 @@
 					$list.removeClass('no-click');
 				}
 
-				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 20){	
+				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 30){	
 					if(moveX > touchX){//prev
 						prev();
 					}else{//next

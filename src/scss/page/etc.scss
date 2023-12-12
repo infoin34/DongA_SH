@@ -20,6 +20,7 @@
             padding-top: 12rem;
             .text-3 {margin-top: 2.4rem;}
         }
+        .detail-addr {gap: 4rem;}
         .postcode, .upload-name {width: calc(100% - 16.5rem);}
         .term-agree {
             .field-table-title {position: relative; display: flex; justify-content: space-between; align-content: flex-end; align-items: flex-end;}
@@ -99,7 +100,7 @@
 } 
 
 @media screen and (max-width: 992px) {
-   
+    .inquiry-form .detail-addr {gap: 0.5rem;}
 }
 
 @media screen and (max-width: 766px) {
@@ -133,6 +134,19 @@
                 padding-top: 6.4rem;
                 .text-3 {margin-top: 2.4rem;}
             }
+            .detail-addr {
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }	
+            .postcode {width: calc(100% - 10.6rem);}
+            .attachment {
+                .field-insert {flex-wrap: wrap;}
+                .field-insert:last-child {display: none;}
+                .upload-name {width: 100%;}
+                .btn-type-b {width: 100%;}
+            }
+            .term-agree label {font-size: 1.3rem;}
+            .btn-privacy {font-size: 1.2rem;}
         }
     }
     
@@ -156,5 +170,15 @@
             margin-top: 2rem;
             a {line-height: 4.9rem; height: 4.9rem; border-radius: 5rem; font-size: 1.4rem;}
         }
+    }
+    
+    //개인정보 수집 팝업
+    .pop-policy-privacy-agree {
+        .popup-head {
+            padding-right: 3rem;
+            .text-3 {margin-top: 1rem;}
+        }        
+        .text-3 {font-size: 1.4rem;}
+        .popup-body {margin-top: 1.6rem; padding: 2.8rem 1.6rem;}
     }
 }

@@ -61,7 +61,7 @@ textarea {
 		outline: none;
 	}
 }
-select	{width: 100%; padding-right: 5rem; outline:none; border:1px solid #ddd; font-size: 1.8rem; font-family: inherit; line-height:1.6; background: svgDownArrow('222') no-repeat calc(100% - 2.4rem) 50% / 11px; border-radius: 0.4rem; box-shadow:none; vertical-align:middle; -webkit-appearance:none; -moz-appearance: none; appearance:none; cursor:pointer;}
+select	{width: 100%; padding-right: 5rem; outline:none; border:1px solid #ddd; font-size: 1.8rem; font-family: inherit; line-height:1.6; background: #fff svgDownArrow('222') no-repeat calc(100% - 2.4rem) 50% / 11px; border-radius: 0.4rem; box-shadow:none; vertical-align:middle; -webkit-appearance:none; -moz-appearance: none; appearance:none; cursor:pointer;}
 select:focus {border: 1px solid #000; color:#000;} 
 select:disabled	{opacity:.5}
 select option { color:#999;}
@@ -430,8 +430,8 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .table-note {margin-top: 2rem; text-align: right; color: #888;}
 .table {
     &-type-a {
-        min-width: 100%;
         font-size: 1.6rem;
+		width: 100%;
         td,
         th {
             padding: 2.4rem;
@@ -522,7 +522,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 	input[type="file"] {display: none;}
 	.ess {display: inline-block; margin-top: -0.4rem; margin-left: 0.4rem; color: #FF4002; vertical-align: top;}
-	.btn-type-b {width: 16.5rem; font-size: 2rem;  font-weight: 500; border-radius: 0.4rem; line-height: 6.4rem;}
+	.btn-type-b {width: 16.5rem; height: 6.4rem; font-size: 2rem; font-weight: 500; border-radius: 0.4rem; line-height: 6.4rem;}
 	.field {
 		width: 100%;
 		&-wrap {
@@ -701,11 +701,11 @@ img.pc-part {display: inline-block;}
 			}
 		}		
 	}
-
 	.field-table-title {padding-top: 5.5rem;}
 	.field-table {
 		.field-wrap {display: block;}
 		.field + .field {margin-top: 6rem;}
+		.field-insert {gap: 0.5rem;}		
 		.half {width: 100%;}
 	}
 }
@@ -738,6 +738,10 @@ img.pc-part {display: inline-block;}
 	.tab-type-a {		
 		.tab-item {font-size: 1.2rem;}
 	}	
+	.check-type-a {
+		input:checked + label:before {background-size: 1.1rem;}
+		label:before {margin-right: 0.6rem; width: 2rem; height: 2rem;}
+	}
 	.table-type-a {
 		td, th {padding: 2rem; font-size: 1.4rem;}
 	}
@@ -776,6 +780,25 @@ img.pc-part {display: inline-block;}
 	}
 	.table-note {margin-top: 1.6rem;}
 		
+	.field-table {
+		input[type="text"], select {
+			padding: 0 2rem; height: 4.6rem; font-size: 1.2rem;
+			@include placeholder(#aaa, 1.2rem);
+		}
+		textarea {padding: 1.6rem 2rem; font-size: 1.2rem; @include placeholder(#aaa, 1.2rem);}
+		.field {
+			+ .field {margin-top: 3rem;}
+			&-wrap {
+				margin-top: 3.6rem;
+				.btn-type-b {width: 10.6rem; height: 4.6rem; line-height: 4.6rem; font-size: 1.2rem;} 
+				.ess {margin-left: 0.4rem; font-size: 2rem;}
+			}
+			&-name {font-size: 1.4rem;}		
+			&-insert +.field-insert {margin-top: 0.5rem;}
+			.limit-size {margin-top: 0.8rem; font-size: 1.2rem;}
+		}
+	}
+	
 	//excel-table
 	.excel-table {
 		table {
@@ -815,6 +838,16 @@ img.pc-part {display: inline-block;}
 			.btn-filter-reset {font-size: 1.2rem;}
 		}
 			
+	}
+
+	.layer-popup {
+		.popup-head {
+			.btn-close {width: 2.2rem; height: 2.2rem;}
+		}
+		.popup-body {
+			&::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}					
+		}
+		.popup-inner {padding: 2.8rem 2rem;}
 	}
 	.title-h2 {font-size: 3.6rem;}
 	.title-h3 {font-size: 2.4rem;}
