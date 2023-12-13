@@ -483,12 +483,15 @@ footer {
         &-inner {padding: 0; width: 100%; max-width: 119.4rem; height: 100%;}
         &-body {margin-top: 1.6rem; padding: 3rem; height: 58.695vh; background-color: #F3F7FA; border-radius: 0.8rem; overflow: auto;}
     }
-    .select-wrap {margin-top: 3.3rem; text-align: right;}
+    .select-wrap {
+        display: flex; justify-content: end; align-items: center; margin-top: 3.3rem; gap: 1.2rem;
+        .label {color: #000081; font-size: 1.6rem;}
+    }
     select {padding-left: 2.2rem; width: 24.2rem; height: 5.1rem; text-align: left;}
 }
 
 
-/*개인정보 처리방침*/
+/*찾아오기*/
 .pop-map {
     .popup {
         &-head {
@@ -779,6 +782,29 @@ footer {
         p {
             font-size: 1.4rem;
             &:before {width: 1.2rem; height: 1.2rem;}
+        }
+    }
+    .pop-policy-privacy {
+        select {
+            padding-left: 2rem; padding-right: 20vw; width: auto; height: 4.4rem; font-size: 1.4rem; background-position: calc(100% - 1.8rem) 50%; background-size: 0.93rem;
+        }
+        .select-wrap {
+            margin-top: 1.6rem;
+        }
+        .popup-wrap {
+            padding: 2.5rem 1.6rem;
+        }
+        .popup-body {margin-top: 0.8rem; height: calc(100% - 10rem);}
+    }
+    
+    .pop-map {
+        .popup-wrap {
+            padding: 2.5rem 1.6rem;
+        }
+        .map {
+            padding-bottom: 2rem;
+            .info b::before {margin-right: 0.4rem; width: 1.5rem; height: 1.6rem;}
+            .text-3 {font-size: 1.4rem;}
         }
     }
 }

@@ -1190,6 +1190,17 @@
 @media screen and (max-width: 766px) {
     .management {      
         &-csr {
+            .article {
+                padding: 6.4rem 0;
+                &.bg-a {background-color: #fff;}
+                &:not(.bg-a) {background-color: #F7F7F7;}
+                .section-inner {
+                    display: block;
+                }
+                h3 {width: 100%;}
+                .title-s2 {font-size: 2.4rem;}
+                .content {margin-top: 1.6rem; width: 100%;}
+            }
             //협력기관
             .cooperation-list {
                 margin: 0 -1.6rem -10rem;

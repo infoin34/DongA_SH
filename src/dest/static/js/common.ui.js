@@ -996,7 +996,7 @@
 		//---only main
 		if(window.isMain){			
 			//새로고침 - 스크롤 상단
-			$("html, body").animate({ scrollTop: 0}, 'fast');
+			$('html, body').animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작
 			//$('#intro').addClass('active');

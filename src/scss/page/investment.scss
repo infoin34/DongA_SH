@@ -338,7 +338,7 @@
         .chart-line {
             .scr-eff {width: 0; overflow: hidden; transition: width 1.2s;}
             .scr-eff-active {width: 100%;}
-            img {max-width: none;}
+            img {width: 100%;}
         }
         .governance {
             &-rule-table  {
@@ -679,6 +679,10 @@
                 a {font-size: 1.5rem;}
             }      
             .stockholder-return-info {flex-wrap: wrap; gap: 0.8rem;}
+            .chart-line {
+                img {width: 800px;}
+                .scr-eff-active {width: 800px;}
+            }
             .return-item {
                 width: 100%; padding: 4rem 1rem;
                 .ico {width: 14rem; height: 14rem;}
