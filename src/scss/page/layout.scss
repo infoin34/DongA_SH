@@ -260,8 +260,7 @@ h1 {
         .text-wrap {padding-top: calc(200/1440*100%);}
         .main-title {font-size: 10rem;}
         .main-title strong, .sub-title {
-            display: block;  /* opacity: 1; transition: opacity 1.5s ease;transform: translateY(150%) skew(-20deg, 0);*/
-            /* &.scr-eff-active {opacity: 1;transform: translateY(0) skew(0, 0);}*/
+            display: block; 
         }
         .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%);}
         .page-menu-list {  
@@ -272,7 +271,6 @@ h1 {
                 .tab-type-a {display: block; text-align: center;}
                 li {
                     display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 2.4rem;
-                    //+ li {margin-left: 6.4rem;}
                     &.on a {color:#000081; font-weight: 600; background-color: #fff;}
                 }
                 a {padding: 2.4rem 0; height: auto;}
@@ -284,7 +282,7 @@ h1 {
             }
         }
     }
-    .page-menu-wrap {position: relative; height: 6.1rem;}
+    //.page-menu-wrap {position: relative; height: 6.1rem;}
    
     .section-contents {
         padding-top: 12rem;
@@ -518,7 +516,7 @@ footer {
         }
     }
     .map-frame {
-       height: 40vh; overflow: hidden; transition: height 0.3s;
+       background-color: #f3f7fa; height: 40vh; overflow: hidden; transition: height 0.3s;
     }
 }
 
