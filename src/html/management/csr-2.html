@@ -658,13 +658,14 @@
         $('.page-menu-list .tab-item').on('click', function(){
             cssToggle('.tab-item', '.section-contents', $(this).index());
           
-            scrollMove($('.csr-activity').offset().top-$('header').height(), 500, (function(){
+            scrollMove($('.csr-activity').offset().top, 500, (function(){
                 $('html').attr('class', 'scr-down');
                 $('.page-menu-list').removeClass('hidden');   
             }));
            
             return false;
         });
+
         //갤러리
         $('.gallery-swiper').each(function(){
             new slideStart($(this));

@@ -844,6 +844,7 @@
 		if (window.isMobile) { //mo
 			$(window).on('orientationchange', function(e) {
 				$(window).one('resize', function() {
+					galleryAniEnd = false;
 					galleryReset();
 				});
 			});

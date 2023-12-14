@@ -129,7 +129,9 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 
 //scroll
 .no-scr {width:100%; height:100%; overflow:hidden;}
-.noScr, .scr-x { -ms-overflow-style:none; /* IE and Edge */ scrollbar-width:none; /* Firefox */ } 
+.noScr, .scr-x { 
+	-ms-overflow-style:none; /* IE and Edge */ scrollbar-width:none; /* Firefox */ 
+} 
 //.scr-x {display:inline-flex; width:100%; white-space:nowrap; justify-content:flex-start; overflow-x:auto; overflow-y: hidden;}
 .scr-x:-webkit-scrollbar{ display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
 
@@ -713,6 +715,7 @@ img.pc-part {display: inline-block;}
 @media screen and (max-width: 766px) {	
 	.scr-x {
 		margin: 0 -1.6rem; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
+		
 		> *:first-child {margin-left: 1.6rem;}
 		> *:last-child {margin-right: 1.6rem;}
 	}

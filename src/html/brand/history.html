@@ -396,7 +396,8 @@
         if(window.isMobile){//mo
             $(window).on('orientationchange', function(e){    
                 $(window).one('resize', function() {
-                        galleryReset();
+                    galleryAniEnd = false;
+                    galleryReset();
                 });               
             });
         }else{//pc

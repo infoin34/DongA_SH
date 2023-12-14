@@ -371,10 +371,13 @@
 	/* slideStart */
 	function slideStart(obj, cnt, rolling){
 		let $self = obj;
-		let $list = $self.find('.slide-list')
+		let $list = $self.find('.slide-list');
+		let $touch = $self.find('.slide-wrap');
 		let $slideSection = $self.find('.slide'); 
 		let $btnSlidePrev = $self.find('.btn-prev'); 
 		let $btnSlideNext = $self.find('.btn-next');
+		let $slideDots = '';
+		let $slideDotsLi = '';
 		let slideLength = $slideSection.length;
 		let initPageIdx = 0, 
 			curPageIdx = 0, 
@@ -385,6 +388,8 @@
 			
 		let touchX = 0, touchY = 0, moveX = 0, moveY = 0;
 		let clickable = false;
+
+	
 		let swipe = {
 			handStart : function(e){
 				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
@@ -397,10 +402,10 @@
 				}			
 				$list.removeClass('no-click');				
 				if(!window.isMobile){
-					$self[0].onmousemove = null;
-					$self[0].onmousemove = $.proxy(swipe.handMove, swipe);
+					$touch[0].onmousemove = null;
+					$touch[0].onmousemove = swipe.handMove;
 				}else{				
-					$self[0].addEventListener('touchmove',  $.proxy(swipe.handMove, swipe), false);
+					$touch[0].addEventListener('touchmove', swipe.handMove);
 				}
 			},
 			handMove : function(e){	
@@ -412,19 +417,15 @@
 				$list.addClass('no-click');	
 
 				if(!window.isMobile) {//PC
-					$self[0].onmouseleave = null;
-					$self[0].onmouseleave = $.proxy(swipe.handMove, swipe);
+					$touch[0].onmouseleave = null;
+					$touch[0].onmouseleave = $swipe.handEnd;
 				}				
 			},
 			handEnd : function(e){	
-				e.preventDefault();
-				e.stopPropagation();
-				e.stopImmediatePropagation();
-
 				if(!window.isMobile) {
-					$self[0].onmousemove = null;	
+					$touch[0].onmousemove = null;	
 				}else{
-					$self[0].removeEventListener('touchmove', $.proxy(swipe.handMove, swipe), false);
+					$touch[0].removeEventListener('touchmove',swipe.handMove);
 				}		
 				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
 
@@ -434,7 +435,7 @@
 				let gapX = Math.abs(touchX - moveX);
 				let gapY = Math.abs(touchY - moveY);
 
-				clickable = gapX != 0 ? false : true;	
+				clickable = gapX != 0 && gapY != 0? false : true;	
 				
 				if(!clickable){
 					e.preventDefault();
@@ -444,21 +445,56 @@
 				}else{
 					$list.removeClass('no-click');
 				}
-
-				if(Math.abs(gapX) > Math.abs(gapY) && gapX > 30){	
+				
+				let pow = Math.pow(gapX, 2) + Math.pow(gapY, 2);
+				if(Math.abs(gapX) > Math.abs(gapY)  && Math.sqrt(pow) > 30){	
 					if(moveX > touchX){//prev
 						prev();
 					}else{//next
 						next();
 					}
-				}else{
 				}
 				
 				
 			},
 		}
-		function setting(){
-			let slidePaging = '';
+		let slideOnceFlag = $(window).width() < 768 ? false : true;
+		function reset(){			
+			let slideLimit = $(window).width() < 768 ? 2 : 3;
+
+			if(slideLength >= slideLimit){
+				$self.removeClass('default');
+				$self.addClass('draggable');
+			}else{
+				$self.removeClass('draggable');	
+				$self.addClass('default');
+			}
+
+			if($(window).width() < 768){	
+				$slideDots.show();		
+				$btnSlidePrev.hide();
+				$btnSlideNext.hide();	
+				if(slideLength >= slideLimit){
+					$slideDots.show();		
+				}else{
+					$slideDots.hide();	
+				}
+			}else{
+				$slideDots.hide();		
+				if(slideLength >= slideLimit){
+					$btnSlidePrev.show();
+					$btnSlideNext.show();	
+				}else{
+					$btnSlidePrev.hide();
+					$btnSlideNext.hide();
+				}
+			}
+			return false;
+		}
+		function setting(){		
+			let slidePaging = '';	
+			let slideLimit = $(window).width() < 768 ? 2 : 3;
+
 			for(var i = 0; i < slideLength; i++){
 				let className = '';
 				if(i == 0){
@@ -466,37 +502,32 @@
 				}
 				slidePaging = slidePaging + ('<li class="'+ className +'">'+ Number(i + 1) +'</li>');
 			}
-			if(slideLength >= 3){
+
+			if(slideLength >= slideLimit){
 				$slideSection.first().addClass('active');
 				$slideSection.first().next().addClass('next');
 				$slideSection.last().addClass('prev');
-				$self.addClass('draggable');
-				//$self.append('<ul class="slide-dots">'+ slidePaging +'</ul>');			
+				$self.addClass('draggable');				
 				init();						
 			}else {
-				//$slideSection.addClass('active');
 				$self.addClass('default');
 				$btnSlidePrev.hide();
 				$btnSlideNext.hide();
-			}
+			}		
+
+			$self.append('<ul class="slide-dots">'+ slidePaging +'</ul>');			
+			$slideDots = $self.find('.slide-dots');
+			$slideDotsLi = $slideDots.find('li');
+			$slideDotsLi.eq(0).addClass('on');
 			
-			// else{
-			// 	$self.find('.slide-list').append($slideSection.eq(0).clone(true));
-			// 	$self.find('.slide-list').append($slideSection.eq(1).clone(true));
-			// 	$slideSection = $self.find('.slideSection'); 
-			// 	slideLength = $slideSection.length;				
-			// 	$slideSection.eq(0).addClass('active');
-			// 	$slideSection.eq(1).addClass('next');
-			// 	$slideSection.last().addClass('prev');
-			// 	init();		
-			// }
+			reset();
 
 			if(!window.isMobile){		
-				$self[0].onmouseup = null;
-				$self[0].onmousedown = null;
-				$self[0].onmousedown = $.proxy(swipe.handStart, swipe);	
-				$self[0].onmouseup = $.proxy(swipe.handEnd, swipe);		 	
-				$self[0].onclick = function(e){		 				
+				$touch[0].onmouseup = null;
+				$touch[0].onmousedown = null;
+				$touch[0].onmousedown = swipe.handStart;	
+				$touch[0].onmouseup = swipe.handEnd;		 	
+				$touch[0].onclick = function(e){		 				
 					if(!clickable){
 						e.preventDefault();
 						e.stopPropagation();	
@@ -504,15 +535,18 @@
 					$list.removeClass('no-click');
 				}	
 			}else{
-				$self[0].addEventListener('touchstart', $.proxy(swipe.handStart, swipe), false);
-				$self[0].addEventListener('touchend', $.proxy(swipe.handEnd, swipe), false);				
+				$touch[0].ontouchstart = null;
+				$touch[0].touchend = null;
+				$touch[0].addEventListener('touchstart', swipe.handStart, false);
+				$touch[0].addEventListener('touchend', swipe.handEnd, false);				
 			}
 		} 
 		
 		function init(){
 			if(autoPlayFlag && !rolling) autoPlay();
 			if(autoPlayFlag && rolling) rollingAutoPlay();
-			
+			$btnSlidePrev.off('click');			
+			$btnSlideNext.off('click');		
 			$btnSlidePrev.on('click', prev);			
 			$btnSlideNext.on('click', next);					
 			// $slideSection.on('click', function(e){
@@ -549,7 +583,10 @@
 		
 			$slideSection.eq(curPageIdx).addClass('active');
 			$slideSection.eq(prevPageIdx).addClass('prev');	
-			$slideSection.eq(nextPageIdx).addClass('next');			
+			$slideSection.eq(nextPageIdx).addClass('next');
+			
+			$slideDotsLi.removeClass('on');
+			$slideDotsLi.eq(curPageIdx).addClass('on');
 			
 			if(autoPlayFlag) {
 				setTo = setTimeout(function(){      	
@@ -588,6 +625,28 @@
 			}, autoSc);
 		}
 		setting();
+
+		if(window.isMobile){//mo
+			$(window).on('orientationchange', function(e){    
+				$(window).one('resize', function() {
+					reset();
+				});
+			});
+		}else{//pc
+			$(window).on('resize', function(e){  
+				if($(window).width() < 768){
+					if(!slideOnceFlag){           
+						slideOnceFlag = true;
+						reset();  
+					}
+				}else{
+					if(slideOnceFlag){
+						slideOnceFlag = false;
+						reset();  
+					}
+				}
+			});
+		}
 
 	}
 
