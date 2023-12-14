@@ -605,7 +605,7 @@
 		function rollingAutoPlay(){
 			$(window).on('scroll',function(){
 				var height = $(window).scrollTop() + $(window).height();
-				if (height < $self.offset().top || height >=$self.offset().top + 200 + $self.parents(".section").height()) {
+				if (height < $self.offset().top || height >=$self.offset().top + 200 + $self.parents('.section').height()) {
 					$self.removeClass('playing');
 					clearTimeout(setTo);
 				}

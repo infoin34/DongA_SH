@@ -472,6 +472,7 @@
 									<div class="swiper-button-next mouse-effect" data-cursor="click"></div>
 								</div>
 							</div>
+							<div class="swiper-pagination"></div>
 						</div>
 						<!-- //퍼즐 가로 스와이퍼 -->
 					</div>
@@ -628,7 +629,7 @@
 									<div class="thumb pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/philosophy_img_5.jpg');"></div>
 									<div class="thumb mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/philosophy_img_5.jpg');"></div>
 									<div class="info">
-										<div class="title">소비자중심<br>경영</div>
+										<div class="title">소비자중심경영</div>
 										<p class="text-1">
 											정도, 성실, 배려의 창업정신 아래 단순한 이윤추구가 아닌<br>
                                             사회정의의 실천을 목표로 내부 및 사회 구성원에 대한<br>
@@ -1007,6 +1008,7 @@
 <!-- 페이지 관련 스크립트 -->
 <script>
 	window.isMain = true;
+	let overOnceFlag = $(window).width() < 768 ? false : true;;
 	$(function() {
 		//메인 팝업 
 		if ($('.main-popup-list').length > 0) {
@@ -1029,19 +1031,14 @@
 
 		//뉴스 슬라이드
 		let mainNewsSwiper = new Swiper('.main-news-swiper .swiper-container', {
-			slidesPerView: 3,
-			spaceBetween: 30,
 			loop: false,
+			spaceBetween: 8,
 			scrollbar: {
 				el: '.main-news-swiper .swiper-scrollbar',
 				hide: false,
 			},
 			updateOnWindowResize: true,
 			breakpoints: {
-				1500: {
-					slidesPerView: 3,
-					spaceBetween: 30
-				},
 				1200: {
 					slidesPerView: 3.3,
 					spaceBetween: 30
@@ -1064,11 +1061,13 @@
 
 		//사업 슬라이드
 		let mainBusinessSwiper = new Swiper('.main-business-swiper .swiper-container', {
+			slidesPerView: 1,
 			initialSlide: 0,
-			slidesPerView: 'auto',
-			centeredSlides: true,
 			loop: true,
 			speed: 800,
+			pagination: {
+				el: '.main-business-swiper .swiper-pagination',
+			},
 			navigation: {
 				nextEl: '.main-business-swiper .swiper-button-next',
 				prevEl: '.main-business-swiper .swiper-button-prev'
@@ -1077,20 +1076,63 @@
 				afterInit: function() {
 					$('.main-business-swiper .total-number').text(this.slides.length);
 					this.slideNext(); //0부터 시작-버그
-					$('.business-bg').eq(0).fadeIn(500);
+					$('.business-bg-1').fadeIn(500);
 				}
+			},
+			breakpoints: {
+				768: {
+					initialSlide: 0,
+					slidesPerView: 'auto',
+					centeredSlides: true,
+				},
+
 			}
 		});
+
 		//사업 스와이프 - 이펙트
 		mainBusinessSwiper.on('slideChange', function() {
 			$('.business-bg').hide();
 			$('.main-business-swiper .current-number').text(this.realIndex + 1);
-			$('.business-bg').eq(this.realIndex).fadeIn(500);
+			$('.business-bg-' + (this.realIndex + 1)).fadeIn(500);
 		})
 
-		//pc만
-		if (!window.isMobile) {
-			listHoverFn($('.philosophy-item').eq(0));
+
+
+		//철학 hover 
+		philosophyItemEff();
+
+		if (window.isMobile) { //mo
+			$(window).on('orientationchange', function(e) {
+				$(window).one('resize', function() {
+					philosophyItemEff();
+				});
+			});
+		} else { //pc
+			$(window).on('resize', function(e) {
+				if ($(window).width() < 768) {
+					if (!overOnceFlag) {
+						overOnceFlag = true;
+						philosophyItemEff();
+					}
+				} else {
+					if (overOnceFlag) {
+						overOnceFlag = false;
+						philosophyItemEff();
+					}
+				}
+			});
+		}
+	});
+
+	//philosophy 
+	function philosophyItemEff() {
+		$('.philosophy-item').off('mouseenter');
+		$('.philosophy-list').off('mouseleave');
+		$('.philosophy-item').off('click');
+		$('.philosophy-item').removeAttr('style');
+		listHoverFn($('.philosophy-item').eq(0));
+
+		if ($(window).width() >= 768) {
 			$('.philosophy-item').on('mouseenter', function(e) {
 				if (!$(this).hasClass('over')) {
 					listHoverFn($(this));
@@ -1099,20 +1141,36 @@
 			$('.philosophy-list').on('mouseleave', function() {
 				listHoverFn($('.philosophy-item').eq(0));
 			});
+		} else {
+			$('.philosophy-item').on('click', function() {
+				if (!$(this).hasClass('over')) {
+					listHoverFn($(this));
+				}
+			});
 		}
-	});
-
-
+	}
 
 	//소개 오버 효과
 	function listHoverFn(target) {
+		let effectObj = {};
+		if ($(window).width() < 768) { //mo            
+			effectObj.default = {
+				height: '5.9rem'
+			};
+			effectObj.over = {
+				height: 'auto'
+			};
+		} else { //pc
+			effectObj.default = {
+				width: '11.6%'
+			}
+			effectObj.over = {
+				width: '48%'
+			}
+		}
 		$('.philosophy-item').not(target).removeClass('over');
-		$('.philosophy-item').not(target).stop().animate({
-			width: '11.6%'
-		}, 300)
-		target.stop().animate({
-			width: '48%'
-		}, {
+		$('.philosophy-item').not(target).stop().animate(effectObj.default, 300)
+		target.stop().animate(effectObj.over, {
 			duration: 300,
 			complete: function() {
 				target.addClass('over');
