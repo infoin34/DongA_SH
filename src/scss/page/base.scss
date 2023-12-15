@@ -638,6 +638,71 @@ img.pc-part {display: inline-block;}
 			}
 		}
 	}
+	&.pop-workplace {
+		position: absolute;
+		right: 0;
+		bottom: -2.8rem;
+		transform: translateY(100%);
+		
+		.popup {
+			&-inner {
+				padding: 4rem;
+				width: 70.5rem;
+				box-shadow: 1rem 1rem 3.2rem rgba(34,34,34,.4);
+				overflow: visible;
+			}
+			&-wrap {
+				width: auto;
+				height: auto;
+				padding: 0;
+				overflow: visible;
+
+				&::before{
+					display: none;
+				}
+			}
+		}
+
+		.workplace{			
+			&-title {
+				line-height: 3.8rem;
+			}
+			&-cont {
+				display: grid;
+				width: 46rem;
+				margin: 3.2rem auto 0;
+				grid-template-columns: 1fr 1fr 1fr;
+				column-gap: 11rem;
+				row-gap: 4rem;
+
+				li {
+					width: 100%;
+				}
+
+				a {
+					width: 100%;
+				}
+				
+				.ico {
+					width: 100%;
+					img {
+						width: 100%;
+					}
+				}
+
+				.name {
+					font-size: 1.4rem;
+					line-height: 1.67rem;
+					text-align: center;
+					font-weight: 400;
+					display: block;
+					margin-top: 0.8rem;
+					color: #2F75FF;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
 
 
@@ -850,7 +915,59 @@ img.pc-part {display: inline-block;}
 			&::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}					
 		}
 		.popup-inner {padding: 2.8rem 2rem;}
+
+		&.pop-workplace {
+			right: auto;
+			left: 50%;
+			transform: translate(-82%, 100%);
+			
+			.popup-head {
+				padding-right: 0;
+			}
+
+			.title-s2 {
+				font-size: 2rem;
+				line-height: 3.4rem;
+			}
+
+			.popup {
+				&-inner {
+					width: calc(100vw - 3.2rem);
+					max-width: 32.8rem;
+					padding: 3.6rem;
+				}
+			}
+
+			.workplace {
+				&-cont {
+					width: 100%;
+					column-gap: 4.7rem;
+					row-gap: 2.8rem;
+
+					a {
+						position: relative;
+					}
+
+					.ico {
+						margin-bottom: 3.6rem;
+					}
+
+					.name {
+						font-size: 1.2rem;
+						line-height: 1.43rem;
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						height: 2.8rem;
+						width: 100%;
+						transform: translateY(calc(100% + 0.8rem)) translateX(-50%);
+					}
+				}
+			}
+		}
 	}
+
+
 	.title-h2 {font-size: 3.6rem;}
 	.title-h3 {font-size: 2.4rem;}
 	.title-s1 {font-size: 2.2rem;}

@@ -73,6 +73,16 @@ header {
     li + li::before {content: ''; margin:0 0.8rem; display: inline-block; width: 1px; height: 1rem; background-color: rgba(0, 0, 0, 0.2);}
     a:after {content: ''; margin-left: 0.4rem; margin-top: -0.2rem; display: inline-block; width: 1.2rem; height: 1.3rem; background: svgUrlArrow('000'); background-size: 100% 100%; vertical-align: middle;}
 } 
+
+.header-workgroup {
+    position: relative;
+
+    &.on {
+        .layer-popup {
+            display: block !important;
+        }
+    }
+}  
 h1 {    
     width: 20.9rem; height: 2.3rem; 
     a {
@@ -596,7 +606,7 @@ footer {
                 }      
             }
             
-        }        
+        }       
         .header-lang {
             &:hover .lang-list-wrap {display: block;}
         }
@@ -651,6 +661,11 @@ footer {
     }
 }
 
+@media screen and (max-width: 766px) {
+    .header-workgroup {
+        position: static;
+    }
+}
 //pc 작은 화면 or mo 버전
 @media screen and (max-width: 766px), (hover: coarse){   
     html, body {width: 100%; overflow-x: hidden;}

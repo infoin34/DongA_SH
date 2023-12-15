@@ -221,6 +221,8 @@
 				$('html').removeClass('scr-up');
 				$('html').addClass('scr-down');
 				$('.page-menu-list').removeClass('hidden');
+				$('.header-workgroup').removeClass('on');
+				$('.btn-work-place').removeClass('on');
 			}	
 		} else{//위로
 			if(!$('html').hasClass('scr-up')){
@@ -989,6 +991,10 @@
 		});
 		$('.about-site-tab > li').on('click', function(){
 			cssToggle('.about-site-tab li', '.about-site-list', $(this).index());
+		});
+		$('.btn-work-place').on('click', function(e){
+			layerToggle(e, '.btn-work-place', '.header-workgroup');
+			return false;
 		});
 		
 
