@@ -707,8 +707,6 @@
 		let brandIntroIdx = 0;
 
 		$(function() {
-
-
 			initBrandIntroSlideSwiper();
 			//각 계열 브랜드 리스트 탭
 			//브랜드 그룹 소개 스와이퍼
@@ -730,13 +728,22 @@
 		if (window.isMobile) { //mo
 			$(window).on('orientationchange', function(e) {
 				$(window).one('resize', function() {
-					swiperOnceFlag = (!window.isMobile && $(window).width() < 768) || window.isMobile ? false : true;
 					initBrandIntroSlideSwiper();
 				});
 			});
 		} else { //pc
 			$(window).on('resize', function(e) {
-				initBrandIntroSlideSwiper();
+				if ($(window).width() < 768) {
+					if (!swiperOnceFlag) {
+						swiperOnceFlag = true;
+						initBrandIntroSlideSwiper();
+					}
+				} else {
+					if (overOnceFlag) {
+						swiperOnceFlag = false;
+						initBrandIntroSlideSwiper();
+					}
+				}
 			});
 		}
 
@@ -744,97 +751,92 @@
 
 		function initBrandIntroSlideSwiper() {
 			if (!window.isMobile && $(window).width() < 768 || window.isMobile) {
-				if (!swiperOnceFlag) {
-					swiperOnceFlag = true;
-					$(window).off('scroll', brandIntroScrPc);
-					$('#wrap').off('wheel', brandIntroWheel);
-					$('.brand-intro .category-item').off('click');
-					$('.brand-intro-swiper').removeClass('fixed');
-					if (brandIntroSwiper) brandIntroSwiper.destroy();
+				$(window).off('scroll', brandIntroScrPc);
+				$('#wrap').off('wheel', brandIntroWheel);
+				$('.brand-intro .category-item').off('click');
+				$('.brand-intro-swiper').removeClass('fixed');
+				if (brandIntroSwiper) brandIntroSwiper.destroy();
 
-					//브랜드 카테고리  
-					$('.brand-intro .category-item').on('click', function(e) {
-						if ($(this).hasClass('on')) return;
-						var hH = $('.category-list').height();
-						var _this = $(this);
-						$(window).off('scroll', brandIntroScrMo);
-						clearTimeout(textSET);
-						$('html').stop().animate({
-							scrollTop: $('.intro-item').eq($(this).index()).offset().top - hH
-						}, {
-							duration: 300,
-							complete: function() {
-								$('.category-item').removeClass('on');
-								_this.addClass('on');
-								tabMenuMove('.category-list');
-								textSET = setTimeout(function() {
-									$('html').removeClass('scr-up');
-									$('html').addClass('scr-down');
-									$('.category-list').removeClass('hidden');
-									$(window).on('scroll', brandIntroScrMo);
-								}, 200);
-							}
-						});
-						return false;
+				//브랜드 카테고리  
+				$('.brand-intro .category-item').on('click', function(e) {
+					if ($(this).hasClass('on')) return;
+					var hH = $('.category-list').height();
+					var _this = $(this);
+					$(window).off('scroll', brandIntroScrMo);
+					clearTimeout(textSET);
+					$('html').stop().animate({
+						scrollTop: $('.intro-item').eq($(this).index()).offset().top - hH
+					}, {
+						duration: 300,
+						complete: function() {
+							$('.category-item').removeClass('on');
+							_this.addClass('on');
+							tabMenuMove('.category-list');
+							textSET = setTimeout(function() {
+								$('html').removeClass('scr-up');
+								$('html').addClass('scr-down');
+								$('.category-list').removeClass('hidden');
+								$(window).on('scroll', brandIntroScrMo);
+							}, 200);
+						}
 					});
+					return false;
+				});
 
-					$(window).on('scroll', brandIntroScrMo);
-				}
+				$(window).on('scroll', brandIntroScrMo);
 			}
 			if (!window.isMobile && $(window).width() >= 768) {
-				if (swiperOnceFlag) {
-					swiperOnceFlag = false;
+				swiperOnceFlag = false;
 
-					$('.brand-intro .category-item').off('click');
-					$(window).off('scroll', brandIntroScrPc);
-					$('#wrap').off('wheel', brandIntroWheel);
+				$('.brand-intro .category-item').off('click');
+				$(window).off('scroll', brandIntroScrPc);
+				$('#wrap').off('wheel', brandIntroWheel);
 
-					if (brandIntroSwiper) brandIntroSwiper.destroy();
+				if (brandIntroSwiper) brandIntroSwiper.destroy();
 
-					//브랜드 그룹 소개 스와이퍼
-					brandIntroSwiper = new Swiper('.brand-cate-info-swiper > .swiper-container', {
-						direction: 'vertical',
-						slidePerView: 1,
-						speed: 1000
-					});
+				//브랜드 그룹 소개 스와이퍼
+				brandIntroSwiper = new Swiper('.brand-cate-info-swiper > .swiper-container', {
+					direction: 'vertical',
+					slidePerView: 1,
+					speed: 1000
+				});
 
-					//탑버튼
-					$('.btn-top').on('click', function() {
-						scrZero = true;
-						brandIntroSwiper.slideTo(0);
-						$('.brand-intro-swiper').removeClass('fixed');
-						setTimeout(function() {
-							scrZero = false;
-						}, 300)
-						return false;
-					});
+				//탑버튼
+				$('.btn-top').on('click', function() {
+					scrZero = true;
+					brandIntroSwiper.slideTo(0);
+					$('.brand-intro-swiper').removeClass('fixed');
+					setTimeout(function() {
+						scrZero = false;
+					}, 300)
+					return false;
+				});
 
-					//브랜드 그룹 소개 스와이퍼
-					brandIntroSwiper.on('slideChange', function(e) {
-						brandIntroIdx = this.realIndex;
-						if (!$('.brand-intro-swiper').hasClass('fixed')) {
-							$('.brand-intro-swiper').addClass('fixed');
-							$(window).scrollTop($('.brand-intro-wrap').offset().top);
-							beforeScr = $(window).scrollTop();
-						}
-						$('.brand-intro .category-item').removeClass('on');
-						$('.brand-intro .category-item').eq(brandIntroIdx).addClass('on');
-						$('.intro-item').eq(brandIntroIdx).find('.bind').removeClass('on');
-						$('.intro-item').eq(brandIntroIdx).find('.bind').eq(0).addClass('on');
-						$('.intro-item').eq(brandIntroIdx).find('.brand-item').removeClass('on');
-						$('.intro-item').eq(brandIntroIdx).find('.brand-item').eq(0).addClass('on');
-						if (brandIntroIdx !== 0) brandListSwiperArr[brandIntroIdx - 1].slideTo(0)
-					});
+				//브랜드 그룹 소개 스와이퍼
+				brandIntroSwiper.on('slideChange', function(e) {
+					brandIntroIdx = this.realIndex;
+					if (!$('.brand-intro-swiper').hasClass('fixed')) {
+						$('.brand-intro-swiper').addClass('fixed');
+						$(window).scrollTop($('.brand-intro-wrap').offset().top);
+						beforeScr = $(window).scrollTop();
+					}
+					$('.brand-intro .category-item').removeClass('on');
+					$('.brand-intro .category-item').eq(brandIntroIdx).addClass('on');
+					$('.intro-item').eq(brandIntroIdx).find('.bind').removeClass('on');
+					$('.intro-item').eq(brandIntroIdx).find('.bind').eq(0).addClass('on');
+					$('.intro-item').eq(brandIntroIdx).find('.brand-item').removeClass('on');
+					$('.intro-item').eq(brandIntroIdx).find('.brand-item').eq(0).addClass('on');
+					if (brandIntroIdx !== 0) brandListSwiperArr[brandIntroIdx - 1].slideTo(0)
+				});
 
-					//브랜드 카테고리  
-					$('.brand-intro .category-item').on('click', function() {
-						brandIntroSwiper.slideTo($(this).index());
-						return false;
-					});
+				//브랜드 카테고리  
+				$('.brand-intro .category-item').on('click', function() {
+					brandIntroSwiper.slideTo($(this).index());
+					return false;
+				});
 
-					$(window).on('scroll', brandIntroScrPc);
-					$('#wrap').on('wheel', brandIntroWheel);
-				}
+				$(window).on('scroll', brandIntroScrPc);
+				$('#wrap').on('wheel', brandIntroWheel);
 			}
 			return false;
 		}

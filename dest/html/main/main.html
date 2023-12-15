@@ -1097,8 +1097,6 @@
 			$('.business-bg-' + (this.realIndex + 1)).fadeIn(500);
 		})
 
-
-
 		//철학 hover 
 		philosophyItemEff();
 
@@ -1132,7 +1130,6 @@
 		$('.philosophy-item').off('click');
 		$('.philosophy-item').removeAttr('style');
 		listHoverFn($('.philosophy-item').eq(0));
-
 		if ($(window).width() >= 768 && !window.isMobile) {
 			$('.philosophy-item').on('mouseenter', function(e) {
 				if (!$(this).hasClass('over')) {
