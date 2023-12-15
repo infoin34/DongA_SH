@@ -652,7 +652,7 @@ footer {
 }
 
 //pc 작은 화면 or mo 버전
-@media screen and (max-width: 766px), (hover:none){   
+@media screen and (max-width: 766px), not (hover:hover){   
     html, body {width: 100%; overflow-x: hidden;}
     h1 {
         position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
@@ -810,7 +810,7 @@ footer {
 }
 
 //마우스 없는 기기
-@media (hover:none) {
+@media  not (hover:hover) {
     ::-webkit-scrollbar { display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
     .all-gnb-view {
         padding: 0;
