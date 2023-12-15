@@ -328,7 +328,7 @@ a.btn-page-move {
     }  
     &-value {
         .bg-a {
-            position:absolute; left: 0; bottom: 0; width:calc(642/1920*100vw); height: calc(739/1920*100vw); background: svgMainA('FF400240'); background-size: 100% 100%; z-index: 0; transform: translateY(30%); transition: transform 0.8s ease-in;
+            position:absolute; left: 0; bottom: 0; width:calc(578/1920*100vw); height: calc(577.52/1920*100vw); background: svgMainA('FF5B35'); background-size: 100% 100%; z-index: 0; transform: translateY(30%); transition: transform 0.8s ease-in;
         }   
         .section-inner {
             position: relative; display: flex; flex-wrap: wrap; justify-content: space-between;
@@ -359,10 +359,11 @@ a.btn-page-move {
         .value-list {display: flex; flex-wrap: wrap; justify-content: space-between;}   
         .value-item {
             position: relative; width: calc(410/924)*100%;       
-            .num {margin-top: 2.8rem; padding-bottom: 0.8rem; font-size: 5.6rem; line-height: calc(66.8/56); color: #e5e5e5; font-weight: 700; border-bottom: 1px solid #e5e5e5;}
+            .num {margin-top: 2.8rem; padding-bottom: 0.8rem; font-size: 5.6rem; line-height: calc(66.8/56); color: #00B4D6; font-weight: 700; border-bottom: 1px solid #e5e5e5;}
             .text-1 {margin-top: 2rem; color: #666;}
-            .text-2 {margin-left: 0.8rem; color: #162DA1; font-weight: 500;}        
-            .title {margin-top: 2.8rem; opacity: 0; transform: translateX(100%); transition: all 2.5s ease-out;}
+            .title-s1 {margin-right: 0.8rem;}
+            .text-2 {display: inline-block; color: #162DA1; font-weight: 500;}        
+            .title {margin-top: 2.8rem; opacity: 0; transform: translateX(100%); transition: all 1.3s ease-out;}
             .thumb {
                 position:relative; font-size: 0; clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); overflow: hidden; transition: 1s ease-out; transition-delay: 0.3s;
                 img {width: 100%; transition: 1.5s ease-out; transition-delay: 0.1s;} 
@@ -544,10 +545,10 @@ a.btn-page-move {
             &.on {transform: translateY(0);}
         }
         .s {background-image: svgMainS('2F75FF');}
-        .o {background-image: svgMainO('666');}
-        .c {background-image: svgMainC('2F75FF');}
-        .i {background-image: svgMainI('B4986F');}
-        .o {background-image: svgMainO('FF4002');}
+        .o-1 {background-image: svgMainO('fff'); background-color: #8B9191;}
+        .c {background-image: svgMainC('2154A5');}
+        .i {background-image: svgMainI('A18158');}
+        .o-2 {background-image: svgMainO('FF5B35');}
     }  
 }
 
@@ -585,6 +586,15 @@ a.btn-page-move {
                 }
             }
         }
+        &-value {
+            .section-contents {width: 70%;}
+            .value-item {
+                width: 46%;
+                .num {margin-top: 2rem; font-size: 4.2rem;}
+                .text-2 {display: block;}
+                .title {margin-top: 2rem;}
+            }
+        }
     }
  
 } 
@@ -608,14 +618,12 @@ a.btn-page-move {
                 }
             }
         }
-        &-business-swiper {
-            
-        }
+       
     }
    
 }
  
-@media screen and (max-width: 766px), (hover:none) {    
+@media screen and (max-width: 766px), not (hover:none) {    
     a.btn-detail {
         width: 14.4rem; line-height: 4.8rem; font-size: 1.3rem;
         &:after {margin-left: 1.4rem; width: 1.6rem; height: 1.6rem;}
@@ -667,6 +675,20 @@ a.btn-page-move {
                 }
             }
         }
+        &-value {
+            padding-bottom: 23.8rem !important;
+            .bg-a {left: auto; right: 0; width: 20rem; height: 19.8rem;}
+            .section-contents {width: 100%;}
+            .value-list {display: block;}
+            .value-item {
+                width: 20rem;
+                &:nth-of-type(2n-1) {margin-left: auto; margin-right: 0;}
+                + .value-item {margin-top: 0.8rem !important ;}
+                .num {margin-top: 2rem; font-size: 4.2rem;}
+                .text-2 {display: block;}
+                .title {margin-top: 2rem;}
+            }
+        }
         &-business {
             min-height: auto;
             .section-head {margin-bottom: 2rem;}
@@ -706,6 +728,13 @@ a.btn-page-move {
                 .text-1 {margin-top: 2rem;}
             }
         }
+    }
+    .pop-main  {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        height: 100%;
+        .popup-footer {padding: 1rem 2rem;}
     }
      
 }
