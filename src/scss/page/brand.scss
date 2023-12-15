@@ -162,6 +162,9 @@
                     &.ico-heart {
                         background: svgHeart('2F75FF'); background-size: 100% 100%;
                     }
+                    &.ico-slogan {
+                        background: svgSlogan('00B4D6'); background-size: 100% 100%;
+                    }
                 }
 
                 strong {
@@ -245,7 +248,6 @@
                 }
                 dd {
                     position: relative;
-                    padding-left: 1.9rem;
                     font-weight: 400;
                     font-size: 2rem;
                     line-height: calc(34/20);
@@ -254,18 +256,6 @@
 
                     &:last-of-type {
                         margin-bottom: 0;
-                    }
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        top: 1.4rem;
-                        width: 0.5rem;
-                        height: 0.5rem;
-                        background-color: #2F75FF;
-                        border-radius: 50%;
-                        vertical-align: middle;
                     }
                 }
             }
@@ -1394,12 +1384,20 @@
             .valuecont {gap: 4rem;}
             .valuecont-box {
                 gap: 2rem;
-                &:nth-child(1) {
+                &:nth-child(2n) {
                     flex-direction: column-reverse;
                 } 
-                &:nth-child(2) {
+                &:nth-child(2n - 1) {
                     flex-direction: column;
                 } 
+            }
+            .valuecont-img {
+                width: 100%;
+                height: 13.2rem;
+                flex-basis: auto;
+                border-radius: 1.6rem;
+
+                img { object-fit: cover; }
             }
             .valuecont-text {               
                 padding-left: 0 !important; width: 100%;
@@ -1421,8 +1419,7 @@
                     margin: 1.8rem 1rem 0 !important;
                     dt {margin-bottom: 0.4rem;}
                     dd {
-                        padding-left: 1.3rem; font-size: 1.5rem;
-                        &:before {top: 1rem;}
+                        font-size: 1.5rem;
                     }
                 }
                 .valueslide-img {
