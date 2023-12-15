@@ -652,7 +652,7 @@ footer {
 }
 
 //pc 작은 화면 or mo 버전
-@media screen and (max-width: 766px), not (hover:hover){   
+@media screen and (max-width: 766px), (hover:none){   
     html, body {width: 100%; overflow-x: hidden;}
     h1 {
         position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
@@ -810,115 +810,7 @@ footer {
 }
 
 //마우스 없는 기기
-@media  not (hover: hover) {
-    ::-webkit-scrollbar { display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
-    .all-gnb-view {
-        padding: 0;
-        .nav-gnb {padding: 0 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.2); color: #fff;}
-        .gnb-depth1-list {
-            > li.on {
-                .gnb-depth1-title {border-bottom: 2px solid #00B4D6;}
-                .gnb-depth2 {display: block;}
-            }
-            > li + li {margin-top: 0;}
-        }
-        .gnb-depth2-list{
-            > li.on {
-                .gnb-depth3 {display: block;}
-            }
-        }
-        .gnb-depth1-title {
-            position: relative; display: block; padding: 2.6rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); color: #fff;
-            &:before {
-                content: '';                    
-                position: absolute;
-                display: block;
-                top: 0;
-                bottom: 0;
-                right: 1.6rem;
-                margin: auto;
-                margin-right: -0.05rem;
-                width: 0.1rem;
-                height: 1.2rem;
-                background-color: #fff
-            }
-            &:after {
-                content: '';
-                position: absolute;
-                display: block;
-                top: 0;
-                bottom: 0;
-                right: 1rem;
-                margin: auto;
-                width: 1.2rem;
-                height: 0.1rem;
-                background-color: #fff
-            }    
-            a:after {display: none;}
-        }
-        .gnb-depth2 {padding: 3rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); display: none;}   
-        .depth-3-y .gnb-depth2-title {
-            position: relative;
-            display: block;
-            &:before {
-                content: '';                    
-                position: absolute;
-                display: block;
-                top: 0;
-                bottom: 0;
-                right: 0.6rem;
-                margin: auto;
-                margin-right: -0.05rem;
-                width: 0.1rem;
-                height: 1.2rem;
-                background-color: #fff
-            }
-            &:after {
-                content: '';
-                position: absolute;
-                display: block;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                margin: auto;
-                width: 1.2rem;
-                height: 0.1rem;
-                background-color: #fff
-            }    
-        }
-        .gnb-depth2-list {
-            > li:not(.depth-3-y).on {color: #00b4d6;}
-        }
-        .gnb-depth3 {display: none;}
-        .nav-etc-link {
-            padding: 3rem 2.6rem; font-size: 1.2rem; font-weight: 400; gap: 0; justify-content: space-between;
-        }
-    }
-    .btn-lang.on {
-        + .lang-list-wrap {display: block;}
-    }
-    .header-menu {
-        .header-lang, .btn-work-place {display: none;}
-    }       
-    .nav-open {
-        .header-lang, .btn-work-place {display: block;}
-    }
-    .pop-about-site  {
-        width: 100%;
-        .popup-wrap {padding: 0;}
-        .popup-inner {padding: 2rem;}
-        .btn-close {display: none;}
-        .about-site-tab li {font-size: 1.6rem;}
-        .about-site-tab li a {padding-bottom: 0.6rem;}
-        .about-site-box {
-            margin-top: 1.4rem; padding: 1.6rem; height: calc(190/770*100vh);
-            &::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}
-        }
-    }
-    
-}
-
-@media  (-webkit-device-pixel-ratio: 1.5) {
+@media (hover: coarse) {
     ::-webkit-scrollbar { display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
     .all-gnb-view {
         padding: 0;
