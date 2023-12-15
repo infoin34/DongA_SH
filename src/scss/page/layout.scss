@@ -807,11 +807,23 @@ footer {
             .text-3 {font-size: 1.4rem;}
         }
     }
+    .pop-about-site  {
+        width: 100%;
+        .popup-wrap {padding: 0;}
+        .popup-inner {padding: 2rem;}
+        .btn-close {display: none;}
+        .about-site-tab li {font-size: 1.6rem;}
+        .about-site-tab li a {padding-bottom: 0.6rem;}
+        .about-site-box {
+            margin-top: 1.4rem; padding: 1.6rem; height: calc(190/770*100vh);
+            &::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}
+        }
+    }
 }
 
 //마우스 없는 기기
-@media (hover:none) {
-    ::-webkit-scrollbar { display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
+@media (hover: none) and (pointer: coarse) {
+    ::-webkit-scrollbar {display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
     .all-gnb-view {
         padding: 0;
         .nav-gnb {padding: 0 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.2); color: #fff;}
@@ -903,17 +915,4 @@ footer {
     .nav-open {
         .header-lang, .btn-work-place {display: block;}
     }
-    .pop-about-site  {
-        width: 100%;
-        .popup-wrap {padding: 0;}
-        .popup-inner {padding: 2rem;}
-        .btn-close {display: none;}
-        .about-site-tab li {font-size: 1.6rem;}
-        .about-site-tab li a {padding-bottom: 0.6rem;}
-        .about-site-box {
-            margin-top: 1.4rem; padding: 1.6rem; height: calc(190/770*100vh);
-            &::-webkit-scrollbar { display: block; width: 0.3rem; /* Remove scrollbar space */ height: 0.3rem;}
-        }
-    }
-    
 }

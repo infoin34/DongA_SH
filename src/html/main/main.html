@@ -96,11 +96,9 @@
                                     </div>
                                 </li>
                                 <li class="spot-item swiper-slide">
-                                    <div class="spot-media cover pc-part">
-                                        <video src="../../static/images/main/visual_video_ex.mp4" autoplay muted></video>
-                                    </div>
-                                    <div class="spot-media cover mo-part">
-                                        <video src="../../static/images/main/visual_video_ex.mp4" playsinline muted></video>
+                                    <div class="spot-media cover">
+                                        <video src="../../static/images/main/visual_video_ex.mp4" autoplay muted class=" pc-part"></video>
+                                        <video src="../../static/images/main/visual_video_ex.mp4" playsinline autoplay muted class=" mo-part"></video>
                                     </div>
                                     <div class="section-inner">
                                         <div class="spot-text">
@@ -239,17 +237,8 @@
                             <h2 class="main-title">
                                 <div class="line-cut"><span class="sub">VALUE</span></div>
                                 <div class="line-cut">
-                                    <strong class="title-h2">도전과</strong>
-                                </div>
-                                <div class="line-cut">
-                                    <strong class="title-h2">혁신으로</strong>
-                                </div>
-                                <div class="line-cut">
-                                    <strong class="title-h2">세상을</strong> 
-                                </div>
-                                <div class="line-cut">
-                                    <strong class="title-h2">가치있게</strong>
-                                </div>                               
+                                    <strong class="title-h2">도전과<br>혁신으로<br>세상을<br>가치있게</strong>
+                                </div>                          
                             </h2>
                             <a href="" class="btn-detail"><span>자세히 보기</span></a>
                         </div> 
@@ -258,7 +247,7 @@
                                 <li class="value-item item-1 scr-eff">
                                     <div class="thumb">
                                         <img src="../../static/images/main/value_img_1.png" class="thumb-img pc-part" alt="혁신 추구">
-                                        <img src="../../static/images/main/value_img_1.png" class="thumb-img mo-part" alt="혁신 추구">
+                                        <img src="../../static/images/mo/main/value_img_1.png" class="thumb-img mo-part" alt="혁신 추구">
                                     </div>
                                     <div class="num">01</div>
                                     <div class="title">
@@ -270,7 +259,7 @@
                                 <li class="value-item item-2 scr-eff">
                                     <div class="thumb">
                                         <img src="../../static/images/main/value_img_2.png" class="thumb-img pc-part" alt="변화 주도">
-                                        <img src="../../static/images/main/value_img_2.png" class="thumb-img mo-part" alt="혁신 추구">
+                                        <img src="../../static/images/mo/main/value_img_2.png" class="thumb-img mo-part" alt="혁신 추구">
                                     </div>
                                     <div class="num">02</div>
                                     <div class="title">
@@ -282,7 +271,7 @@
                                 <li class="value-item item-3 scr-eff">
                                     <div class="thumb">
                                         <img src="../../static/images/main/value_img_3.png" class="thumb-img pc-part" alt="상호 신뢰"> 
-                                        <img src="../../static/images/main/value_img_3.png" class="thumb-img mo-part" alt="상호 신뢰">
+                                        <img src="../../static/images/mo/main/value_img_3.png" class="thumb-img mo-part" alt="상호 신뢰">
                                     </div>
                                     <div class="num">03</div>
                                     <div class="title">
@@ -294,7 +283,7 @@
                                 <li class="value-item item-4 scr-eff">
                                     <div class="thumb">
                                         <img src="../../static/images/main/value_img_4.png" class="thumb-img pc-part" alt="함께 성장">
-                                        <img src="../../static/images/main/value_img_4.png" class="thumb-img mo-part" alt="함께 성장">
+                                        <img src="../../static/images/mo/main/value_img_4.png" class="thumb-img mo-part" alt="함께 성장">
                                     </div>
                                     <div class="num">04</div>
                                     <div class="title">
@@ -455,10 +444,10 @@
                 </section>
                 <div class="bg-socio">
                     <div class="s"></div>
-                    <div class="o"></div>
+                    <div class="o-1"></div>
                     <div class="c"></div>
                     <div class="i"></div>
-                    <div class="o"></div>
+                    <div class="o-2"></div>
                 </div>
             </div>
         </main>
@@ -509,8 +498,19 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-    window.isMain = true;
-    let overOnceFlag = $(window).width() < 768 ? false : true;;
+    window.isMain = true;    
+    let overOnceFlag = $(window).width() < 768 ? false : true;
+    
+    //spot 높이
+    if(window.isMobile){
+        $('.main-spot').css('height', window.innerHeight);
+        $(window).on('orientationchange', function(e){    
+            $(window).one('resize', function() {
+                $('.main-spot').css('height', window.innerHeight);
+            });
+        });
+    }
+
     $(function(){
         //메인 팝업 
         if($('.main-popup-list').length > 0){
@@ -533,7 +533,8 @@
 
         //뉴스 슬라이드
         let mainNewsSwiper = new Swiper('.main-news-swiper .swiper-container', {	
-            loop: false,        
+            loop: false,    
+            lidesPerView: 1.3,  
             spaceBetween: 8,
             scrollbar: {
                 el: '.main-news-swiper .swiper-scrollbar',
@@ -633,8 +634,8 @@
         $('.philosophy-item').off('click');
         $('.philosophy-item').removeAttr('style');
         listHoverFn( $('.philosophy-item').eq(0));   
-
-        if($(window).width() >= 768){            
+        
+        if($(window).width() >= 768 && !window.isMobile){            
             $('.philosophy-item').on('mouseenter', function(e){                    
                 if(!$(this).hasClass('over')){ 
                     listHoverFn($(this));
@@ -654,19 +655,16 @@
 
     //소개 오버 효과
     function listHoverFn(target){      
-        let effectObj = {};
-        if($(window).width() < 768){//mo            
-            effectObj.default = {height : '5.9rem'};
-            effectObj.over = {height : 'auto'};
-        }else{//pc
-            effectObj.default = {width : '11.6%'}
-            effectObj.over = {width : '48%'}
+        if($(window).width() < 768){   
+            $('.philosophy-item').not(target).removeClass('over');
+            target.addClass('over');
+        }else{           
+            $('.philosophy-item').not(target).removeClass('over');
+            $('.philosophy-item').not(target).stop().animate({width: '11.6%'}, 300);
+            target.stop().animate({width: '48%'},{duration:300, complete:function(){
+                    target.addClass('over');
+            }});
         }   
-        $('.philosophy-item').not(target).removeClass('over');
-        $('.philosophy-item').not(target).stop().animate(effectObj.default, 300) 
-        target.stop().animate(effectObj.over,{duration:300, complete:function(){
-                target.addClass('over');
-        }});
     }  
 </script>
 <!--//페이지 관련 스크립트 -->

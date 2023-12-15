@@ -716,6 +716,8 @@
 			slideControl: function(did){
 				let _ = this;
 				let stopTime = 1500;
+				let vdo;
+				
 				$item.removeClass('playing');
 				$playing.addClass('playing');	
 				$stopCv.attr('class', 'spot-change');
@@ -740,17 +742,19 @@
 					  left: 'linear'
 					},
 					step: function(v, d){
-						if(d.pos > 0.5) {
+						if(d.pos > 0.3) {
 							$('.spot-time-break').removeClass('spot-time-break');	
 						}
 					},
-					complete : function(){//커버 지나간 후						
+					complete : function(){//커버 지나간 후		
 						$playing.hasClass('spot-last') && $playing.addClass('on');	
 						if($playing.find('video').length > 0){
-							$playing.find('video')[0].play();
+							vdo = $(window).width() < 768 ? $playing.find('video.mo-part') : $playing.find('video.pc-part') ;
+							//vdo[0].currentTime = 0;
+							vdo[0].play();
 						}			
-						if($playing.find('video').length > 0 && $playing.find('video')[0].duration){
-							curDelay = $playing.find('video')[0].duration;
+						if($playing.find('video').length > 0 && vdo[0].duration){
+							curDelay = vdo[0].duration;
 						}else{
 							curDelay = 5;
 						}				
@@ -803,6 +807,7 @@
 				mainSpotSwiper = new Swiper('.main-spot-swiper .swiper-container', {
 					slidesPerView: 1,
 					loop: true,
+					resizeObserver: false,
 					pagination: {
 						el: '.main-spot-swiper .swiper-pagination',
 						clickable: true,
@@ -835,6 +840,10 @@
 				mainSpotSwiper.on('beforeSlideChangeStart', function(){
 					$item.eq(this.realIndex).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면	
 				})
+				// mainSpotSwiper.on('beforeResize', function(){
+				// });
+				// mainSpotSwiper.on('resize', function(){
+				// })
 				mainSpotSwiper.on('slideChange', function(){	
 					playingIdx = this.realIndex;
 					spot.reset();
@@ -846,8 +855,9 @@
 		if($('.spot-item').eq(0).find('video').length == 0){//첫 슬라이드에 video 없을 시
 			spot.init();
 		}else {//video 있을 시
-			let loadCheck = setInterval(function(){//첫 영상 로드 다되기까지 체크
-				if($('.spot-item').eq(0).find('video')[0].duration > 0){
+			let vdo = $(window).width() < 768 ? $('.spot-item').eq(0).find('video.mo-part') : $('.spot-item').eq(0).find('video.pc-part') ;
+			let loadCheck = setInterval(function(){//첫 영상 로드 다되기까지 체크			
+				if(vdo[0].duration > 0){
 					spot.init();					
 					clearInterval(loadCheck);
 				}    	   
