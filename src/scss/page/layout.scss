@@ -870,7 +870,7 @@ footer {
         }
         .gnb-depth2-list{
             display: block;
-            > li + li {margin-top: 4rem;}
+            > li + li {margin-top: 3rem;}
             > li.on {
                 .gnb-depth1-title a:after {right: -1.2rem; bottom: 0.2rem; width: 0.6rem; height: 0.6rem;}
                 .gnb-depth3 {display: block;}

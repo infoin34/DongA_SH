@@ -138,7 +138,7 @@ a.btn-page-move {
             position:absolute; top: -50%; left:0; width: 100%; height: 100%; opacity: 0; 
         } 
         .intro-text {
-            position: relative; display: inline-block; width:100%; font-size: 4rem; font-weight: 700; line-height: 52/40; opacity: 0; text-align: center; vertical-align: middle;
+            position: relative; display: inline-block; width:100%; font-size: 4rem; font-weight: 700; line-height: calc(52/40); opacity: 0; text-align: center; vertical-align: middle;
         }    
         .intro-img {
             position:absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; max-width: 200px; max-height: 200px; width: calc(200/1920*100vw); height: calc(200/1920*100vw); filter: drop-shadow(rgba(22, 45, 161, 0.3) 1rem 1rem 32px);
@@ -205,13 +205,13 @@ a.btn-page-move {
     &-spot {
         position: relative; width: 100vw; height: 100vh; padding: 0 !important;  clip-path: circle(0);
         .section-inner {width: 100%;}       
-        .swiper-slide-active:not(.last) {
+        .swiper-slide-active:not(.spot-last) {
             .spot-media {transform: scale(1.3);}
         }
         .spot {           
             &-time-break {z-index: 1000 !important;}    
             &-media {  
-                position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto; width: 100vw; height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; transition: transform 5s 1s;
+                position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto; width: 100vw; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; transition: transform 5s 1s;
                 &.cover:after {
                     content: ''; position: absolute; top:0; left:0; width: 100%; height: 100%; background: rgba(34,34,34,0.2);
                 }
@@ -251,9 +251,9 @@ a.btn-page-move {
                     .mask-1 {background-image: introCover('000081');}
                     .mask-2, .mask-3 { background-color: #000081;}                   
                 }
-                .mask-1 {width: calc(464/1080*100vh); height: 100vh;  background-size: 100% 100%;}
-                .mask-2 {left: -0.1vw; width: 100vw; height: 100vh;} 
-                .mask-3 {left: -0.1vw; width: 50vw; height: 100vh; border-top-right-radius: 50%; border-bottom-right-radius: 50%;}
+                .mask-1 {width: 100vh; height: 100vh; background-repeat: no-repeat; background-size: auto 100%; background-position: 100% 0;}
+                .mask-2 {left: -0.2vw; width: 100vw; height: 100vh;} 
+                .mask-3 {left: -0.2vw; width: 50vw; height: 100vh; border-top-right-radius: 50%; border-bottom-right-radius: 50%;}
             }
             &-last {
                 background-color:  #000081;
@@ -266,8 +266,8 @@ a.btn-page-move {
                 }
                 &.on {
                     .spot-media {
-                        width: 100vw;
-                        height: 100vh;
+                        width: 100%;
+                        height: 100%;
                         border-radius: 0;
                     }
                 }
@@ -539,12 +539,12 @@ a.btn-page-move {
         }       
     } 
     .bg-socio {
-        margin-top: 12rem; display: flex; overflow: hidden;
+        display: flex; overflow: hidden;
         div {
             width: calc(384/1920*100vw); height: calc(384/1920*100vw); background-repeat: no-repeat; background-size: 100%; opacity: 0.4; transform: translateY(100%); transition: transform 0.8s ease-in;
             &.on {transform: translateY(0);}
         }
-        .s {background-image: svgMainS('2F75FF');}
+        .s {background-image: svgMainS('A18158');}
         .o-1 {background-image: svgMainO('fff'); background-color: #8B9191;}
         .c {background-image: svgMainC('2154A5');}
         .i {background-image: svgMainI('A18158');}
@@ -623,7 +623,8 @@ a.btn-page-move {
    
 }
  
-@media screen and (max-width: 766px){    
+@media screen and (max-width: 766px){   
+    .main-intro .intro-text {padding: 0 1.6rem; font-size: 2rem;} 
     a.btn-detail {
         width: 14.4rem; line-height: 4.8rem; font-size: 1.3rem;
         &:after {margin-left: 1.4rem; width: 1.6rem; height: 1.6rem;}
@@ -717,7 +718,6 @@ a.btn-page-move {
                 .swiper-pagination-bullet-active {background-color: #fff;}
             }
         }
-        .bg-socio {margin-top: 0;}
 
         &-news {
             .swiper-scrollbar {display: none;}
