@@ -1441,6 +1441,17 @@
             .sub-wrap-gray {
                 padding: 6.4rem 0;
             }
+            .ci-type{
+                .content-wrap {
+                    margin-top: 2.8rem;
+                    gap: 4rem;
+                }
+
+                .content strong {
+                    font-size: 1.8rem;
+                    line-height: 2.15rem;
+                }
+            } 
             .ci-motif {
                 gap: 2.8rem;
                 .title-s2 {
@@ -1537,14 +1548,418 @@
                     }
                 }
             }
-            .ciincorrect-list {
-                grid-template-columns: 1fr;
+            .ci-cont {
+                margin-top: 6.4rem;
+
+                .ci-tit{
+                    font-size: 2.4rem;
+                    line-height: 3.6rem;
+                }
             }
-            .cicolor-list {
-                flex-wrap: wrap;
+            .citype {
+                &-list {
+                    margin-top: 1.6rem;
+                    gap: 0.8rem;
+                }
+                &-li {
+                    padding: 3.6rem 0 2.4rem;
+                    gap: 1rem;
+
+                    span {
+                        font-size: 1.4rem;
+                        line-height: 2.2rem;
+                    }
+
+                    .citype-ico{
+                        &-kor1 {
+                            width: 12.8rem;
+                            height: 1.4rem;
+                        }
+                        &-cc1 {
+                            width: 12.4rem;
+                            height: 1.5rem;
+                        }
+                        &-eng1 {
+                            width: 21.6rem;
+                            height: 1.2rem;
+                        }
+                        &-kor2 {
+                            width: 14.2rem;
+                            height: 1.5rem;
+                        }
+                        &-cc2 {
+                            width: 14rem;
+                            height: 1.5rem;
+                        }
+                        &-eng2 {
+                            width: 24rem;
+                            height: 1.2rem;
+                        }
+                    }
+                }
             }
-            .cicolor-li {
-                flex-basis: calc(50% - 1.5rem);
+            .ci-combination {
+                background-color: #f7f7f7;
+                width: calc(100% + 3.2rem);
+                margin-left: -1.6rem;
+                padding: 6.4rem 1.6rem;
+                .tab {
+                    margin-top: 2.8rem;
+                }
+            }
+            .ci-box {
+                margin-top: 2.8rem;
+            }
+            .cicombi {
+                flex-direction: row;
+                gap: 0.8rem;
+
+                &-box {
+                    strong {
+                        font-size: 1.2rem;
+                        line-height: 1.43rem;
+                    }
+                    ul {
+                        background-color: #fff;
+                        border: 1px solid #e5e5e5;
+                        margin-top: 1.2rem;
+                        height: 23rem;
+                        gap: 3.9rem;
+
+                        &.gap-60x {
+                            gap: 2.6rem;
+                        }
+                        &.vertical {
+                            gap: 2.8rem;
+                        }
+                    }
+                }
+
+                &-ico {
+                    &.type1 {
+                        gap: 0.4rem;
+                        .symbol{
+                            width: 1.24rem;
+                            height: 1.2rem;
+                        }
+                        .logo {
+                            width: 8.79rem;
+                            height: 1rem;
+                        }
+                    }
+                    &.type2 {
+                        gap: 0.4rem;
+                        .symbol{
+                            width: 1.24rem;
+                            height: 1.2rem;
+                        }
+                        .logo {
+                            width: 8.79rem;
+                            height: 1rem;
+                        }
+                    }
+                    &.type3 {
+                        gap: 0.27rem;
+                        .symbol{
+                            width: 0.83rem;
+                            height: 0.8rem;
+                        }
+                        .logo {
+                            width: 10.95rem;
+                            height: 0.63rem;
+                        }
+                    }
+                    &.type4 {
+                        gap: 0.4rem;
+                        .symbol{
+                            width: 1.24rem;
+                            height: 1.2rem;
+                        }
+                        .logo {
+                            width: 10.05rem;
+                            height: 1.06rem;
+                        }
+                    }
+                    &.type5 {
+                        gap: 0.4rem;
+                        .symbol{
+                            width: 1.24rem;
+                            height: 1.2rem;
+                        }
+                        .logo {
+                            width: 9.9rem;
+                            height: 1.06rem;
+                        }
+                    }
+                    &.type6 {
+                        gap: 0.24rem;
+                        .symbol{
+                            width: 0.72rem;
+                            height: 0.7rem;
+                        }
+                        .logo {
+                            width: 11rem;
+                            height: 0.55rem;
+                        }
+                    }
+                    &.type7 {
+                        gap: 0.5rem;
+                        .symbol{
+                            width: 2.12rem;
+                            height: 2.05rem;
+                        }
+                        .logo {
+                            width: 7.42rem;
+                            height: 0.85rem;
+                        }
+                    }
+                    &.type8 {
+                        gap: 0.45rem;
+                        .symbol{
+                            width: 2.1rem;
+                            height: 2.07rem;
+                        }
+                        .logo {
+                            width: 7.28rem;
+                            height: 0.87rem;
+                        }
+                    }
+                    &.type9 {
+                        gap: 0.45rem;
+                        .symbol{
+                            width: 1.96rem;
+                            height: 1.9rem;
+                        }
+                        .logo {
+                            width: 11.17rem;
+                            height: 0.64rem;
+                        }
+                    }
+                    &.type10 {
+                        gap: 0.45rem;
+                        .symbol{
+                            width: 2.12rem;
+                            height: 2.05rem;
+                        }
+                        .logo {
+                            width: 8.47rem;
+                            height: 0.89rem;
+                        }
+                    }
+                    &.type11 {
+                        gap: 0.45rem;
+                        .symbol{
+                            width: 2.12rem;
+                            height: 2.05rem;
+                        }
+                        .logo {
+                            width: 8.35rem;
+                            height: 0.9rem;
+                        }
+                    }
+                    &.type12 {
+                        gap: 0.46rem;
+                        .symbol{
+                            width: 1.96rem;
+                            height: 1.9rem;
+                        }
+                        .logo {
+                            width: 12.84rem;
+                            height: 0.64rem;
+                        }
+                    }
+                    &.type13 {
+                        .logo {
+                            width: 1.6rem;
+                            height: 12.64rem;
+                        }
+                    }
+                    &.type14 {
+                        .logo {
+                            width: 1.6rem;
+                            height: 12.64rem;
+                        }
+                    }
+                    &.type15 {
+                        .logo {
+                            width: 1.6rem;
+                            height: 14.3rem;
+                        }
+                    }
+                    &.type16 {
+                        .logo {
+                            width: 1.6rem;
+                            height: 14.3rem;
+                        }
+                    }
+                }
+
+                &-btnG {
+                    flex-direction: column;
+                    width: 22.3rem;
+                    margin: 2.8rem auto 0;
+
+                    .btn-type-a{
+                        padding: 0 3.6rem;
+                        span {
+                            justify-content: space-between;
+                            font-size: 1.4rem;
+
+                            &::after {
+                                width: 1.6rem;
+                                height: 1.6rem;
+                            }
+                        }
+                    } 
+                }
+            }
+            .ciincorrect{
+                &-list {
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 0.8rem;
+                    row-gap: 2rem;
+                }
+                &-box {
+                    height: 5.2rem;
+
+                    img {
+                        &.type1 {
+                            height: 1.2rem;
+                        }
+                        &.type2 {
+                            height: 1.2rem;
+                        }
+                        &.type3 {
+                            height: 1rem;
+                        }
+                        &.type4 {
+                            height: 2.2rem;
+                        }
+                        &.type5 {
+                            height: 1.2rem;
+                        }
+                        &.type6 {
+                            width: 140%;
+                            height: 140%;
+                        }
+                    }
+                }
+                &-txt {
+                    margin-top: 0.8rem;
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                    text-align: center;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            .ci-color {
+                background-color: #f7f7f7;
+                width: calc(100% + 3.2rem);
+                margin-left: -1.6rem;
+                padding: 6.4rem 1.6rem;
+            }
+            .cicolor {
+                &-list {
+                    gap: 0.8rem;
+                    row-gap: 2rem;
+                    flex-wrap: wrap;
+                }
+                &-li {
+                    flex-basis:calc(50% - 0.4rem);
+                }
+                &-color {
+                    height: 7.1rem;
+                    padding: 1.2rem;
+
+                    span {
+                        font-size: 1.2rem;
+                        line-height: 1.4rem;
+                    }
+                }
+                &-text {
+                    margin-top: 0.8rem;
+
+                    strong {
+                        font-size: 1.4rem;
+                        line-height: 2.2rem;
+                        margin-bottom: 4px;
+                    }
+
+                    span {
+                        font-size: 1.2rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+
+            .cihistory {
+                &-img {
+                    flex-basis: calc( (100% - 3.9rem) / 4);
+                    &-wrap {
+                        padding: 2rem;
+                    }
+                    &-group {
+                        // gap: 1.7rem;
+                        gap: 0;
+                    }
+
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+
+                    .year {
+                        white-space: nowrap;
+                        margin-top: 0.8rem;
+                        font-size: 1.2rem;
+                        line-height: 1.43rem;
+                    }
+                }
+                &-arrow {
+                    flex-basis: 1.3rem;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    background: svgRightArrow('ccc'); 
+                    background-size: 100% 100%;
+                    flex-shrink: 0;
+                    margin-bottom: 2rem;
+                }
+
+                &-txt{
+                    gap: 2rem;
+
+                    &-wrap{
+                        margin-top: 2.8rem;
+                    }
+
+                    &-box {
+                        margin-top: 0.2rem;
+
+                        strong {
+                            font-size: 1.8rem;
+                        }
+
+                        p {
+                            margin-top: 1rem;
+                            font-size: 1.5rem;
+                            line-height: 2.7rem;
+                        }
+                    }
+
+                    img {
+                        width: 3rem;
+                    }
+
+                    .ico-ci-text {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        background-size: 100% 100%;
+                    }
+                }
             }
         }
     }
