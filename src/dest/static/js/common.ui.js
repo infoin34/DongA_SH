@@ -930,7 +930,6 @@
 				left: mouseX + 'px',
 				top: mouseY + 'px'
 			});				
-			return false;
 		});
 
 		$(document).on('mouseleave', function(e){
@@ -1073,7 +1072,7 @@
 			//새로고침 - 스크롤 상단
 			$('html, body').animate({ scrollTop: 0}, 'fast');
 
-			//intro 시작
+			//intro 시작			
 			$('#intro').addClass('active');
 
 			// $('#intro').remove();
