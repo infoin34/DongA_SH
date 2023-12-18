@@ -917,12 +917,16 @@ img.pc-part {display: inline-block;}
 		.popup-inner {padding: 2.8rem 2rem;}
 
 		&.pop-workplace {
-			right: auto;
-			left: 50%;
-			transform: translate(-82%, 100%);
+			right: -10rem;
+			transform: translate(-0.8rem, 100%);
 			
 			.popup-head {
 				padding-right: 0;
+			}
+
+			.btn-close {
+				margin-top: -0.8rem;
+				margin-right: -0.8rem;
 			}
 
 			.title-s2 {
@@ -944,6 +948,10 @@ img.pc-part {display: inline-block;}
 					column-gap: 4.7rem;
 					row-gap: 2.8rem;
 
+					li {
+						position: relative;
+					}
+
 					a {
 						position: relative;
 					}
@@ -959,8 +967,9 @@ img.pc-part {display: inline-block;}
 						bottom: 0;
 						left: 50%;
 						height: 2.8rem;
-						width: 100%;
+						width: fit-content;
 						transform: translateY(calc(100% + 0.8rem)) translateX(-50%);
+						white-space: nowrap;
 					}
 				}
 			}

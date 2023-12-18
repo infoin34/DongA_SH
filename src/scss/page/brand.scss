@@ -1294,13 +1294,13 @@
             .brand-list {
                 align-items: flex-end;
                 li {
-                    padding: 0 1rem; border: none;
+                    padding: 0 1rem; border: none; width: 45%;
                     &:first-child {padding-left: 1.6rem;}
                     &:last-child {padding-right: 1.6rem;}
                     a {
                         position: relative;
                         padding: 1.8rem 0;
-                       
+                       word-break: break-all;
                     }
                     &.on {
                         a:before {

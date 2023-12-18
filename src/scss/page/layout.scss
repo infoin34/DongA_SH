@@ -662,9 +662,6 @@ footer {
 }
 //기기 상관없이
 @media screen and (max-width: 766px) {
-    .header-workgroup {
-        position: static;
-    }
 }
 //pc 작은 화면 or mo 버전
 @media screen and (max-width: 766px), (hover: coarse){   
