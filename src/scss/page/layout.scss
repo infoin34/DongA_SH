@@ -299,19 +299,7 @@ h1 {
     }
     .head-img {
         position: absolute; right: 3rem; top: 0;  display: flex; flex-wrap: wrap; align-content: center; width: 30rem; height: 100%;
-        .img {width: 100%; }
-        .img-1 {
-            transform: translateX(-100%); transition: 0.3s ease-out; opacity: 0;
-            &.scr-eff-active {
-                transform: translateX(0); opacity: 1;
-            }
-        }
-        .img-2 {
-             transition: 0.3s 0.3s ease-out; opacity: 0;
-            &.scr-eff-active {
-                transform: translateX(0); opacity: 1;
-            }
-        }
+        .img {width: 100%;}
     }
 }
 /*container - 컨텐츠 1440기준, padding 양쪽 20*/

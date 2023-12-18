@@ -28,25 +28,6 @@
         }
         .btn-privacy {margin-left: 0.8rem; color: #2F75FF; font-size: 1.4rem; font-weight: 500; border-bottom: 1px solid;}
     }
-    &-notice-box {
-        margin-top: 12rem;
-        padding: 5rem 8rem;
-        border-radius: 2rem;
-        background-color: #162DA1;
-        color: #fff;
-    }
-    &-notice-content {
-        margin-top: 5rem;
-        display: flex;
-        gap: 15.3rem;
-        .text-3 {
-            font-weight: 400;
-        }
-        .text-1 {
-            line-height: calc(34/20);
-            font-weight: 600;
-        }
-    }
 }
 //개인정보동의
 .pop-policy-privacy-agree {
@@ -115,19 +96,7 @@
             &-2:before {background-size: 2.94rem;} 
         }
     }
-    .inquiry {
-        &-notice-content {
-            margin-top: 3.4rem;
-            display: block;
-            gap: 15.3rem;
-            .text-3 {
-                font-size: 1.2rem;
-            }
-            .text-1 {
-                line-height: calc(34/20);
-                font-weight: 600;
-            }
-        }
+    .inquiry {        
         &-form {
             padding-bottom: 14rem; margin-bottom: -14rem;
             .form-head {

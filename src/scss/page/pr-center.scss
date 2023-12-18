@@ -39,7 +39,7 @@
         }
     }
     &-detail {
-        margin-top: 20rem;
+        .section-contents {padding-top: 20rem !important;}
         .detail {
             &-head {
                 padding-bottom: 5rem; border-bottom: 1px solid #E5E5E5;
@@ -212,7 +212,7 @@
             }
         }
         &-detail {
-            margin-top: 10rem;
+            .section-contents {padding-top: 10rem!important;}
             .detail-head {
                 padding-bottom: 2.8rem;
                 .brand {height: 3.8rem; line-height: 3.8rem; font-size: 1.2rem;}
