@@ -963,7 +963,6 @@
 		$('.btn-top').on('click', function(){
 			$('html, body').animate({scrollTop: 0}, 300, 'linear');
 		});  
-		
 	
 		scrCSSEff();
 
@@ -971,16 +970,21 @@
 		let headerH = $('header').height();
 		$('.btn-all-gnb').on('click', function(e){			
 			e.preventDefault();
-			if($(this).hasClass('on')){				
+			if($(this).hasClass('on')){		
 				bodyScrollBlock(false);				
 				$('header').removeClass('nav-open');
+				$('.all-gnb-view').removeClass('open');
 				$(this).removeClass('on');
 				$('.btn-lang').removeClass('on');
+				$(window).on('scroll', scrollEv);
 			}else{
+				$(window).off('scroll', scrollEv);
 				bodyScrollBlock(true);
 				$('header').addClass('nav-open');
+				$('.all-gnb-view').addClass('open');
 				$(this).addClass('on');
 			}
+			return false;
 		});
 		
 		//---패밀리 사이트
