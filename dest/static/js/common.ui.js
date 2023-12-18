@@ -940,11 +940,11 @@
 			$('.mouse-cursor').fadeOut();
 		});
 		
-		$('a[href]').on('mouseenter', function(){
+		$('[href]').on('mouseenter', function(){
 			$('.mouse-cursor').addClass('click');
 		});
 
-		$('a[href]').on('mouseleave', function(){
+		$('[href]').on('mouseleave', function(){
 			$('.mouse-cursor').removeClass('click');
 		});
 

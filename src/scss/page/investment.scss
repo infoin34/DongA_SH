@@ -316,10 +316,29 @@
             font-size: 1.6rem;
         }
     }
-
     .inquiry-notice-box {
+        position: relative;
         margin-top: 8rem;
+        padding: 5rem 8rem;
+        border-radius: 2rem;
+        background-color: #162DA1;
+        color: #fff;
+        overflow: hidden;
+        img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;}
     }
+    .inquiry-notice-content {
+        margin-top: 5rem;
+        display: flex;
+        gap: 15.3rem;
+        .text-3 {
+            font-weight: 400;
+        }
+        .text-1 {
+            line-height: calc(34/20);
+            font-weight: 600;
+        }
+    }
+    .inquiry-notice-text {position: relative;}
 
     //재무정보
     &-finance {
@@ -666,8 +685,20 @@
             a {display: flex; flex-direction: column-reverse; flex-wrap: wrap; gap: 0.5rem;}
             .date-td, .title-td {width: 100%;}
             .date-td {border: 0;}
-        }
-        .inquiry-notice-box {margin-top: 5.6rem; padding: 4rem 3rem;}        
+        }        
+        .inquiry-notice-box {margin-top: 5.6rem; padding: 4rem 3rem;}      
+        .inquiry-notice-content {
+            margin-top: 3.4rem;
+            flex-direction: column;
+            gap: 2.4rem;
+            .text-3 {
+                font-size: 1.2rem;
+            }
+            .text-1 {
+                line-height: calc(34/20);
+                font-weight: 600;
+            }
+        }  
         &-governance {        
             .stock-current-box {
                 li:not(.current-price) {min-width: 40%;}

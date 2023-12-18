@@ -69,9 +69,7 @@
                 padding: 5rem;
                 background-color: #fff;
                 border-radius: 0.8rem;
-
                 img {
-                    display: block;
                     width: 100%;
                     max-width: 58.1rem;
                     margin: 0 auto;
@@ -186,18 +184,13 @@
             display: flex;
             + .plank-item {margin-top: 5rem;}
             .title-s2 {padding-right: 3rem; width: calc(350/1440*100%);}
-            .plank-cont {width: calc(100% - 350/1440*100%);}
+            .title-s3 {display: block; margin-top: 5rem;}
         }
         .humanrightcont {
             padding: 12rem 0;
             &-img {
-                width: 100%;
-                margin-left: auto;
-                margin-top: 5rem;
-
+                margin-top: 5rem; text-align: center;
                 img {
-                    width: 100%;
-                    max-width: 84.1rem;
                     margin: 0 auto;
                     object-fit: contain;
                 }
@@ -217,17 +210,11 @@
             }
 
             &-img {
+                margin: 0 auto;
                 .title-s3 { font-weight: 500;}
-
-                img {
-                    display: block;
-                    width: 100%;
-                }
-                
                 &.cont1 {
-                    img{
+                    img{                        
                         margin: 5rem auto 0;
-                        max-width: 47.1rem;
                     }
                 }
                 
