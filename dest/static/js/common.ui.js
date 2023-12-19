@@ -449,7 +449,7 @@
 				}
 				
 				let pow = Math.pow(gapX, 2) + Math.pow(gapY, 2);
-				if(Math.abs(gapX) > Math.abs(gapY)  && Math.sqrt(pow) > 30){	
+				if(Math.abs(gapX) > Math.abs(gapY) && Math.sqrt(pow) > 40){	
 					if(moveX > touchX){//prev
 						prev();
 					}else{//next
@@ -822,14 +822,6 @@
 						},
 					},
 					effect: 'creative',
-					creativeEffect: {//cover넣기위한 꼼수
-						prev: {
-							opacity: 1,
-						},
-						next: {
-							opacity: 1,
-						},
-					},
 					on : {
 						afterInit : function(){
 							$durBar = $('.spot-duration-bar');
@@ -842,11 +834,7 @@
 				mainSpotSwiper.on('beforeSlideChangeStart', function(){
 					$item.eq(this.realIndex).addClass('spot-time-break');//다음 화면 전에 보여줄 전화면	
 				})
-				// mainSpotSwiper.on('beforeResize', function(){
-				// });
-				// mainSpotSwiper.on('resize', function(){
-				// })
-				mainSpotSwiper.on('slideChange', function(){	
+				mainSpotSwiper.on('realIndexChange', function(){	
 					playingIdx = this.realIndex;
 					spot.reset();
 					spot.slideControl();
@@ -998,8 +986,7 @@
 		$('.btn-work-place').on('click', function(e){
 			layerToggle(e, '.btn-work-place', '.header-workgroup');
 			return false;
-		});
-		
+		});		
 
 
 		//---input[type="text"] 초기화
@@ -1038,13 +1025,20 @@
 				if($(this).find('.gnb-depth3').length > 0) $(this).addClass('depth-3-y');
 			});
 
+			//on 2뎁스, 3뎁스
+			$('.gnb-depth1-list > li.on .gnb-depth2').show();
+			$('.depth-3-y.on .gnb-depth3').show();
+
 			//--1뎁스 클릭
 			$('.gnb-depth1-title').on('click', function(){
 				if(!$(this).parent().hasClass('on')){
 					$('.gnb-depth1-list > li').removeClass('on');
 					$(this).parent().addClass('on');
+					$('.gnb-depth2').not($(this).siblings('.gnb-depth2')).stop().slideUp(300);
+					$(this).siblings('.gnb-depth2').stop().slideDown(300);
 				}else{
 					$(this).parent().removeClass('on');
+					$(this).siblings('.gnb-depth2').stop().slideUp(300);
 				}				
 				return false;
 			});
@@ -1054,8 +1048,11 @@
 				if(!$(this).parent().hasClass('on')){
 					$('.gnb-depth2-list > li').removeClass('on');
 					$(this).parent().addClass('on');
+					$('.gnb-depth3').not($(this).siblings('.gnb-depth3')).stop().slideUp(300);
+					$(this).siblings('.gnb-depth3').stop().slideDown(300);
 				}else{
 					$(this).parent().removeClass('on');
+					$(this).siblings('.gnb-depth3').stop().slideUp(300);
 				}				
 				return false;
 			});

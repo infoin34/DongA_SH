@@ -647,14 +647,12 @@ footer {
        .gnb-depth1-list {gap: 3em;}
     }
 }
-//기기 상관없이
-@media screen and (max-width: 766px) {
-}
 //pc 작은 화면 or mo 버전
-@media screen and (max-width: 766px), (hover: coarse){   
+@media screen and (max-width: 766px){   
     html, body {width: 100%; overflow-x: hidden;}
     h1 {
         position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
+        &.white a {background-image: svgLogo('fff', '00B4D6');}
     }
     .nav-open {
         h1 a { background-image: svgLogo('fff', '00B4D6');}
@@ -817,8 +815,6 @@ footer {
 }
 
 
-
-
 //마우스 없는 기기
 .window-mo {
     html {
@@ -828,7 +824,6 @@ footer {
     h1 {
         position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
     }
-    .all-gnb-view .logo {display: none;}
     .header {
         &-inner {padding: 3rem 1.6rem; height: 7.6rem;}
         &-etc-link {display: none;}
@@ -866,7 +861,7 @@ footer {
             display: block;
             > li.on {
                 .gnb-depth1-title {border-bottom: 2px solid #00B4D6;}
-                .gnb-depth2 {display: block;}
+                //.gnb-depth2 {display: block;}
             }
             > li + li {margin-top: 0;}
         }
@@ -875,7 +870,7 @@ footer {
             > li + li {margin-top: 3rem;}
             > li.on {
                 .gnb-depth1-title a:after {right: -1.2rem; bottom: 0.2rem; width: 0.6rem; height: 0.6rem;}
-                .gnb-depth3 {display: block;}
+                //.gnb-depth3 {display: block;}
             }
         }
         .gnb-depth1-title {
