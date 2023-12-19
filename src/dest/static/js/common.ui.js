@@ -945,6 +945,32 @@
 		});
 	}
 
+	let reqGnbAni, allGnbAniFlag, reqCnt = 0;
+	function allGnbAni(dv){		
+		console.log(reqCnt,)		
+		reqGnbAni = requestAnimationFrame(allGnbAni);		
+		if(allGnbAniFlag){
+			reqCnt = reqCnt + 3.67;
+			if(reqCnt >= 150) {
+				reqCnt = 150;
+			}
+		}else{
+			reqCnt = reqCnt - 3.67;
+			if(reqCnt <= 0) {
+				reqCnt = 0;
+				$('header').removeClass('nav-open');
+				$('.all-gnb-view').removeClass('open');
+				$('.all-gnb-view').css('display', 'none');
+			}
+		}		
+		$('.all-gnb-view').css('clip-path', 'circle('+ reqCnt +'% at 98% 2%)');
+		if(reqCnt == 150 || reqCnt == 0) {
+			cancelAnimationFrame(reqGnbAni);
+		}
+	}
+
+	
+
 	/******** 공통 ********/
 	$(function(){
 		//---탑버튼 클릭
@@ -959,31 +985,18 @@
 		$('.btn-all-gnb').on('click', function(e){			
 			e.preventDefault();
 			if($(this).hasClass('on')){		
-				bodyScrollBlock(false);				
-				
-				$('.all-gnb-view').stop().animate({},
-				{	
-					duration: 300,
-					// specialEasing: {
-					//   left: 'linear'
-					// },
-					step: function(v, d){
-						if(d.pos > 0.3) {
-							//$('.spot-time-break').removeClass('spot-time-break');	
-						}
-						console.log(d, ss)
-					},
-					complete : function(){
-						
-					}
-				});
-				$('header').removeClass('nav-open');
-				$('.all-gnb-view').removeClass('open');
+				cancelAnimationFrame(reqGnbAni);
+				allGnbAniFlag = false;
+				allGnbAni();
+				bodyScrollBlock(false);					
 				$(this).removeClass('on');
 				$('.btn-lang').removeClass('on');
 				$(window).on('scroll', scrollEv);
-				
 			}else{
+				$('.all-gnb-view').css('display', 'block');
+				cancelAnimationFrame(reqGnbAni);
+				allGnbAniFlag = true;
+				allGnbAni();
 				$(window).off('scroll', scrollEv);
 				bodyScrollBlock(true);
 				$('header').addClass('nav-open');
