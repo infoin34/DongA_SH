@@ -643,7 +643,7 @@
 					<div class="footer-info">
 						<div class="info-item">
 							<strong>Address</strong>
-							<p class="address"><a href="javascript:void(0);" onclick="popup.open('.pop-map');">서울시 동대문구 천호대로</a></p>
+							<p class="address"><a href="javascript:void(0);" onclick="popup.open('.pop-map');">서울특별시 동대문구 천호대로 64</a></p>
 						</div>
 						<div class="info-item">
 							<strong>Contact</strong>
@@ -836,12 +836,11 @@
 <!-- 페이지 관련 스크립트 -->
 <script>
 	$(function() {
-
-		$('.executive-director .director-info-item').each(function() {
-			this.addEventListener('animationend', function() {
-				console.log('sss')
-			})
-		})
+		// $('.executive-director .director-info-item').each(function(){
+		//     this.addEventListener('animationend', function(){
+		//         console.log('sss')
+		//    })
+		// })
 		$('.executive-director .director-info-item').on('click', function() {
 			cssToggle('.executive-director .director-info-item', '', $(this).index());
 

@@ -323,13 +323,12 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-    $(function(){
-        
-        $('.executive-director .director-info-item').each(function(){
-            this.addEventListener('animationend', function(){
-                console.log('sss')
-           })
-        })
+    $(function(){        
+        // $('.executive-director .director-info-item').each(function(){
+        //     this.addEventListener('animationend', function(){
+        //         console.log('sss')
+        //    })
+        // })
         $('.executive-director .director-info-item').on('click', function(){
             cssToggle('.executive-director .director-info-item', '', $(this).index());
           
