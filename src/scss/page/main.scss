@@ -415,7 +415,6 @@ a.btn-page-move {
             &:after {content: ''; position: relative; display: block; width: 100%; height: 100%;  background: #222; filter:opacity(0.6)}
             .business-bg {position: absolute; display: none; top: 0; left: 0; width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%;  background-size: cover; background-attachment: fixed;}
         }
-        a.btn-page-move {display: flex;}
         .swiper-container {width:100%; height: 100%;}
         .scr-eff-active {
             .main-business-swiper {opacity: 1; transform: skew(0, 0);}
@@ -772,6 +771,12 @@ a.btn-page-move {
             p {margin-top: 2rem; font-size: 1.5rem;}
         }
         .swiper-pagination { bottom: 2.8rem; padding: 0 1.6rem; gap: 0;}
+    }
+    .main {
+        &-business {
+            .section-bg .business-bg {background-attachment: initial;}
+            .content {padding: 0 3rem; text-align: center;}
+        }
     }
     .pop-main {
         top: 50% !important;
