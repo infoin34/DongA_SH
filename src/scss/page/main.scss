@@ -64,7 +64,7 @@ a.btn-page-move {
         i {
             position: relative; width: 3.9rem; height: 3.9rem; border: 1px solid #fff; border-radius: 50%; vertical-align: middle;
             &:after {
-                content: ''; position: absolute; top:0; right: 1.2rem; bottom:0; margin:auto; width:3.9rem; height: 1.6rem; background: svgUrlArrow3('fff'); background-size: 100%; animation: link 1s ease-out infinite;
+                content: ''; position: absolute; top:0; right: 1.2rem; bottom:0; margin: auto; width: 3.9rem; height: 1.6rem; background: svgUrlArrow3('fff'); background-size: 100%; animation: link 1s ease-out infinite;
             }
         }
     }
@@ -157,7 +157,7 @@ a.btn-page-move {
             position: absolute;
         }
         .intro-logo {
-            margin:0 auto; width:calc(77/1920*100vw); height:calc(78/1920*100vw); opacity: 0; @include font0; overflow: hidden;
+            margin:0 auto; width: calc(77/1920*100vw); height: calc(78/1920*100vw); opacity: 0; @include font0; overflow: hidden;
             &:after {
                 content: '';
                 position: absolute;
@@ -167,7 +167,7 @@ a.btn-page-move {
                 background-color: rgba(255, 255, 255, 0.5);
             }
             span {
-                display: block; width:calc(705/1920*100vw); height:calc(78/1920*100vw); background: svgLogo('000', '00B4D6') no-repeat 0 /100%; 
+                display: block; width: calc(705/1920*100vw); height: calc(78/1920*100vw); background: svgLogo('000', '00B4D6') no-repeat 0 /100%; 
             }
         }       
     } 
@@ -753,6 +753,15 @@ a.btn-page-move {
             }
         }
     }
+    .pop-main {
+        top: 50% !important;
+        left: 0 !important;
+        right: 0;
+        margin: auto;
+        transform: translateY(-50%);
+        .popup-wrap {padding: 0;}
+        .popup-footer {padding: 1rem 2rem;}
+    }
 }
 .window-mo {
     .main-spot {
@@ -770,6 +779,7 @@ a.btn-page-move {
         right: 0;
         margin: auto;
         transform: translateY(-50%);
+        .popup-wrap {padding: 0;}
         .popup-footer {padding: 1rem 2rem;}
     }
 }

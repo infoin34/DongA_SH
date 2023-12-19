@@ -960,11 +960,13 @@
 			e.preventDefault();
 			if($(this).hasClass('on')){		
 				bodyScrollBlock(false);				
+				
 				$('header').removeClass('nav-open');
 				$('.all-gnb-view').removeClass('open');
 				$(this).removeClass('on');
 				$('.btn-lang').removeClass('on');
 				$(window).on('scroll', scrollEv);
+				
 			}else{
 				$(window).off('scroll', scrollEv);
 				bodyScrollBlock(true);
