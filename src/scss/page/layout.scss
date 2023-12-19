@@ -57,7 +57,7 @@ header {
     }
     &.nav-open{
         z-index: 2000;
-        .all-gnb-view {clip-path: circle(150% at 97% 10%);}
+        .all-gnb-view {/*clip-path: circle(150% at 97% 10%);*/}
         .btn-lang {background-image: svgLang('fff');}
         .btn-work-place {background-image: svgWorkPlace('fff');}
     }
@@ -194,7 +194,7 @@ h1 {
     }    
 }
 .all-gnb-view {
-    position: fixed; padding: 9.5rem 8rem; width: 100vw; height: 100%; right: 0; top: 0; background-color: #101e5d; transition: clip-path 0.7s cubic-bezier(0.47, 0, 0.745, 0.715); clip-path: circle(0rem at 97% 5%); overflow-y: auto; background: #101e5d allGnbBg('0E1B55') no-repeat 50% 50%/ cover;
+    position: fixed; display: none; padding: 9.5rem 8rem; width: 100vw; height: 100%; right: 0; top: 0; background-color: #101e5d; clip-path: circle(0 at 98% 2%); overflow-y: auto; background: #101e5d allGnbBg('0E1B55') no-repeat 50% 50%/ cover;
     .logo { 
        width: 20.9rem; height: 2.3rem;
         a {display: block; width: 100%; height: 100%; background-image: svgLogo('fff', 'fff'); background-repeat: no-repeat;}
