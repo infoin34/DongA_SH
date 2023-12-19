@@ -740,7 +740,7 @@
             .director-info {display: block; margin-top: 0;}
             .director-profile {width: 100%;}
             .director-info-item {        
-                min-height: auto; width: 100% !important;   
+                 height: auto; min-height: auto; width: 100% !important;
                 + .director-info-item {
                     margin-top: 0.8rem;
                 }
