@@ -667,14 +667,22 @@
 	 
 	
 	/* tab on */
-	function tabMenuMove(target){
-		var $target = $(target);
-		var halfVW = $(window).width()/2;
-		var $onTab = $(target).find('.on');
-		var onMenuWidth = $onTab.outerWidth();
-		var onMenuXPos = $onTab.position().left;		
-		var moveWidth = (onMenuXPos + onMenuWidth/2) - halfVW;	
-		$target.stop().animate({scrollLeft:moveWidth});		
+	function tabMenuMove(target, parent, onIdx){
+		let $parent = $(parent);
+		let $target = $(target);
+		let halfVW = $(window).width()/2;
+		let $onTab = $(target).eq(onIdx);		
+		let onMenuWidth = $onTab.outerWidth();
+		let onMenuXPos = $onTab.position().left;		
+		
+		$target.each(function(idx) {
+			if (idx < onIdx) {
+				onMenuXPos += $(this).outerWidth();
+			}
+		});	
+		let moveWidth = (onMenuXPos + onMenuWidth/2) - halfVW;
+		console.log($onTab[0], $onTab.position().left,'ss')
+		$parent.stop().animate({scrollLeft:moveWidth});		
 	} 
 
 	/* animate */ 
@@ -1102,8 +1110,8 @@
 				return false;
 			});			
 
-			if($('.page-menu-list').length > 0) {
-				tabMenuMove('.page-menu-list');
+			if($('.page-menu-list .tab-item').length > 0) {
+				tabMenuMove('.page-menu-list .tab-item', '.page-menu-list', $('.page-menu-list .tab-item').index($('.page-menu-list .tab-item.on')));  
 			}
 		}
 

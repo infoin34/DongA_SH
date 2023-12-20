@@ -280,14 +280,13 @@ h1 {
                 .tab-type-a {display: block; text-align: center;}
                 li {
                     display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 2.4rem;
-                    &.on a {color:#000081; font-weight: 600; background-color: #fff;}
+                    &.on a {color:#000081 !important; font-weight: 600; background-color: #fff;}
                 }
                 a {padding: 2.4rem 0; height: auto;}
             }
             .tab-type-a {
                 width: 100%; gap: 0; white-space: nowrap;
-                li {border: 0; font-size: 1.8rem; color: #aaa; font-weight: 400;}
-                a {padding: 2rem 3.6rem; height: 6.1rem;}
+                a {padding: 2rem 3.6rem; height: 6.1rem; border: 0; font-size: 1.8rem; color: #aaa; font-weight: 400;}
             }
         }
     }
@@ -699,19 +698,18 @@ footer {
             .page-menu-wrap {
                 position: relative; margin-bottom: 2.8rem; height: 4.2rem; bottom: auto;
                 .tab-type-a {
-                    li {
-                        font-size: 1.2rem;
-                        &:first-child {margin-left: 1.6rem;}
-                        &:last-child {margin-right: 1.6rem;}
+                    li {                        
+                        &:first-child {padding-left: 1.6rem;}
+                        &:last-child {padding-right: 1.6rem;}
                     }
-                    a {padding: 1.4rem; height: 4.2rem;}
+                    a {padding: 1.4rem; height: 4.2rem; font-size: 1.2rem;}
                 }
                 .fixed {
                     &.page-menu-list {margin: 0;}
                     li {
-                        + li {margin-left: 0;}
-                        &:first-child {margin-left: 0;}
-                        &:last-child {margin-right: 0;}
+                        + li {padding-left: 0;}
+                        &:first-child {padding-left: 0;}
+                        &:last-child {padding-right: 0;}
                     }
                 }
             } 

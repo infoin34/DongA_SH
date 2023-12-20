@@ -422,8 +422,14 @@
                                                                 </a>
                                                             </li>
                                                             <li class="brand-item swiper-slide">
-                                                                <a href="#" aria-label="STP America">
+                                                                <a href="#" aria-label="Anapath Service">
                                                                     <span class="num">07</span>
+                                                                    <div class="brand-name">Anapath Research</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="brand-item swiper-slide">
+                                                                <a href="#" aria-label="STP America">
+                                                                    <span class="num">08</span>
                                                                     <div class="brand-name">STP America</div>
                                                                 </a>
                                                             </li>
@@ -507,8 +513,21 @@
                                                             <!-- <a href="#" target="_blank" title="Anapath Service" class="btn-page-move"><span>VISIT SITE</span><i class="ico-link"></i></a> -->
                                                         </div>
                                                     </div>
-                                                </div>           
+                                                </div>   
                                                 <div class="bind bind-7">
+                                                    <div class="thumb">
+                                                        <img src="../../static/images/brand/intro_slide_20.jpg" class="pc-part" alt="Anapath Service">
+                                                        <img src="../../static/images/mo/brand/intro_slide_20.jpg" class="mo-part" alt="Anapath Service">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div class="text">
+                                                            <h3 class="title-h2">Anapath Research</h3>
+                                                            <p class="text-1">Barcelona, Spain에 위치한 Anapath Research는 비임상 동물 실험 서비스를 제공하고 있습니다.</p>
+                                                            <!-- <a href="#" target="_blank" title="Anapath Research" class="btn-page-move"><span>VISIT SITE</span><i class="ico-link"></i></a> -->
+                                                        </div>
+                                                    </div>
+                                                </div>          
+                                                <div class="bind bind-8">
                                                     <div class="thumb">
                                                         <img src="../../static/images/brand/intro_slide_21.jpg" class="pc-part" alt="STP America">
                                                         <img src="../../static/images/mo/brand/intro_slide_21.jpg" class="mo-part" alt="STP America">
@@ -609,20 +628,21 @@ $(function(){
                 var hH = $('.category-list').height();
                 var _this = $(this);
                 $(window).off('scroll', brandIntroScrMo);
-                clearTimeout(textSET);            
+                clearTimeout(tabShowSetIt);            
                 $('html').stop().animate({
                     scrollTop: $('.intro-item').eq($(this).index()).offset().top - hH
                 }, {
                     duration: 300,
                     complete: function() {
                         $('.category-item').removeClass('on');
-                        _this.addClass('on');
-                        tabMenuMove('.category-list');  
-                        textSET= setTimeout(function(){                       
+                        _this.addClass('on');                        
+                        tabMenuMove('.category-item', '.category-list', $('.category-item').index($('.category-item.on')));  
+                        tabShowSetIt= setTimeout(function(){                       
                             $('html').removeClass('scr-up');
                             $('html').addClass('scr-down');
                             $('.category-list').removeClass('hidden');
                             $(window).on('scroll', brandIntroScrMo);  
+                            console.log($('.category-item').index($('.category-item.on')))
                         }, 200);
                     }
                 });
@@ -692,7 +712,7 @@ $(function(){
     ***************/
     let tabMenuIdx = [];
     let temp = 0;
-    let textSET;    
+    let tabShowSetIt;    
     function brandIntroScrMo(e) {  
         if (e) {
             e.preventDefault();
@@ -712,7 +732,7 @@ $(function(){
         tabMenuIdx.push(temp);
         tabMenuIdx.length > 2 && tabMenuIdx.shift();
         if (tabMenuIdx[0] != tabMenuIdx[1]) {
-            tabMenuMove('.category-list');  
+            tabMenuMove('.category-item', '.category-list', temp);  
         }       
         return false;
     }

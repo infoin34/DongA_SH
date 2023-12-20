@@ -436,12 +436,12 @@
             tabMenuIdx.push(temp);
             tabMenuIdx.length > 2 && tabMenuIdx.shift();
             if (tabMenuIdx[0] != tabMenuIdx[1]) {
-                tabMenuMove('.page-menu-list');  
+                tabMenuMove('.year-item', '.page-menu-list', temp); 
             }       
             return false;
         }
         $(window).on('scroll', tabScrollEvent);
-        let textSET;
+        let tabShowSetIt;
         //연도 클릭 
 
         $('.year-item').on('click', function(e){
@@ -449,7 +449,8 @@
             var hH = $('header').height();
             var _this = $(this);
             $(window).off('scroll', tabScrollEvent);
-            clearTimeout(textSET);            
+            clearTimeout(tabShowSetIt);            
+
             $('html').stop().animate({
                 scrollTop: $('.history-list').eq($(this).index()).offset().top - hH
             }, {
@@ -457,8 +458,8 @@
                 complete: function() {
                     $('.year-item').removeClass('on');
                     _this.addClass('on');
-                    tabMenuMove('.page-menu-list');  
-                    textSET= setTimeout(function(){                       
+                    tabMenuMove('.year-item', '.page-menu-list', $('.year-item').index($('.year-item.on')));  
+                    tabShowSetIt= setTimeout(function(){                       
                         $('html').removeClass('scr-up');
                         $('html').addClass('scr-down');
                         $('.page-menu-list').removeClass('hidden');
