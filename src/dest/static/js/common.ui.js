@@ -330,31 +330,31 @@
 
 	/* layer토글 - 화면 클릭하면 none*/
 	function layerToggle(e, btn, target){
+		console.log(e,'ss')
 		let $btn = $(btn);
 		let parent = target ? target : btn;
-		if($btn.hasClass('on')){			
-			closeFn(e);
-		}else{			
-			$(parent).addClass('on');
-			$btn.addClass('on');
-			$('#wrap').on('click', closeFn);			
-		}			
 
-		$(parent).find('.btn-close').off('click').on('click', function(){
+		if($btn.hasClass('on')){			
+			closeFn(e, true);
+		}else{							
+			$(parent).addClass('on');
+			$btn.addClass('on');	
+			$('#wrap').on('click', closeFn);
+		}			
+		
+		$(parent).find('.btn-close').off('click').on('click', function(e){
 			closeFn(e);
 			return false;	
 		});
 			
-		function closeFn(e){
-			console.log($(e.target).parents(btn).length)
-			if($(e.target).parents(parent).length == 0 || $(e.target).parents(btn).length > 0 || e.target == $(btn)[0] || $(e.target).hasClass('btn-close')){
+		function closeFn(e, close){
+			if(close || $(e.target).parents(parent).length == 0 || $(e.target).parents(btn).length > 0 || $(e.target).hasClass('btn-close')){
 				$(parent).removeClass('on');
 				$btn.removeClass('on');
 				$('#wrap').off('click', closeFn);
 			}
 			return false;
 		}	
-		return false;
 	}
 
 	/* Swiper */
@@ -873,12 +873,11 @@
 
 
 	/************************************************/
-	/************************************************/
-	/************************************************/
 	/******** 스크롤 ********/
 	let currentScr = 0, lastScr = 0;
 	let pageEnd;
 	
+	//스크롤 관련
 	function scrollEv(){
 		//---현재 스크롤값
 		currentScr = $(window).scrollTop();	
@@ -903,6 +902,7 @@
 		lastScr = currentScr;
 	}
 
+	//마우스 커서
 	function mouseCursor(){
 		$(document).on('mousemove', function(e){
 			let mouseX = e.clientX-($('.mouse-cursor').width()/2);
@@ -945,17 +945,18 @@
 		});
 	}
 
-	let reqGnbAni, allGnbAniFlag, reqCnt = 0;
-	function allGnbAni(dv){		
-		console.log(reqCnt,)		
-		reqGnbAni = requestAnimationFrame(allGnbAni);		
+	let reqGnbAni, allGnbAniFlag, gnbStartTime, reqCnt = 0;
+	function allGnbAni(dv){			
+		reqGnbAni = requestAnimationFrame(allGnbAni);	
+		let timePassed = new Date - gnbStartTime,
+			progress = timePassed/600;
+
+		if(progress > 1) progress = 1;
+
 		if(allGnbAniFlag){
-			reqCnt = reqCnt + 3.67;
-			if(reqCnt >= 150) {
-				reqCnt = 150;
-			}
+			reqCnt = 150*progress;
 		}else{
-			reqCnt = reqCnt - 3.67;
+			reqCnt = 150*(1-progress);
 			if(reqCnt <= 0) {
 				reqCnt = 0;
 				$('header').removeClass('nav-open');
@@ -964,12 +965,11 @@
 			}
 		}		
 		$('.all-gnb-view').css('clip-path', 'circle('+ reqCnt +'% at 98% 2%)');
-		if(reqCnt == 150 || reqCnt == 0) {
+
+		if(progress === 1){
 			cancelAnimationFrame(reqGnbAni);
 		}
 	}
-
-	
 
 	/******** 공통 ********/
 	$(function(){
@@ -984,39 +984,47 @@
 		let headerH = $('header').height();
 		$('.btn-all-gnb').on('click', function(e){			
 			e.preventDefault();
-			if($(this).hasClass('on')){		
+			if($(this).hasClass('on')){	
+				//gnb관련 clip 모션(css로 넣으면 모바일 줌에 보여서 js로 변경)
+				gnbStartTime = new Date;
 				cancelAnimationFrame(reqGnbAni);
 				allGnbAniFlag = false;
 				allGnbAni();
+
 				bodyScrollBlock(false);					
 				$(this).removeClass('on');
 				$('.btn-lang').removeClass('on');
 				$(window).on('scroll', scrollEv);
 			}else{
 				$('.all-gnb-view').css('display', 'block');
+
+				//gnb관련 clip 모션(css로 넣으면 모바일 줌에 보여서 js로 변경)
+				gnbStartTime = new Date;
 				cancelAnimationFrame(reqGnbAni);
 				allGnbAniFlag = true;
 				allGnbAni();
+
 				$(window).off('scroll', scrollEv);
 				bodyScrollBlock(true);
 				$('header').addClass('nav-open');
 				$('.all-gnb-view').addClass('open');
 				$(this).addClass('on');
 			}
-			return false;
 		});
 		
 		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(e){
+			e.preventDefault();
 			layerToggle(e, '.btn-family-site', '.footer-family-site');
-			return false;
+			//return false
 		});
 		$('.about-site-tab > li').on('click', function(){
 			cssToggle('.about-site-tab li', '.about-site-list', $(this).index());
 		});
 		$('.btn-work-place').on('click', function(e){
+			e.preventDefault();
 			layerToggle(e, '.btn-work-place', '.header-workgroup');
-			return false;
+			//return false
 		});		
 
 
