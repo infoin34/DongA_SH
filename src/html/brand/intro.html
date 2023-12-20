@@ -557,8 +557,8 @@
 <!-- 페이지 관련 스크립트 -->
 <script>
 $(function(){  
-     //새로고침 - 스크롤 상단
-     history.scrollRestoration = 'manual';
+    //새로고침 - 스크롤 상단
+    history.scrollRestoration = 'manual';
 
     let brandIntroSwiper;//브랜드 그룹 소개 스와이퍼  
     let brandListSwiperArr = [];//각 그룹 브랜드 스와이퍼 
@@ -607,6 +607,7 @@ $(function(){
             }else{
                 if(swiperOnceFlag){
                     swiperOnceFlag = false;
+                    brandIntroIdx = 0;
                     initBrandIntroSlideSwiper();  
                 }
             }
@@ -677,7 +678,7 @@ $(function(){
             });                
 
             //브랜드 그룹 소개 스와이퍼
-            brandIntroSwiper.on('slideChange', function(e){
+            brandIntroSwiper.on('realIndexChange', function(e){
                 brandIntroIdx = this.realIndex;
                 if(!$('.brand-intro-swiper').hasClass('fixed')){
                     $('.brand-intro-swiper').addClass('fixed');

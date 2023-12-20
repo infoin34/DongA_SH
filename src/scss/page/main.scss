@@ -340,7 +340,7 @@ a.btn-page-move {
             position: relative; display: flex; flex-wrap: wrap; justify-content: space-between;
         }
         .section-head {       
-            padding: 0;    
+            width: 30%; padding: 0;    
             .btn-detail {
                 position:static; margin-top: 70px;
             }  
@@ -702,6 +702,7 @@ a.btn-page-move {
         &-value {
             padding-bottom: 23.8rem !important;
             .bg-a {left: auto; right: 0; width: 20rem; height: 19.8rem;}
+            .section-head {width: 100%;}
             .section-contents {width: 100%;}
             .value-list {display: block;}
             .value-item {
@@ -728,7 +729,7 @@ a.btn-page-move {
                 width: 24rem; height: 24rem;
                 .name {margin-left: 0; margin-bottom: 0; bottom: auto; top: calc(100% + 3rem); width: 100%; text-align: center; font-size: 3.6rem;}
             }
-            .content {margin-top: 8.2rem; padding: 0; width: auto; transform: translateX(100%); transition-delay: 0.2s;}
+            .content {margin-top: 8.2rem; padding: 0; width: auto; text-align: center; transform: translateX(100%); transition-delay: 0.2s;}
             .swiper-slide-active .content {
                 transform: translateX(0);
             }
@@ -775,7 +776,7 @@ a.btn-page-move {
     .main {
         &-business {
             .section-bg .business-bg {background-attachment: initial;}
-            .content {padding: 0 3rem; text-align: center;}
+            .content {padding: 0 3rem;}
         }
     }
     .pop-main {

@@ -112,7 +112,6 @@
 					<div class="header-util">
 						<div class="header-workgroup">
 							<a href="#" class="btn-work-place">오피스 365</a>
-
 							<div class="layer-popup pop-workplace no-dim" id="workPlacePop">
 								<div class="popup-wrap">
 									<div class="popup-inner">
@@ -1085,6 +1084,7 @@
 				} else {
 					if (swiperOnceFlag) {
 						swiperOnceFlag = false;
+						brandIntroIdx = 0;
 						initBrandIntroSlideSwiper();
 					}
 				}
@@ -1156,7 +1156,7 @@
 				});
 
 				//브랜드 그룹 소개 스와이퍼
-				brandIntroSwiper.on('slideChange', function(e) {
+				brandIntroSwiper.on('realIndexChange', function(e) {
 					brandIntroIdx = this.realIndex;
 					if (!$('.brand-intro-swiper').hasClass('fixed')) {
 						$('.brand-intro-swiper').addClass('fixed');

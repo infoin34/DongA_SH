@@ -681,7 +681,6 @@
 			}
 		});	
 		let moveWidth = (onMenuXPos + onMenuWidth/2) - halfVW;
-		console.log($onTab[0], $onTab.position().left,'ss')
 		$parent.stop().animate({scrollLeft:moveWidth});		
 	} 
 
