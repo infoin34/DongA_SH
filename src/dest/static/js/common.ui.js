@@ -417,6 +417,9 @@
 
 				moveX = ev.pageX;
 				moveY = ev.pageY;
+
+				let gapX = Math.abs(touchX - moveX);
+				let gapY = Math.abs(touchY - moveY);
 				
 				$list.addClass('no-click');	
 
@@ -424,6 +427,11 @@
 					$touch[0].onmouseleave = null;
 					$touch[0].onmouseleave = $swipe.handEnd;
 				}				
+				
+				if(Math.abs(gapX) > Math.abs(gapY)){
+					e.preventDefault();
+					e.stopPropagation();
+				}
 			},
 			handEnd : function(e){	
 				if(!window.isMobile) {
