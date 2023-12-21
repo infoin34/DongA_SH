@@ -118,13 +118,14 @@
 			})
 			popup.targetArr.push($obj);
 
+			
 			popup.guideZindex++;
 			$obj.attr('data-pop', popup.guideZindex);
 			$obj.css({
 				'display': 'block',
 				'z-index': popup.guideZindex
 			});
-			
+			console.log(popup.targetArr[0].attr('data-pop') , $obj.attr('data-pop'))
 			//$('html').append($obj);
 			$closeBtn.click(function(e){
 				e.preventDefault();
@@ -154,11 +155,12 @@
 			let $target = $(target),
 			    $pop = $target.hasClass('layer-popup') ? $target : $target.parents('.layer-popup');
 			
-			$.each(popup.targetArr, function(i) {
+			for(let i=0; i < popup.targetArr.length; i++){
 				if (popup.targetArr[i].attr('data-pop') == $pop.attr('data-pop')) {
 					popup.targetArr.splice(i,1);
+					break;
 				}
-			});
+			}
 			if (popup.targetArr.length == 0) {
 				if( !$('html').hasClass('layer-open') && !$pop.hasClass('no-dim')) {
 					bodyScrollBlock(false);
@@ -673,7 +675,7 @@
 		let halfVW = $(window).width()/2;
 		let $onTab = $(target).eq(onIdx);		
 		let onMenuWidth = $onTab.outerWidth();
-		let onMenuXPos = $onTab.position().left;		
+		let onMenuXPos = 0;		
 		
 		$target.each(function(idx) {
 			if (idx < onIdx) {
@@ -1120,31 +1122,31 @@
 			$('html, body').animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작			
-			$('#intro').addClass('active');
+			//$('#intro').addClass('active');
 
-			// $('#intro').remove();
-			// $('html').removeClass('main-intro');
-			// $('html').addClass('main-intro-end');		
-			// $('header').addClass('white');
-			// mainSpot();						
-			// $(window).on('scroll', scrollEv);
+			$('#intro').remove();
+			$('html').removeClass('main-intro');
+			$('html').addClass('main-intro-end');		
+			$('header').addClass('white');
+			mainSpot();						
+			$(window).on('scroll', scrollEv);
 
-			//메인 인트로 제거 후
-			document.querySelector('#intro').addEventListener('animationend', function(e){
-				if(e.target == this) {
-					$('#intro').remove();					
-					$('.main-intro').addClass('main-intro-end');	
-					$('header').addClass('white');	
-				}
-			});
-			//clip-path모션 끝난 후
-			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-				if($('html').hasClass('main-intro')){	
-					$('html').removeClass('main-intro');						
-					mainSpot();						
-					$(window).on('scroll', scrollEv);
-				}		
-			});
+			// //메인 인트로 제거 후
+			// document.querySelector('#intro').addEventListener('animationend', function(e){
+			// 	if(e.target == this) {
+			// 		$('#intro').remove();					
+			// 		$('.main-intro').addClass('main-intro-end');	
+			// 		$('header').addClass('white');	
+			// 	}
+			// });
+			// //clip-path모션 끝난 후
+			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+			// 	if($('html').hasClass('main-intro')){	
+			// 		$('html').removeClass('main-intro');						
+			// 		mainSpot();						
+			// 		$(window).on('scroll', scrollEv);
+			// 	}		
+			// });
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];

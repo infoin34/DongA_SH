@@ -355,9 +355,8 @@
     //기업지배구조
     &-governance {
         .chart-line {
-            .scr-eff {width: 0; overflow: hidden; transition: width 1.2s;}
-            .scr-eff-active {width: 100%;}
-            .graph {display: inline-block;}
+            .scr-eff {opacity: 0; transition: opacity 1.3s ease-out;}
+            .scr-eff-active {opacity: 1;}
             img {width: 100%;}
         }
         .governance {
@@ -497,7 +496,7 @@
             
         }
         .director-info-item {
-            position: relative;  height: 51rem; background-color: #F3F7FA; border-radius: 2rem; transition: width 0.3s;
+            position: relative;  min-height: 51rem; background-color: #F3F7FA; border-radius: 2rem; transition: width 0.3s;
             &.on { 
                 width: calc(613/1440*100%) !important; background-color: #162DA1; color: #fff; opacity: 1; 
                 .director-info-dl {display: flex; width: 100%;}
