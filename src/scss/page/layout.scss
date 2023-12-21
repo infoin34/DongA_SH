@@ -264,7 +264,7 @@ h1 {
 #wrap:not(.main) {
     .section-head {
         &.no-h .section-inner {height: auto;}
-        .section-inner {padding-right: 34rem; height: calc(760/1440*100vw); max-height: 76rem;}
+        .section-inner {padding-right: 38rem; height: calc(760/1440*100vw); max-height: 76rem;}
         .sub-title {margin-top: 2rem; color: #666;}
         .text-wrap {padding-top: calc(200/1440*100%);}
         .main-title {font-size: 10rem;}
@@ -302,7 +302,7 @@ h1 {
 }
 /*container - 컨텐츠 1440기준, padding 양쪽 20*/
 #container {  
-    padding-top: 15.3rem; padding-bottom: 14rem; min-height: 100vh;
+    padding-top: 15.3rem; padding-bottom: 14rem;
     .section-inner {position: relative; margin: 0 auto; padding: 0 3rem; max-width: 150rem;}
     &.pb-0x {
         padding-bottom: 0;

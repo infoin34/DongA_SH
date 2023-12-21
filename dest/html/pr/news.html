@@ -771,14 +771,6 @@
 </body>
 <!-- 페이지 관련 스크립트 -->
 <script>
-	$(function() {
-		$('.media-item a').on('click', function() {
-			let ytbId = $(this).data('id');
-			$('.pop-youtube iframe').attr('src', `https://www.youtube.com/embed/${ytbId}`);
-			popup.open('.pop-youtube');
-			return false;
-		});
-	})
 </script>
 <!--//페이지 관련 스크립트 -->
 
