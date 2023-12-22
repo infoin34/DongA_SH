@@ -53,9 +53,15 @@ $img : '../images/';
 //로고 보이기
 @keyframes introV4 {
 	20% {opacity: 1;} 
-	70% {opacity: 1; width:calc(77/1920*100vw);}
-	100% {width:calc(705/1920*100vw); opacity: 1;}
+	70% {opacity: 1; width:calc(78/1920*100vw);}
+	100% {width: calc(705/1920*100vw); opacity: 1;}
 }
+@keyframes introV4-m {
+	20% {opacity: 1;} 
+	70% {opacity: 1; width:calc(80vw*78/705);}
+	100% {width: 80vw; opacity: 1;}
+}
+
 //로고 올라가기
 @keyframes introV5 {
 	from {top: calc(50% - calc(78/1920*50vw)); left:calc(705/1920*50vw);}

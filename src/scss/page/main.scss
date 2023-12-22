@@ -157,7 +157,7 @@ a.btn-page-move {
             position: absolute;
         }
         .intro-logo {
-            margin:0 auto; width: calc(77/1920*100vw); height: calc(78/1920*100vw); opacity: 0; @include font0; overflow: hidden;
+            position: relative; margin:0 auto; width: calc(77/1920*100vw); height: calc(78/1920*100vw); opacity: 0; @include font0; overflow: hidden;
             &:after {
                 content: '';
                 position: absolute;
@@ -167,7 +167,7 @@ a.btn-page-move {
                 background-color: rgba(255, 255, 255, 0.5);
             }
             span {
-                display: block; width: calc(705/1920*100vw); height: calc(78/1920*100vw); background: svgLogo('000', '00B4D6') no-repeat 0 /100%; 
+                position:relative; left: 0; top: 0; display: block; width: calc(705/1920*100vw); height: 100%; background: svgLogo('000', '00B4D6') no-repeat 0 / 100%; 
             }
         }       
     } 
@@ -676,6 +676,7 @@ a.btn-page-move {
                 &:nth-child(8) {top: 0; left: 90%;}
                 &:nth-child(9) {top: 34%; left: 95%;}
             }
+            
         }
         &-spot {
             .section-inner {height: 100%;}
@@ -773,7 +774,28 @@ a.btn-page-move {
         }
         .swiper-pagination { bottom: 2.8rem; padding: 0 1.6rem; gap: 0;}
     }
-    .main {
+    &.main-intro {
+        #intro {
+            position: fixed; top:0; left:0; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #fff; z-index: 2000;              
+            &.active {
+                .intro-logo {
+                    animation-delay: 2.5s;
+                    animation-duration: 1s;
+                    animation-name: introV4-m;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;                 
+                }               
+            }
+        }
+        .intro-logo {
+            width: calc(80vw*78/705);
+            height: calc(80vw*78/705);
+            span {
+                width: 80vw;
+            }
+        }
+    }
+    .main {        
         &-business {
             .section-bg .business-bg {background-attachment: initial;}
             .content {padding: 0 3rem;}
