@@ -1140,14 +1140,14 @@
 			document.querySelector('#intro').addEventListener('animationend', function(e){
 				if(e.target == this) {
 					$('#intro').remove();					
-					$('#wrap').addClass('main-intro-end');	
+					$('html').addClass('main-intro-end');	
 					$('header').addClass('white');	
 				}
 			});
 			//clip-path모션 끝난 후
 			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-				if($('#wrap').hasClass('main-intro')){	
-					$('#wrap').removeClass('main-intro');						
+				if($('html').hasClass('main-intro')){	
+					$('html').removeClass('main-intro');						
 					mainSpot();						
 					$(window).on('scroll', scrollEv);
 				}		

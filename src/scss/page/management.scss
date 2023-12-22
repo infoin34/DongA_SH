@@ -223,6 +223,7 @@
                     img{
                         margin: 5rem auto 0;
                         max-width: 52rem;
+                        width: 100%;
                     }
                 }
                 
@@ -413,7 +414,7 @@
             }
 
             .organizational {
-                margin: 2rem -3rem;
+                margin: 5rem -3rem 0;
                 width: calc(100% + 6rem);
                 border-collapse: separate;
                 border-spacing: 3rem 1.2rem;
@@ -1400,7 +1401,7 @@
                 .organizational {
                     border-spacing: 0.8rem ;
                     width: calc(100% + 1.6rem);
-                    margin: 0 -0.8rem;
+                    margin:  -0.8rem;
 
                     col {
                         width: 50% !important;

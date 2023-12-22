@@ -939,9 +939,7 @@
 
 		$('.humanrightcont-imgbtn').on('click', function() {
 			let popId = $(this).data('js');
-			console.log(popId);
-			popup.open(`#${popId}`);
-			// return false;
+			popup.open('#' + popId);
 		});
 	});
 </script>
