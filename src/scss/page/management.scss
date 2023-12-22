@@ -1190,6 +1190,10 @@
 @media screen and (max-width: 766px) {
     .management {      
         &-csr {
+            //전략 및 운영체계
+            .strategy-list {
+                img.mo-part {width: 44.9rem;}
+            }
             .article {
                 padding: 6.4rem 0;
                 &.bg-a {background-color: #fff;}
@@ -1226,18 +1230,19 @@
                 }
                 &.draggable {
                     .slide {
-                        top: 0; width: 100%; height: auto;
+                        top: 0; width: 100%; height: auto; opacity: 0; transition: opacity 0.8s;
                         &.active {
                             position: relative;
                             transform: translate3d(0, 0, 0);
                             left: 0;
                             box-shadow: none;
+                            opacity: 1;
                         }
                         &.prev {
-                            left: calc(-100% - 1.6rem); transform: none;
+                            left: 0; transform: none;
                         }
                         &.next {
-                            left: calc(100% + 1.6rem); transform: none;
+                            left: 0; transform: none;
                         }
                     }
                 }

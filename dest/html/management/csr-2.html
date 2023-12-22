@@ -335,7 +335,7 @@
 										<div class="gallery-swiper">
 											<div class="slide-wrap">
 												<div class="slide-list">
-													<div class="slide"><img src="../../static/images/management/csr_act_1_1.jpg" alt="이미지"></div>
+													<div class="slide"><a href="http://www.naver.com/"><img src="../../static/images/management/csr_act_1_1.jpg" alt="이미지"></a></div>
 													<div class="slide"><img src="../../static/images/management/csr_act_1_2.jpg" alt="이미지"></div>
 													<div class="slide"><img src="../../static/images/management/csr_act_1_3.jpg" alt="이미지"></div>
 												</div>
@@ -1128,14 +1128,17 @@
 <script>
 	$(function() {
 		//탭
+		let tabScrSetT;
 		$('.page-menu-list .tab-item').on('click', function() {
 			cssToggle('.tab-item', '.section-contents', $(this).index());
-
-			scrollMove($('.csr-activity').offset().top, 500, (function() {
-				$('html').attr('class', 'scr-down');
-				$('.page-menu-list').removeClass('hidden');
+			clearTimeout(tabScrSetT);
+			scrollMove($('.csr-activity').offset().top, 300, (function() {
+				tabScrSetT = setTimeout(function() {
+					$('html').removeClass('scr-up');
+					$('html').addClass('scr-down');
+					$('.page-menu-list').removeClass('hidden');
+				}, 300);
 			}));
-
 			return false;
 		});
 

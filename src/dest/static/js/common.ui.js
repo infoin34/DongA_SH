@@ -408,9 +408,11 @@
 				if(!window.isMobile){
 					$touch[0].onmousemove = null;
 					$touch[0].onmousemove = swipe.handMove;
+					$touch[0].onmouseleave = swipe.handEnd;
 				}else{				
 					$touch[0].addEventListener('touchmove', swipe.handMove);
 				}
+				
 			},
 			handMove : function(e){	
 				let ev = window.isMobile ? e.touches[0] || e.changedTouches[0] : e;
@@ -422,11 +424,6 @@
 				let gapY = Math.abs(touchY - moveY);
 				
 				$list.addClass('no-click');	
-
-				if(!window.isMobile) {//PC
-					$touch[0].onmouseleave = null;
-					$touch[0].onmouseleave = $swipe.handEnd;
-				}				
 				
 				if(Math.abs(gapX) > Math.abs(gapY)){
 					e.preventDefault();
@@ -458,6 +455,7 @@
 					$list.removeClass('no-click');
 				}
 				
+				$touch[0].onmouseleave = null;
 				let pow = Math.pow(gapX, 2) + Math.pow(gapY, 2);
 				if(Math.abs(gapX) > Math.abs(gapY) && Math.sqrt(pow) > 40){	
 					if(moveX > touchX){//prev
@@ -962,6 +960,7 @@
 		});
 	}
 
+	//gnb - path-clip animation(css로 넣으면 모바일 줌에 보여서 js로 변경)
 	let reqGnbAni, allGnbAniFlag, gnbStartTime, reqCnt = 0;
 	function allGnbAni(dv){			
 		reqGnbAni = requestAnimationFrame(allGnbAni);	
@@ -1002,7 +1001,6 @@
 		$('.btn-all-gnb').on('click', function(e){			
 			e.preventDefault();
 			if($(this).hasClass('on')){	
-				//gnb관련 clip 모션(css로 넣으면 모바일 줌에 보여서 js로 변경)
 				gnbStartTime = new Date;
 				cancelAnimationFrame(reqGnbAni);
 				allGnbAniFlag = false;
@@ -1015,7 +1013,6 @@
 			}else{
 				$('.all-gnb-view').css('display', 'block');
 
-				//gnb관련 clip 모션(css로 넣으면 모바일 줌에 보여서 js로 변경)
 				gnbStartTime = new Date;
 				cancelAnimationFrame(reqGnbAni);
 				allGnbAniFlag = true;
@@ -1130,31 +1127,31 @@
 			$('html, body').animate({ scrollTop: 0}, 'fast');
 
 			//intro 시작			
-			//$('#intro').addClass('active');
+			$('#intro').addClass('active');
 
-			$('#intro').remove();
-			$('html').removeClass('main-intro');
-			$('html').addClass('main-intro-end');		
-			$('header').addClass('white');
-			mainSpot();						
-			$(window).on('scroll', scrollEv);
+			// $('#intro').remove();
+			// $('#wrap').removeClass('main-intro');
+			// $('#wrap').addClass('main-intro-end');		
+			// $('header').addClass('white');
+			// mainSpot();						
+			// $(window).on('scroll', scrollEv);
 
-			// //메인 인트로 제거 후
-			// document.querySelector('#intro').addEventListener('animationend', function(e){
-			// 	if(e.target == this) {
-			// 		$('#intro').remove();					
-			// 		$('.main-intro').addClass('main-intro-end');	
-			// 		$('header').addClass('white');	
-			// 	}
-			// });
-			// //clip-path모션 끝난 후
-			// document.querySelector('.main-spot').addEventListener('animationend', function(e){	
-			// 	if($('html').hasClass('main-intro')){	
-			// 		$('html').removeClass('main-intro');						
-			// 		mainSpot();						
-			// 		$(window).on('scroll', scrollEv);
-			// 	}		
-			// });
+			//메인 인트로 제거 후
+			document.querySelector('#intro').addEventListener('animationend', function(e){
+				if(e.target == this) {
+					$('#intro').remove();					
+					$('#wrap').addClass('main-intro-end');	
+					$('header').addClass('white');	
+				}
+			});
+			//clip-path모션 끝난 후
+			document.querySelector('.main-spot').addEventListener('animationend', function(e){	
+				if($('#wrap').hasClass('main-intro')){	
+					$('#wrap').removeClass('main-intro');						
+					mainSpot();						
+					$(window).on('scroll', scrollEv);
+				}		
+			});
 
 			//동아쏘시오 그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];

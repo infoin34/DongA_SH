@@ -698,6 +698,12 @@
                 font-weight: 600;
             }
         }  
+        &-ir {
+            &-1 {
+                margin-bottom: -10rem;
+                .data-wrap:nth-child(1) {padding-bottom: 10rem;}
+            }
+        }
         &-governance {        
             .stock-current-box {
                 li:not(.current-price) {min-width: 40%;}
