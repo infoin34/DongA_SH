@@ -129,7 +129,8 @@ a.btn-page-move {
                     animation-duration: 1s;
                     animation-name: introV4;
                     animation-fill-mode: forwards;
-                    animation-timing-function: linear;                 
+                    animation-timing-function: linear;            
+                    &.en {animation-name: introV4-en;}     
                 }               
             }
             
@@ -158,6 +159,14 @@ a.btn-page-move {
         }
         .intro-logo {
             position: relative; margin:0 auto; width: calc(77/1920*100vw); height: calc(78/1920*100vw); opacity: 0; @include font0; overflow: hidden;
+
+            span {
+                position:relative; left: 0; top: 0; display: block; width: calc(705/1920*100vw); height: 100%; background: svgLogo('000', '00B4D6') no-repeat 0 / 100%; 
+            }            &.en {
+                width: calc(49/1920*100vw);
+                height: calc(50/1920*100vw);
+                span {background-image: svgLogo3('000', '00B4D6'); width: calc(800/1920*100vw)}
+            }
             &:after {
                 content: '';
                 position: absolute;
@@ -165,9 +174,6 @@ a.btn-page-move {
                 height: 100%;
                 width: 10%;
                 background-color: rgba(255, 255, 255, 0.5);
-            }
-            span {
-                position:relative; left: 0; top: 0; display: block; width: calc(705/1920*100vw); height: 100%; background: svgLogo('000', '00B4D6') no-repeat 0 / 100%; 
             }
         }       
     } 
@@ -783,7 +789,10 @@ a.btn-page-move {
                     animation-duration: 1s;
                     animation-name: introV4-m;
                     animation-fill-mode: forwards;
-                    animation-timing-function: linear;                 
+                    animation-timing-function: linear; 
+                    &.en {
+                        animation-name: introV4-m-en;
+                    }                
                 }               
             }
         }
@@ -793,6 +802,11 @@ a.btn-page-move {
             span {
                 width: 80vw;
             }
+            &.en {
+                width: calc(80vw*9/120);
+                height: calc(80vw*9/120);
+            }
+            
         }
     }
     .main {        

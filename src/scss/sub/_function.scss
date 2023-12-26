@@ -61,6 +61,16 @@ $img : '../images/';
 	70% {opacity: 1; width:calc(80vw*78/705);}
 	100% {width: 80vw; opacity: 1;}
 }
+@keyframes introV4-m-en {
+	20% {opacity: 1;} 
+	70% {opacity: 1; width:calc(80vw*9/120);}
+	100% {width: 80vw; opacity: 1;}
+}
+@keyframes introV4-en {
+	20% {opacity: 1;} 
+	70% {opacity: 1; width:calc(49/1920*100vw);}
+	100% {width: calc(800/1920*100vw); opacity: 1;}
+}
 
 //로고 올라가기
 @keyframes introV5 {

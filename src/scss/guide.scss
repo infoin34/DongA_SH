@@ -39,17 +39,17 @@ html {cursor: auto;}
                 border-bottom:1px solid #ddd;               
             }
         }
-        tbody{
-                th, td {
-                    font-size:18px; 
-                    border-bottom:1px solid #ddd; 
-                    text-align:center;
-                }
-                th {padding: 28px 0; color:#888;  vertical-align: top;}
-                td { padding:28px 15px;}
-                th + *, td + * {
-                    border-left: 1px solid #ddd;
-                }
+        tbody {
+            th, td {
+                font-size:18px; 
+                border-bottom:1px solid #ddd; 
+                text-align:center;
+            }
+            th {padding: 28px 0; color:#888;  vertical-align: top;}
+            td { padding:28px 15px;}
+            th + *, td + * {
+                border-left: 1px solid #ddd;
+            }
         }
     }
     /* tab */

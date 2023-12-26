@@ -49,6 +49,7 @@ header {
             }
         }
         h1 a {background-image: svgLogo('fff', 'fff');}
+        h1.en a {background-image: svgLogo3('fff', 'fff');}
         .btn-work-place {background-image: svgWorkPlace('fff');}
         .btn-lang {background-image: svgLang('fff');}
         .btn-all-gnb {
@@ -86,6 +87,10 @@ h1 {
     width: 20.9rem; height: 2.3rem; 
     a {
         display: block; width: 100%; height: 100%; background: svgLogo('000', '00B4D6'); background-size: 100% 100%; @include font0;
+    }
+    &.en {
+        width: 33rem; 
+        a {background-image: svgLogo3('000', '00B4D6');}
     }
 }
 .header-menu {
@@ -197,7 +202,11 @@ h1 {
     position: fixed; display: none; padding: 9.5rem 8rem; width: 100vw; height: 100%; right: 0; top: 0; background-color: #101e5d; clip-path: circle(0 at 98% 2%); overflow-y: auto; background: #101e5d allGnbBg('0E1B55') no-repeat 50% 50%/ cover;
     .logo { 
        width: 20.9rem; height: 2.3rem;
-        a {display: block; width: 100%; height: 100%; background-image: svgLogo('fff', 'fff'); background-repeat: no-repeat;}
+        a {display: block; width: 100%; height: 100%; background-image: svgLogo('fff', 'fff'); background-repeat: no-repeat; background-position: 50% 50%;}
+        &.en {
+            width: 33rem; height: 1.925rem;
+            a {background-image: svgLogo3('fff', 'fff');}
+        }
     }
     .nav-gnb {
         margin: 7.5em auto 0; max-width: 1440px; color: rgba(255,255,255,.5);
@@ -271,7 +280,7 @@ h1 {
         .main-title strong, .sub-title {
             display: block; 
         }
-        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%);}
+        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%); z-index: 1;}
         .page-menu-list {  
             position: absolute; top: 0; left: 0; transition: top 0.4s cubic-bezier(0.2, 0.4, 0.9, 1);               
             &.fixed {
@@ -649,11 +658,14 @@ footer {
 @media screen and (max-width: 766px){   
     html, body {width: 100%; overflow-x: hidden;}
     h1 {
-        position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
-        &.white a {background-image: svgLogo('fff', '00B4D6');}
+        position: relative; width: 15.2rem; z-index: 1;
+        &.en {width: 22rem;}
+        &.white a {background-image: svgLogo('fff', '00B4D6');}       
+        &.white.en a{background-image: svgLogo3('fff', '00B4D6');}
     }
     .nav-open {
         h1 a { background-image: svgLogo('fff', '00B4D6');}
+        h1.en a { background-image: svgLogo3('fff', '00B4D6');}
     }
     .all-gnb-view .logo {display: none;}
     .header {
@@ -820,6 +832,7 @@ footer {
     ::-webkit-scrollbar {display: none; width: 0; /* Remove scrollbar space */ height: 0; background: transparent; /* Optional: just make scrollbar invisible */ -webkit-appearance: none;}
     h1 {
         position: relative; width: 15.2rem; height: 1.673rem; z-index: 1;
+        &.en {width: 17.5rem;}
     }
     .header {
         &-inner {padding: 3rem 1.6rem; height: 7.6rem;}
@@ -949,6 +962,7 @@ footer {
     .nav-open {
         .header-lang, .btn-work-place {display: block;}
         h1 a {background-image: svgLogo('fff', 'fff');}
+        h1.en a {background-image: svgLogo3('fff', 'fff');}
         .header-inner {background-color: #101e5d; z-index: 1;}
     }    
 }

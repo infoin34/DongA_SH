@@ -65,26 +65,61 @@
 						</tr>
 						<tr>
 							<th>btn-a</th>
-							<td>
+							<td colspan="2">
 								<div class="code-box">
 									<div class="code-view">
-										<a href="javascript:void(0);" class="btn-a">버튼</a>
-									</div>
-								</div>
-							</td>
-							<td>
-								<div class="code-box">
-									<div class="code-view">
-										<a href="javascript:void(0);" class="btn-a">버튼</a>
+										<div class="bottom-btn-wrap">
+											<a href="#" class="btn-type-a"><span>더 보기</span></a>
+										</div>
 									</div>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<th>btn-b</th>
-							<td></td>
-							<td></td>
+							<th>btn-b/th>
+							<td colspan="2">
+								<style>
+									.btn-type-b {
+										width: 110px;
+										line-height: 40px;
+										border-radius: 20px;
+									}
+								</style>
+								<div class="code-box">
+									<div class="code-view">
+										<a href="#" class="btn-type-b"><span>더 보기</span></a>
+									</div>
+								</div>
+							</td>
 						</tr>
+						<tr>
+							<th>link</th>
+							<td colspan="2">
+								<div class="code-box">
+									<p>더보기 버튼 - 블랙</p>
+									<div class="code-view">
+										<a href="#" title="헬스케어" class="btn-page-move"><span>MORE VIEW</span><i class="ico-link"></i></a>
+									</div>
+								</div>
+								<div class="code-box">
+									<p>더보기 버튼 - 화이트</p>
+									<div class="code-view" style="padding: 10px 0; background-color: #000;">
+										<a href="#" title="헬스케어" class="btn-page-move white"><span>MORE VIEW</span><i class="ico-link"></i></a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>자세히 보기</th>
+							<td colspan="2">
+								<div class="code-box">
+									<div class="code-view">
+										<a href="#" class="btn-detail"><span>자세히 보기</span></a>
+									</div>
+								</div>
+							</td>
+						</tr>
+
 					</tbody>
 				</table>
 			</div>
@@ -104,8 +139,75 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th></th>
-							<td></td>
+							<th>select</th>
+							<td>
+								<style>
+									select {
+										padding-left: 10px;
+										height: 45px;
+										width: 250px;
+									}
+								</style>
+								<div class="code-box">
+									<div class="code-view">
+										<select name="">
+											<option>선택</option>
+											<option>문의유형1</option>
+											<option>문의유형2</option>
+											<option>문의유형3</option>
+											<option>문의유형4</option>
+										</select>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>문의 폼</th>
+							<td>
+								<div class="code-box">
+									<style>
+										.field-table {
+											text-align: left;
+										}
+									</style>
+									<div class="code-view">
+										<div class="field-table">
+											<div class="field-wrap">
+												<div class="field user">
+													<strong class="field-name">한줄<span class="ess">*</span></strong>
+													<div class="field-insert">
+														<input type="text" name="">
+													</div>
+												</div>
+											</div>
+											<div class="field-wrap">
+												<div class="field half">
+													<strong class="field-name">half<span class="ess">*</span></strong>
+													<div class="field-insert">
+														<input type="text" name="">
+													</div>
+												</div>
+												<div class="field half">
+													<strong class="field-name">half<span class="ess">*</span></strong>
+													<div class="field-insert">
+														<input type="text" name="" placeholder="(숫자만 입력)">
+													</div>
+												</div>
+											</div>
+											<div class="field-wrap">
+												<div class="field">
+													<strong class="field-name">첨부파일</strong>
+													<div class="field-insert">
+														<input type="text" class="upload-name" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly="">
+														<input type="file" id="addFile" name="" accept="">
+														<label for="addFile" class="btn-type-b">파일 추가</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -219,18 +321,170 @@
 									<p>check-a</p>
 									<div class="code-view">
 										<div class="check-a">
-											<input type="checkbox" name="chk" id="chk1">
-											<label for="chk1">체크박스</label>
+											<div class="check-type-a">
+												<input type="checkbox" name="" id="check01">
+												<label for="check01">체크2</label>
+											</div>
 										</div>
 									</div>
 								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>tab-a</th>
+							<td>
 								<div class="code-box">
-									<p>check-b</p>
+									<style>
+										.tab-type-a a {
+											padding: 1rem 1.6rem;
+										}
+									</style>
+									<p>check-a</p>
 									<div class="code-view">
-										<div class="check-b">
-											<input type="checkbox" name="chk" id="chk2">
-											<label for="chk2">체크박스</label>
-										</div>
+										<ul class="tab-type-a">
+											<li class="tab-item on"><a href="governance-3-1.html">탭1-on</a></li>
+											<li class="tab-item"><a href="governance-3-2.html">탭2</a></li>
+											<li class="tab-item"><a href="governance-3-3.html">탭3</a></li>
+											<li class="tab-item"><a href="governance-3-4.html">탭4</a></li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>table-type-b</th>
+							<td>
+								<div class="code-box">
+									<p>테이블 리스트</p>
+									<div class="code-view">
+										<ul class="table-type-b">
+											<li class="rule-item">
+												<!-- href="파일 경로", download="다운 받을 때 새로운 이름" -->
+												<a href="#" download="다운로드이름">
+													<div class="date-td">
+														<div class="date ico text-2">2023.10.05</div>
+													</div>
+													<div class="title-td">
+														<span class="title-s3">타이틀1</span>
+													</div>
+												</a>
+											</li>
+											<li class="rule-item">
+												<a href="#">
+													<div class="date-td">
+														<div class="date ico text-2">2023.10.05</div>
+													</div>
+													<div class="title-td">
+														<span class="title-s3">타이틀2</span>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>list-type-a</th>
+							<td>
+								<div class="code-box">
+									<style>
+										.list-type-a a {
+											display: block;
+											width: 100%;
+											height: 100%;
+											border: 1px solid #e5e5e5;
+											transition: margin .3s ease-in, transform .3s ease;
+											border-radius: 2rem;
+											background-color: #fff;
+											overflow: hidden;
+											text-align: left;
+										}
+
+										.list-type-a .thumb-wrap {
+											position: relative;
+											width: 100%;
+											height: 100%;
+											opacity: 0;
+											transition: opacity .3s ease-out
+										}
+
+										.list-type-a .thumb-wrap:before {
+											content: "";
+											position: absolute;
+											top: 0;
+											left: 0;
+											width: 100%;
+											height: 100%;
+											background-color: rgba(22, 45, 161, .9)
+										}
+
+										.list-type-a .thumb:before {
+											content: "";
+											display: block;
+											padding-bottom: 100%;
+										}
+									</style>
+									<p>기본 리스트</p>
+									<div class="code-view">
+										<ul class="list-type-a">
+											<li>
+												<a href="detail.html">
+													<div class="thumb-wrap">
+														<div class="thumb pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+														<div class="thumb mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+													</div>
+													<div class="info">
+														<div class="brand">브랜드</div>
+														<div class="title-s2 ell-2"><span>타이틀1</span></div>
+														<p class="text-1 ell-3">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+														<div class="date ico text-2">2023.10.05</div>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="detail.html">
+													<div class="thumb-wrap">
+														<div class="thumb pc-part" aria-label="이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+														<div class="thumb mo-part" aria-label="이미지" style="background-image:url('../../static/images/main/news_img_1.jpg');"></div>
+													</div>
+													<div class="info">
+														<div class="brand">브랜드</div>
+														<div class="title-s2 ell-2"><span>타이틀2</span></div>
+														<p class="text-1 ell-3">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+														<div class="date ico text-2">2023.10.05</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>list-type-b</th>
+							<td>
+								<div class="code-box">
+									<p>다운로드 리스트</p>
+									<div class="code-view">
+										<ul class="list-type-b">
+											<li>
+												<!-- href="파일 경로", download="다운 받을 때 새로운 이름" -->
+												<a href="#" download="다운로드이름">
+													<strong>리스트1</strong>
+												</a>
+											</li>
+											<li>
+												<a href="#" download="다운로드이름">
+													<strong>리스트2</strong>
+												</a>
+											</li>
+											<li>
+												<a href="#" download="다운로드이름">
+													<strong>리스트3</strong>
+												</a>
+											</li>
+										</ul>
 									</div>
 								</div>
 							</td>

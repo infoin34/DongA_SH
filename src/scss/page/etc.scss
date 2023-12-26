@@ -6,7 +6,7 @@
         margin-top: 8rem; display: flex; gap: 13%;
     }
     .inquiry-info {
-        position: relative; padding-left: 10.8rem;
+        position: relative; padding-left: 10.8rem; min-width: 29rem;
         strong {display: block; padding-bottom: 1rem; color: #666; font-weight: 400;}
         &:before {content: ''; position: absolute; left: 0;  width: 8rem; height: 8rem; border-radius: 50%; background-color: #2F75FF; background-repeat: no-repeat; background-position: 50% 50%; vertical-align: middle;}
         &-1:before {background-image: svgPhone2('fff'); background-size: 4.8rem;}

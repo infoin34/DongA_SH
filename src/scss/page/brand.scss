@@ -371,7 +371,7 @@
             }
             .gallery-item {width: 100%; height: 100%; overflow: hidden; border-radius: 1rem;}
             .gallery-text {
-                position: absolute; width: 100%; text-align: center; color: #fff; z-index: 1;
+                position: absolute; left: 0; right: 0; margin: auto; width: 80%; text-align: center; color: #fff; z-index: 1;
                 p {margin-top: 3rem;}
             }
         }
@@ -1347,12 +1347,11 @@
                     }
                 }
                 .category-item {
-                    display: inline-block; padding: 1.8rem 0; font-weight: 400; font-size: 1.6rem;
-                    + .category-item {margin-left: 2rem;}
-                    &:first-child {margin-left: 1.6rem;}
-                    &:last-child {margin-right: 1.6rem;}
+                    display: inline-block; padding: 1.8rem 1rem; font-weight: 400; font-size: 1.6rem;
+                    &:first-child {padding-left: 1.6rem;}
+                    &:last-child {padding-right: 1.6rem;}
                     &.on {font-weight: 600;}
-                    &::before {display: none;}
+                    &:before {display: none;}
                 }
             }            
             .brand-intro-wrap {height: auto;}
