@@ -332,7 +332,7 @@
 
 	/* layer토글 - 화면 클릭하면 none*/
 	function layerToggle(e, btn, target){
-		console.log(e,'ss')
+		console.log(btn,'ss')
 		let $btn = $(btn);
 		let parent = target ? target : btn;
 
@@ -350,12 +350,11 @@
 		});
 			
 		function closeFn(e, close){
-			if(close || $(e.target).parents(parent).length == 0 || $(e.target).parents(btn).length > 0 || $(e.target).hasClass('btn-close')){
+			if(close || $(e.target).parents(parent).length == 0 || $(e.target).hasClass('btn-close')){
 				$(parent).removeClass('on');
 				$btn.removeClass('on');
 				$('#wrap').off('click', closeFn);
 			}
-			return false;
 		}	
 	}
 
@@ -1028,7 +1027,6 @@
 		
 		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(e){
-			e.preventDefault();
 			layerToggle(e, '.btn-family-site', '.footer-family-site');
 			//return false
 		});

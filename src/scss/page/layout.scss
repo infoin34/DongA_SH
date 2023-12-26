@@ -280,7 +280,7 @@ h1 {
         .main-title strong, .sub-title {
             display: block; 
         }
-        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%); z-index: 1;}
+        .page-menu-wrap {position:absolute; height: 6.1rem; bottom: calc(80/1440*100%); z-index: 1001;}
         .page-menu-list {  
             position: absolute; top: 0; left: 0; transition: top 0.4s cubic-bezier(0.2, 0.4, 0.9, 1);               
             &.fixed {
