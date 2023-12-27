@@ -1,5 +1,10 @@
 /*management*/
 .management {
+    .plank-item {
+        .title-s2 { flex-shrink: 0; }
+        .plank-cont { flex-shrink: 1; flex-grow: 1;}
+    }
+    
     //정도경영 철학
     &-philosophy {
         .plank-item {
@@ -185,7 +190,7 @@
         .plank-item {
             display: flex;
             + .plank-item {margin-top: 5rem;}
-            .title-s2 {padding-right: 3rem; width: calc(350/1440*100%); flex-shrink: 0;}
+            .title-s2 {padding-right: 3rem; width: calc(350/1440*100%);}
             .title-s3 {display: block; margin-top: 5rem;}
         }
         .humanrightcont {
