@@ -332,7 +332,6 @@
 
 	/* layer토글 - 화면 클릭하면 none*/
 	function layerToggle(e, btn, target){
-		console.log(btn,'ss')
 		let $btn = $(btn);
 		let parent = target ? target : btn;
 
@@ -1027,8 +1026,8 @@
 		
 		//---패밀리 사이트
 		$('.btn-family-site').on('click', function(e){
+			e.preventDefault();
 			layerToggle(e, '.btn-family-site', '.footer-family-site');
-			//return false
 		});
 		$('.about-site-tab > li').on('click', function(){
 			cssToggle('.about-site-tab li', '.about-site-list', $(this).index());
@@ -1036,7 +1035,6 @@
 		$('.btn-work-place').on('click', function(e){
 			e.preventDefault();
 			layerToggle(e, '.btn-work-place', '.header-workgroup');
-			//return false
 		});		
 
 

@@ -19,10 +19,10 @@
             position: relative; font-size: 0;
            img {width: 100%; height: 100%; object-fit: cover;}
            .content {
-                position: absolute; top: 0; display: flex; flex-wrap: wrap; align-content: center; gap: 3rem; width: 100%; height: 100%; text-align: center;
+                position: absolute; padding: 0 5rem; top: 0; display: flex; flex-wrap: wrap; align-content: center; gap: 3rem; width: 100%; height: 100%; text-align: center;
            }
            strong {width: 100%; color: #fff;}
-           .title-s3 {margin: 0 auto; width: 80%; font-weight: 400; color: rgba(255,255,255,0.8)}
+           .title-s3 {margin: 0 auto; font-weight: 400; color: rgba(255,255,255,0.8)}
         }
         
         .brand-category {width: calc((455/975)*50vw);}
