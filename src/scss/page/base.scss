@@ -635,6 +635,7 @@ img.pc-part {display: inline-block;}
 						background-color: #666;
 						border-radius: 50%;
 						margin: 1.1rem;
+						flex-shrink: 0;
 					}
 				}
 			}
@@ -973,6 +974,22 @@ img.pc-part {display: inline-block;}
 						transform: translateY(calc(100% + 0.8rem)) translateX(-50%);
 						white-space: nowrap;
 					}
+				}
+			}
+		}
+
+		&.pop-humanright {
+			.popup-inner {
+				padding: 2rem;
+			}  
+			.humanright-cont {
+				margin-top: 0.8rem;
+				padding: 2.8rem 1.6rem ;
+
+				li {
+					align-items: flex-start;
+					font-size: 1.4rem;
+					line-height: 2.6rem;
 				}
 			}
 		}
