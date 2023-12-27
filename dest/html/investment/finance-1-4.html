@@ -202,7 +202,7 @@
 					<li><a href="#">정도 경영</a></li>
 					<li><a href="#">CLEAN :D</a></li>
 					<li><a href="#">인재채용</a></li>
-					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+					<li><a href="../customer/inquiry.html" class="no-ico">상담/문의</a></li>
 				</ul>
 			</div>
 			<!-- 전체메뉴 -->
@@ -286,7 +286,7 @@
 					<li><a href="#">정도 경영</a></li>
 					<li><a href="#">CLEAN :D</a></li>
 					<li><a href="#">인재채용</a></li>
-					<li><a href="../customer/inquiry.html">상담/문의</a></li>
+					<li><a href="../customer/inquiry.html" class="no-ico">상담/문의</a></li>
 				</ul>
 			</nav>
 			<!-- //전체메뉴 -->
@@ -335,8 +335,9 @@
 										<li class="tab-item"><a href="#">연간</a></li>
 									</ul>
 								</div>
-								<!-- 연결재무현황 -->
-								<div class="finance-stats-chart">
+
+								<!-- tab-content-year -->
+								<div class="finance-stats-chart tab-content-year">
 									<div class="chart-vertical">
 										<div class="chart-head">
 											<h4 class="title-s3">매출액</h4>
@@ -510,9 +511,13 @@
 											</ul>
 										</div>
 									</div>
+								</div>
+
+								<!-- tab-content-month -->
+								<div class="finance-stats-chart tab-content-month">
 									<div class="chart-vertical">
 										<div class="chart-head">
-											<h4 class="title-s3">두 줄</h4>
+											<h4 class="title-s3">매출액</h4>
 											<div class="unit">(단위: 백만원)</div>
 										</div>
 										<div class="chart-content">
@@ -548,7 +553,7 @@
 														</div>
 													</div>
 													<div class="name">
-														<strong>2021</strong>
+														<strong>2022.1Q</strong>
 													</div>
 												</li>
 												<li class="axis-x-item">
@@ -573,16 +578,155 @@
 														</div>
 													</div>
 													<div class="name">
-														<strong>2022</strong>
+														<strong>2023.1Q</strong>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="chart-vertical">
+										<div class="chart-head">
+											<h4 class="title-s3">영업이익</h4>
+											<div class="unit">(단위: 백만원)</div>
+										</div>
+										<div class="chart-content">
+											<ul class="axis-y" data-total="1,000,000">
+												<li class="axis-y-item start"><span>0</span></li>
+												<li class="axis-y-item"><span>200,000</span></li>
+												<li class="axis-y-item"><span>400,000</span></li>
+												<li class="axis-y-item"><span>600,000</span></li>
+												<li class="axis-y-item"><span>800,000</span></li>
+												<li class="axis-y-item"><span>1,000,000</span></li>
+											</ul>
+											<ul class="axis-x">
+												<li class="axis-x-item">
+													<div class="graph">
+														<div class="data-bar bar-1" data-num="250,000">
+															<div class="data">
+																<span>3개월</span>
+																<strong class="blind">250,000</strong>
+															</div>
+															<div class="data tooltip">
+																<span>2021 영업수익</span>
+																<strong class="graph-data">350,000</strong>
+															</div>
+														</div>
+														<div class="data-bar bar-2" data-num="350,000">
+															<div class="data">
+																<span>누적</span>
+															</div>
+															<div class="data tooltip">
+																<span>2021 영업수익</span>
+																<strong class="graph-data">350,000</strong>
+															</div>
+														</div>
+													</div>
+													<div class="name">
+														<strong>2022.1Q</strong>
+													</div>
+												</li>
+												<li class="axis-x-item">
+													<div class="graph">
+														<div class="data-bar bar-1" data-num="200,000">
+															<div class="data">
+																<span>3개월</span>
+															</div>
+															<div class="data tooltip">
+																<span>2022 영업수익</span>
+																<strong class="graph-data">200,000</strong>
+															</div>
+														</div>
+														<div class="data-bar bar-2" data-num="1,000,000">
+															<div class="data">
+																<span>누적</span>
+															</div>
+															<div class="data tooltip">
+																<span>2022 영업수익</span>
+																<strong class="graph-data">1,000,000</strong>
+															</div>
+														</div>
+													</div>
+													<div class="name">
+														<strong>2023.1Q</strong>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="chart-vertical">
+										<div class="chart-head">
+											<h4 class="title-s3">당기순이익</h4>
+											<div class="unit">(단위: 백만원)</div>
+										</div>
+										<div class="chart-content">
+											<ul class="axis-y" data-total="1,000,000">
+												<li class="axis-y-item start"><span>0</span></li>
+												<li class="axis-y-item"><span>200,000</span></li>
+												<li class="axis-y-item"><span>400,000</span></li>
+												<li class="axis-y-item"><span>600,000</span></li>
+												<li class="axis-y-item"><span>800,000</span></li>
+												<li class="axis-y-item"><span>1,000,000</span></li>
+											</ul>
+											<ul class="axis-x">
+												<li class="axis-x-item">
+													<div class="graph">
+														<div class="data-bar bar-1" data-num="250,000">
+															<div class="data">
+																<span>3개월</span>
+																<strong class="blind">250,000</strong>
+															</div>
+															<div class="data tooltip">
+																<span>2021 영업수익</span>
+																<strong class="graph-data">350,000</strong>
+															</div>
+														</div>
+														<div class="data-bar bar-2" data-num="350,000">
+															<div class="data">
+																<span>누적</span>
+															</div>
+															<div class="data tooltip">
+																<span>2021 영업수익</span>
+																<strong class="graph-data">350,000</strong>
+															</div>
+														</div>
+													</div>
+													<div class="name">
+														<strong>2022.1Q</strong>
+													</div>
+												</li>
+												<li class="axis-x-item">
+													<div class="graph">
+														<div class="data-bar bar-1" data-num="200,000">
+															<div class="data">
+																<span>3개월</span>
+															</div>
+															<div class="data tooltip">
+																<span>2022 영업수익</span>
+																<strong class="graph-data">200,000</strong>
+															</div>
+														</div>
+														<div class="data-bar bar-2" data-num="1,000,000">
+															<div class="data">
+																<span>누적</span>
+															</div>
+															<div class="data tooltip">
+																<span>2022 영업수익</span>
+																<strong class="graph-data">1,000,000</strong>
+															</div>
+														</div>
+													</div>
+													<div class="name">
+														<strong>2023.1Q</strong>
 													</div>
 												</li>
 											</ul>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
-						<!-- 연결재무현황 -->
+
 						<div class="data-wrap">
 							<div class="section-inner">
 								<div class="data-head">
@@ -591,7 +735,9 @@
 										<div class="unit">(단위: 백만원)</div>
 									</div>
 								</div>
-								<div class="finance-stats-table">
+
+								<!-- tab-content-year -->
+								<div class="finance-stats-table tab-content-year">
 									<div class="scr-x">
 										<table class="table-type-a">
 											<caption>별도포괄손익계산서</caption>
@@ -698,6 +844,135 @@
 										</table>
 									</div>
 								</div>
+
+								<!-- tab-content-month -->
+								<div class="finance-stats-table tab-content-month">
+									<div class="scr-x">
+										<table class="table-type-a">
+											<caption>연결포괄손익계산서</caption>
+											<colgroup>
+												<col width="20%">
+												<col width="25%">
+												<col width="25%">
+												<col width="*">
+											</colgroup>
+											<thead class="line">
+												<tr>
+													<th scope="col" rowspan="2">과목</th>
+													<th scope="colgroup" colspan="2">2023년 1Q</th>
+													<th scope="colgroup" colspan="2">2022년 1Q</th>
+												</tr>
+												<tr>
+													<th scope="col">3개월</th>
+													<th scope="col">누적</th>
+													<th scope="col">3개월</th>
+													<th scope="col">누적</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td scope="row">영업수익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr>
+													<td scope="row">영업비용</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">급여</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">퇴직급여</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">복리후생비</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">기타판매비와 일반관리비</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">경상연구개발비</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr>
+													<td scope="row">영업이익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">기타수익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">기타비용</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">금융수익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr class="indent">
+													<td scope="row">지분법손익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr>
+													<td scope="row">법인세비용차감전순이익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+												<tr>
+													<td scope="row">당기순이익</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+													<td class="tx-c">985,709</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
 							</div>
 						</div>
 					</div>
@@ -910,7 +1185,9 @@
 			try {
 				let $parent = $(this);
 				let axisYH = 0;
-				let total = Number($parent.find('.axis-y').data('total').replace(/,/g, ''));
+				let total = $parent.find('.axis-y').attr('data-total');
+
+				total = total.indexOf(',') > -1 ? Number(total.replace(/,/g, '')) : Number(total);
 
 				let zero = ($(this).find('.axis-y-item.start').position().top / $(this).find('.axis-y').height()) * 100;
 				$parent.find('.axis-x').css('height', zero + '%');

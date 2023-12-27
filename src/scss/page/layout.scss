@@ -73,6 +73,7 @@ header {
     position: absolute; padding: 1.2rem 3.6rem; top: 4rem; right: 8rem; display: flex; font-size: 1.6rem; font-weight: 500;  background-color: rgba(0,0,0, 0.04); border: 1px solid rgba(0,0,0, 0.08); border-radius: 5rem;
     li + li::before {content: ''; margin:0 0.8rem; display: inline-block; width: 1px; height: 1rem; background-color: rgba(0, 0, 0, 0.2);}
     a:after {content: ''; margin-left: 0.4rem; margin-top: -0.2rem; display: inline-block; width: 1.2rem; height: 1.3rem; background: svgUrlArrow('000'); background-size: 100% 100%; vertical-align: middle;}
+    .no-ico:after {display: none;}
 } 
 
 .header-workgroup {
@@ -266,6 +267,7 @@ h1 {
             background-size: 100% 100%;
             vertical-align: middle;
         }
+        .no-ico:after {display: none;}
     }
     
 }
@@ -273,7 +275,7 @@ h1 {
 #wrap:not(.main) {
     .section-head {
         &.no-h .section-inner {height: auto;}
-        .section-inner {padding-right: 38rem; height: calc(760/1440*100vw); max-height: 76rem;}
+        .section-inner {padding-right: 38rem; padding-bottom: 13rem; min-height: calc(760/1440*100vw); max-height: 77rem;}
         .sub-title {margin-top: 2rem; color: #666;}
         .text-wrap {padding-top: calc(200/1440*100%);}
         .main-title {font-size: 10rem;}
@@ -641,10 +643,11 @@ footer {
     html {font-size: 0.75vw;}
 } 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {    
+    #wrap:not(.main) .section-head .text-wrap {padding-top: 13%;}
 } 
 
-@media screen and (max-width: 992px) {    
+@media screen and (max-width: 992px) {       
     html {font-size: 0.88vw;}
     .header-inner {padding: 3.8rem 3rem 2.6rem;}
     .header-etc-link {top: 2.7rem; right: 2rem}
@@ -653,6 +656,8 @@ footer {
        .header-util {top: 9rem; right: 2rem;}
        .gnb-depth1-list {gap: 3em;}
     }
+    #wrap:not(.main) .section-head .main-title {font-size: 9rem;} 
+    #wrap:not(.main) .section-head .text-wrap {padding-top: 10%;}
 }
 //pc 작은 화면 or mo 버전
 @media screen and (max-width: 766px){   
