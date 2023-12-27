@@ -12,6 +12,17 @@
             padding: 1rem 1.6rem;
         }
     }
+
+    //영문
+    &.en {
+        .brand-intro {
+            .brand-category {width: calc((585/975)*50vw);}
+            .brand-intro-swiper {
+                .thumb {width: calc((390/975)*50vw); opacity: 0; transition: opacity 1.5s;}
+            }
+        }
+    }
+
     //동아 그룹 소개
     &-intro {
         margin-bottom: -14rem;
@@ -83,6 +94,8 @@
             .brand-name {margin-top: 0.8rem; font-size: 1.8rem;}
         }
     }
+
+  
     //CEO 인사말
     &-ceo {
         .ceo-intro {
@@ -1200,6 +1213,19 @@
 
 @media screen and (max-width: 992px) {
     .brand {
+        //영문
+        &.en {
+            .brand-intro {
+                .brand-category {width: 30rem;}
+                .category-item {
+                    padding-left: 20%;
+                    &.on:before {width: 20%;}
+                }
+                .brand-intro-swiper {
+                    .thumb {width: calc(50vw - 30rem);}
+                }
+            }
+        }
         &-ceo {
             .ceo-intro{
                 .content {
@@ -1245,160 +1271,6 @@
 }
 
 @media screen and (max-width: 766px){
-    .brand {
-        &-intro {
-            .sub-visual {
-                //height: calc(470/360*100vw);
-                img {position: absolute; top: 0; left: 0;}
-                .title-h2 {font-size: 2.4rem;}
-                .content {
-                    position: relative;
-                    align-content: flex-start;
-                    padding: 6.4rem 1.6rem 15.7rem;
-                    gap: 2rem;
-                    text-align: left;
-                }
-            }
-            .brand-category {
-                position: relative; width: 100%; height: 5.5rem;
-                .category-list {
-                    position: absolute; left: 0; top: 0; display: block; width: 100%; white-space: nowrap; font-size: 0; background-color: #fff; overflow-x: auto; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12);  z-index: 2;
-                    &.fixed {
-                        position: fixed; margin: 0; top: 0; left: 0; width: 100%; height: auto; z-index: 1001; transition: transform 0.6s; transform: translateY(0);
-                       
-                        &.hidden {transform: translateY(-100%);}
-                    }
-                }
-                .category-item {
-                    display: inline-block; padding: 1.8rem 1rem; font-weight: 400; font-size: 1.6rem;
-                    &:first-child {padding-left: 1.6rem;}
-                    &:last-child {padding-right: 1.6rem;}
-                    &.on {font-weight: 600;}
-                    &:before {display: none;}
-                }
-            }            
-            .brand-intro-wrap {height: auto;}
-            .brand-intro-swiper {
-                display: block; height: auto;
-                .intro-list {display: block;}
-                .bind {flex-direction: column-reverse;}
-                .content {margin: 6.4rem 0 4rem; padding: 0 1.6rem; width: 100%; max-width: none;}
-                .thumb {
-                    position: relative; width: 100%;
-                    &:before {content:''; display: block; padding-bottom: 100%;}
-                    img {position: absolute; top: 0; left: 0;}
-                }
-                .title-h2 {font-size: 2.4rem;}
-                .text-1 {margin-top: 1.6rem}
-                .intro-item-1 .content {padding-bottom: 4rem;}
-            }            
-            .brand-list-swiper {position: relative; bottom: auto; width: 100%; max-width: none; border-bottom: 1px solid rgba(0,0,0,0.2);}
-            .brand-list {
-                align-items: flex-end;
-                li {
-                    padding: 0 1rem; border: none; width: 45%;
-                    &:first-child {padding-left: 1.6rem;}
-                    &:last-child {padding-right: 1.6rem;}
-                    a {
-                        position: relative;
-                        padding: 1.8rem 0;
-                       word-break: break-all;
-                    }
-                    &.on {
-                        a:before {
-                            content:'';
-                            position: absolute;
-                            bottom: 0;
-                            width: 100%;
-                            height: 1px;
-                            background-color: #000081;
-                        }
-                    }
-                    .num {display: none;}
-                    .brand-name {font-size: 1.6rem;}
-                }
-            }
-        }
-    }
-}
-.window-mo {
-    .brand {
-        &-intro {
-            .sub-visual {
-                //height: calc(470/360*100vw);
-                img {position: absolute; top: 0; left: 0;}
-                .title-h2 {font-size: 2.4rem;}
-                .content {
-                    position: relative;
-                    align-content: flex-start;
-                    padding: 6.4rem 1.6rem 15.7rem;
-                    gap: 2rem;
-                    text-align: left;
-                }
-            }
-            .brand-category {
-                position: relative; width: 100%; height: 5.5rem;
-                .category-list {
-                    position: absolute; left: 0; top: 0; display: block; width: 100%; white-space: nowrap; font-size: 0; background-color: #fff; overflow-x: auto; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12);  z-index: 2;
-                    &.fixed {
-                        position: fixed; margin: 0; top: 0; left: 0; width: 100%; height: auto; z-index: 1001; transition: transform 0.6s; transform: translateY(0);
-                       
-                        &.hidden {transform: translateY(-100%);}
-                    }
-                }
-                .category-item {
-                    display: inline-block; padding: 1.8rem 1rem; font-weight: 400; font-size: 1.6rem;
-                    &:first-child {padding-left: 1.6rem;}
-                    &:last-child {padding-right: 1.6rem;}
-                    &.on {font-weight: 600;}
-                    &:before {display: none;}
-                }
-            }            
-            .brand-intro-wrap {height: auto;}
-            .brand-intro-swiper {
-                display: block; height: auto;
-                .intro-list {display: block;}
-                .bind {flex-direction: column-reverse;}
-                .content {margin: 6.4rem 0 4rem; padding: 0 1.6rem; width: 100%; max-width: none;}
-                .thumb {
-                    position: relative; width: 100%;
-                    &:before {content:''; display: block; padding-bottom: 100%;}
-                    img {position: absolute; top: 0; left: 0;}
-                }
-                .title-h2 {font-size: 2.4rem;}
-                .text-1 {margin-top: 1.6rem}
-                .intro-item-1 .content {padding-bottom: 4rem;}
-            }            
-            .brand-list-swiper {position: relative; bottom: auto; width: 100%; max-width: none; border-bottom: 1px solid rgba(0,0,0,0.2);}
-            .brand-list {
-                align-items: flex-end;
-                li {
-                    padding: 0 1rem; border: none; width: 45%;
-                    &:first-child {padding-left: 1.6rem;}
-                    &:last-child {padding-right: 1.6rem;}
-                    a {
-                        position: relative;
-                        padding: 1.8rem 0;
-                       word-break: break-all;
-                    }
-                    &.on {
-                        a:before {
-                            content:'';
-                            position: absolute;
-                            bottom: 0;
-                            width: 100%;
-                            height: 1px;
-                            background-color: #000081;
-                        }
-                    }
-                    .num {display: none;}
-                    .brand-name {font-size: 1.6rem;}
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 766px){
     #wrap:not(.main) {
         .brand-history {
             .page-menu-wrap {
@@ -1426,6 +1298,91 @@
         }
     }
     .brand {
+        //영문
+        &.en {
+            .brand-intro {
+                .brand-category {width: 100%;}
+                .category-item {
+                    padding: 1.8rem 1rem;
+                }
+                .brand-intro-swiper {
+                    .thumb {width: 100%;}
+                }
+            }
+        }
+        &-intro {
+            .sub-visual {
+                //height: calc(470/360*100vw);
+                img {position: absolute; top: 0; left: 0;}
+                .title-h2 {font-size: 2.4rem;}
+                .content {
+                    position: relative;
+                    align-content: flex-start;
+                    padding: 6.4rem 1.6rem 15.7rem;
+                    gap: 2rem;
+                    text-align: left;
+                }
+            }
+            .brand-category {
+                position: relative; width: 100%; height: 5.5rem;
+                .category-list {
+                    position: absolute; left: 0; top: 0; display: block; width: 100%; white-space: nowrap; font-size: 0; background-color: #fff; overflow-x: auto; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12);  z-index: 2;
+                    &.fixed {
+                        position: fixed; margin: 0; top: 0; left: 0; width: 100%; height: auto; z-index: 1001; transition: transform 0.6s; transform: translateY(0);
+                       
+                        &.hidden {transform: translateY(-100%);}
+                    }
+                }
+                .category-item {
+                    display: inline-block; padding: 1.8rem 1rem; font-weight: 400; font-size: 1.6rem;
+                    &:first-child {padding-left: 1.6rem;}
+                    &:last-child {padding-right: 1.6rem;}
+                    &.on {font-weight: 600;}
+                    &:before {display: none;}
+                }
+            }            
+            .brand-intro-wrap {height: auto;}
+            .brand-intro-swiper {
+                display: block; height: auto;
+                .intro-list {display: block;}
+                .bind {flex-direction: column-reverse;}
+                .content {margin: 6.4rem 0 4rem; padding: 0 1.6rem; width: 100%; max-width: none;}
+                .thumb {
+                    position: relative; width: 100%;
+                    &:before {content:''; display: block; padding-bottom: 100%;}
+                    img {position: absolute; top: 0; left: 0;}
+                }
+                .title-h2 {font-size: 2.4rem;}
+                .text-1 {margin-top: 1.6rem}
+                .intro-item-1 .content {padding-bottom: 4rem;}
+            }            
+            .brand-list-swiper {position: relative; bottom: auto; width: 100%; max-width: none; border-bottom: 1px solid rgba(0,0,0,0.2);}
+            .brand-list {
+                align-items: flex-end;
+                li {
+                    padding: 0 1rem; border: none; width: 45%;
+                    &:first-child {padding-left: 1.6rem;}
+                    &:last-child {padding-right: 1.6rem;}
+                    a {
+                        position: relative;
+                        padding: 1.8rem 0;
+                       word-break: break-all;
+                    }
+                    &.on {
+                        a:before {
+                            content:'';
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: #000081;
+                        }
+                    }
+                    .num {display: none;}
+                    .brand-name {font-size: 1.6rem;}
+                }
+            }
+        }
         &-ceo {
             .ceo-intro{
                 .title-s1 {padding-right: 37%;}
@@ -2028,6 +1985,95 @@
                         height: 1.8rem;
                         background-size: 100% 100%;
                     }
+                }
+            }
+        }
+    }    
+}
+.window-mo {
+    .brand {
+        //영문
+        &.en {
+            .brand-intro {
+                .brand-category {width: 100%;}
+                .category-item {
+                    padding: 1.8rem 1rem;
+                }
+                .brand-intro-swiper {
+                    .thumb {width: 100%;}
+                }
+            }
+        }
+        &-intro {
+            .sub-visual {
+                //height: calc(470/360*100vw);
+                img {position: absolute; top: 0; left: 0;}
+                .title-h2 {font-size: 2.4rem;}
+                .content {
+                    position: relative;
+                    align-content: flex-start;
+                    padding: 6.4rem 1.6rem 15.7rem;
+                    gap: 2rem;
+                    text-align: left;
+                }
+            }
+            .brand-category {
+                position: relative; width: 100%; height: 5.5rem;
+                .category-list {
+                    position: absolute; left: 0; top: 0; display: block; width: 100%; white-space: nowrap; font-size: 0; background-color: #fff; overflow-x: auto; box-shadow: 0.1rem 0.1rem 1.6rem rgba(0,0,0,0.12);  z-index: 2;
+                    &.fixed {
+                        position: fixed; margin: 0; top: 0; left: 0; width: 100%; height: auto; z-index: 1001; transition: transform 0.6s; transform: translateY(0);
+                       
+                        &.hidden {transform: translateY(-100%);}
+                    }
+                }
+                .category-item {
+                    display: inline-block; padding: 1.8rem 1rem; font-weight: 400; font-size: 1.6rem;
+                    &:first-child {padding-left: 1.6rem;}
+                    &:last-child {padding-right: 1.6rem;}
+                    &.on {font-weight: 600;}
+                    &:before {display: none;}
+                }
+            }            
+            .brand-intro-wrap {height: auto;}
+            .brand-intro-swiper {
+                display: block; height: auto;
+                .intro-list {display: block;}
+                .bind {flex-direction: column-reverse;}
+                .content {margin: 6.4rem 0 4rem; padding: 0 1.6rem; width: 100%; max-width: none;}
+                .thumb {
+                    position: relative; width: 100%;
+                    &:before {content:''; display: block; padding-bottom: 100%;}
+                    img {position: absolute; top: 0; left: 0;}
+                }
+                .title-h2 {font-size: 2.4rem;}
+                .text-1 {margin-top: 1.6rem}
+                .intro-item-1 .content {padding-bottom: 4rem;}
+            }            
+            .brand-list-swiper {position: relative; bottom: auto; width: 100%; max-width: none; border-bottom: 1px solid rgba(0,0,0,0.2);}
+            .brand-list {
+                align-items: flex-end;
+                li {
+                    padding: 0 1rem; border: none; width: 45%;
+                    &:first-child {padding-left: 1.6rem;}
+                    &:last-child {padding-right: 1.6rem;}
+                    a {
+                        position: relative;
+                        padding: 1.8rem 0;
+                       word-break: break-all;
+                    }
+                    &.on {
+                        a:before {
+                            content:'';
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: #000081;
+                        }
+                    }
+                    .num {display: none;}
+                    .brand-name {font-size: 1.6rem;}
                 }
             }
         }

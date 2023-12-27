@@ -1064,7 +1064,12 @@
 			//pc에서 가로 스크롤 할 때
 			$('.scr-x').on('scroll', function(){
 				$('.mouse-cursor').hide();
-			})	
+			});
+
+			//pc에서 가로 스크롤 할 때
+			$('.page-menu-list').on('scroll', function(){
+				$('.mouse-cursor').hide();
+			})
 		}else{//---mo 일때
 			$('html').addClass('window-mo');
 						
