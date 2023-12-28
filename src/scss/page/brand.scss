@@ -1219,6 +1219,7 @@
                 .brand-category {width: 30rem;}
                 .category-item {
                     padding-left: 20%;
+                    &.before {right: 80%;}
                     &.on:before {width: 20%;}
                 }
                 .brand-intro-swiper {
