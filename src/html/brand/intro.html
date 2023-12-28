@@ -565,7 +565,7 @@ $(function(){
     let brandIntroSetT;
     let brandIntroIdx = 0;
 
-    $(function(){       
+    $(function(){              
         initBrandIntroSlideSwiper();
         //각 계열 브랜드 리스트 탭
         //브랜드 그룹 소개 스와이퍼
@@ -585,6 +585,13 @@ $(function(){
             cssToggle($(this).parents('.intro-item').find('.brand-item'), $(this).parents('.intro-item').find('.bind'), $(this).index());
             return false;
         });
+
+        //메인에서 그룹소개로 넘어올 경우
+		if(location.href.indexOf('loc') > -1){
+            let url = new URL(location.href);
+            $('.brand-intro .category-item').eq(Number(url.searchParams.get('loc'))).click();
+		}	
+
     });
 
     if(window.isMobile){//mo

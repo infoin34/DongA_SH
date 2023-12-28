@@ -14,14 +14,14 @@
     }
 
     //영문
-    &.en {
-        .brand-intro {
-            .brand-category {width: calc((585/975)*50vw);}
-            .brand-intro-swiper {
-                .thumb {width: calc((390/975)*50vw); opacity: 0; transition: opacity 1.5s;}
-            }
-        }
-    }
+    // &.en {
+    //     .brand-intro {
+    //         .brand-category {width: calc((585/975)*50vw);}
+    //         .brand-intro-swiper {
+    //             .thumb {width: calc((390/975)*50vw); opacity: 0; transition: opacity 1.5s;}
+    //         }
+    //     }
+    // }
 
     //동아 그룹 소개
     &-intro {
@@ -36,7 +36,7 @@
            .title-s3 {margin: 0 auto; font-weight: 400; color: rgba(255,255,255,0.8)}
         }
         
-        .brand-category {width: calc((455/975)*50vw);}
+        .brand-category {width: calc((575/975)*50vw);}
         .category-list {
             height: 100%; display: flex; flex-direction: column;  justify-content: center; gap: 2rem;
         }
@@ -68,7 +68,7 @@
                     }
                 }
             }
-            .thumb {width: calc((520/975)*50vw); opacity: 0; transition: opacity 1.5s;}
+            .thumb {width: calc((400/975)*50vw); opacity: 0; transition: opacity 1.5s;}
             .content {
                 position: relative; display: flex; margin-left: 8rem; padding-right: 2rem; padding-bottom: 15rem; width: calc(50vw - 8rem); max-width: 72rem;  justify-content: center; flex-direction: column; transform: translateX(100%); transition: transform 0.5s;
             }            
@@ -1198,10 +1198,11 @@
     .brand {
         &-intro {
             .brand-category {
+                width: 27rem;
                 .category-item {font-size: 2.5rem;}
             }
             .brand-intro-swiper {
-                .thumb {width: calc(50vw - 20rem);}
+                .thumb {width: calc(50vw - 27rem);}
                 .content {margin-left: 4rem; width: calc(50vw - 4rem);}
                 
             }
@@ -1213,20 +1214,6 @@
 
 @media screen and (max-width: 992px) {
     .brand {
-        //영문
-        &.en {
-            .brand-intro {
-                .brand-category {width: 30rem;}
-                .category-item {
-                    padding-left: 20%;
-                    &.before {right: 80%;}
-                    &.on:before {width: 20%;}
-                }
-                .brand-intro-swiper {
-                    .thumb {width: calc(50vw - 30rem);}
-                }
-            }
-        }
         &-ceo {
             .ceo-intro{
                 .content {
@@ -1236,11 +1223,11 @@
         }
         &-intro {
             .brand-category {
-                width: 15rem;
+                width: 20rem;
                 .category-item {font-size: 2rem;}
             }
             .brand-intro-swiper {
-                .thumb {width: calc(50vw - 15rem);}
+                .thumb {width: calc(50vw - 20rem);}
                 .content {margin-left: 2rem; width: calc(50vw - 2rem);}      
                 .title-h2 {font-size: 4.2rem;}          
             }
@@ -1298,19 +1285,7 @@
             }
         }
     }
-    .brand {
-        //영문
-        &.en {
-            .brand-intro {
-                .brand-category {width: 100%;}
-                .category-item {
-                    padding: 1.8rem 1rem;
-                }
-                .brand-intro-swiper {
-                    .thumb {width: 100%;}
-                }
-            }
-        }
+    .brand {        
         &-intro {
             .sub-visual {
                 //height: calc(470/360*100vw);
@@ -1992,19 +1967,7 @@
     }    
 }
 .window-mo {
-    .brand {
-        //영문
-        &.en {
-            .brand-intro {
-                .brand-category {width: 100%;}
-                .category-item {
-                    padding: 1.8rem 1rem;
-                }
-                .brand-intro-swiper {
-                    .thumb {width: 100%;}
-                }
-            }
-        }
+    .brand {        
         &-intro {
             .sub-visual {
                 //height: calc(470/360*100vw);

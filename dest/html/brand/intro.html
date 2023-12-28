@@ -32,7 +32,8 @@
 
 		<header id="header" class="">
 			<div class="header-inner">
-				<h1 class="logo en"><a href="../main/main.html">로고</a></h1>
+				<h1 class="logo"><a href="../main/main.html">로고</a></h1>
+				<!-- <h1 class="logo en"><a href="../main/main.html">로고</a></h1>  -->
 				<!-- 헤더 메뉴 -->
 				<div class="header-menu">
 					<div class="header-gnb">
@@ -1062,6 +1063,13 @@
 				cssToggle($(this).parents('.intro-item').find('.brand-item'), $(this).parents('.intro-item').find('.bind'), $(this).index());
 				return false;
 			});
+
+			//메인에서 그룹소개로 넘어올 경우
+			if (location.href.indexOf('loc') > -1) {
+				let url = new URL(location.href);
+				$('.brand-intro .category-item').eq(Number(url.searchParams.get('loc'))).click();
+			}
+
 		});
 
 		if (window.isMobile) { //mo

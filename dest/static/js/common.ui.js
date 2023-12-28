@@ -125,7 +125,6 @@
 				'display': 'block',
 				'z-index': popup.guideZindex
 			});
-			console.log(popup.targetArr[0].attr('data-pop') , $obj.attr('data-pop'))
 			//$('html').append($obj);
 			$closeBtn.click(function(e){
 				e.preventDefault();
