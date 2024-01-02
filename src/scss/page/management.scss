@@ -1048,7 +1048,7 @@
         .article {
             padding: 12rem 0;
             .section-inner {display: flex;}  
-            h3 {width: calc(368/1440*100%);} 
+            h3 {padding-right: 2rem; width: calc(368/1440*100%);} 
             .content {width: calc(100% - 368/1440*100%);} 
             .text-2 {
                 margin-bottom: 5rem; color: #444;
