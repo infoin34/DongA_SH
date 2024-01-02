@@ -319,17 +319,6 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 		}
 		.btn-filter-reset {
 			position: absolute; top: 0; right: 0; color:#888; font-size: 1.4rem;
-			&:after {
-				content: "";
-				margin-top: -0.3rem;
-				margin-left: 0.4rem;
-				display: inline-block;
-				width: 1.6rem;
-				height: 1.6rem;
-				background: url('../images/common/btn-reset.svg');
-				background-size: 100% 100%;  
-				vertical-align: middle;                               
-			}
 		}	
 		.filter {
 			&-wrap {
@@ -626,6 +615,7 @@ img.pc-part {display: inline-block;}
 					line-height: 2.8rem;
 					letter-spacing: -0.02em;
 					color: #666;
+					align-items: flex-start;
 
 					&::before {
 						content: '';
@@ -636,6 +626,7 @@ img.pc-part {display: inline-block;}
 						border-radius: 50%;
 						margin: 1.1rem;
 						flex-shrink: 0;
+						
 					}
 				}
 			}

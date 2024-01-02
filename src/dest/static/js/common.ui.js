@@ -348,12 +348,12 @@
 		});
 			
 		function closeFn(e, close){
-			if(close || $(e.target).parents(parent).length == 0 || $(e.target).hasClass('btn-close')){
+			if(close || (e.target !== $(parent)[0] && $(e.target).parents(parent).length == 0) || $(e.target).hasClass('btn-close')){
 				$(parent).removeClass('on');
 				$btn.removeClass('on');
 				$('#wrap').off('click', closeFn);
 			}
-		}	
+		}		
 	}
 
 	/* Swiper */
@@ -939,12 +939,16 @@
 		$('input[type="file"]').on('click', function(){
 			$('.mouse-cursor').fadeOut();
 		});
+
+		$('.map-frame').on('mouseenter', function(){
+			$('.mouse-cursor').fadeOut();
+		});
 		
-		$('[href]').on('mouseenter', function(){
+		$('[href]:not([href="#none"])').on('mouseenter', function(){
 			$('.mouse-cursor').addClass('click');
 		});
 
-		$('[href]').on('mouseleave', function(){
+		$('[href]:not([href="#none"])').on('mouseleave', function(){
 			$('.mouse-cursor').removeClass('click');
 		});
 
@@ -1111,10 +1115,10 @@
 			});
 
 			//언어
-			$('.btn-lang').on('click', function(){
-				$('.btn-lang').toggleClass('on');
-				return false;
-			});			
+			$('.btn-lang').on('click', function(e){
+				e.preventDefault();
+				layerToggle(e, '.btn-lang');
+			});		
 
 			if($('.page-menu-list .tab-item').length > 0) {
 				tabMenuMove('.page-menu-list .tab-item', '.page-menu-list', $('.page-menu-list .tab-item').index($('.page-menu-list .tab-item.on')));  
