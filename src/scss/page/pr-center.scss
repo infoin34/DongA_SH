@@ -1,6 +1,9 @@
 /*pr-center*/
 //media
 .pr-center {
+    .page-menu-list .tab-item:nth-child(4){
+        a:after {content: ''; margin-left: 0.4rem; display:inline-block; width: 1.2rem; height: 1.3rem; background: svgUrlArrow('aaa'); background-size: 100% 100%;}
+    }
     &-media {
         .media {
             &-list {
@@ -186,6 +189,9 @@
 
 @media screen and (max-width: 766px) {
     .pr-center {
+        .page-menu-list .tab-item:nth-child(4){
+            a:after {width: 0.8rem; height: 0.8rem;}
+        }
         &-media {
             .media {
                 &-list {

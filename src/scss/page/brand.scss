@@ -392,7 +392,7 @@
             padding: 5rem 4rem; display: flex; border-top: 2px solid #ccc;
             .year {padding-right: 12rem; font-weight: 500; color:#162da1;}
             dl {display: flex; flex-wrap: wrap; width: 100%; gap: 2rem 4rem;}
-            dt {font-weight: 600;}
+            dt {min-width: 4.2rem; font-weight: 600;}
             dd {width: calc(100% - 12rem); color: #666;}
         }
     }
@@ -1378,6 +1378,7 @@
             .history-item {
                 padding: 3rem 0;
                 .title-s1 {font-size: 2rem;}
+                dt {min-width: 2.6rem;}
                 dl {font-size: 1.2rem; gap: 1.6rem 1.5rem;}
                 dd {width: calc(100% - 4.1rem);}
                 .year {padding-right: 3rem;}
