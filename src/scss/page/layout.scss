@@ -114,16 +114,16 @@ h1 {
             box-shadow: 1px 1px 10px rgba(34,34,34,0.24);
             > li {
                 position: relative;
-                + li {margin-top: 2rem;}
+                + li {margin-top: 2.4rem;}
             }
         }   
     }
     .gnb-depth3 {
         &-list {
-            padding-top: 10px;
+            padding-top: 1.2rem;
             li {
                 color:#666; font-size: 1.6rem; font-weight: 400; 
-                + li {margin-top: 10px;}
+                + li {margin-top: 1.2rem;}
                 &.on {color: #162DA1; font-weight: 500;}
             }      
         }
@@ -236,16 +236,16 @@ h1 {
             font-size: 1.6rem;
             > li {
                 position: relative;
-                + li {margin-top: 2rem;}
+                + li {margin-top: 2.4rem;}
             }
         }   
     }
     .gnb-depth3 {
         &-list {
-            padding-top: 10px; color: rgba(255, 255, 255, 0.5);
+            padding-top: 1.2rem; color: rgba(255, 255, 255, 0.5);
             li {
                 font-size: 1.6rem; font-weight: 400; 
-                + li {margin-top: 10px;}
+                + li {margin-top: 1.2rem;}
                 &.on {color: #00B4D6; font-weight: 500;}
             }      
         }        

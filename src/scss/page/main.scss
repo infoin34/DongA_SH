@@ -13,10 +13,16 @@
 .pop-main {
     position: fixed;
     .popup-inner {padding: 0; overflow: hidden;}
+    .popup-content {
+        min-width: 30.5rem; background-color: #fff;  white-space: pre-line;
+        * {
+            font-size: 1.8rem;
+        }
+    }
     img {max-width: calc(100vw - 3.2rem); max-height: 78vh;}
     .popup-footer {
-        padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; background-color: #F3F7FA;
-        .btn-close {font-weight: 600;}
+        position: relative; padding: 2rem 4rem; background-color: #F3F7FA;
+        .btn-close {position: absolute; margin-top: -1.4rem; top: 50%; right: 4rem; font-weight: 600;}
     }
 }
 a.btn-detail {
@@ -224,7 +230,7 @@ a.btn-page-move {
                 
             } 
             &-text {
-                position: relative; color: #fff; 
+                position: relative; color: #fff; white-space: pre-line; 
                 &.on {
                     strong {opacity: 1; transform: translateY(0);}
                     p {opacity: 1; transform: translateX(0);}
@@ -766,8 +772,12 @@ a.btn-page-move {
         right: 0;
         margin: auto;
         transform: translateY(-50%);
+        .popup-content {min-width: none;}
         .popup-wrap {padding: 0;}
-        .popup-footer {padding: 1rem 2rem;}
+        .popup-footer {
+            padding: 1rem 2rem;
+            .btn-close {right: 2rem;}
+        }
     }
 }
 .window-mo {
@@ -822,6 +832,7 @@ a.btn-page-move {
         margin: auto;
         transform: translateY(-50%);
         .popup-wrap {padding: 0;}
+        .popup-content {min-width: none;}
         .popup-footer {padding: 1rem 2rem;}
     }
 }

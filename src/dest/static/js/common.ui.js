@@ -421,11 +421,6 @@
 				let gapY = Math.abs(touchY - moveY);
 				
 				$list.addClass('no-click');	
-				
-				if(Math.abs(gapX) > Math.abs(gapY)){
-					e.preventDefault();
-					e.stopPropagation();
-				}
 			},
 			handEnd : function(e){	
 				if(!window.isMobile) {
@@ -763,9 +758,10 @@
 					complete : function(){//커버 지나간 후		
 						$playing.hasClass('spot-last') && $playing.addClass('on');	
 						if($playing.find('video').length > 0){
-							vdo = $(window).width() < 768 ? $playing.find('video.mo-part') : $playing.find('video.pc-part') ;
-							//vdo[0].currentTime = 0;
-							vdo[0].play();
+							vdo = $playing.find('video');
+							vdo.each(function(){
+								this.play();
+							});
 						}			
 						if($playing.find('video').length > 0 && vdo[0].duration){
 							curDelay = vdo[0].duration;
@@ -805,8 +801,10 @@
 			reset: function(){
 				$playing = $item.eq(playingIdx);
 				if($playing.find('video').length > 0){
-					$playing.find('video')[0].pause();
-					$playing.find('video')[0].currentTime = 0;						
+					$playing.find('video').each(function(){
+						this.pause();
+						this.currentTime = 0;	
+					});
 				}
 				clearInterval(setToBar);		
 				$durBar.css('width', 0);
