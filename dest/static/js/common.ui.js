@@ -1155,7 +1155,7 @@
 				}		
 			});
 
-			//동아쏘시오 그룹 소개 - 퍼즐
+			//동아쏘시오그룹 소개 - 퍼즐
 			let philosophyFlag, socioSetTArr = [];
 			$(window).on('scroll', function(){
 

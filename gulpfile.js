@@ -213,7 +213,7 @@ function filecopy_pc_js(done) {
 function filecopy_pc_css(done) {
 	src(paths.pc.css.dest + "*", {read: false})
 	.pipe(clean())
-	.pipe(src([paths.pc.css.src2 + "/!(common)*.css", paths.pc.css.src2 + "/!(guide)*.css"]))
+	.pipe(src([paths.pc.css.output + "/!(common)*.css", paths.pc.css.output + "/!(guide)*.css"]))
 	.pipe(dest(paths.pc.css.dest));
 	done();
 }

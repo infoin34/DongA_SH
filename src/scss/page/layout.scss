@@ -274,7 +274,7 @@ h1 {
 //메인 제외한
 #wrap:not(.main) {
     .section-head {
-        &.no-h .section-inner {height: auto;}
+        &.no-h .section-inner {min-height: auto; padding-bottom: 0;}
         .section-inner {padding-right: 38rem; padding-bottom: 16.5rem; min-height: 76rem; }
         .sub-title {margin-top: 2rem; color: #666;}
         .text-wrap {padding-top: calc(200/1440*100%);}
@@ -875,7 +875,10 @@ footer {
         .gnb-depth1-list {
             display: block;
             > li.on {
-                .gnb-depth1-title {border-bottom: 2px solid #00B4D6;}
+                .gnb-depth1-title {
+                    border-bottom: 2px solid #00B4D6;
+                    &:before {display: none;}
+                }
                 //.gnb-depth2 {display: block;}
             }
             > li + li {margin-top: 0;}
@@ -885,7 +888,6 @@ footer {
             > li + li {margin-top: 3rem;}
             > li.on {
                 .gnb-depth1-title a:after {right: -1.2rem; bottom: 0.2rem; width: 0.6rem; height: 0.6rem;}
-                //.gnb-depth3 {display: block;}
             }
         }
         .gnb-depth1-title {

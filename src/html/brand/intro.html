@@ -587,10 +587,14 @@ $(function(){
             return false;
         });
 
-        //메인에서 그룹소개로 넘어올 경우
+        //링크 통해 그룹소개로 넘어올 경우
 		if(location.href.indexOf('loc') > -1){
             let url = new URL(location.href);
             $('.brand-intro .category-item').eq(Number(url.searchParams.get('loc'))).click();
+            if(location.href.indexOf('tab') > -1){
+            	$('.intro-item').eq(Number(url.searchParams.get('loc'))).find('.brand-item').eq(Number(url.searchParams.get('tab'))).click();
+            	brandListSwiperArr[Number(url.searchParams.get('loc'))-1].slideTo(Number(url.searchParams.get('tab')));
+            }
 		}	
 
     });

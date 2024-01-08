@@ -102,11 +102,11 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 /**************** common-class ********************/
 :root {
 	--size: 10px;
-	--clr1: #000;
-	--clr2: #000081;
-	--clr3: #162DA1;
-	--clr4: #2F75FF;
-	--clr5: #00B4D6;
+	--clr1: #0df7ff;
+	--clr2: #00B4D6;
+	--clr3: #2F75FF;
+	--clr4: #162DA1;
+	--clr5: #031053;
 	--hl1: #FF0002;   
 	--ico-s1: 6.4rem;
 	--ico-s2: 2rem;
@@ -228,6 +228,8 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .loader-wrap {
 	display: none;
 	position: fixed;
+	width: 100%;
+	height: 100%;
 	top: 0;
 	left: 0;
 	z-index: 99999;
@@ -277,8 +279,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	span:nth-child(1) {
 		--clr-spinner: var(--clr1);
 		animation-delay: calc(var(--animation-duration) / 6 * -1);
-	}
-  
+	}  
 	span:nth-child(2) {
 		--clr-spinner: var(--clr2);
 		animation-delay: calc(var(--animation-duration) / 6 * -2);
@@ -408,6 +409,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 		th, td {
             padding: 2.4rem;
             font-weight: 500;
+			text-align: center;
 		}
 		.header td {
 			text-align: center; background-color: #2F75FF; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
@@ -421,7 +423,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 }
 
 //table-type
-.table-note {margin-top: 2rem; text-align: right; color: #888;}
+.table-note {margin-top: 2rem; text-align: right; color: #888; white-space: pre-line;}
 .table {
     &-type-a {
         font-size: 1.6rem;

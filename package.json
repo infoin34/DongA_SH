@@ -42,7 +42,6 @@
     "pc": {
       "css": {
         "src": "./src/scss",
-        "src2": "./src/dest/static/css",
         "output": "./src/dest/static/css/",
         "dest": "./dest/static/css/"
       },

@@ -526,7 +526,7 @@
                 strong {
                     padding-right: 1.2rem; font-weight: 600;
                 }
-                
+                .career-text {white-space: pre-line;}                
             }
         }
         .director-profile {
@@ -766,7 +766,10 @@
                 &.on {
                     width: 100% !important;
                     + .director-info-item {margin-top: 2.8rem;}                    
-                    a {padding: 4rem 2rem;}
+                    a {
+                        padding: 4rem 2rem;
+                        &:before, &:after {display: none;}
+                    }
                     .photo {display: block;}
                     .name {margin-top: 1.2rem; font-size: 2.4rem; text-align: center;}
                 }

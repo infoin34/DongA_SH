@@ -21,8 +21,8 @@
     }
     img {max-width: calc(100vw - 3.2rem); max-height: 78vh;}
     .popup-footer {
-        position: relative; padding: 2rem 4rem; background-color: #F3F7FA;
-        .btn-close {position: absolute; margin-top: -1.4rem; top: 50%; right: 4rem; font-weight: 600;}
+        position: relative; min-height: 7.3rem; padding: 2rem 4rem; background-color: #F3F7FA;
+        .btn-close {position: absolute; top: 50%; right: 4rem; transform: translateY(-50%); font-weight: 600;}
     }
 }
 a.btn-detail {
@@ -197,7 +197,7 @@ a.btn-page-move {
             .sub, .title-h2, .text-1 { transform: translateY(0)  skew(0, 0); opacity: 1;}
         }        
         .text-1 {
-            margin-top: 2rem; color: #444; font-size: 2rem; font-weight: 500;
+            margin-top: 2rem; color: #444; font-size: 2rem; font-weight: 500; white-space: pre-line;
          }
         .btn-detail {
             position: absolute; right: 0; bottom:0; 
@@ -333,7 +333,7 @@ a.btn-page-move {
             .thumb {width: 100%; height: 100%; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover;}
             .info {position: relative; padding: 0 4rem;}
             .title {width: 100%; font-size: 2.4rem; font-weight: 600; transition: font 0.3s ease-out;}
-            .text-1 {margin-top: 2rem; width:100%;}
+            .text-1 {margin-top: 2rem; width:100%; white-space: pre-line;}
             .text-1, .btn-wrap {display: none;}
             .btn-wrap {margin-top: 5rem;}
         }
@@ -484,7 +484,7 @@ a.btn-page-move {
                 transform: opacity 0.5s;
             }
         }       
-        .text {font-size: 4.8rem; color: #fff; font-weight: 600;}
+        .text {font-size: 4.8rem; color: #fff; font-weight: 600; white-space: pre-line;}
         .puzzle {
             position: absolute;
             width: 100%;
@@ -775,7 +775,7 @@ a.btn-page-move {
         .popup-content {min-width: none;}
         .popup-wrap {padding: 0;}
         .popup-footer {
-            padding: 1rem 2rem;
+            padding: 1rem 2rem; min-height: 4.6rem;
             .btn-close {right: 2rem;}
         }
     }
@@ -833,6 +833,6 @@ a.btn-page-move {
         transform: translateY(-50%);
         .popup-wrap {padding: 0;}
         .popup-content {min-width: none;}
-        .popup-footer {padding: 1rem 2rem;}
+        .popup-footer {padding: 1rem 2rem; min-height: 4.6rem;}
     }
 }

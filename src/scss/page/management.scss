@@ -1191,6 +1191,12 @@
             //협력기관
             .cooperation-list {gap: 2rem;}
             .cooperation-item {width: calc((100% - 8rem)/5);}
+            .btn-url:after {width: 2rem; height: 2rem;}
+            .info-box {
+                display: block; padding: 3rem; background-color: #fff;
+                .title-s2, dl {width: 100%;}
+                dl {margin-top: 1.6rem;}
+            }
         }
         //통합보고서
         &-synthesis-report {
