@@ -959,7 +959,7 @@
                 padding-top: 0 !important;
                 &.on {display: block;}
             }
-            margin-bottom: -12rem; 
+            margin-bottom: -14rem; 
         }
         .btn-url {
             &:after {content:''; display: inline-block; margin-left: 1rem; margin-top: -0.2rem; width: 2.4rem; height: 2.4rem; background: svgUrlArrow4('000'); background-size: 100% 100%; vertical-align: middle;}
@@ -1247,6 +1247,7 @@
             }
 
             //csr 활동 
+            .csr-activity {margin-bottom: -10rem;}
             .gallery-swiper {
                 // margin: 0 -1.6rem;
                 // width: auto;
