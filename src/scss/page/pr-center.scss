@@ -4,6 +4,7 @@
     .page-menu-list .tab-item:nth-child(4){
         a:after {content: ''; margin-left: 0.4rem; display:inline-block; width: 1.2rem; height: 1.3rem; background: svgUrlArrow('aaa'); background-size: 100% 100%;}
     }
+    //미디어
     &-media {
         .media {
             &-list {
@@ -20,6 +21,7 @@
         
         }
     }
+    //뉴스
     &-news {
         .news {
             &-item {
@@ -41,6 +43,7 @@
             }
         }
     }
+    //상세
     &-detail {
         .section-contents {padding-top: 14rem !important;}
         .detail {
@@ -103,6 +106,7 @@
             }
         }
     }
+    //사회공헌
     &-contribution {
         .contribution{
             &-item {

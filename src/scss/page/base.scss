@@ -2,7 +2,7 @@
 /************************************************/
 /************************************************/
 /************************************************/
-/* default */
+/* 기본 */
 * {box-sizing:border-box;} 
 html {font-size:62.5%; font-family: "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; cursor: none; word-break: keep-all;}
 // :hover, :link {cursor: none;}
@@ -147,7 +147,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .text-3 {font-size: 1.6rem; line-height: calc(28/16);}
 .text-4 {font-size: 1.4rem; line-height: calc(22/14);}
 
-//btn
+//버튼
 [class*="btn-type-"] {
 	position: relative;
     -webkit-transition: 0.3s;
@@ -193,20 +193,21 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 }
 
-//check
+//체크박스
 .check-type-a input {display:none;}
 .check-type-a input + label { font-size: 1.3rem; line-height: 2.2rem; font-weight:400;} 
 .check-type-a label:before {content:''; display:inline-block; margin: -2px 10px 0 0; width: 2.4rem; height: 2.4rem; border: 1px solid #ccc; background-color:#fff;box-sizing:border-box;  border-radius: 0.4rem; vertical-align: middle;}
 .check-type-a input:checked + label {color:#333 !important; font-weight:600 !important;}
 .check-type-a input:checked + label:before {border-color: #000081; background:#000081 svgCheck('fff') no-repeat 50% 50%/ 1.6rem;}
 
+//라디오
 .radio-type-a input {display:none;}
 .radio-type-a input + label {cursor:pointer; font-size:rem(13); line-height:rem(21); font-weight:500; color:#333; } 
 .radio-type-a label:before {content:''; display:inline-block; margin-right:10px; width:rem(21); height:rem(21); border-radius:50%; border: 1px solid #bcbbbc; vertical-align:middle; box-sizing:border-box;}
 .radio-type-a input:checked + label:before {background:url(../images/common/ico-radio-bk.png) no-repeat 50% 50%/ 100%; border:none;}
 
 
-//paging
+//페이징-번호
 .paging {margin-top: 5rem; display: flex; gap: 1rem; width: 100%; justify-content: center;}
 .paging li {position: relative; font-size: 1.6rem;}
 .paging li a, .paging li strong {display: block; padding: 0 11px; width: 100%; height: 100%; font-size:1.6rem; color:#aaa; line-height: 3rem;}
@@ -224,7 +225,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 .paging-right a {background: svgPageArrow('000081') no-repeat 50% 50%/ 1rem; transform: scaleX(-1);}
 .paging-right-2 a {background: svgPageArrow2('000081') no-repeat 50% 50%/ 1.5rem; transform: scaleX(-1);}
 
-//loader
+//로딩바
 .loader-wrap {
 	display: none;
 	position: fixed;
@@ -299,7 +300,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 } 
   
-//filter
+//검색박스
 .search {
 	&-box {
 		margin-bottom: 5rem; padding: 2.8rem 12.3rem; background-color:#F7F7F7; border-radius: 2rem; @include font0;
@@ -357,7 +358,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 }
 
 
-//tab-type
+//탭
 .tab {
 	&-type-a {
 		display: flex; gap: 0.8rem;
@@ -371,7 +372,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 }
 
-//list-type
+//리스트 (테이블 형식)
 .list {
 	&-type-a { 
 		display: flex; flex-wrap: wrap; gap: 3rem;
@@ -392,7 +393,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
     }
 }
 
-//bullet
+//불릿 리스트
 .bullet {
 	&-type-a {
 		li {
@@ -402,7 +403,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 }
 
-//excel-table
+//엑셀 데이터 테이블
 .excel-table {
 	table {
 		width: 100%; font-size: 1.6rem; border: 0;
@@ -422,7 +423,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	}
 }
 
-//table-type
+//테이블 
 .table-note {margin-top: 2rem; text-align: right; color: #888; white-space: pre-line;}
 .table {
     &-type-a {
@@ -509,7 +510,7 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
     }
 }
 
-//field-table
+//폼형식
 .field-table {
 	//&-title {padding-top: 12rem; padding-bottom: 2.4rem; margin-bottom: 2.8rem; border-bottom: 1px solid #E5E5E5;}
 	input[type="text"], select {padding-left: 3rem;  height: 6.4rem; text-align: left;}
@@ -545,15 +546,16 @@ body::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:i
 	.half {width: calc((100% - 4rem)/2);}	
 }
 
-//date
+//날짜 
 .date.ico {padding-left: 3rem; background: svgClock('aaa') no-repeat 0 50%/2rem; color: #aaa; font-weight: 700;}
 
+//pc, mo 구분
 .pc-part {display: block;}
 img.pc-part {display: inline-block;}
 .mo-part {display: none;}
 
 
-//popup
+//레이어팝업
 .layer-popup {
 	display: none;	
 	&:not(.no-dim){
@@ -704,7 +706,7 @@ img.pc-part {display: inline-block;}
 
 
 @media (hover: hover) and (pointer: fine) {
-	//table
+	//테이블
 	.table {
         &-type-b {
             > li:hover {
@@ -716,7 +718,7 @@ img.pc-part {display: inline-block;}
             }
         }
     }
-	//list 
+	//리스트 
 	.list {
 		&-type-b {
 			> li:hover {
@@ -783,7 +785,7 @@ img.pc-part {display: inline-block;}
 	.scr-x {
 		img {max-width: none;}
 	}
-	.paging {margin-top: 4rem;}
+	.paging {margin-top: 4rem; gap: 1.4rem;}
 	input[type="text"], input[type="password"], input[type="number"], input[type="tel"], input[type="email"], input[type="search"] {
 		font-size: 1.5rem;
 		@include placeholder(#aaa, 1.5rem);

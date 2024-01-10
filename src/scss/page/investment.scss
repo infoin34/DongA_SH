@@ -600,7 +600,7 @@
                 .name {min-width: 10rem;}
             } 
             &-price-table {
-                display: flex; gap: 3rem;
+                display: flex; gap: 3rem; flex-wrap: wrap;
                 
             }
         }
