@@ -518,7 +518,7 @@
                     display: inline-flex; flex-wrap: wrap; width: 50%; font-weight: 300;
                     &.role {width: 100%;}
                     &.career {
-                        padding-top: 2rem; margin-top: 2rem; margin-left: 0; width: 100%; border-top: 1px solid #DBDBDB; 
+                        padding-top: 2rem; margin-top: 2rem; margin-left: 0; display: block; width: 100%; border-top: 1px solid #DBDBDB; 
                         strong {display: block; width: 100%;}
                     }
                 }

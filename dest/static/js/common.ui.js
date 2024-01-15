@@ -165,6 +165,9 @@
 					bodyScrollBlock(false);
 				}
 			}			
+			if($pop.hasClass('pop-youtube')) {
+				$pop.find('iframe').attr('src', '');
+			}
 			$pop.css({ 'display': 'none', 'z-index': 0 });
 		},
 		confirm : function(obj){
@@ -421,6 +424,11 @@
 				let gapY = Math.abs(touchY - moveY);
 				
 				$list.addClass('no-click');	
+				
+				if(Math.abs(gapX) > Math.abs(gapY)){
+					e.preventDefault();
+					e.stopPropagation();
+				}
 			},
 			handEnd : function(e){	
 				if(!window.isMobile) {
@@ -719,8 +727,9 @@
 				this.active();		
 			},
 			active: function(){		
-				let _ = this;			
-				$('.swiper-pagination-bullet-'+ playingIdx).click();
+				let _ = this;		
+				mainSpotSwiper.slideTo(playingIdx);
+				//$('.swiper-pagination-bullet-'+ playingIdx).click();
 			},
 			slideControl: function(did){
 				let _ = this;
