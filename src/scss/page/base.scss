@@ -953,6 +953,8 @@ img.pc-part {display: inline-block;}
 
 					a {
 						position: relative;
+						display: block;
+						height: 100%;
 					}
 
 					.ico {
@@ -964,11 +966,9 @@ img.pc-part {display: inline-block;}
 						line-height: 1.43rem;
 						position: absolute;
 						bottom: 0;
-						left: 50%;
-						height: 2.8rem;
-						width: fit-content;
-						transform: translateY(calc(100% + 0.8rem)) translateX(-50%);
-						white-space: nowrap;
+						width: 100%;
+						height: 2.86rem;
+						text-align: center;
 					}
 				}
 			}
