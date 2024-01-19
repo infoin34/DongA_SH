@@ -137,7 +137,18 @@ a.btn-page-move {
                     animation-fill-mode: forwards;
                     animation-timing-function: linear;            
                     &.en {animation-name: introV4-en;}     
-                }               
+                }      
+                
+                
+                &.en {
+                    .intro-box { 
+                        animation-delay: 3s;
+                    }
+
+                    .intro-logo  {
+                        animation-delay: 3.5s;
+                    }
+                }
             }
             
         }
